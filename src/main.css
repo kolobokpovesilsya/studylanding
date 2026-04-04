@@ -1,4 +1,5 @@
 @import url('blocks/brands/brands.css');
+@import url('blocks/software/software.css');
 /* Reset and base styles */
 *,
 *::before,
@@ -8,7 +9,10 @@
   box-sizing: border-box;
 }
 :root{
-    --container:1200px
+    --container:1200px;
+    --card-radius:20px;
+    --box-shadow-v1:0 10px 60px #262D7608;
+    --box-shadow-v2:0 16px 40px #252C7110
 }
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;

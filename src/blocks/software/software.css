@@ -1,0 +1,25 @@
+
+.software__title,.software__description{
+    text-align: center;
+}
+.software__card-list{
+    display: flex;
+    justify-content: space-between;
+}
+.software__card-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: var(--card-radius);
+    box-shadow: var(--box-shadow-v1);
+}
+.software__card-item__icon{
+    box-shadow: var(--box-shadow-v2);
+    border-radius: 50%;
+}
+.software__card-item__title{
+
+}
+.software__card-item__text{
+
+}
