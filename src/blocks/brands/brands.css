@@ -1,0 +1,14 @@
+.brands{
+
+}
+.brands__container{
+     
+}
+.brands__title{
+    text-align: center;
+}
+.brands__list{
+    display: flex;
+    justify-content: space-between;
+    align-items:center
+}
