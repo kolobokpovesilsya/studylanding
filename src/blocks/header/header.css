@@ -1,0 +1,63 @@
+.header {
+  position: fixed;
+  width: 100%;
+  padding: 16px 0;
+  z-index: 1000;
+}
+
+/* Логотип */
+.header__logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111;
+  text-decoration: none;
+  flex-shrink: 0; /* Запрещаем сжиматься */
+}
+
+/* Навигация */
+.header__nav {
+  display: flex;
+  justify-content: center;
+}
+.header__nav--right {
+  margin-left: auto;
+}
+.header__nav-list {
+  display: flex;
+  list-style: none;
+  gap: 28px;
+  align-items: center;
+}
+
+.header__nav-link {
+  text-decoration: none;
+  color: #4b5563;
+  font-weight: 500;
+  font-size: 15px;
+  transition: color 0.2s ease;
+}
+
+.header__nav-link:hover {
+  color: #111;
+}
+
+/* Блок действий (кнопки) */
+.header__actions {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* Адаптив для мобильных (опционально, но рекомендуется) */
+@media (max-width: 768px) {
+  .header__container {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+  .header__nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+  }
+}

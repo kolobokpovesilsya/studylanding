@@ -1,43 +1,81 @@
-@import url('blocks/brands/brands.css');
-@import url('blocks/software/software.css');
-/* Reset and base styles */
+@import url("./blocks/button/button.css");
+@import url("./blocks/logo/logo.css");
+@import url("./blocks/notification/notification.css");
+@import url("./blocks/header/header.css");
+@import url("./blocks/intro/intro.css");
+
+:root {
+    --white: #ffffff;
+    --black: #000000;
+    --color-bg: var(--white);
+    --accent-primary: #65daff;
+    --accent-warning: #f48c06;
+    --accent-info: #2f327d;
+    --gap: 1rem;
+    --radius: 8px;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
+    --container: min(100% - 2rem, 1200px);
+    --btn-radius: 5rem;
+    --card-radius: 20px;
+    --box-shadow-v1: 0 10px 60px 0 #262d7615;
+    --box-shadow-v2: 0 16px 40px 0 #252c7130;
+}
 *,
 *::before,
 *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
-:root{
-    --container:1200px;
-    --card-radius:20px;
-    --box-shadow-v1:0 10px 60px 0 #262D7615;
-    --box-shadow-v2:0 16px 40px 0 #252C7130;
-    --warning:#F48C06;
-    --primary:#29B9E7;
-    --info:#5B72EE
-
+html {
+    scroll-behavior: smooth;
 }
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  line-height: 1.6;
-  color: #333;
-  background-color: #fff;
+    font-family:
+        system-ui,
+        -apple-system,
+        "Segoe UI",
+        Roboto,
+        sans-serif;
+    line-height: 1.5;
+    background: var(--color-bg);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+button {
+    font: inherit;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+}
+.main {
+    flex: 1;
 }
 
-.page {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.text-warning {
+    color: var(--accent-warning);
 }
 
-/* .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-} */
-
- [class*="__container"] {
-  width:var(--container);
-  margin:0 auto
- }
+[class*="__container"] {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+}

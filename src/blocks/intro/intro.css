@@ -1,0 +1,51 @@
+.intro {
+  position: relative;
+  overflow: hidden;
+  height: 800px;
+  background-color: #fff2e1;
+  clip-path: ellipse(100% 100% at 50% 0%);
+}
+.intro__container {
+  height: 100%;
+}
+.intro__title {
+  margin-bottom: 1rem;
+}
+.intro__description {
+  margin-bottom: 1rem;
+}
+.intro__btn-join,
+.intro__btn-play {
+  margin-right: 1rem;
+}
+.intro__content,
+.intro__image {
+  width: 50%;
+}
+.intro__image {
+  position: relative;
+  width: 500px;
+  height: 800px;
+}
+.intro__image img {
+  position: absolute;
+  bottom: 0;
+}
+
+.intro__notification-join {
+  position: absolute;
+  bottom: 10rem;
+}
+/* .intro::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -50%;  
+  width: 150%;  
+  aspect-ratio: 1 / 1;  
+  border-radius: 50%;
+  background: inherit;
+  background-color: #fff2e1;
+  z-index: -1;
+} */

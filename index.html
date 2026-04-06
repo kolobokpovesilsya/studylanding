@@ -1,51 +1,90 @@
-<!DOCTYPE html>
-<html lang="ru">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="/src/main.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <script type="module" src="/src/main.js"></script>
+  </head>
+  <body class="page">
+    <header class="header">
+      <div class="header__container">
+        <a href="/" class="header__logo logo logo--primary"> Skilline </a>
+        <nav class="header__nav header__nav--right">
+          <ul class="header__nav-list">
+            <li class="header__nav-item">
+              <a href="#" class="header__nav-link">Home</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="#" class="header__nav-link">Careers</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="#" class="header__nav-link">Blog</a>
+            </li>
+            <li class="header__nav-item">
+              <a href="#" class="header__nav-link">About Us</a>
+            </li>
+          </ul>
+        </nav>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мой проект</title>
-    <link rel="stylesheet" href="/src/main.css">
-</head>
-
-<body>
-    <div class="page">
-        <!-- Header -->
-        <header class="header">
-            <div class="container header__container">
-                <div class="logo header__logo">
-                    <a href="/" class="logo__link">МойСайт</a>
-                </div>
-
-                <nav class="nav header__nav">
-                    <ul class="nav__list">
-                        <li class="nav__item">
-                            <a href="#home" class="nav__link">Главная</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#about" class="nav__link">О нас</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#services" class="nav__link">Услуги</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="#contacts" class="nav__link">Контакты</a>
-                        </li>
-                    </ul>
-                </nav>
-
-                <button class="burger header__burger" aria-label="Меню">
-                    <span class="burger__line"></span>
-                    <span class="burger__line"></span>
-                    <span class="burger__line"></span>
-                </button>
+        <div class="header__actions">
+          <button type="button" class="header__btn btn btn--white">
+            Login
+          </button>
+          <button type="button" class="header__btn btn btn--warning">
+            Sign Up
+          </button>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <section class="intro" aria-labelledby="intro-title">
+        <div class="intro__container">
+          <div class="intro__content">
+            <h1 class="intro__title">
+              <span class="text-warning">Studying</span> Online is now much
+              easier
+            </h1>
+            <div class="intro__description">
+              Skilline is an interesting platform that will teach you in more an
+              interactive way
             </div>
-        </header>
-
-        <!-- Main Content -->
-        <main class="main">
-            <!-- Section Hero -->
-            <section class="brands" id="brands">
+            <div class="intro__controls">
+              <button type="button" class="intro__btn-join btn btn--warning">
+                Join for free
+              </button>
+              <button type="button" class="intro__btn-play btn btn--white">
+                >
+              </button>
+              <span>Watch how it works</span>
+            </div>
+          </div>
+          <div class="intro__image">
+            <img src="/src/assets/intro/girl.png" />
+            <div class="intro__notification-join notification">
+              <div class="notification__image">
+                  A
+              </div>
+              <div class="notification__content">
+                  <div class="notification__title">
+                    User Experience Class
+                  </div>
+                  <div class="notification__description">
+                    Today at 12.00 PM
+                  </div>
+                  <div class="notification__action">
+                    <button class="btn btn-warning">
+                        Join Now
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+       <section class="brands" id="brands">
                 <div class="brands__container ">
                     <div class="brands__title">
                         Trusted by 5,000+ Companies Worldwide
@@ -101,46 +140,7 @@
                     </div>
                 </div>
             </section>
-        </main>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="container footer__container">
-                <div class="footer__info">
-                    <div class="logo footer__logo">
-                        <a href="/" class="logo__link">МойСайт</a>
-                    </div>
-                    <p class="footer__copyright">© 2024 МойСайт. Все права защищены.</p>
-                </div>
-
-                <div class="footer__contacts">
-                    <h4 class="footer__title">Контакты</h4>
-                    <ul class="footer__list">
-                        <li class="footer__item">
-                            <a href="mailto:info@example.com" class="footer__link">info@example.com</a>
-                        </li>
-                        <li class="footer__item">
-                            <a href="tel:+71234567890" class="footer__link">+7 (123) 456-78-90</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="footer__social">
-                    <h4 class="footer__title">Соцсети</h4>
-                    <ul class="social footer__social-list">
-                        <li class="social__item">
-                            <a href="#" class="social__link social__link--vk" aria-label="ВКонтакте"></a>
-                        </li>
-                        <li class="social__item">
-                            <a href="#" class="social__link social__link--tg" aria-label="Telegram"></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </footer>
-    </div>
-
-    <script type="module" src="/src/main.js"></script>
-</body>
-
+    </main>
+    <footer class="footer" aria-label="Подвал сайта"></footer>
+  </body>
 </html>

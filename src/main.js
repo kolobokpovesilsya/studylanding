@@ -1,10 +1,5 @@
- 
-// import { initHeader } from './blocks/header.js'; 
+import { initHeader } from "./blocks/header/header.js";
 
-// Инициализация всех блоков при загрузке DOM
-document.addEventListener('DOMContentLoaded', () => {
-  
-//   initHeader(); 
-  
+document.addEventListener("DOMContentLoaded", () => {
+    initHeader();
 });
- 
