@@ -1,8 +1,15 @@
+/* UI blocks */
 @import url("./blocks/button/button.css");
 @import url("./blocks/logo/logo.css");
 @import url("./blocks/notification/notification.css");
+/* Page sections */
 @import url("./blocks/header/header.css");
 @import url("./blocks/intro/intro.css");
+@import url("./blocks/brands/brands.css");
+@import url("./blocks/software/software.css");
+@import url("./blocks/about/about.css");
+@import url("./blocks/classroom/classroom.css");
+/* @import url("./blocks/footer/footer.css"); */
 
 :root {
     --white: #ffffff;
@@ -19,6 +26,10 @@
     --card-radius: 20px;
     --box-shadow-v1: 0 10px 60px 0 #262d7615;
     --box-shadow-v2: 0 16px 40px 0 #252c7130;
+    --text-size: 24px;
+    --text-color: #696984;
+    --menu-text-color: #252641;
+    --heading-text-color: #2f327d;
 }
 *,
 *::before,
@@ -37,11 +48,17 @@ body {
         "Segoe UI",
         Roboto,
         sans-serif;
-    line-height: 1.5;
+    line-height: 180%;
+    letter-spacing: 2%;
+    font-size: var(--text-size);
+    color: var(--text-color);
     background: var(--color-bg);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+}
+section {
+    margin-bottom: 170px;
 }
 img {
     display: block;
@@ -53,7 +70,7 @@ ul {
     list-style: none;
 }
 a {
-    text-decoration: none;
+    /* text-decoration: none; */
     color: inherit;
 }
 button {
@@ -61,6 +78,26 @@ button {
     cursor: pointer;
     border: none;
     background: transparent;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--heading-text-color);
+    letter-spacing: 0;
+    /* line-height: 140%; */
+}
+h2 {
+    margin-bottom: 30px;
+    font-size: 44px;
+    line-height: 180%;
+}
+h3 {
+    font-size: 36px;
+    line-height: 160%;
+    font-weight: 500;
 }
 .main {
     flex: 1;
@@ -74,8 +111,18 @@ button {
     max-width: var(--container);
     margin: 0 auto;
     padding: 0 24px;
-    display: flex;
+    /* display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 32px;
+    gap: 32px; */
+}
+.section-title {
+    text-align: center;
+}
+.section-description {
+    text-align: center;
+}
+.link {
+    font-size: 22px;
+    /* color: var(--text-color); */
 }
