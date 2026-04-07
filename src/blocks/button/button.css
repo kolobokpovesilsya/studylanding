@@ -33,9 +33,14 @@
 }
 
 .btn--white {
-    --btn-border: --white;
+    --btn-border: var(--white);
     --btn-bg: var(--white);
     --btn-text: var(--black);
+}
+.btn--info {
+    --btn-border: var(--accent-info);
+    --btn-bg: var(--accent-info);
+    --btn-text: var(--white);
 }
 .btn--warning {
     --btn-bg: var(--accent-warning);

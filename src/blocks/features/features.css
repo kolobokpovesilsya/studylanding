@@ -1,0 +1,115 @@
+.features__container {
+    --container: 1500px;
+}
+.features__description {
+    margin-bottom: 100px;
+}
+
+.features__content {
+    display: flex;
+    gap: 50px;
+}
+.features__screen-title {
+    margin-bottom: 60px;
+}
+.features__screen-list-item {
+    display: flex;
+    align-items: center;
+}
+.features__screen-list-item:not(:last-child) {
+    margin-bottom: 40px;
+}
+.features__screen-list-item span {
+    display: inline-flex;
+    flex-shrink: 0;
+    width: 60px;
+    height: 60px;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--box-shadow-v2);
+    background-color: var(--white);
+    border-radius: 100%;
+    margin-right: 35px;
+}
+
+.features__screen {
+    position: relative;
+    flex-basis: 55%;
+}
+.features__screen-description {
+    flex-basis: 45%;
+    padding-left: 5rem;
+}
+.features__screen-interface {
+    /* width: ; */
+}
+.features__video-list {
+    position: absolute;
+    display: flex;
+    top: 5rem;
+    left: 2rem;
+}
+.features__video-v-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-left: 2rem;
+}
+.features__video-v-list--centered {
+    align-items: center;
+}
+.features__video-v-list--shift-top {
+    transform: translateY(-20px);
+}
+.features__videocall {
+    width: 255px;
+    height: 255px;
+    /* border-radius: var(--card-radius); */
+    /* overflow: hidden; */
+}
+.features__videocall--xs {
+    width: 160px;
+    height: 160px;
+}
+.features__videocall--md {
+    width: 200px;
+    height: 200px;
+}
+.features__videocall-main {
+    margin-right: 3rem;
+}
+.features__videocall-main {
+    margin-bottom: 2.5rem;
+}
+.features__video-item-main img {
+    /* box-shadow: 0px 8.5px 20.4px 0px #00000030; */
+}
+.features__video-item-btns {
+    display: flex;
+    gap: 1.5rem;
+}
+.features__video-item-btn {
+    font-size: 22px;
+    /* padding: 0.7rem 1.5rem; */
+    font-weight: 500;
+    width: 150px;
+}
+.features__video-item-btn--info {
+    background-color: #3465e1;
+    padding: 0.25rem 1.5rem;
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    border-radius: var(--btn-radius);
+    box-shadow: 0px 8.5px 20.4px 0px #3465e130;
+}
+
+.features__video-item-btn--danger {
+    background-color: #e13468;
+    padding: 0.25rem 1.5rem;
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    border-radius: var(--btn-radius);
+    box-shadow: 0px 0 0 8px #e1346830;
+}
