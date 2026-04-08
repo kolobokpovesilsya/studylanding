@@ -1,4 +1,5 @@
 .videocall {
+    display: inline-block;
     position: relative;
     overflow: hidden;
     border-radius: var(--card-radius);
@@ -7,9 +8,9 @@
 .videocall--shadow {
     box-shadow: var(--box-shadow-v2);
 }
-.videocall img {
+/* .videocall img {
     height: 100%;
-}
+} */
 
 .videocall video {
     width: 100%;

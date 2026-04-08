@@ -1,0 +1,35 @@
+.badge {
+    --badge-font-size: 20px;
+    --bg-color: #cdd8ff;
+    --text-color: #717fb0;
+    border-radius: var(--card-radius);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-size: var(--badge-font-size);
+    display: inline-flex;
+    align-items: center;
+    line-height: normal;
+}
+
+.badge--orange {
+    --bg-color: #f4c467;
+    --text-color: #252641;
+}
+.badge--cyan {
+    --bg-color: #cdf3ff;
+    --text-color: #43869b;
+}
+.badge--green {
+    --bg-color: #d7ffcd;
+    --text-color: #4e8c3f;
+}
+.badge--blue {
+    --bg-color: #cde4ff;
+    --text-color: #486f9c;
+}
+.badge--red {
+    --bg-color: #ffcdcd;
+    --text-color: #9e5555;
+}

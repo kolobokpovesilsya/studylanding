@@ -1,0 +1,45 @@
+.boxicon {
+    position: relative;
+    --border-radius: 1rem;
+}
+
+.boxicon__bg {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    padding: 0.4rem;
+    box-shadow: -3px 7px 17px #00000010;
+}
+
+.boxicon__backdrop {
+    position: relative;
+    border-radius: var(--border-radius);
+    background: #fff;
+    padding: 0.7rem;
+    z-index: 2;
+    overflow: hidden;
+    box-shadow: -7px 12px 23px #00000015;
+}
+
+/* @supports (backdrop-filter: blur(1px)) {
+    .boxicon__backdrop {
+        background: #00000005;
+        backdrop-filter: blur(10px) saturate(130%);
+        -webkit-backdrop-filter: blur(10px) saturate(130%);
+       
+    }
+} */
+
+.boxicon__shadow {
+    /* position: absolute;
+    width: 20%;
+    height: 20%;
+    bottom: 10px;
+    left: 10px;
+    border-radius: 50%;
+    filter: blur(20px);
+    background-color: #000000; */
+}
+
+.boxicon--round {
+    --border-radius: 50%;
+}

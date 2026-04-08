@@ -4,6 +4,8 @@
 @import url("./blocks/button/button.css");
 @import url("./blocks/logo/logo.css");
 @import url("./blocks/notification/notification.css");
+@import url("./blocks/boxicon/boxicon.css");
+@import url("./blocks/bulb/bulb.css");
 /* Page sections */
 @import url("./blocks/header/header.css");
 @import url("./blocks/intro/intro.css");
@@ -12,6 +14,10 @@
 @import url("./blocks/about/about.css");
 @import url("./blocks/classroom/classroom.css");
 @import url("./blocks/features/features.css");
+@import url("./blocks/tools/tools.css");
+@import url("./blocks/quiz/quiz.css");
+@import url("./blocks/badge/badge.css");
+@import url("./blocks/discussions/discussion.css");
 /* @import url("blocks/team/team.css"); */
 /* @import url("./blocks/footer/footer.css"); */
 
