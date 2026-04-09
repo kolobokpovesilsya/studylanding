@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+        <link rel="stylesheet" href="/src/main.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Vite App</title>
+        <script type="module" src="/src/main.js"></script>
+    </head>
+
+    <body class="page">
+        <header class="header">
+            <div class="header__container">
+                <a href="/" class="header__logo">
+                    <img
+                        class="header__logo-icon"
+                        src="src/assets/logo/logoicon.svg"
+                        alt=""
+                    />
+                    <img
+                        class="header__logo-text"
+                        src="src/assets/logo/logotext.svg"
+                        alt=""
+                    />
+                </a>
+                <nav class="header__nav header__nav--right">
+                    <ul class="header__nav-list">
+                        <li class="header__nav-item">
+                            <a href="#" class="header__nav-link"
+                                >Обмен криптовалюты</a
+                            >
+                        </li>
+                        <li class="header__nav-item">
+                            <a href="#" class="header__nav-link"
+                                >Международные платежи</a
+                            >
+                        </li>
+                        <li class="header__nav-item">
+                            <a href="#" class="header__nav-link"
+                                >Виртуальные карты</a
+                            >
+                        </li>
+                        <li class="header__nav-item">
+                            <a href="#" class="header__nav-link">Steam</a>
+                        </li>
+                    </ul>
+                </nav>
+                <span class="header__divider"></span>
+                <span class="header__btn header__btn--purple header__btn-wallet"
+                    >Создать кошелёк</span
+                >
+
+                <span class="header__btn header__btn--outlined header__btn-lang"
+                    >RU</span
+                >
+                <span class="header__btn header__btn--outlined">
+                    <img src="/src/assets/header/user.svg" />
+                </span>
+            </div>
+        </header>
+        <main class="main">
+            <section class="payment">
+                <div class="payment__container">
+                    <div class="payment__content">
+                        <div class="payment__content__breadcrumbs breadcrumbs">
+                            <a href="" class="breadcrumbs__item">стр1</a>
+                            <span class="breadcrumbs__divider">/</span>
+                            <a href="" class="breadcrumbs__item">стр2</a>
+                            <span class="breadcrumbs__divider">/</span>
+                            <a href="" class="breadcrumbs__item">стр3</a>
+                            <span class="breadcrumbs__divider">/</span>
+                            <a href="" class="breadcrumbs__item">стр4</a>
+                        </div>
+                        <h1 class="payment__content__title">
+                            Оплата инвойса
+                            <span
+                                class="payment__content__title__accent text-accent--default"
+                                >за автомобиль</span
+                            >
+                        </h1>
+                        <p class="payment__content__description">
+                            Оплатите инвойс за автомобиль быстро и безопасно
+                            в любую страну мира. Мы проводим международные
+                            переводы для покупки авто с аукционов, автосалонов
+                            и у частных продавцов. Гарантируем точность
+                            реквизитов, прозрачность и надежность каждой сделки.
+                        </p>
+                        <p class="payment__content__info">
+                            <span
+                                class="payment__content__info-accent text-accent--default"
+                            >
+                                <img
+                                    src="/src/assets/payment/checkicon.svg"
+                                    alt=""
+                                />
+                                <span class="payment__content__info-value">
+                                    40 000
+                                </span>
+                            </span>
+                            успешных сделок доверили Aifory Pro
+                        </p>
+                        <button
+                            class="payment__content__btn payment__content__btn--default"
+                            type="button"
+                        >
+                            <div class="payment__content__btn__text">
+                                Оставить заявку
+                            </div>
+                            <img src="src/assets/payment/planeicon.svg" />
+                        </button>
+                    </div>
+                    <div class="payment__calculator">
+                        <div class="calculator">
+                            <div class="calculator__card calculator__give">
+                                <div
+                                    class="calculator__row calculator__give__row"
+                                >
+                                    <span class="calculator__give__row__label"
+                                        >Я отдаю</span
+                                    >
+                                    <div
+                                        class="calculator__give__row__select select"
+                                    >
+                                        USD
+                                    </div>
+                                </div>
+                                <input
+                                    type="text"
+                                    class="calculator__give__row input input--borderless"
+                                />
+                            </div>
+                            <div class="calculator__card calculator__get">
+                                <div
+                                    class="calculator__row calculator__get__row"
+                                >
+                                    <span class="calculator__get__row__label"
+                                        >Я получаю</span
+                                    >
+                                    <div
+                                        class="calculator__get__row__select select"
+                                    >
+                                        USD
+                                    </div>
+                                </div>
+                                <input
+                                    type="text"
+                                    class="calculator__get__row input input--borderless"
+                                />
+                            </div>
+                            <div class="calculator__card calculator__summary">
+                                <div
+                                    class="calculator__summary__commision"
+                                ></div>
+                                <div class="calculator__summary__current"></div>
+                                <div class="calculator__summary__income"></div>
+                                <input
+                                    type="text"
+                                    class="calculator__summary__input input"
+                                />
+                                <button class="calculator__summary__submit">
+                                    Отправить
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </body>
+</html>

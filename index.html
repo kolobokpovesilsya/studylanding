@@ -462,12 +462,15 @@ Student results are automatically entered in the online gradebook.
             </div>
           </div>
         </section>
-         <section class="discussions">
+        <section class="discussions">
             <div class="discussions__container">
  
                 <div class="discussions__content">
                     <div class="discussions__screen">
                         <div class="discussions__screen-background">
+                            <div class="discussions__screen-background__ring"></div>
+                            <div class="discussions__screen-background__triangle"></div>
+                            
                             <div class="discussions__videocall-layer">
                                 <div class="discussions__videocall-main">
                                     <div class="discussions__videocall features__videocall--abstract videocall">
@@ -513,19 +516,81 @@ Student results are automatically entered in the online gradebook.
                                     </div>
                                 </div>                            
                             </div>
-                            <img class="discussions__screen-interface" src="src/assets/screen.svg" />
-                        </div>                          
+                            <img class="discussions__screen-interface" src="src/assets/screensolidgray.svg" />
+                        </div>  
+                        <div class="discussion__screen-foreground">
+                           <div class="discussion__boxicon  boxicon boxicon--round">
+                                <div class="boxicon__backdrop">
+                                    <div class="boxicon__bg">
+                                    <img src="src/assets/discussion/users.svg" alt="">   
+                                    </div>
+                                </div>                  
+                            </div>
+                            <div class="discussion__screen-foreground__layer">
+                                <div class="discussion__screen-foreground__layer-row">
+                                    <div class="discussion__screen__videocall   videocall videocall--shadow">
+                                        <video autoplay loop>
+                                            <!-- <source src="/src/assets/features/operator.webm" type="video/webm"> -->
+                                            <source src="/src/assets/features/asian3.mp4" type="video/mp4">
+                                            Ваш браузер не поддерживает тег video.
+                                        </video>
+                                        <!-- <img src="/src/assets/features/person1.png" alt=""> -->
+                                        <div class="videocall__info">
+                                            <div class="videocall__network">|||</div>
+                                            <div class="videocall__name">Patricia Mendoza</div>
+                                        </div>
+                                    </div>
+                                    <div class="discussion__screen-foreground__divider"></div>
+                                    <div class="discussion__screen__videocall   videocall videocall--shadow">
+                                        <video autoplay loop>
+                                            <!-- <source src="/src/assets/features/operator.webm" type="video/webm"> -->
+                                            <source src="/src/assets/features/asian3.mp4" type="video/mp4">
+                                            Ваш браузер не поддерживает тег video.
+                                        </video>
+                                        <!-- <img src="/src/assets/features/person1.png" alt=""> -->
+                                        <div class="videocall__info">
+                                            <div class="videocall__network">|||</div>
+                                            <div class="videocall__name">Patricia Mendoza</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="discussion__screen-foreground__layer-row">
+                                    <div class="discussion__screen-foreground__layer-info">
+                                        <h4 class="discussion__screen-foreground__layer-info__title">Private Discussion</h4>
+                                        <p class="discussion__screen-foreground__layer-info__text">Your video can’t be seen by others</p>
+                                    </div>
+                                    <span class="discussion__screen-btn">
+                                        End Discussion
+                                    </span>
+                                </div>
+                            </div>
+                            <img class="discussion__screen-foreground__interface" src="src/assets/screensolid.svg" />
+                        </div>                        
                     </div>
-                    <div class="discussions__screen-description">
+                    <div class="discussions__screen-text">
                         <h3 class="discussions__screen-title">
                             One-on-One <br/><span class="text-warning">Discussions</span>
                         </h3>
-                        <p class="section-description">
+                        <p class="discussions__screen-description ">
 Teachers and teacher assistants can talk with students privately without leaving the Zoom environment.
                         </p>
                     </div>
                 </div>
 
+            </div>
+        </section>
+          <section class="news">
+            <div class="news__container">
+
+                <h2 class="news__title section-title">
+                   Lastest News and Resources
+                </h2>
+                <p class="news__description section-description">
+                   See the developments that have occurred to Skillines in the world
+                </p>
+                <div class="news__content">
+                 
+                </div>
             </div>
         </section>
     </main>

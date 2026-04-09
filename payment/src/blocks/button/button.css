@@ -1,0 +1,73 @@
+/* .btn {
+    --btn-bg: transparent;
+    --btn-text: #000000;
+    --btn-border: transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+    padding: 8px 15px;
+    font: inherit;
+    font-weight: 500;
+    line-height: 1.25;
+    text-decoration: none;
+    border: 1px solid var(--btn-border);
+    border-radius: var(--btn-radius);
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    cursor: pointer;
+    transition:
+        transform 0.15s ease,
+        background-color 0.2s ease,
+        color 0.2s ease,
+        box-shadow 0.2s ease;
+    user-select: none;
+    -webkit-appearance: none;
+    white-space: nowrap;
+}
+.btn.round {
+    border-radius: 100%;
+    padding: 1rem 1.5rem;
+}
+.btn--filled {
+    border: none;
+}
+
+.btn--white {
+    --btn-border: var(--white);
+    --btn-bg: var(--white);
+    --btn-text: var(--black);
+}
+.btn--info {
+    --btn-border: var(--accent-info);
+    --btn-bg: var(--accent-info);
+    --btn-text: var(--white);
+}
+.btn--warning {
+    --btn-bg: var(--accent-warning);
+    --btn-text: var(--white);
+}
+
+.btn--outlined {
+    --btn-bg: transparent;
+    --btn-text: var(--white);
+    --btn-border: var(--white);
+} */
+/* .btn--outlined-white:hover:not(:disabled),
+.btn--outlined-white.active {
+    --btn-bg: var(--white);
+    --btn-text: var(--black);
+    --btn-border: var(--white);
+}
+
+.btn--outlined-primary {
+    --btn-bg: transparent;
+    --btn-text: var(--accent-primary);
+    --btn-border: var(--accent-primary);
+}
+.btn--outlined-primary:hover:not(:disabled),
+.btn--outlined-primary.active {
+    --btn-bg: var(--accent-primary);
+    --btn-text: var(--white);
+    --btn-border: var(--accent-primary);
+} */

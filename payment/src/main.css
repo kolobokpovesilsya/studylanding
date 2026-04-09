@@ -1,0 +1,90 @@
+/* UI blocks */
+@import url("./blocks/button/button.css");
+@import url("./blocks/breadcrumbs/breadcrumbs.css");
+@import url("./blocks/calculator/calculator.css");
+/* Page sections */
+@import url("./blocks/header/header.css");
+@import url("./blocks/payment/payment.css");
+
+:root {
+    --panel-bg: white;
+    --page-bg: #f4f4f5;
+    --purple-bg: #8b5cf6;
+    --purple-bg-tr: #8b5cf616;
+    --purple-text: #8b5cf6;
+    --container: min(100%, 888px);
+    --btn-radius: 10px;
+    --stroke-primary: #0b0b1008;
+    --text-primary: #1d1d20;
+    --stroke-primary: #ebebee;
+    --text-accent-default: #1ea7ff;
+    --bg-accent-default: var(--text-accent-default);
+    --text-tertiary: #a1a1aa;
+
+    --line-height: 16px;
+    --font-size: 12px;
+    --font-weight: 400;
+    --letter-spacing: -0.3px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family:
+        system-ui,
+        -apple-system,
+        "Segoe UI",
+        Roboto,
+        sans-serif;
+    font-size: var(--font-size);
+    line-height: var(--line-height);
+    font-weight: var(--font-weight);
+    letter-spacing: var(--letter-spacing);
+    color: var(--text-color);
+
+    background: var(--color-bg);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--page-bg);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+ul {
+    list-style: none;
+}
+a {
+    color: inherit;
+}
+button {
+    font: inherit;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+}
+
+.main {
+    flex: 1;
+}
+
+[class*="__container"] {
+    max-width: var(--container);
+    margin: 0 auto;
+}
+
+.text-accent--default {
+    color: var(--text-accent-default);
+}

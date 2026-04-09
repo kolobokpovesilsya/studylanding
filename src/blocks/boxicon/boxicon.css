@@ -1,4 +1,5 @@
 .boxicon {
+    --size: 80px;
     position: relative;
     --border-radius: 1rem;
 }
@@ -6,7 +7,12 @@
 .boxicon__bg {
     background-color: var(--white);
     border-radius: var(--border-radius);
-    padding: 0.4rem;
+    height: var(--size);
+    width: var(--size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding: 0.4rem; */
     box-shadow: -3px 7px 17px #00000010;
 }
 
@@ -17,7 +23,7 @@
     padding: 0.7rem;
     z-index: 2;
     overflow: hidden;
-    box-shadow: -7px 12px 23px #00000015;
+    box-shadow: -7px 12px 23px #00000030;
 }
 
 /* @supports (backdrop-filter: blur(1px)) {
