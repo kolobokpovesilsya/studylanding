@@ -1,0 +1,15 @@
+.news__row{
+ display: flex;
+ gap:5rem
+}
+.news__content{
+    /* display: flex; */
+}
+.news__list{
+    display: flex;
+    flex-direction: column;
+    gap:2rem
+}
+.news__item{
+    display: flex;
+}

@@ -18,8 +18,7 @@
 @import url("./blocks/quiz/quiz.css");
 @import url("./blocks/badge/badge.css");
 @import url("./blocks/discussions/discussion.css");
-/* @import url("blocks/team/team.css"); */
-/* @import url("./blocks/footer/footer.css"); */
+@import url("./blocks/news/news.css");
 
 :root {
     --white: #ffffff;
