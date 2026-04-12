@@ -20,6 +20,8 @@
 @import url("./blocks/discussions/discussion.css");
 @import url("./blocks/news/news.css");
 @import url("./blocks/testimonial/testimonial.css");
+@import url("./blocks/integration/integration.css");
+@import url("./blocks/footer/footer.css");
 
 :root {
     --white: #ffffff;
@@ -81,7 +83,7 @@ ul {
     list-style: none;
 }
 a {
-    /* text-decoration: none; */
+    text-decoration: none;
     color: inherit;
 }
 button {
