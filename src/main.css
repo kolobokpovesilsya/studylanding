@@ -53,6 +53,7 @@
 }
 html {
     scroll-behavior: smooth;
+    overflow: hidden;
 }
 body {
     font-family:
@@ -68,7 +69,9 @@ body {
     background: var(--color-bg);
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    height: 100vh;
+    overflow: auto;
+    /* min-height: 100vh; */
 }
 section {
     margin-bottom: 170px;
