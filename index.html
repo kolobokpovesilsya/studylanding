@@ -65,28 +65,46 @@
                 </div>
                 <div class="intro__image">
                     <img src="/src/assets/intro/girl.png" />
-                    <div class="intro__notification-join notification">
-                        <div class="notification__image">
-                            A
+                    <div class="intro__popup intro__popup--join">
+                        <div class="intro__popup__avatar">
+                            <img src="/src/assets/intro/avatar.png" alt="">
                         </div>
-                        <div class="notification__content">
-                            <div class="notification__title">
-                                User Experience Class
-                            </div>
-                            <div class="notification__description">
-                                Today at 12.00 PM
-                            </div>
-                            <div class="notification__action">
-                                <button class="btn btn-warning">
-                                    Join Now
-                            </div>
+                        <div class="intro__popup__content">                      
+                            <div class="intro__popup__title">User Experience Class</div>
+                            <div class="intro__popup__description">Today at 12.00 PM</div>
+                            <div class="intro__popup__btn">Join Now</div>
                         </div>
+                    </div>
+                    <div class="intro__popup intro__popup--message">
+                        <div class="intro__popup__icon intro__popup__icon--orange">
+                             
+                        </div>
+                        <div class="intro__popup__content">                      
+                            <div class="intro__popup__title">
+                                Congratulations
+                                <div class="intro__popup__title__check"></div>
+                            </div>
+                            <div class="intro__popup__description">Your admission completed</div>
+                        </div>
+                    </div>
+                    <div class="intro__popup intro__popup--calendar">
+                        <div class="intro__popup__icon intro__popup__icon--blue">                             
+                        </div>
+                        <div class="intro__popup__content">                      
+                            <div class="intro__popup__title">
+                                250k 
+                            </div>
+                            <div class="intro__popup__description">Assisted Student</div>
+                        </div>
+                    </div>
+                    <div class="intro__popup intro__popup--settings">
+                        
                     </div>
                 </div>
             </div>
             </div>
         </section>
-        <section class="team">
+        <!-- <section class="team">
             <div class="team__container">
                 <div class="team__slider slider">
                     <div class="slider__content">
@@ -132,7 +150,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
         <section class="brands" id="brands">
             <div class="brands__container ">
                 <div class="brands__title">
@@ -470,6 +488,93 @@
                 </div>
             </div>
         </section>
+         <section class="gradebook">
+            <div class="gradebook__container">
+                <div class="gradebook__content">
+                    <h3 class="gradebook__title section-title">
+                       <span class="text-warning">Class Management</span> Tools for Educators
+                    </h3>
+                    <p class="gradebook__description section-description">
+                        Class provides tools to help run and manage the class such as Class Roster, Attendance, and more. With the Gradebook, teachers can review and grade tests and quizzes in real-time.
+                    </p>
+                </div>
+                <div class="gradebook__picture">
+                    <div class="gradebook__picture__background">
+                        <img class="gradebook__picture__wave-decor" src="src/assets/gradebook/wave.svg"/>
+                       <div class="gradebook__picture__bulb-decor"></div>
+                       <div class="gradebook__picture__bulb-decor gradebook__picture__bulb-decor--small"></div>
+                            <div class="gradebook__picture__boxicon  boxicon boxicon--round">
+                                <div class="boxicon__backdrop">
+                                    <div class="boxicon__bg">
+                                        *
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="gradebook__picture__boxicon gradebook__picture__boxicon--right  boxicon boxicon--round">
+                                <div class="boxicon__backdrop">
+                                    <div class="boxicon__bg">
+                                        b
+                                    </div>
+                                </div>
+                            </div> 
+                       <div class="gradebook__picture__wrapper">
+                            <div class="gradebook__picture__header">
+                                <span class="gradebook__picture__title">GradeBook</span>                                
+                            </div>
+                            <div class="gradebook__picture__body">
+                                <div class="gradebook__picture__row">
+                                    <div class="gradebook__picture__col gradebook__picture__col--blue ">
+                                        <div class="gradebook__picture__tail"></div>
+                                        <div class="gradebook__picture__avatar">
+                                            <img src="src/assets/gradebook/person1.png" alt="">
+                                            <div class="gradebook__picture__badge">
+                                                30
+                                            </div>
+                                        </div>
+                                    </div>    
+                                <div class="gradebook__picture__col gradebook__picture__col--purple ">
+                                        <div class="gradebook__picture__tail"></div>
+                                        <div class="gradebook__picture__avatar">
+                                            <img src="src/assets/gradebook/person2.png" alt="">
+                                            <div class="gradebook__picture__badge">
+                                                98
+                                            </div>
+                                        </div>
+                                    </div>                         
+                                </div>
+                                <div class="gradebook__picture__row">
+                                    <div class="gradebook__picture__col gradebook__picture__col--green ">
+                                        <div class="gradebook__picture__tail"></div>
+                                        <div class="gradebook__picture__avatar">
+                                            <img src="src/assets/gradebook/person3.png" alt="">
+                                            <div class="gradebook__picture__badge">
+                                                85
+                                            </div>
+                                        </div>
+                                    </div>    
+                                <div class="gradebook__picture__col gradebook__picture__col--red ">
+                                        <div class="gradebook__picture__tail"></div>
+                                        <div class="gradebook__picture__avatar">
+                                            <img src="src/assets/gradebook/person4.png" alt="">
+                                            <div class="gradebook__picture__badge">
+                                                75
+                                            </div>
+                                        </div>
+                                    </div>                         
+                                </div>
+                                
+                                
+                            </div>
+                            <div class="gradebook__picture__footer">
+                                <div class="gradebook__picture__btn">
+                                    Export
+                                </div>
+                            </div>    
+                        </div>                   
+                    </div>
+                </div>
+            </div>
+        </section>
         <section class="discussions">
             <div class="discussions__container">
 
@@ -665,13 +770,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <!-- <div class="slider__bullet-list">
-                            <div class="slider__bullet"></div>
-                            <div class="slider__bullet"></div>
-                            <div class="slider__bullet"></div>
-                        </div> -->
+                        </div> 
                     </div>
                 </div>
             </div>
@@ -765,7 +864,7 @@
                     Subscribe to get our Newsletter
                 </div>
                 <div class="footer__search-group">
-                    <input type="text" class="footer__search-input">
+                    <input placeholder="Your Email" type="text" class="footer__search-input">
                     <div class="footer__search-btn">Subscribe</div>
                 </div>
             </div>

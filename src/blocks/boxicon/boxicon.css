@@ -2,6 +2,7 @@
     --size: 80px;
     position: relative;
     --border-radius: 1rem;
+    display: inline-flex;
 }
 
 .boxicon__bg {
@@ -9,7 +10,7 @@
     border-radius: var(--border-radius);
     height: var(--size);
     width: var(--size);
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     /* padding: 0.4rem; */
@@ -19,7 +20,7 @@
 .boxicon__backdrop {
     position: relative;
     border-radius: var(--border-radius);
-    background: #fff;
+    background: #ffffff99;
     padding: 0.7rem;
     z-index: 2;
     overflow: hidden;

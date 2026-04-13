@@ -1,56 +1,78 @@
-.footer{
+.footer {
     background-color: #252641;
-    padding:  70px 0 40px 0;
+    padding: 70px 0 40px 0;
     font-size: 22px;
     line-height: normal;
 }
-.footer__container{
-    --container:599px;
+.footer__container {
+    --container: 660px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    
 }
-.footer__logo-row{
+.footer__logo-row {
     display: flex;
-    color:white;
-    gap:30px;
+    color: white;
+    gap: 30px;
     margin-bottom: 80px;
 }
-.footer__divider{
+.footer__divider {
     width: 1px;
     background: #626381;
     align-self: stretch;
-
 }
-.footer__virtual{
-     
+.footer__virtual {
 }
-.footer__search{
+.footer__search {
+    width: 100%;
     margin-bottom: 70px;
 }
-.footer__search-title{
-    margin-bottom: 10px;
-}
-.footer__search-group{
-    display: flex;
-    gap:20px
-}
-.footer__search-input{
-    background-color: transparent;
-   color:#83839A;
-   letter-spacing: 4%;
-   font-size: 20px;
-   outline: none;
-   border:1px solid #83839A;
-   border-radius: 40px;
-   padding: 16px 25px;
-   max-width: 400px;
-   flex-grow: 1;
-}
-.footer___links{
-    display: flex;
-    gap: 5px;
-    line-height: 90%;
+.footer__search-title {
+    text-align: center;
     margin-bottom: 20px;
+    font-size: 26px;
+    letter-spacing: 4%;
+    font-weight: 500;
+}
+.footer__search-title,
+.footer__links,
+.footer__rights,
+.footer__link,
+.footer__divider {
+    color: #b2b3cf;
+}
+.footer__search-group {
+    display: flex;
+    gap: 20px;
+}
+.footer__search-input {
+    background-color: transparent;
+    color: #83839a;
+    letter-spacing: 4%;
+    font-size: 20px;
+    outline: none;
+    border: 1px solid #83839a;
+    border-radius: 40px;
+    padding: 16px 25px;
+    max-width: 400px;
+    flex-grow: 1;
+}
+.footer__search-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 15px 40px;
+    background: linear-gradient(
+        51deg,
+        rgba(84, 90, 231, 1) 0%,
+        rgba(57, 63, 207, 1) 100%
+    );
+    border-radius: 40px;
+}
+.footer___links {
+    display: flex;
+    gap: 15px;
+    line-height: 90%;
+    margin-bottom: 30px;
 }

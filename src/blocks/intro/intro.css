@@ -1,11 +1,12 @@
 .intro {
     position: relative;
     overflow: hidden;
-    height: 800px;
+    height: 1120px;
     background-color: #fff2e1;
     clip-path: ellipse(100% 100% at 50% 0%);
 }
 .intro__container {
+    --container: 1680px;
     height: 100%;
     display: flex;
     align-items: center;
@@ -21,24 +22,27 @@
 .intro__btn-play {
     margin-right: 1rem;
 }
-.intro__content,
+.intro__content {
+    width: 40%;
+}
 .intro__image {
-    width: 50%;
+    width: 60%;
 }
 .intro__image {
     position: relative;
-    width: 500px;
-    height: 800px;
+    /* width: 500px; */
+    height: 100%;
 }
-.intro__image img {
+.intro__image > img {
     position: absolute;
     bottom: 0;
+    height: 100%;
 }
 
-.intro__notification-join {
+/* .intro__notification-join {
     position: absolute;
     bottom: 10rem;
-}
+} */
 /* .intro::after {
   content: "";
   position: absolute;
@@ -52,3 +56,101 @@
   background-color: #fff2e1;
   z-index: -1;
 } */
+
+.intro__popup {
+    position: absolute;
+    --top: 66%;
+    --left: -10%;
+    top: var(--top);
+    left: var(--left);
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 20px;
+    padding: 28px;
+    display: flex;
+    gap: 25px;
+    line-height: normal;
+}
+@supports (backdrop-filter: blur(1px)) {
+    .intro__popup {
+        background: rgba(255, 255, 255, 0.75);
+        backdrop-filter: blur(10px) saturate(130%);
+        -webkit-backdrop-filter: blur(10px) saturate(130%);
+    }
+}
+.intro__popup__avatar {
+    position: relative;
+    display: inline-flex;
+    width: 56px;
+    height: 56px;
+}
+
+.intro__popup__avatar:after {
+    content: "";
+    position: absolute;
+    bottom: -5%;
+    right: 0%;
+    width: 19px;
+    height: 19px;
+    background-color: #2ebb5e;
+    border: 1px solid #fbecd7;
+    border-radius: 50%;
+}
+.intro__popup__icon {
+    /* --bg-color: transparent; */
+    display: inline-flex;
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    background-color: var(--bg-color);
+}
+.intro__popup__icon--orange {
+    --bg-color: #f88c3d;
+}
+.intro__popup__icon--blue {
+    --bg-color: #23bdee;
+}
+.intro__popup__title__check {
+    width: 20px;
+    height: 20px;
+    background-color: #4ee381;
+    border-radius: 50%;
+}
+.intro__popup__title {
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+    font-weight: bold;
+}
+.intro__popup__description {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.intro__popup__btn {
+    display: inline-flex;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 40px;
+    background-color: #d8587e;
+    border-radius: 80px;
+    margin-top: 20px;
+}
+
+.intro__popup--message {
+    --top: 50%;
+    --left: 60%;
+}
+.intro__popup--calendar {
+    --top: 30%;
+    --left: -5%;
+}
+
+.intro__popup--settings {
+    --top: 25%;
+    --left: 70%;
+    background: #f3627c;
+    backdrop-filter: unset;
+    width: 70px;
+    height: 70px;
+}

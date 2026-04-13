@@ -22,6 +22,7 @@
 @import url("./blocks/testimonial/testimonial.css");
 @import url("./blocks/integration/integration.css");
 @import url("./blocks/footer/footer.css");
+@import url("./blocks/gradebook/gradebook.css");
 
 :root {
     --white: #ffffff;

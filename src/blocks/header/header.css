@@ -3,16 +3,16 @@
     width: 100%;
     padding: 16px 0;
     z-index: 1000;
-     transition-duration: .3s;
+    transition-duration: 0.3s;
 }
-.header--fill{
- background: rgba(255, 255, 255, 0.85);
- box-shadow: 0px 10px 10px 10px #00000015;
+.header--fill {
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0px 10px 10px 10px #00000015;
 }
-.header--hide{
-    transform:translateY(-150%);
+.header--hide {
+    transform: translateY(-150%);
     transition-property: transform;
-    transition-duration: .3s;
+    transition-duration: 0.3s;
 }
 @supports (backdrop-filter: blur(1px)) {
     .header--fill {
@@ -23,6 +23,7 @@
 }
 
 .header__container {
+    --container: 1680px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -70,8 +71,6 @@
     gap: 12px;
     flex-shrink: 0;
 }
-
-
 
 /* Адаптив для мобильных (опционально, но рекомендуется) */
 @media (max-width: 768px) {
