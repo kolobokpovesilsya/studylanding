@@ -5,6 +5,7 @@
 .discussions__content {
     display: flex;
     gap: 15rem;
+    margin-bottom: 200px;
 }
 
 .discussions__screen {
@@ -199,4 +200,9 @@
 .discussions__screen-title,
 .discussions__screen-description {
     text-align: start;
+}
+
+.discussions__more-features{
+    display: flex;
+    justify-content: center;
 }

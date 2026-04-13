@@ -6,6 +6,10 @@
 }
 .brands__title{
     text-align: center;
+    font-size: 28px;
+    letter-spacing: 2%;
+    margin-bottom: 40px;
+    font-weight: 500;
 }
 .brands__list{
     display: flex;

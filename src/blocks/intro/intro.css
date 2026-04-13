@@ -5,35 +5,57 @@
     background-color: #fff2e1;
     clip-path: ellipse(100% 100% at 50% 0%);
 }
+
 .intro__container {
     --container: 1680px;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap:250px;
 }
+
 .intro__title {
-    margin-bottom: 1rem;
+
+    font-size: 54px;
+    font-weight: bold;
+    line-height: 5rem;
+    margin-bottom: 65px;
 }
+
 .intro__description {
-    margin-bottom: 1rem;
+    font-size: 24px;
+    line-height: 2.5rem;
+    margin-bottom: 50px;
 }
+
 .intro__btn-join,
 .intro__btn-play {
     margin-right: 1rem;
 }
+
 .intro__content {
-    width: 40%;
+    width: 45%;
 }
+
 .intro__image {
-    width: 60%;
+    width: 55%;
 }
+
 .intro__image {
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
     /* width: 500px; */
     height: 100%;
 }
-.intro__image > img {
+
+.intro__image-wrapper {
+
+    position: relative;
+}
+
+.intro__image>img {
     position: absolute;
     bottom: 0;
     height: 100%;
@@ -70,6 +92,7 @@
     gap: 25px;
     line-height: normal;
 }
+
 @supports (backdrop-filter: blur(1px)) {
     .intro__popup {
         background: rgba(255, 255, 255, 0.75);
@@ -77,6 +100,7 @@
         -webkit-backdrop-filter: blur(10px) saturate(130%);
     }
 }
+
 .intro__popup__avatar {
     position: relative;
     display: inline-flex;
@@ -95,6 +119,7 @@
     border: 1px solid #fbecd7;
     border-radius: 50%;
 }
+
 .intro__popup__icon {
     /* --bg-color: transparent; */
     display: inline-flex;
@@ -103,24 +128,29 @@
     border-radius: 8px;
     background-color: var(--bg-color);
 }
+
 .intro__popup__icon--orange {
     --bg-color: #f88c3d;
 }
+
 .intro__popup__icon--blue {
     --bg-color: #23bdee;
 }
+
 .intro__popup__title__check {
     width: 20px;
     height: 20px;
     background-color: #4ee381;
     border-radius: 50%;
 }
+
 .intro__popup__title {
     display: flex;
     justify-content: space-between;
     font-size: 24px;
     font-weight: bold;
 }
+
 .intro__popup__description {
     font-size: 20px;
     font-weight: 500;
@@ -141,6 +171,7 @@
     --top: 50%;
     --left: 60%;
 }
+
 .intro__popup--calendar {
     --top: 30%;
     --left: -5%;

@@ -70,3 +70,15 @@
     --btn-text: var(--white);
     --btn-border: var(--accent-primary);
 }
+
+.btn--outlined-orange {
+    --btn-bg: transparent;
+    --btn-text: var(--accent-warning);
+    --btn-border: var(--accent-warning);
+}
+.btn--outlined-primary:hover:not(:disabled),
+.btn--outlined-primary.active {
+    --btn-bg: var(--accent-warning);
+    --btn-text: var(--white);
+    --btn-border: var(--accent-warning);
+}

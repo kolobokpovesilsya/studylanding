@@ -9,8 +9,9 @@
   position: absolute;
   top: 55%; /* привязываем к центру по вертикали */
   left: -0.6rem; /* привязываем к левому краю */
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
+  transform-origin: center center;
   transform: translateY(-50%) rotate(45deg); /* сдвиг на половину высоты + поворот */
 
   z-index: -1; /* если ромб должен быть ПОД текстом */
