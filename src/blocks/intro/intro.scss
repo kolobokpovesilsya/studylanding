@@ -12,20 +12,20 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 250px;
+    gap: rem(250px);
 }
 
 .intro__title {
-    font-size: 54px;
+    font-size: rem(54px);
     font-weight: bold;
     line-height: 5rem;
-    margin-bottom: 65px;
+    margin-bottom: rem(65px);
 }
 
 .intro__description {
-    font-size: 24px;
+    font-size: rem(24px);
     line-height: 2.5rem;
-    margin-bottom: 50px;
+    margin-bottom: rem(50px);
 }
 
 .intro__btn-join,
@@ -84,26 +84,26 @@
     top: var(--top);
     left: var(--left);
     background: rgba(255, 255, 255, 0.85);
-    border-radius: 20px;
-    padding: 28px;
+    border-radius: rem(20px);
+    padding: rem(28px);
     display: flex;
-    gap: 25px;
+    gap: rem(25px);
     line-height: normal;
 }
 
 @supports (backdrop-filter: blur(1px)) {
     .intro__popup {
         background: rgba(255, 255, 255, 0.75);
-        backdrop-filter: blur(10px) saturate(130%);
-        -webkit-backdrop-filter: blur(10px) saturate(130%);
+        backdrop-filter: blur(rem(10px)) saturate(130%);
+        -webkit-backdrop-filter: blur(rem(10px)) saturate(130%);
     }
 }
 
 .intro__popup__avatar {
     position: relative;
     display: inline-flex;
-    width: 56px;
-    height: 56px;
+    width: rem(58px);
+    height: rem(58px);
 }
 
 .intro__popup__avatar:after {
@@ -111,8 +111,8 @@
     position: absolute;
     bottom: -5%;
     right: 0%;
-    width: 19px;
-    height: 19px;
+    width: rem(19px);
+    height: rem(19px);
     background-color: #2ebb5e;
     border: 1px solid #fbecd7;
     border-radius: 50%;
@@ -121,9 +121,9 @@
 .intro__popup__icon {
     /* --bg-color: transparent; */
     display: inline-flex;
-    width: 50px;
-    height: 50px;
-    border-radius: 8px;
+    width: rem(50px);
+    height: rem(50px);
+    border-radius: rem(8px);
     background-color: var(--bg-color);
 }
 
@@ -136,8 +136,8 @@
 }
 
 .intro__popup__title__check {
-    width: 20px;
-    height: 20px;
+    width: rem(20px);
+    height: rem(20px);
     background-color: #4ee381;
     border-radius: 50%;
 }
@@ -145,24 +145,24 @@
 .intro__popup__title {
     display: flex;
     justify-content: space-between;
-    font-size: 24px;
+    font-size: rem(24px);
     font-weight: bold;
 }
 
 .intro__popup__description {
-    font-size: 20px;
+    font-size: rem(20px);
     font-weight: 500;
 }
 
 .intro__popup__btn {
     display: inline-flex;
     color: white;
-    font-size: 20px;
+    font-size: rem(20px);
     font-weight: bold;
-    padding: 10px 40px;
+    padding: rem(10px) rem(40px);
     background-color: #d8587e;
-    border-radius: 80px;
-    margin-top: 20px;
+    border-radius: rem(80px);
+    margin-top: rem(20px);
 }
 
 .intro__popup--message {
@@ -180,6 +180,6 @@
     --left: 70%;
     background: #f3627c;
     backdrop-filter: unset;
-    width: 70px;
-    height: 70px;
+    width: rem(70px);
+    height: rem(70px);
 }

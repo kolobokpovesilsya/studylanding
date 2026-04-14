@@ -1,18 +1,16 @@
-.brands{
-
+.brands {
 }
-.brands__container{
-     
+.brands__container {
 }
-.brands__title{
+.brands__title {
     text-align: center;
-    font-size: 28px;
+    font-size: rem(28px);
     letter-spacing: 2%;
-    margin-bottom: 40px;
+    margin-bottom: rem(40px);
     font-weight: 500;
 }
-.brands__list{
+.brands__list {
     display: flex;
     justify-content: space-between;
-    align-items:center
+    align-items: center;
 }

@@ -1,5 +1,5 @@
 .boxicon {
-    --size: 80px;
+    --size: rem(80px);
     position: relative;
     --border-radius: 1rem;
     display: inline-flex;
@@ -14,7 +14,7 @@
     align-items: center;
     justify-content: center;
     /* padding: 0.4rem; */
-    box-shadow: -3px 7px 17px #00000010;
+    box-shadow: rem(-3px) rem(7px) rem(17px) #00000010;
 }
 
 .boxicon__backdrop {
@@ -24,7 +24,7 @@
     padding: 0.7rem;
     z-index: 2;
     overflow: hidden;
-    box-shadow: -7px 12px 23px #00000030;
+    box-shadow: rem(-7px) rem(12px) rem(23px) #00000030;
 }
 
 /* @supports (backdrop-filter: blur(1px)) {

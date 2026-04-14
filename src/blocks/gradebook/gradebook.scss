@@ -4,7 +4,7 @@
 .gradebook__container {
     --container: 1580px;
     display: flex;
-    gap: 190px;
+    gap: rem(190px);
 }
 .gradebook__content {
     display: flex;
@@ -16,27 +16,27 @@
     text-align: start !important;
 }
 .gradebook__title {
-    max-width: 393px;
+    max-width: rem(393px);
 }
 .gradebook__description {
-    max-width: 600px;
+    max-width: rem(600px);
 }
 
 .gradebook__picture {
 }
 .gradebook__picture__background {
     position: relative;
-    width: 700px;
+    width: rem(700px);
 }
 .gradebook__picture__background:before {
     content: "";
     position: absolute;
     bottom: -5%;
     left: -3%;
-    width: 288px;
-    height: 207px;
+    width: rem(288px);
+    height: rem(207px);
     background-color: #d3e7ff;
-    border-radius: 20px;
+    border-radius: rem(20px);
     z-index: -1;
 }
 .gradebook__picture__wave-decor {
@@ -46,7 +46,7 @@
     transform: translateX(-50%);
 }
 .gradebook__picture__bulb-decor {
-    --size: 44px;
+    --size: rem(44px);
     --top: -14%;
     --right: 2%;
     position: absolute;
@@ -60,7 +60,7 @@
 
 .gradebook__picture__boxicon {
     position: absolute;
-    --size: 110px;
+    --size: rem(110px);
     --top: -12%;
     --left: -5%;
 
@@ -68,12 +68,12 @@
     left: var(--left);
 }
 .gradebook__picture__boxicon--right {
-    --size: 79px;
+    --size: rem(79px);
     --top: 10%;
     --left: 88%;
 }
 .gradebook__picture__bulb-decor--small {
-    --size: 20px;
+    --size: rem(20px);
     --top: -5%;
     --right: -3%;
 }
@@ -88,16 +88,16 @@
     background: #54aff0;
     color: #fff;
     text-align: center;
-    padding: 13px 0;
+    padding: rem(13px) 0;
 }
 .gradebook__picture__body {
-    padding-top: 50px;
+    padding-top: rem(50px);
 }
 .gradebook__picture__row {
     display: flex;
 }
 .gradebook__picture__row:not(:last-child) {
-    margin-bottom: 50px;
+    margin-bottom: rem(50px);
 }
 .gradebook__picture__col {
     --flex-direction: row;
@@ -112,8 +112,8 @@
     --badge-color: #43869b;
     --badge-top: 70%;
     --badge-left: 70%;
-    --left-shift: -10px;
-    --tail-width: 100px;
+    --left-shift: rem(-10px);
+    --tail-width: rem(100px);
 }
 .gradebook__picture__col--purple {
     --tail-bg: #3189ef;
@@ -121,8 +121,8 @@
     --badge-color: #486f9c;
     --badge-top: 80%;
     --badge-left: 20%;
-    --right-shift: -10px;
-    --tail-width: 250px;
+    --right-shift: rem(-10px);
+    --tail-width: rem(250px);
     --flex-direction: row-reverse;
     transform: translateY(-10%);
 }
@@ -132,8 +132,8 @@
     --badge-color: #4e8c3f;
     --badge-top: 70%;
     --badge-left: 70%;
-    --left-shift: -10px;
-    --tail-width: 250px;
+    --left-shift: rem(-10px);
+    --tail-width: rem(250px);
 }
 .gradebook__picture__col--red {
     --tail-bg: #f13c3c;
@@ -141,14 +141,14 @@
     --badge-color: #9e5555;
     --badge-top: 70%;
     --badge-left: -20%;
-    --right-shift: -10px;
-    --tail-width: 120px;
+    --right-shift: rem(-10px);
+    --tail-width: rem(120px);
     --flex-direction: row-reverse;
     transform: translateY(-50%);
 }
 .gradebook__picture__tail {
     width: var(--tail-width);
-    height: 30px;
+    height: rem(30px);
     background-color: var(--tail-bg);
 }
 
@@ -163,9 +163,9 @@
     left: var(--badge-left);
     background-color: var(--badge-bg);
     color: var(--badge-color);
-    font-size: 22px;
-    padding: 0 20px;
-    border-radius: 40px;
+    font-size: rem(22px);
+    padding: 0 rem(20px);
+    border-radius: rem(40px);
 }
 .gradebook__picture__avatar img {
     border-radius: 50%;
@@ -173,20 +173,20 @@
 
 .gradebook__picture__footer {
     text-align: end;
-    padding: 20px 50px;
+    padding: rem(20px) rem(50px);
     border-radius: 0 0 var(--card-radius) var(--card-radius);
 }
 .gradebook__picture__btn {
     position: relative;
     display: inline-flex;
-    border-radius: 60px;
+    border-radius: rem(60px);
     background: linear-gradient(
         51deg,
         rgba(84, 90, 231, 1) 0%,
         rgba(57, 63, 207, 1) 100%
     );
     color: white;
-    padding: 4px 40px;
+    padding: rem(4px) rem(40px);
     z-index: 2;
 }
 .gradebook__picture__btn:after {
@@ -198,8 +198,8 @@
     left: 0;
     top: 20%;
     z-index: -1;
-    filter: blur(10px);
-    -webkit-filter: blur(10px);
-    border-radius: 60px;
-    font-size: 20px;
+    filter: blur(rem(10px));
+    -webkit-filter: blur(rem(10px));
+    border-radius: rem(60px);
+    font-size: rem(20px);
 }

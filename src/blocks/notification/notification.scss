@@ -1,16 +1,16 @@
 .notification {
     background: rgba(255, 255, 255, 0.85);
-    border-radius: 16px;
-    padding: 24px;
+    border-radius: rem(16px);
+    padding: rem(24px);
     display: flex;
 }
 
 @supports (backdrop-filter: blur(1px)) {
     .notification {
         background: rgba(255, 255, 255, 0.75);
-        backdrop-filter: blur(10px) saturate(130%);
-        -webkit-backdrop-filter: blur(10px) saturate(130%);
-        border: 1px solid rgba(255, 255, 255, 0.35);
+        backdrop-filter: blur(rem(10px)) saturate(130%);
+        -webkit-backdrop-filter: blur(rem(10px)) saturate(130%);
+        border: rem(1px) solid rgba(255, 255, 255, 0.35);
         /* box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12); */
     }
 }

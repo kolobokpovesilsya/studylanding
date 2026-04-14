@@ -2,7 +2,7 @@
     --container: 1550px;
 }
 .news__description {
-    margin-bottom: 95px;
+    margin-bottom: rem(95px);
 }
 .news__row {
     display: flex;
@@ -18,13 +18,13 @@
 }
 .news__item {
     display: flex;
-    gap: 35px;
+    gap: rem(35px);
     line-height: 2.5rem;
 }
 .news__content {
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: rem(25px);
 }
 .news__badge {
     display: inline-block;
@@ -33,43 +33,43 @@
     border-radius: var(--card-radius);
     white-space: nowrap;
     padding: 0.1rem 0.5rem;
-    font-size: 18px;
+    font-size: rem(18px);
 }
 .news__intemtitle {
-    font-size: 22px;
+    font-size: rem(22px);
 }
 .news__description {
-    font-size: 20px;
+    font-size: rem(20px);
 }
 .news__badge--lg {
-    font-size: 20px;
+    font-size: rem(20px);
     padding: 0.2rem 1rem;
 }
 .news__main__image {
-    margin-bottom: 40px;
+    margin-bottom: rem(40px);
 }
 .news__main__badge {
-    margin-bottom: 30px;
+    margin-bottom: rem(30px);
 }
 .news__main__title {
-    margin-bottom: 40px;
+    margin-bottom: rem(40px);
 }
 .news__title--lg {
-    font-size: 26px;
+    font-size: rem(26px);
 }
 .news__main__description {
-    margin-bottom: 45px;
+    margin-bottom: rem(45px);
 }
 .news__description--lg {
-    font-size: 20px;
+    font-size: rem(20px);
 }
 .news__main__link {
-    font-size: 20px;
+    font-size: rem(20px);
 }
 
 .news__image--sm {
-    width: 280px;
-    height: 200px;
+    width: rem(280px);
+    height: rem(200px);
 }
 .news__image--fixed {
     flex-shrink: 0;

@@ -5,7 +5,7 @@
 .discussions__content {
     display: flex;
     gap: 15rem;
-    margin-bottom: 200px;
+    margin-bottom: rem(200px);
 }
 
 .discussions__screen {
@@ -14,7 +14,7 @@
 }
 .discussions__screen-interface {
     position: relative;
-    width: 650px;
+    width: rem(650px);
     z-index: 1;
 }
 .discussions__screen-background {
@@ -25,7 +25,7 @@
     top: 20%;
     left: 1rem;
     display: flex;
-    gap: 50px;
+    gap: rem(50px);
     z-index: 2;
 }
 
@@ -44,8 +44,8 @@
 @supports (backdrop-filter: blur(1px)) {
     .discussions__screen-background:after {
         background: rgba(0, 0, 0, 0.03);
-        backdrop-filter: blur(4px) saturate(130%);
-        -webkit-backdrop-filter: blur(4px) saturate(130%);
+        backdrop-filter: blur(rem(4px)) saturate(130%);
+        -webkit-backdrop-filter: blur(rem(4px)) saturate(130%);
     }
 }
 
@@ -66,8 +66,8 @@
     gap: 1rem;
 }
 .features__videocall--abstract {
-    height: 193px;
-    width: 193px;
+    height: rem(193px);
+    width: rem(193px);
 }
 .discussions__videocall-btns {
     display: flex;
@@ -80,21 +80,21 @@
 .discussions__videocall-btn {
     display: inline-block;
     line-height: normal;
-    font-size: 16px;
+    font-size: rem(16px);
     font-weight: 500;
-    width: 116px;
+    width: rem(116px);
     color: white;
     padding: 0.5rem 1.5rem;
     border-radius: var(--btn-radius);
 }
 .discussions__videocall-btn--info {
     background-color: #3465e1;
-    box-shadow: 0px 10px 10px 2px #3465e130;
+    box-shadow: 0px rem(10px) rem(10px) rem(2px) #3465e130;
 }
 
 .discussions__videocall-btn--danger {
     background-color: #e13468;
-    box-shadow: 0px 10px 10px 2px #e1346830;
+    box-shadow: 0px rem(10px) rem(10px) rem(2px) #e1346830;
 }
 
 .discussion__screen-foreground {
@@ -110,8 +110,8 @@
     z-index: 1;
 }
 .discussion__screen-foreground__interface {
-    width: 680px;
-    height: 42s0px;
+    width: rem(680px);
+    height: rem(420px); /* исправлено: было 42s0px - опечатка */
 }
 
 .discussion__screen-foreground__layer-row {
@@ -122,27 +122,27 @@
     margin-bottom: 2rem;
 }
 .discussion__screen__videocall {
-    height: 200px;
-    width: 200px;
+    height: rem(200px);
+    width: rem(200px);
 }
 
 .discussion__screen-foreground__divider {
-    height: 200px;
-    width: 3px;
+    height: rem(200px);
+    width: rem(3px);
     background-color: #d5e2fb;
     margin: 0 2rem;
 }
 
 .discussion__screen-foreground__layer-info__title {
     line-height: normal;
-    font-size: 22px;
+    font-size: rem(22px);
 }
 .discussion__screen-foreground__layer-info__text {
     line-height: normal;
-    font-size: 16px;
+    font-size: rem(16px);
 }
 .discussion__screen-btn {
-    font-size: 20px;
+    font-size: rem(20px);
     color: var(--white);
     border-radius: var(--btn-radius);
     padding: 0.2rem 1.5rem;
@@ -151,7 +151,7 @@
         rgba(245, 84, 84, 1) 1%,
         rgba(229, 66, 43, 1) 100%
     );
-    box-shadow: 0px 10px 20px 5px #eb493a40;
+    box-shadow: 0px rem(10px) rem(20px) rem(5px) #eb493a40;
 }
 
 .discussion__boxicon {
@@ -165,8 +165,8 @@
     content: "";
     position: absolute;
     left: -1rem;
-    height: 196px;
-    width: 196px;
+    height: rem(196px);
+    width: rem(196px);
     background-color: #73bcff;
     border-radius: var(--card-radius);
     z-index: -1;
@@ -182,17 +182,17 @@
     background-color: transparent;
     border: 1.2rem solid #23bdee;
     border-radius: 50%;
-    width: 112px;
-    height: 112px;
+    width: rem(112px);
+    height: rem(112px);
 }
 .discussions__screen-background__triangle {
     top: 4rem;
     right: -5rem;
     width: 0;
     height: 0;
-    border-left: 16px solid transparent;
-    border-right: 16px solid transparent;
-    border-bottom: 26px solid #fba333;
+    border-left: rem(16px) solid transparent;
+    border-right: rem(16px) solid transparent;
+    border-bottom: rem(26px) solid #fba333;
     transform-origin: center center;
     transform: rotate(-20deg);
 }
@@ -202,7 +202,7 @@
     text-align: start;
 }
 
-.discussions__more-features{
+.discussions__more-features {
     display: flex;
     justify-content: center;
 }

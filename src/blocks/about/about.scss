@@ -8,7 +8,7 @@
 }
 .about__description {
     max-width: calc(0.74 * var(--container));
-    margin-bottom: 90px;
+    margin-bottom: rem(90px);
 }
 .about__card-list {
     display: flex;
@@ -21,8 +21,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 400px;
-    width: 600px;
+    height: rem(400px);
+    width: rem(600px);
     border-radius: var(--card-radius);
     overflow: hidden;
 }
@@ -49,13 +49,13 @@
 .about__card-title {
     color: #ffffff;
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: rem(25px);
     font-weight: bolder;
 }
 .about__card-btn {
-    padding: 20px 35px;
+    padding: rem(20px) rem(35px);
 }
 .about__card-btn__text {
     font-weight: bolder;
-    font-size: 22px;
+    font-size: rem(22px);
 }

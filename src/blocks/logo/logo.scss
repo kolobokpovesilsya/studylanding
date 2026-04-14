@@ -1,24 +1,24 @@
 .logo {
-  position: relative;
-  display: inline-flex; /* или block, в зависимости от макета */
-  align-items: center;
+    position: relative;
+    display: inline-flex; /* или block, в зависимости от макета */
+    align-items: center;
 }
 
 .logo::after {
-  content: "";
-  position: absolute;
-  top: 55%; /* привязываем к центру по вертикали */
-  left: -0.6rem; /* привязываем к левому краю */
-  width: 60px;
-  height: 60px;
-  transform-origin: center center;
-  transform: translateY(-50%) rotate(45deg); /* сдвиг на половину высоты + поворот */
+    content: "";
+    position: absolute;
+    top: 55%; /* привязываем к центру по вертикали */
+    left: -0.6rem; /* привязываем к левому краю */
+    width: rem(60px);
+    height: rem(60px);
+    transform-origin: center center;
+    transform: translateY(-50%) rotate(45deg); /* сдвиг на половину высоты + поворот */
 
-  z-index: -1; /* если ромб должен быть ПОД текстом */
-  pointer-events: none; /* чтобы не перекрывал клики */
-  border-radius: 3px;
+    z-index: -1; /* если ромб должен быть ПОД текстом */
+    pointer-events: none; /* чтобы не перекрывал клики */
+    border-radius: rem(3px);
 }
 
 .logo--primary::after {
-  background-color: var(--accent-primary);
+    background-color: var(--accent-primary);
 }

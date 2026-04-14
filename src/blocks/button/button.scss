@@ -11,7 +11,7 @@
     font-weight: 500;
     line-height: 1.25;
     text-decoration: none;
-    border: 1px solid var(--btn-border);
+    border: rem(1px) solid var(--btn-border);
     border-radius: var(--btn-radius);
     background-color: var(--btn-bg);
     color: var(--btn-text);

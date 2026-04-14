@@ -8,7 +8,7 @@
 .classroom__content,
 .classroom__video {
     width: 50%;
-    padding: 30px;
+    padding: rem(30px);
 }
 .classroom__content {
     position: relative;
@@ -16,7 +16,7 @@
 
 .classroom__title,
 .classroom__description {
-    margin-bottom: 30px;
+    margin-bottom: rem(30px);
 }
 
 .classroom__title {
@@ -29,10 +29,10 @@
 .classroom__title:after {
     content: "";
     position: absolute;
-    top: 5px;
+    top: rem(5px);
     left: 0;
-    width: 73px;
-    height: 73px;
+    width: rem(73px);
+    height: rem(73px);
     background-color: var(--accent-warning);
     border-radius: 100%;
     z-index: -1;
@@ -42,8 +42,8 @@
     position: absolute;
     top: 55%;
     right: 10%;
-    width: 30px;
-    height: 30px;
+    width: rem(30px);
+    height: rem(30px);
     border-radius: 100%;
     background-color: var(--accent-warning);
     z-index: -1;
@@ -55,10 +55,10 @@
 .classroom__video:after {
     content: "";
     position: absolute;
-    top: 11px;
-    left: 11px;
-    width: 138px;
-    height: 138px;
+    top: rem(11px);
+    left: rem(11px);
+    width: rem(138px);
+    height: rem(138px);
     background-color: var(--accent-primary);
     border-radius: var(--card-radius);
     z-index: -1;
@@ -66,10 +66,10 @@
 .classroom__video:before {
     content: "";
     position: absolute;
-    bottom: 11px;
-    right: -11px;
-    width: 231px;
-    height: 231px;
+    bottom: rem(11px);
+    right: rem(-11px);
+    width: rem(231px);
+    height: rem(231px);
     border-radius: var(--card-radius);
     background-color: var(--accent-warning);
     z-index: -1;
@@ -78,8 +78,8 @@
     position: relative;
     overflow: hidden;
     border-radius: var(--card-radius);
-    width: 705px;
-    height: 470px;
+    width: rem(705px);
+    height: rem(470px);
 }
 .classroom__video video {
     width: 100%;

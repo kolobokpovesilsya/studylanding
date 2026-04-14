@@ -3,7 +3,7 @@
 
 .quiz__container {
     display: flex;
-    gap: 190px;
+    gap: rem(190px);
 }
 .quiz__content {
     display: flex;
@@ -15,14 +15,14 @@
     text-align: start !important;
 }
 .quiz__title {
-    max-width: 393px;
+    max-width: rem(393px);
 }
 .quiz__description {
-    max-width: 568px;
+    max-width: rem(568px);
 }
 .quiz__picture {
     position: relative;
-    max-height: 650px;
+    max-height: rem(650px);
 }
 
 .quiz__item {
@@ -61,8 +61,8 @@
     transform: rotate(30deg);
 }
 .quiz__item__btn {
-    width: 76px;
-    height: 76px;
+    width: rem(76px);
+    height: rem(76px);
     border-radius: 50%;
     display: inline-flex;
     align-items: center;
@@ -76,7 +76,7 @@
     box-shadow: var(--box-shadow-v1);
     background-color: var(--white);
     padding: 1rem 2rem;
-    max-width: 355px;
+    max-width: rem(355px);
 }
 
 .quiz__item__alert {
@@ -91,7 +91,7 @@
 .quiz__item__alert-text {
     position: relative;
     color: #41be90;
-    font-size: 20px;
+    font-size: rem(20px);
     font-weight: 500;
     line-height: normal;
 }
@@ -104,8 +104,8 @@
     position: absolute;
     bottom: -0.8rem;
     right: -0.2rem;
-    width: 37px;
-    height: 37px;
+    width: rem(37px);
+    height: rem(37px);
     background-color: #d8f9ed;
     border-radius: 50%;
     z-index: 0;
@@ -124,35 +124,35 @@
     position: absolute;
     top: 0.6rem;
     left: 0.7rem;
-    width: 60px;
-    height: 60px;
+    width: rem(60px);
+    height: rem(60px);
     background-color: #d8f9ed;
     border-radius: 50%;
     z-index: 0;
 }
 
 .quiz__item__bulb-1 {
-    --size: 100px;
+    --size: rem(100px);
     --top: -1.5rem;
     --left: -2.5rem;
     z-index: -1;
 }
 .quiz__item__bulb-2 {
-    --size: 22px;
+    --size: rem(22px);
     --top: -2.5rem;
     --left: 4rem;
     z-index: -1;
 }
 
 .quiz__item__bulb-3 {
-    --size: 20px;
+    --size: rem(20px);
     --top: 102%;
     --left: -1rem;
     z-index: -1;
 }
 
 .quiz__item__bulb-4 {
-    --size: 16px;
+    --size: rem(16px);
     --top: 50%;
     --left: 113%;
     z-index: -1;
