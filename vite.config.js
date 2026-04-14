@@ -45,9 +45,9 @@ export default defineConfig({
                     ) {
                         return `${chunkInfo.name}.js`;
                     }
-                    return "[name].js";
+                    return "src/[name].js";
                 },
-                chunkFileNames: "[name].js",
+                chunkFileNames: "src/[name].js",
 
                 assetFileNames: (assetInfo) => {
                     const originalPath = assetInfo.originalFileName || "";
@@ -64,7 +64,7 @@ export default defineConfig({
                         // if (match) {
                         //     return `${match[1]}.css`;
                         // }
-                        return "[name].css";
+                        return "src/[name].css";
                     }
 
                     // Ассеты из папки src/assets
@@ -73,11 +73,11 @@ export default defineConfig({
                         const assetMatch =
                             originalPath.match(/src\/assets\/(.+)/);
                         if (assetMatch) {
-                            return `assets/${assetMatch[1]}`;
+                            return `src/assets/${assetMatch[1]}`;
                         }
                     }
 
-                    return "assets/[name].[ext]";
+                    return "src/assets/[name].[ext]";
                 },
             },
         },
@@ -119,85 +119,3 @@ export default defineConfig({
         },
     },
 });
-
-// Функция обработки main.css
-async function processMainCss(distPath) {
-    const mainCssPath = resolve(distPath, "main.css");
-
-    if (!fs.existsSync(mainCssPath)) return;
-
-    const cssFiles = glob.sync("dist/blocks/**/*.css", {
-        cwd: resolve(__dirname),
-        absolute: true,
-    });
-
-    let mainContent = fs.readFileSync(mainCssPath, "utf8");
-    mainContent = mainContent.replace(/@import\s+["'].*?\.scss["'];\s*/g, "");
-
-    let imports = "";
-    console.log("file===", cssFiles);
-    for (const file of cssFiles) {
-        let relativePath = file.replace(distPath, "").replace(/^[\\/]/, "");
-        relativePath = relativePath.replace(/\\/g, "/");
-        imports += `@import "./${relativePath}";\n`;
-    }
-
-    const finalContent = `/* ============================================
-   Глобальные стили проекта
-   ============================================ */
-
-${mainContent.trim()}
-
-/* ============================================
-   Импорты БЭМ-блоков
-   ============================================ */
-
-${imports}
-`;
-
-    fs.writeFileSync(mainCssPath, finalContent, "utf8");
-    console.log(`✅ main.css обновлён (${cssFiles.length} импортов)`);
-}
-
-// Функция обработки main.js
-async function processMainJs(distPath) {
-    const mainJsPath = resolve(distPath, "main.js");
-    if (!fs.existsSync(mainJsPath)) return;
-
-    const jsFiles = glob.sync("dist/blocks/**/*.js", {
-        cwd: resolve(__dirname),
-        absolute: true,
-    });
-
-    let imports = "";
-    let initCalls = "";
-
-    for (const file of jsFiles) {
-        let relativePath = file.replace(distPath, "").replace(/^[\\/]/, "");
-        relativePath = relativePath.replace(/\\/g, "/");
-        const blockName = relativePath.split("/")[1];
-        imports += `import { init${capitalize(blockName)} } from "./${relativePath}";\n`;
-        initCalls += `    init${capitalize(blockName)}();\n`;
-    }
-
-    const newMainContent = `/* ============================================
-   Импорты БЭМ-блоков
-   ============================================ */
-
-${imports}
-
-/* ============================================
-   Инициализация
-   ============================================ */
-
-document.addEventListener('DOMContentLoaded', () => {
-${initCalls}});
-`;
-
-    fs.writeFileSync(mainJsPath, newMainContent, "utf8");
-    console.log(`✅ main.js обновлён (${jsFiles.length} импортов)`);
-}
-
-function capitalize(str) {
-    return str.charAt(0).toUpperCase() + str.slice(1);
-}

@@ -13,11 +13,11 @@ const scssFiles = glob.sync("src/blocks/**/*.scss", { absolute: true });
 for (const scssFile of scssFiles) {
     // Определяем выходной путь в dist
     const relativePath = path.relative(srcPath, scssFile);
-    const outputPath = path.join(
+    const blockOutputPath = path.join(
         `${distPath}/src`,
         relativePath.replace(".scss", ".css"),
     );
-    const outputDir = path.dirname(outputPath);
+    const outputDir = path.dirname(blockOutputPath);
     console.log("outpu====", outputDir);
     // Создаём директорию
     if (!fs.existsSync(outputDir)) {
@@ -27,9 +27,9 @@ for (const scssFile of scssFiles) {
     // Компилируем SCSS в CSS
     try {
         execSync(
-            `npx sass "${scssFile}" "${outputPath}" --no-source-map --style=expanded`,
+            `npx sass "${scssFile}" "${blockOutputPath}" --no-source-map --style=expanded`,
         );
-        console.log(`✅ Compiled: ${relativePath} → ${outputPath}`);
+        console.log(`✅ Compiled: ${relativePath} → ${blockOutputPath}`);
     } catch (error) {
         console.error(`❌ Error compiling ${scssFile}:`, error.message);
     }
@@ -37,7 +37,7 @@ for (const scssFile of scssFiles) {
 
 // 2. Собираем main.css (глобальные стили без импортов)
 const mainScssPath = path.join(srcPath, "main.scss");
-const mainCssPath = path.join(distPath, "main.css");
+const mainCssPath = path.join(`${distPath}/src`, "main.css");
 let scssImports = [];
 if (fs.existsSync(mainScssPath)) {
     // Временно убираем импорты из main.scss
@@ -47,7 +47,7 @@ if (fs.existsSync(mainScssPath)) {
 
     console.log("scssImports---", scssImports);
     // Компилируем глобальные стили
-    const tempScss = path.join(distPath, "_temp_main.scss");
+    const tempScss = path.join(`${distPath}/src`, "_temp_main.scss");
     fs.writeFileSync(tempScss, globalStyles);
     execSync(
         `npx sass "${tempScss}" "${mainCssPath}" --no-source-map --style=expanded`,
@@ -57,7 +57,7 @@ if (fs.existsSync(mainScssPath)) {
     if (scssImports.length) {
         let cssContent = "";
         for (let path of scssImports) {
-            cssContent += `@import url('${path.original}');\n`;
+            cssContent += `@import url('${path.cssPath}');\n`;
         }
         let content = fs.readFileSync(mainCssPath, "utf8");
         content = content.replace('@charset "UTF-8";', "");
