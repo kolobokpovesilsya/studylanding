@@ -12,11 +12,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap:250px;
+    gap: 250px;
 }
 
 .intro__title {
-
     font-size: 54px;
     font-weight: bold;
     line-height: 5rem;
@@ -51,11 +50,10 @@
 }
 
 .intro__image-wrapper {
-
     position: relative;
 }
 
-.intro__image>img {
+.intro__image > img {
     position: absolute;
     bottom: 0;
     height: 100%;
