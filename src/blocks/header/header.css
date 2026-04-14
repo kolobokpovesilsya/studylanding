@@ -1,13 +1,13 @@
 .header {
     position: fixed;
     width: 100%;
-    padding: 16px 0;
+    padding: 0.8rem 0; /*16*/
     z-index: 1000;
     transition-duration: 0.3s;
 }
 .header--fill {
     background: rgba(255, 255, 255, 0.85);
-    box-shadow: 0px 10px 10px 10px #00000015;
+    box-shadow: 0px 0.5rem 0.5rem 0.5rem #00000015; /*10px*/
 }
 .header--hide {
     transform: translateY(-150%);
@@ -17,8 +17,8 @@
 @supports (backdrop-filter: blur(1px)) {
     .header--fill {
         background: rgba(255, 255, 255, 0.26);
-        backdrop-filter: blur(10px) saturate(130%);
-        -webkit-backdrop-filter: blur(10px) saturate(130%);
+        backdrop-filter: blur(0.5px) saturate(130%); /*10px*/
+        -webkit-backdrop-filter: blur(0.5px) saturate(130%);
     }
 }
 
@@ -31,7 +31,7 @@
 
 /* Логотип */
 .header__logo {
-    font-size: 32px;
+    font-size: 1.6rem; /*32px;*/
     font-weight: 700;
     letter-spacing: 4%;
     color: #111;
@@ -50,16 +50,16 @@
 .header__nav-list {
     display: flex;
     list-style: none;
-    gap: 70px;
+    gap: 3.5rem; /*70px*/
     align-items: center;
-    margin-right: 80px;
+    margin-right: 4rem; /*80px*/
 }
 
 .header__nav-link {
     text-decoration: none;
     color: #4b5563;
     font-weight: 500;
-    font-size: 22px;
+    font-size: 1.1rem; /*22px*/
     letter-spacing: 2%;
     transition: color 0.2s ease;
 }
@@ -71,18 +71,20 @@
 /* Блок действий (кнопки) */
 .header__actions {
     display: flex;
-    gap: 30px;
+    gap: 1.5rem; /*30px*/
     flex-shrink: 0;
 }
-.header__btn{
-    padding:18px 40px
+.header__btn {
+    font-size: 1.1rem; /*22px*/
+    letter-spacing: 2%;
+    padding: 0.9rem 2rem; /*18px 40px */
 }
-.header__btn-login{
+.header__btn-login {
     box-shadow: var(--box-shadow-v1);
-    padding:18px 50px
+    padding: 0.9rem 2.5rem; /*18px 50px*/
 }
 /* Адаптив для мобильных (опционально, но рекомендуется) */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .header__container {
         flex-wrap: wrap;
         justify-content: center;
@@ -93,4 +95,4 @@
         width: 100%;
         justify-content: center;
     }
-}
+} */
