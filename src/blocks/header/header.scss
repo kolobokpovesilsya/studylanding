@@ -17,8 +17,8 @@
 @supports (backdrop-filter: blur(1px)) {
     .header--fill {
         background: rgba(255, 255, 255, 0.26);
-        backdrop-filter: blur(0.5px) saturate(130%); /*10px*/
-        -webkit-backdrop-filter: blur(0.5px) saturate(130%);
+        backdrop-filter: blur(0.5rem) saturate(130%); /*10px*/
+        -webkit-backdrop-filter: blur(0.5rem) saturate(130%);
     }
 }
 
