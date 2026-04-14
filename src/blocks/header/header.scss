@@ -3,7 +3,7 @@
     width: 100%;
     padding: rem(16px);
     z-index: 1000;
-    transition-duration: 0.3s;
+    transition-duration: 0.3s; 
 }
 .header--fill {
     background: rgba(255, 255, 255, 0.85);
@@ -72,7 +72,7 @@
 .header__actions {
     display: flex;
     gap: rem(30px);
-    flex-shrink: 0;
+    flex-shrink: 0; 
 }
 .header__btn {
     font-size: rem(22px);
@@ -83,16 +83,29 @@
     box-shadow: var(--box-shadow-v1);
     padding: rem(18px) rem(50px);
 }
-/* Адаптив для мобильных (опционально, но рекомендуется) */
-/* @media (max-width: 768px) {
-    .header__container {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 16px;
+.header__burgerbutton{
+    margin-left: rem(30px);
+}
+
+@media (max-width: 1024px) {
+    .header__nav{ 
+        display: none;
     }
-    .header__nav {
-        order: 3;
-        width: 100%;
-        justify-content: center;
+    .header__actions {
+        margin-left: auto;
     }
-} */
+}
+
+@media (max-width: 768px) {
+    .header__actions {
+        gap:rem(10px)
+    }
+    .header__burgerbutton{
+        margin-left: rem(10px);
+    }
+}
+@media (max-width: 480px) {
+    .header__actions {
+        display:none
+    }
+}

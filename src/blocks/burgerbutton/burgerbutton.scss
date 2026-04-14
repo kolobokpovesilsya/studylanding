@@ -1,0 +1,25 @@
+.burgerbutton{   
+    background-color: white;
+    padding: rem(21px)  ;
+    border-radius: var(--card-radius);
+    box-shadow: var(--box-shadow-v1);
+    display: none;
+    flex-direction: column;
+    gap:rem(6px);
+
+    &__line{
+        width: rem(30px);
+        height:3px;
+        background-color: #4b5563;
+    }
+    &--open{
+
+    }
+}
+
+@media (max-width: 1024px) {
+    .burgerbutton{ 
+        display: flex;
+    }
+}
+ 
