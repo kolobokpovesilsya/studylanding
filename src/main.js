@@ -1,3 +1,5 @@
+// import "./blocks/header/header.scss";
+
 import { initHeader } from "./blocks/header/header.js";
 import { initClassroom } from "./blocks/classroom/classroom.js";
 

@@ -1,28 +1,28 @@
 /* UI blocks */
-@import url("blocks/videocall/videocall.css");
-@import url("blocks/slider/slider.css");
-@import url("./blocks/button/button.css");
-@import url("./blocks/logo/logo.css");
-@import url("./blocks/notification/notification.css");
-@import url("./blocks/boxicon/boxicon.css");
-@import url("./blocks/bulb/bulb.css");
+// @import url("blocks/videocall/videocall.scss");
+// @import url("blocks/slider/slider.scss");
+@import "./blocks/button/button.scss";
+@import "./blocks/logo/logo.scss";
+// @import url("./blocks/notification/notification.scss");
+// @import url("./blocks/boxicon/boxicon.scss");
+// @import url("./blocks/bulb/bulb.scss");
 /* Page sections */
-@import url("./blocks/header/header.css");
-@import url("./blocks/intro/intro.css");
-@import url("./blocks/brands/brands.css");
-@import url("./blocks/software/software.css");
-@import url("./blocks/about/about.css");
-@import url("./blocks/classroom/classroom.css");
-@import url("./blocks/features/features.css");
-@import url("./blocks/tools/tools.css");
-@import url("./blocks/quiz/quiz.css");
-@import url("./blocks/badge/badge.css");
-@import url("./blocks/discussions/discussion.css");
-@import url("./blocks/news/news.css");
-@import url("./blocks/testimonial/testimonial.css");
-@import url("./blocks/integration/integration.css");
-@import url("./blocks/footer/footer.css");
-@import url("./blocks/gradebook/gradebook.css");
+@import "./blocks/header/header.scss";
+@import "./blocks/intro/intro.scss";
+// @import url("./blocks/brands/brands.scss");
+// @import url("./blocks/software/software.scss");
+// @import url("./blocks/about/about.scss");
+// @import url("./blocks/classroom/classroom.scss");
+// @import url("./blocks/features/features.scss");
+// @import url("./blocks/tools/tools.scss");
+// @import url("./blocks/quiz/quiz.scss");
+// @import url("./blocks/badge/badge.scss");
+// @import url("./blocks/discussions/discussion.scss");
+// @import url("./blocks/news/news.scss");
+// @import url("./blocks/testimonial/testimonial.scss");
+// @import url("./blocks/integration/integration.scss");
+@import "./blocks/footer/footer.scss";
+// @import url("./blocks/gradebook/gradebook.scss");
 
 :root {
     --white: #ffffff;
