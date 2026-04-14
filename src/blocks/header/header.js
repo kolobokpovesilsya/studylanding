@@ -2,9 +2,7 @@ let prevScrollTop=0
 
 const scrollHandler=(e)=>{
     const header = document.body.querySelector('header')
-    const scrollTop = document.body.scrollTop
-    const height = document.body.scrollHeight
-    console.log('===',height)
+    const scrollTop = window.scrollY
     if(!scrollTop){
         header.classList.remove('header--fill')
         header.classList.remove('header--hide')
@@ -17,5 +15,5 @@ const scrollHandler=(e)=>{
     prevScrollTop =scrollTop
 }
 export function initHeader() {
-    document.body.addEventListener('scroll',scrollHandler)
+    document.addEventListener('scroll',scrollHandler)
 }
