@@ -145,11 +145,7 @@ h3 {
 [class*="__container"] {
     max-width: var(--container);
     margin: 0 auto;
-    padding: 0 24px;
-    /* display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 32px; */
+    padding: 0 rem(24px);
 }
 .section-title {
     text-align: center;
@@ -185,5 +181,10 @@ h3 {
 @media (max-width: 480px) {
     html {
         font-size: 14px;
+    }
+    [class*="__container"] {
+        max-width: var(--container);
+        margin: 0 auto;
+        padding: 0 rem(12px);
     }
 }

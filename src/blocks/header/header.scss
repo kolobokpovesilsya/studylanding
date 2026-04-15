@@ -142,7 +142,20 @@
     }
 }
 @media (max-width: 480px) {
+    .header__container {
+        grid-template-columns: 1fr auto;
+    }
     .header__actions {
         display: none;
+        order: 4;
+        justify-content: end;
+        width: 100%;
+        grid-column: 1 / -1;
+    }
+    .header--extended .header__actions {
+        display: flex;
+    }
+    .header__btn {
+        padding: rem(9px) rem(20px);
     }
 }
