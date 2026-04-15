@@ -6,6 +6,7 @@
     text-align: center;
     font-size: rem(28px);
     letter-spacing: 2%;
+    line-height: 160%;
     margin-bottom: rem(40px);
     font-weight: 500;
 }
@@ -13,4 +14,12 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: rem(30px);
+}
+
+@media (max-width: 1280px) {
+    .brands__list {
+        justify-content: center;
+    }
 }
