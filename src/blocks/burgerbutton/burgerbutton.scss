@@ -1,25 +1,17 @@
-.burgerbutton{   
+.burgerbutton {
     background-color: white;
-    padding: rem(21px)  ;
+    padding: rem(21px);
     border-radius: var(--card-radius);
     box-shadow: var(--box-shadow-v1);
-    display: none;
+    display: flex;
     flex-direction: column;
-    gap:rem(6px);
+    gap: rem(6px);
 
-    &__line{
+    &__line {
         width: rem(30px);
-        height:3px;
+        height: 3px;
         background-color: #4b5563;
     }
-    &--open{
-
+    &--open {
     }
 }
-
-@media (max-width: 1024px) {
-    .burgerbutton{ 
-        display: flex;
-    }
-}
- 

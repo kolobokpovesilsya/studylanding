@@ -40,6 +40,7 @@
 :root {
     --white: #ffffff;
     --black: #000000;
+    --color-panel: var(--white);
     --color-bg: var(--white);
     --accent-primary: #65daff;
     --accent-warning: #f48c06;
@@ -70,6 +71,9 @@ html {
     scroll-behavior: smooth;
     // overflow: hidden;
 }
+html:has(.header--extended) {
+    overflow: hidden;
+}
 body {
     font-family:
         system-ui,
@@ -86,7 +90,7 @@ body {
     flex-direction: column;
     // height: 100vh;
     // overflow: auto;
-     min-height: 100vh; 
+    min-height: 100vh;
 }
 section {
     margin-bottom: 170px;
