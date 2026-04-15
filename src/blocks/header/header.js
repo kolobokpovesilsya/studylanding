@@ -53,12 +53,14 @@ function clickBurgerMenu(e) {
         header.style.background = "var(--color-panel)";
         toggleExpand(() => {
             header.classList.toggle("header--extended");
+            header.style.height = "100%";
         });
     } else {
         toggleExpand(() => {
             header.classList.toggle("header--extended");
             setTimeout(() => {
                 header.style.background = initialHeaderBackground;
+                header.style.height = "min-content";
             }, 200);
         });
     }
