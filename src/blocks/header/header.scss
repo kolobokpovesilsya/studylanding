@@ -114,6 +114,10 @@
         grid-column: 1 / -1;
         transition: transform 0.3s ease;
     }
+    .header__nav-list {
+        margin-top: rem(30px);
+        margin-right: 0;
+    }
     .header--extended .header__nav {
         height: 100%;
         overflow: auto;
@@ -139,6 +143,10 @@
     }
     .header__burgerbutton {
         margin-left: rem(10px);
+        padding: rem(15px);
+    }
+    .header__btn {
+        padding: rem(9px) rem(20px);
     }
 }
 @media (max-width: 480px) {
@@ -154,8 +162,5 @@
     }
     .header--extended .header__actions {
         display: flex;
-    }
-    .header__btn {
-        padding: rem(9px) rem(20px);
     }
 }
