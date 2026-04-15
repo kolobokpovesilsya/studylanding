@@ -11,7 +11,9 @@
 }
 .software__card-list {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
+    gap: rem(20px);
 }
 
 .software__card-item {
@@ -23,6 +25,7 @@
     width: rem(450px);
     border-radius: var(--card-radius);
     box-shadow: var(--box-shadow-v1);
+    min-height: rem(440px);
 }
 
 .software__card-item__icon {
@@ -65,4 +68,10 @@
 
 .software__card-item__text {
     font-size: rem(20px);
+}
+
+@media (max-width: 1280px) {
+    // .software__card-list {
+    //     justify-content: center;
+    // }
 }
