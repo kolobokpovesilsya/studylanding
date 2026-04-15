@@ -86,7 +86,21 @@
     margin-left: rem(30px);
     display: none;
 }
-
+@media (max-width: 1280px) {
+    .header__actions {
+        gap: rem(10px);
+    }
+    .header__burgerbutton {
+        margin-left: rem(10px);
+        padding: rem(15px);
+    }
+    .header__btn {
+        padding: rem(9px) rem(20px);
+    }
+    .intro__watch {
+        font-size: rem(20px);
+    }
+}
 @media (max-width: 1024px) {
     .header--extended {
         height: 100%;
@@ -138,16 +152,16 @@
 }
 
 @media (max-width: 768px) {
-    .header__actions {
-        gap: rem(10px);
-    }
-    .header__burgerbutton {
-        margin-left: rem(10px);
-        padding: rem(15px);
-    }
-    .header__btn {
-        padding: rem(9px) rem(20px);
-    }
+    // .header__actions {
+    //     gap: rem(10px);
+    // }
+    // .header__burgerbutton {
+    //     margin-left: rem(10px);
+    //     padding: rem(15px);
+    // }
+    // .header__btn {
+    //     padding: rem(9px) rem(20px);
+    // }
 }
 @media (max-width: 480px) {
     .header__container {

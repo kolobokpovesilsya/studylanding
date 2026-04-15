@@ -157,6 +157,14 @@ h3 {
     font-size: 22px;
     /* color: var(--text-color); */
 }
+.text {
+    font-size: rem(24px);
+    line-height: 180%;
+}
+h1 {
+    font-size: rem(54px);
+    line-height: auto;
+}
 @media (max-width: 1600px) {
     html {
         font-size: 18px;
@@ -166,16 +174,33 @@ h3 {
     html {
         font-size: 17px; /* Все rem размеры уменьшатся пропорционально */
     }
+    h1 {
+        font-size: rem(44px);
+        line-height: 160%;
+    }
+    .text {
+        font-size: rem(22px);
+    }
 }
 
 @media (max-width: 1024px) {
     html {
         font-size: 16px;
     }
+    h1 {
+        line-height: 120%;
+    }
 }
 @media (max-width: 768px) {
     html {
         font-size: 15px;
+    }
+    h1 {
+        font-size: rem(38px);
+        line-height: 110%;
+    }
+    .text {
+        font-size: rem(20px);
     }
 }
 @media (max-width: 480px) {
