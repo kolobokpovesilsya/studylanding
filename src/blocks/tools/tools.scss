@@ -20,8 +20,16 @@
 .tools__description {
     max-width: rem(568px);
 }
+
+.tools__content,
 .tools__picture {
+    width: 50%;
+}
+.tools__picture-wrapper {
     position: relative;
+    display: inline-block;
+}
+.tools__picture {
     max-height: rem(611px);
 }
 .tools__picture-bg {
@@ -36,9 +44,8 @@
     --ellipse-bg: transparent;
     --size: 0;
     position: absolute;
-
-    width: var(--size);
-    height: var(--size);
+    width: var-to-rem(--size);
+    height: var-to-rem(--size);
     background-color: var(--ellipse-bg);
     border-radius: 50%;
 }
@@ -52,24 +59,24 @@
     --ellipse-bg: var(--accent-warning);
 }
 .tools__picture-ellipse--main {
-    --size: rem(236px);
+    --size: 236px;
     top: -5%;
     left: 50%;
     transform: translateX(-50%);
     z-index: -1;
 }
 .tools__picture-ellipse--left {
-    --size: rem(24px);
+    --size: 24px;
     bottom: 15%;
     left: -5%;
 }
 .tools__picture-ellipse--right {
-    --size: rem(20px);
+    --size: 20px;
     bottom: 0%;
     right: 5%;
 }
 .tools__picture-ellipse--top {
-    --size: rem(20px);
+    --size: 20px;
     top: -10%;
     right: 20%;
 }
@@ -77,25 +84,45 @@
     position: absolute;
     top: 30%;
     left: -20%;
-    /* padding: 0.5rem; */
-    /* background-color: var(--white); */
-    /* z-index: 2; */
-    /* border-radius: var(--card-radius);
-    box-shadow:
-        0 0 0 10px rgba(255, 255, 255, 0.8),
-        0 0 0 10px #00000030; */
 }
 .tools__picture-icon-right {
     position: absolute;
     top: 35%;
     right: -25%;
 }
-/* .tools__picture-icon-left:after {
-    content: "";
-    position: absolute;
-    width: 110%;
-    height: 110%;
-    top: 0;
-    left: 0;
-    
-} */
+
+@media (max-width: 1280px) {
+    .tools__container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: rem(50px);
+    }
+    .tools__content,
+    .tools__picture {
+        width: 80%;
+    }
+    .tools__picture {
+        text-align: center;
+    }
+    .tools__title,
+    .tools__description {
+        text-align: center !important;
+        max-width: unset;
+    }
+}
+
+@media (max-width: 768px) {
+    .tools__picture {
+        width: 80%;
+    }
+    .tools__picture-ellipse--left {
+        left: 15%;
+    }
+    .tools__picture-icon-left {
+        left: 0;
+    }
+    .tools__picture-icon-right {
+        right: 0;
+    }
+}

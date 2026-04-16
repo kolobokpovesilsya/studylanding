@@ -10,6 +10,9 @@
 
     @return ($px-value / $base-font-size) * 1rem;
 }
+@function var-to-rem($px-var) {
+    @return calc(var(#{$px-var}) / 20px * 1rem);
+}
 /* UI blocks */
 // @import url("blocks/videocall/videocall.scss");
 // @import url("blocks/slider/slider.scss");
@@ -17,8 +20,8 @@
 @import "./blocks/logo/logo.scss";
 @import "./blocks/burgerbutton/burgerbutton.scss";
 // @import url("./blocks/notification/notification.scss");
-// @import url("./blocks/boxicon/boxicon.scss");
-// @import url("./blocks/bulb/bulb.scss");
+@import "./blocks/boxicon/boxicon.scss";
+@import "./blocks/bulb/bulb.scss";
 /* Page sections */
 @import "./blocks/header/header.scss";
 @import "./blocks/intro/intro.scss";
@@ -27,7 +30,7 @@
 @import "./blocks/about/about.scss";
 @import "./blocks/classroom/classroom.scss";
 // @import url("./blocks/features/features.scss");
-// @import url("./blocks/tools/tools.scss");
+@import "./blocks/tools/tools.scss";
 // @import url("./blocks/quiz/quiz.scss");
 // @import url("./blocks/badge/badge.scss");
 // @import url("./blocks/discussions/discussion.scss");
