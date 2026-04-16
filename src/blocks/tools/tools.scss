@@ -92,6 +92,9 @@
 }
 
 @media (max-width: 1280px) {
+    .tools {
+        margin-bottom: rem(350px);
+    }
     .tools__container {
         flex-direction: column;
         align-items: center;
@@ -111,7 +114,15 @@
         max-width: unset;
     }
 }
-
+@media (max-width: 1024px) {
+    .tools__picture {
+        display: flex;
+        justify-content: center;
+    }
+    .tools__picture-wrapper {
+        display: flex;
+    }
+}
 @media (max-width: 768px) {
     .tools__picture {
         width: 80%;

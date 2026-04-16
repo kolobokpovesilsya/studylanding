@@ -1,5 +1,5 @@
 .badge {
-    --badge-font-size: rem(20px);
+    --badge-font-size: 20px;
     --bg-color: #cdd8ff;
     --text-color: #717fb0;
     border-radius: var(--card-radius);
@@ -7,7 +7,7 @@
     color: var(--text-color);
     display: inline-block;
     padding: 0.5rem 1rem;
-    font-size: var(--badge-font-size);
+    font-size: var-to-rem(--badge-font-size);
     display: inline-flex;
     align-items: center;
     line-height: normal;
