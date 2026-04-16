@@ -165,6 +165,14 @@ h1 {
     font-size: rem(54px);
     line-height: auto;
 }
+h2 {
+    font-size: rem(36px);
+    line-height: 180%;
+}
+h3 {
+    font-size: rem(30px);
+    line-height: auto;
+}
 @media (max-width: 1600px) {
     html {
         font-size: 18px;
@@ -177,6 +185,13 @@ h1 {
     h1 {
         font-size: rem(44px);
         line-height: 160%;
+    }
+    h2 {
+        font-size: rem(34px);
+        line-height: 160%;
+    }
+    h3 {
+        font-size: rem(28px);
     }
     .text {
         font-size: rem(22px);
