@@ -78,7 +78,7 @@
     position: relative;
     overflow: hidden;
     border-radius: var(--card-radius);
-    width: rem(705px);
+    // width: rem(705px);
     height: rem(470px);
 }
 .classroom__video video {
@@ -91,4 +91,40 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+@media (max-width: 1024px) {
+    .classroom__container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .classroom__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .classroom__content,
+    .classroom__video {
+        width: 80%;
+    }
+    .classroom__title,
+    .classroom__description {
+        text-align: center;
+    }
+    .classroom__description {
+        width: 100%;
+    }
+    .classroom__description:before {
+        right: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .classroom__content,
+    .classroom__video {
+        width: 100%;
+    }
+    .classroom__video {
+        padding: 0;
+    }
 }
