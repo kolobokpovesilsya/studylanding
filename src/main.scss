@@ -33,13 +33,13 @@
 // @import url("./blocks/features/features.scss");
 @import "./blocks/tools/tools.scss";
 @import "./blocks/quiz/quiz.scss";
+@import "./blocks/gradebook/gradebook.scss";
 //
 // @import url("./blocks/discussions/discussion.scss");
 // @import url("./blocks/news/news.scss");
 // @import url("./blocks/testimonial/testimonial.scss");
 // @import url("./blocks/integration/integration.scss");
 @import "./blocks/footer/footer.scss";
-// @import url("./blocks/gradebook/gradebook.scss");
 
 :root {
     --white: #ffffff;
@@ -226,6 +226,9 @@ a {
     }
     .text {
         font-size: rem(20px);
+    }
+    [class*="__container"] {
+        max-width: unset;
     }
 }
 @media (max-width: 480px) {
