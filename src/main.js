@@ -7,8 +7,10 @@ import { initBrands } from "./blocks/brands/brands.js";
 import { initSoftware } from "./blocks/software/software.js";
 
 import { Slider } from "./blocks/slider/slider";
+import { IntersectionAnimation } from "./lib/animation/animation.js";
 
 document.addEventListener("DOMContentLoaded", () => {
+    const intersectionAnimation = new IntersectionAnimation({rootElement:document})
     initHeader();
     initIntro();
     initClassroom();

@@ -25,10 +25,10 @@ function onIntersect() {
     });
 }
 export function initIntro() {
-    const intersectionObserver = new IntersectionAnimation({
-        containerSelector: ".intro",
-        onHide,
-        onIntersect,
-        threshold: 0.5,
-    });
+    // const intersectionObserver = new IntersectionAnimation({
+    //     containerSelector: ".intro",
+    //     onHide,
+    //     onIntersect,
+    //     threshold: 0.5,
+    // });
 }

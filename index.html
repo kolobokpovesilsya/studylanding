@@ -46,18 +46,18 @@
         </div>
     </header>
     <main class="main">
-        <section class="intro" aria-labelledby="intro-title">
+        <section data-animation-container data-anim-threshold="0.5" class="intro" aria-labelledby="intro-title">
             <div class="intro__container">
                 <div class="intro__content">
-                    <h1 class="intro__title">
+                    <h1 data-animation="slide-y" class="intro__title">
                         <span class="text-warning">Studying</span> Online is now much
                         easier
                     </h1>
-                    <div class="intro__description text">
+                    <div data-animation="slide-y" data-anim-delay="0.2" class="intro__description text">
                         Skilline is an interesting platform that will teach you in more an
                         interactive way
                     </div>
-                    <div class="intro__controls">
+                    <div data-animation="slide-y" data-anim-delay="0.4" class="intro__controls">
                         <button type="button" class="intro__btn-join btn btn--warning">
                             Join for free
                         </button>
@@ -70,7 +70,7 @@
                 <div class="intro__image">
                     <div class="intro__image-wrapper">
                         <img src="/src/assets/intro/girl.png" />
-                        <div class="intro__popup intro__popup--join">
+                        <div data-animation="popup" data-anim-delay="0.2" class="intro__popup intro__popup--join">
                             <div class="intro__popup__avatar">
                                 <img src="/src/assets/intro/avatar.png" alt="">
                             </div>
@@ -80,7 +80,7 @@
                                 <div class="intro__popup__btn">Join Now</div>
                             </div>
                         </div>
-                        <div class="intro__popup intro__popup--message">
+                        <div data-animation="popup" data-anim-delay="0.4" class="intro__popup intro__popup--message">
                             <div class="intro__popup__icon intro__popup__icon--orange">
 
                             </div>
@@ -92,7 +92,7 @@
                                 <div class="intro__popup__description">Your admission completed</div>
                             </div>
                         </div>
-                        <div class="intro__popup intro__popup--calendar">
+                        <div data-animation="popup" data-anim-delay="0.6" class="intro__popup intro__popup--calendar">
                             <div class="intro__popup__icon intro__popup__icon--blue">
                             </div>
                             <div class="intro__popup__content">
@@ -102,7 +102,7 @@
                                 <div class="intro__popup__description">Assisted Student</div>
                             </div>
                         </div>
-                        <div class="intro__popup intro__popup--settings">
+                        <div data-animation="popup" data-anim-delay="0.8" class="intro__popup intro__popup--settings">
                         </div>
                     </div>
 
@@ -111,32 +111,32 @@
             </div>
         </section>
       
-        <section class="brands" id="brands">
+        <section data-animation-container class="brands" id="brands">
             <div class="brands__container ">
-                <div class="brands__title">
+                <div data-animation="slide-y"  class="brands__title">
                     Trusted by 5,000+ Companies Worldwide
                 </div>
                 <div class="brands__list">
-                    <img src="src/assets/brands/google.svg" class="brands__item"></img>
-                    <img src="src/assets/brands/netflix.svg" class="brands__item"></img>
-                    <img src="src/assets/brands/airbnb.svg" class="brands__item"></img>
-                    <img src="src/assets/brands/amazon.svg" class="brands__item"></img>
-                    <img src="src/assets/brands/facebook.svg" class="brands__item"></img>
-                    <img src="src/assets/brands/grab.svg" class="brands__item"></img>
+                    <img data-animation="slide-y"  src="src/assets/brands/google.svg" class="brands__item"></img>
+                    <img data-animation="slide-y" data-anim-delay="0.4" src="src/assets/brands/netflix.svg" class="brands__item"></img>
+                    <img data-animation="slide-y" data-anim-delay="0.6" src="src/assets/brands/airbnb.svg" class="brands__item"></img>
+                    <img data-animation="slide-y" data-anim-delay="0.8" src="src/assets/brands/amazon.svg" class="brands__item"></img>
+                    <img data-animation="slide-y" data-anim-delay="1" src="src/assets/brands/facebook.svg" class="brands__item"></img>
+                    <img data-animation="slide-y" data-anim-delay="1.2" src="src/assets/brands/grab.svg" class="brands__item"></img>
                 </div>
             </div>
         </section>
-         <section class="software">
+         <section data-animation-container data-anim-threshold="0.8" class="software">
             <div class="software__container">
-                <h2 class="software__title section-title">
+                <h2 data-animation="slide-y"  class="software__title section-title">
                     All-In-One <span class="text-warning">Cloud Software.</span>
                 </h2>
-                <p class="software__description section-description text">
+                <p data-animation="slide-y" data-anim-delay="0.4" class="software__description section-description text">
                     Skilline is one powerful online software suite that combines all the tools needed to run a
                     successful school or office.
                 </p>
                 <div class="software__card-list">
-                    <div class="software__card-item">
+                    <div data-animation="flip-y" data-anim-delay="0.6"  class="software__card-item">
                         <span class="software__card-item__icon software__card-item__icon--info">
                             <img src="src/assets/software/file-invoice.svg"></img>
 
@@ -146,7 +146,7 @@
                         <p class="software__card-item__text">Simple and secure control of your organization’s
                             financial and legal transactions. Send customized invoices and contracts</p>
                     </div>
-                    <div class="software__card-item">
+                    <div data-animation="flip-y" data-anim-delay="0.8" class="software__card-item">
                         <span class="software__card-item__icon software__card-item__icon--warning">
                             <img src="src/assets/software/calendar.svg"></img>
 
@@ -155,7 +155,7 @@
                         <p class="software__card-item__text">Schedule and reserve classrooms at one campus or
                             multiple campuses. Keep detailed records of student attendance</p>
                     </div>
-                    <div class="software__card-item">
+                    <div data-animation="flip-y" data-anim-delay="1" class="software__card-item">
                         <span class="software__card-item__icon software__card-item__icon--primary">
                             <img src="src/assets/software/users.svg"></img>
 

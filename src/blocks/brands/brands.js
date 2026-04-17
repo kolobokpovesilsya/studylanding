@@ -20,9 +20,9 @@ function onIntersect() {
     });
 }
 export function initBrands() {
-    const intersectionObserver = new IntersectionAnimation({
-        containerSelector: ".brands",
-        onHide,
-        onIntersect,
-    });
+    // const intersectionObserver = new IntersectionAnimation({
+    //     containerSelector: ".brands",
+    //     onHide,
+    //     onIntersect,
+    // });
 }

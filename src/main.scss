@@ -13,6 +13,8 @@
 @function var-to-rem($px-var) {
     @return calc(var(#{$px-var}) / 20px * 1rem);
 }
+@import "lib/animation/animation.scss";
+
 /* UI blocks */
 @import "blocks/videocall/videocall.scss";
 @import "blocks/slider/slider.scss";
@@ -187,7 +189,7 @@ h5 {
     font-size: rem(20px);
     line-height: 180%;
 }
-.animation-popup--hide {
+.animation-popup--hide { 
     --anim-popup-shift: 120px;
     opacity: 0;
     transform: translateY(var(--anim-popup-shift));
