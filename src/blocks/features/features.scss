@@ -113,3 +113,34 @@
     border-radius: var(--btn-radius);
     box-shadow: 0px 0 0 rem(8px) #e1346830;
 }
+
+@media (max-width: 1280px) {
+    .features__content {
+        flex-direction: column;
+    }
+    .features__screen {
+        order: 2;
+        align-self: center;
+    }
+    .features__screen-description {
+        align-self: center;
+        padding: 0 rem(20px);
+    }
+}
+@media (max-width: 1024px) {
+    .features__screen-description {
+        align-self: start;
+    }
+}
+@media (max-width: 768px) {
+    .features__video-v-list--shift-top {
+        transform: unset;
+    }
+    .features__videocall:not(.features__videocall-main) {
+        width: rem(160px) !important;
+        height: rem(160px) !important;
+    }
+    // .features__videocall-main{
+
+    // }
+}
