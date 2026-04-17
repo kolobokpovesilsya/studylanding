@@ -38,8 +38,8 @@
 @import "./blocks/discussions/discussion.scss";
 @import "./blocks/integration/integration.scss";
 @import "./blocks/testimonial/testimonial.scss";
+@import "./blocks/news/news.scss";
 
-// @import url("./blocks/news/news.scss");
 // @import url("./blocks/testimonial/testimonial.scss");
 @import "./blocks/footer/footer.scss";
 
@@ -183,6 +183,10 @@ h4 {
     font-size: rem(22px);
     line-height: auto;
 }
+h5 {
+    font-size: rem(20px);
+    line-height: 180%;
+}
 @media (max-width: 1600px) {
     html {
         font-size: 18px;
@@ -225,6 +229,10 @@ a {
     h4 {
         font-size: rem(20px);
         line-height: auto;
+    }
+    h5 {
+        font-size: rem(18px);
+        line-height: 180%;
     }
 }
 @media (max-width: 768px) {
