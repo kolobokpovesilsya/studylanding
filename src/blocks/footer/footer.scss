@@ -76,3 +76,18 @@
     line-height: 90%;
     margin-bottom: rem(30px);
 }
+
+@media (max-width: 768px) {
+    .footer__search-input {
+        padding: rem(10px) rem(15px);
+        max-width: unset;
+    }
+    .footer__search-btn {
+        padding: rem(10px) rem(20px);
+    }
+}
+@media (max-width: 480px) {
+    .footer__search-group {
+        flex-direction: column;
+    }
+}
