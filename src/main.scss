@@ -15,7 +15,7 @@
 }
 /* UI blocks */
 @import "blocks/videocall/videocall.scss";
-// @import url("blocks/slider/slider.scss");
+@import "blocks/slider/slider.scss";
 @import "./blocks/button/button.scss";
 @import "./blocks/logo/logo.scss";
 @import "./blocks/burgerbutton/burgerbutton.scss";
@@ -37,9 +37,10 @@
 //
 @import "./blocks/discussions/discussion.scss";
 @import "./blocks/integration/integration.scss";
+@import "./blocks/testimonial/testimonial.scss";
+
 // @import url("./blocks/news/news.scss");
 // @import url("./blocks/testimonial/testimonial.scss");
-// @import url("./blocks/integration/integration.scss");
 @import "./blocks/footer/footer.scss";
 
 :root {
