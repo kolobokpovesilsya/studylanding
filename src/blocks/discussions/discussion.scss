@@ -135,13 +135,14 @@
 
 .discussion__screen-foreground__layer-info__title {
     line-height: normal;
-    font-size: rem(22px);
+    // font-size: rem(22px);
 }
 .discussion__screen-foreground__layer-info__text {
     line-height: normal;
     font-size: rem(16px);
 }
 .discussion__screen-btn {
+    display: inline-flex;
     font-size: rem(20px);
     color: var(--white);
     border-radius: var(--btn-radius);
@@ -205,4 +206,60 @@
 .discussions__more-features {
     display: flex;
     justify-content: center;
+}
+
+@media (max-width: 1280px) {
+    .discussions__content {
+        flex-direction: column;
+        align-items: center;
+        gap: rem(100px);
+    }
+    .discussions__screen-title {
+        display: flex;
+        justify-content: center;
+    }
+    .discussions__screen-decor {
+        margin-left: rem(10px);
+    }
+    .discussions__screen-description {
+        text-align: center;
+    }
+    .discussions__screen {
+        order: 1;
+    }
+}
+@media (max-width: 768px) {
+    .discussion__screen-foreground {
+        position: static;
+    }
+    .discussions__screen-background {
+        display: none;
+    }
+    .discussion__screen-foreground__interface {
+        width: 100%;
+        height: auto;
+    }
+    .discussion__screen-foreground__layer {
+        left: 0;
+        top: 12%;
+    }
+    .discussion__screen__videocall {
+        width: auto;
+        height: auto;
+    }
+    .discussion__screen-btn {
+        align-self: flex-start;
+        font-size: rem(14px);
+        padding: 0.1rem 0.5rem;
+        line-height: 150%;
+    }
+    .discussion__screen-foreground__layer-info__text {
+        font-size: rem(14px);
+    }
+    .discussion__screen-foreground__layer-row:first-child {
+        margin-bottom: rem(20px);
+    }
+    .discussions__content {
+        margin-bottom: rem(50px);
+    }
 }

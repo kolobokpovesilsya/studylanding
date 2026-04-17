@@ -14,7 +14,7 @@
     @return calc(var(#{$px-var}) / 20px * 1rem);
 }
 /* UI blocks */
-// @import url("blocks/videocall/videocall.scss");
+@import "blocks/videocall/videocall.scss";
 // @import url("blocks/slider/slider.scss");
 @import "./blocks/button/button.scss";
 @import "./blocks/logo/logo.scss";
@@ -35,7 +35,7 @@
 @import "./blocks/quiz/quiz.scss";
 @import "./blocks/gradebook/gradebook.scss";
 //
-// @import url("./blocks/discussions/discussion.scss");
+@import "./blocks/discussions/discussion.scss";
 // @import url("./blocks/news/news.scss");
 // @import url("./blocks/testimonial/testimonial.scss");
 // @import url("./blocks/integration/integration.scss");
@@ -177,6 +177,10 @@ h3 {
     font-size: rem(30px);
     line-height: auto;
 }
+h4 {
+    font-size: rem(22px);
+    line-height: auto;
+}
 @media (max-width: 1600px) {
     html {
         font-size: 18px;
@@ -200,6 +204,7 @@ a {
     h3 {
         font-size: rem(28px);
     }
+
     .text {
         font-size: rem(22px);
     }
@@ -215,6 +220,10 @@ a {
     h1 {
         line-height: 120%;
     }
+    h4 {
+        font-size: rem(20px);
+        line-height: auto;
+    }
 }
 @media (max-width: 768px) {
     html {
@@ -223,6 +232,10 @@ a {
     h1 {
         font-size: rem(38px);
         line-height: 110%;
+    }
+    h4 {
+        font-size: rem(18px);
+        line-height: auto;
     }
     .text {
         font-size: rem(20px);
