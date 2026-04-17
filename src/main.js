@@ -1,6 +1,7 @@
 // import "./blocks/header/header.scss";
 
 import { initHeader } from "./blocks/header/header.js";
+import { initIntro } from "./blocks/intro/intro.js";
 import { initClassroom } from "./blocks/classroom/classroom.js";
 import { initBrands } from "./blocks/brands/brands.js";
 
@@ -8,6 +9,7 @@ import { Slider } from "./blocks/slider/slider";
 
 document.addEventListener("DOMContentLoaded", () => {
     initHeader();
+    initIntro();
     initClassroom();
     initBrands();
     // const slider = new Slider({

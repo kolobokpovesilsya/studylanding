@@ -16,6 +16,7 @@ export class IntersectionAnimation {
                         onIntersect();
                         once && intersectionObserver.unobserve(entry.target);
                     } else {
+                        console.log("элемента нет");
                         if (once) {
                             return;
                         }

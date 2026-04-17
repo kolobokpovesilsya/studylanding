@@ -187,6 +187,33 @@ h5 {
     font-size: rem(20px);
     line-height: 180%;
 }
+.animation-popup--hide {
+    --anim-popup-shift: 120px;
+    opacity: 0;
+    transform: translateY(var(--anim-popup-shift));
+}
+
+.animation-popup--show {
+    --anim-popup-delay: 0.2s;
+    opacity: 1;
+    transform: translateY(0);
+    transition-duration: 1.2s;
+    transition-delay: var(--anim-popup-delay);
+}
+.animation-popup--grow-down {
+    --anim-popup-shift: 20px;
+    opacity: 0;
+    transform: translateY(var(--anim-popup-shift)) scale(0);
+}
+
+.animation-popup--grow-up {
+    --anim-popup-delay: 0.2s;
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition-duration: 1s;
+    transition-delay: var(--anim-popup-delay);
+}
+
 @media (max-width: 1600px) {
     html {
         font-size: 18px;

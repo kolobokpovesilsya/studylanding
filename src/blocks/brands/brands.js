@@ -25,6 +25,4 @@ export function initBrands() {
         onHide,
         onIntersect,
     });
-
-    // intersectionObserver.observe(brandsSection);
 }
