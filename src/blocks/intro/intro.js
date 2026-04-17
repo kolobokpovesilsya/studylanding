@@ -4,7 +4,6 @@ const introContentChildren = document.querySelector(".intro__content").children;
 const popupList = document.querySelectorAll(".intro__popup");
 
 function onHide() {
-    console.log("introContentChildren=", introContentChildren);
     Array.from(introContentChildren).forEach((ch) => {
         ch.classList.add("animation-popup--hide");
     });
@@ -13,6 +12,7 @@ function onHide() {
     });
 }
 function onIntersect() {
+    console.log("introContentChildren=", introContentChildren);
     Array.from(introContentChildren).forEach((ch, idx) => {
         ch.classList.remove("animation-popup--hide");
         ch.style.setProperty("--anim-popup-delay", `${0.2 * (idx + 1)}s`);

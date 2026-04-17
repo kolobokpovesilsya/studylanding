@@ -213,6 +213,18 @@ h5 {
     transition-duration: 1s;
     transition-delay: var(--anim-popup-delay);
 }
+.animation-popup--flip-y-hide {
+    opacity: 0;
+    transform: rotateY(-90deg);
+}
+
+.animation-popup--flip-y-show {
+    --anim-popup-delay: 0.2s;
+    opacity: 1;
+    transform: rotateY(0deg);
+    transition-duration: 1s;
+    transition-delay: var(--anim-popup-delay);
+}
 
 @media (max-width: 1600px) {
     html {
