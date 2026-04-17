@@ -57,3 +57,22 @@
     align-items: end;
     row-gap: 2rem;
 }
+
+@media (max-width: 768px) {
+    .integration__container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .integration__platforms {
+        order: 2;
+        width: 100%;
+    }
+    .integration__content {
+        padding: 0 rem(20px);
+        width: 100%;
+    }
+    .integration__platforms__content {
+        justify-items: center;
+        padding: 0 rem(20px);
+    }
+}
