@@ -1,4 +1,3 @@
-//emerging from bottom
 .animation--slide-y-reset {
   --anim-y: 120px;
   opacity: 0;
@@ -9,6 +8,19 @@
   --anim-delay: 0.2s;
   opacity: 1;
   transform: translateY(0);
+  transition-duration: 1.2s;
+  transition-delay: var(--anim-delay);
+}
+.animation--slide-x-reset {
+  --anim-x: 120px;
+  opacity: 0;
+  transform: translateX(var(--anim-x));
+}
+
+.animation--slide-x-enter {
+  --anim-delay: 0.2s;
+  opacity: 1;
+  transform: translateX(0);
   transition-duration: 1.2s;
   transition-delay: var(--anim-delay);
 }
@@ -28,14 +40,48 @@
 }
 //flip vertical
 .animation--flip-y-reset {
+    --origin:center center; 
     opacity: 0;
+    transform-origin: var(--origin);
     transform: rotateY(-90deg);
 }
 
 .animation--flip-y-enter {
-    --anim-delay: 0.2s;
+  --origin:center center; 
+  --anim-delay: 0.2s;
     opacity: 1;
+    transform-origin: var(--origin);
     transform: rotateY(0deg);
     transition-duration: 1s;
+    transition-delay: var(--anim-delay);
+}
+
+.animation--flip-x-reset {
+    --origin:center center; 
+    opacity: 0;
+    transform-origin: var(--origin);
+    transform: rotateX(-90deg);
+}
+
+.animation--flip-x-enter {
+  --origin:center center; 
+  --duration:1s;
+  --anim-delay: 0.2s;
+    opacity: 1;
+    transform-origin: var(--origin);
+    transform: rotateX(0deg);
+    transition-duration: var(--duration);
+    transition-delay: var(--anim-delay);
+}
+
+.animation--fade-reset { 
+    opacity: 0;
+}
+
+.animation--fade-enter { 
+  --duration:1s;
+  --anim-delay: 0.2s;
+    opacity: 1;       
+    transition-duration: var(--duration);
     transition-delay: var(--anim-delay);
 }

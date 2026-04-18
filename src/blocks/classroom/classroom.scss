@@ -29,8 +29,8 @@
 .classroom__title:after {
     content: "";
     position: absolute;
-    top: rem(5px);
-    left: 0;
+    top: -0.75rem;
+    left: -1rem;
     width: rem(73px);
     height: rem(73px);
     background-color: var(--accent-warning);

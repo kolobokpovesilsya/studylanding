@@ -39,12 +39,17 @@ export class IntersectionAnimation {
         
         Array.from(animatedElementList).forEach(el => {
             const animationType = el.getAttribute('data-animation')
+            const origin = el.getAttribute('data-anim-origin')
             const delay = el.getAttribute('data-anim-delay')
+            const duration = el.getAttribute('data-anim-duration')
             const shiftY = el.getAttribute('data-anim-y')
-             console.log('animation class---',animationType)
+            const shiftX = el.getAttribute('data-anim-x')
             const animationClass = this.getAnimationClass(animationType,reset)
             delay && el.style.setProperty("--anim-delay", `${delay}s`);
-            shiftY && el.style.setProperty("--anim-y", `${shiftY}s`);
+            shiftY && el.style.setProperty("--anim-y", `${shiftY}`);
+            shiftX && el.style.setProperty("--anim-x", `${shiftX}`);
+            origin && el.style.setProperty("--origin", origin);
+            duration && el.style.setProperty("--duration", duration);
             el.classList.add(animationClass)
         })
     }
@@ -52,10 +57,16 @@ export class IntersectionAnimation {
         switch (animationType) {
             case 'slide-y':                
                 return `animation--slide-y-${reset?'reset':'enter'}`
+            case 'slide-x':                
+                return `animation--slide-x-${reset?'reset':'enter'}`
             case 'popup':
                 return  `animation--popup-${reset?'reset':'enter'}`
             case 'flip-y':
                 return `animation--flip-y-${reset?'reset':'enter'}`
+            case 'flip-x':
+                return `animation--flip-x-${reset?'reset':'enter'}`
+            case 'fade':
+                return `animation--fade-${reset?'reset':'enter'}`
             default:
                 console.warn('Unknow animation type:',animationType)
                 return  null
