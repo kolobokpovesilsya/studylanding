@@ -99,6 +99,7 @@
 }
 .testimonial__slider-content__img {
     border-radius: var(--card-radius);
+    overflow: hidden;
 }
 .testimonial__slider-btn-right {
     stroke: #1ea4ce !important;

@@ -72,7 +72,10 @@
                 </div>
                 <div class="intro__image">
                     <div class="intro__image-wrapper">
-                        <img src="/src/assets/intro/girl.png" />
+                        <picture>
+                            <source srcset="/src/assets/intro/girl.avif" type="image/avif">
+                            <img src="/src/assets/intro/girl.png" alt="...">
+                        </picture> 
                         <div data-animation="popup" data-anim-delay="0.2" class="intro__popup intro__popup--join">
                             <div class="intro__popup__avatar">
                                 <img src="/src/assets/intro/avatar.png" alt="">
@@ -193,7 +196,10 @@
                 </p>
                 <div class="about__card-list">
                     <div data-animation="flip-x" data-anim-duration="2s" data-anim-origin="center bottom" data-anim-delay="0.6" class="about__card-item">
-                        <img class="about__card-bg" src="/src/assets/about/woman.png" />
+                        <picture>
+                            <source srcset="/src/assets/about/woman.avif" type="image/avif">
+                            <img src="/src/assets/about/woman.png" alt="...">
+                        </picture>
                         <div class="about__card-content">
                             <h3 class="about__card-title">FOR INSTRUCTORS</h3>
                             <button class="about__card-btn btn btn--outlined-white">
@@ -202,7 +208,10 @@
                         </div>
                     </div>
                     <div data-animation="flip-x" data-anim-duration="2s" data-anim-origin="center bottom" data-anim-delay="0.6" class="about__card-item">
-                        <img class="about__card-bg" src="/src/assets/about/group.png" />
+                        <picture>
+                            <source srcset="/src/assets/about/group.avif" type="image/avif">
+                            <img src="/src/assets/about/group.png" alt="...">
+                        </picture>
                         <div class="about__card-content">
                             <h3 class="about__card-title">FOR STUDENTS</h3>
                             <button class="about__card-btn btn btn--outlined-primary active">
@@ -456,7 +465,11 @@
                                 True or false? This play takes place in Italy
                             </h3>
                             <div data-animation="slide-y" data-anim-delay="1" class="quiz__item__content__image">
-                                <img src="/src/assets/quiz/venezia.png" />
+                                 <picture>
+                                    <source srcset="/src/assets/quiz/venezia.avif" type="image/avif">
+                                    <img src="/src/assets/quiz/venezia.png" alt="...">
+                                </picture>
+                                <!-- <img src="/src/assets/quiz/venezia.png" /> -->
                             </div>
 
                         </div>
@@ -546,7 +559,10 @@
                                     <div data-animation="slide-y" data-anim-delay="0.8" class="gradebook__picture__col gradebook__picture__col--blue ">
                                         <div class="gradebook__picture__tail"></div>
                                         <div class="gradebook__picture__avatar">
-                                            <img src="src/assets/gradebook/person1.png" alt="">
+                                            <picture>
+                                                <source srcset="src/assets/gradebook/person1.avif" type="image/avif">
+                                                <img src="src/assets/gradebook/person1.png" alt="...">
+                                            </picture>
                                             <div class="gradebook__picture__badge">
                                                 30
                                             </div>
@@ -555,7 +571,10 @@
                                     <div data-animation="slide-y" data-anim-delay="1" class="gradebook__picture__col gradebook__picture__col--purple ">
                                         <div class="gradebook__picture__tail"></div>
                                         <div class="gradebook__picture__avatar">
-                                            <img src="src/assets/gradebook/person2.png" alt="">
+                                            <picture>
+                                                <source srcset="src/assets/gradebook/person2.avif" type="image/avif">
+                                                <img src="src/assets/gradebook/person2.png" alt="...">
+                                            </picture>
                                             <div class="gradebook__picture__badge">
                                                 98
                                             </div>
@@ -566,7 +585,10 @@
                                     <div data-animation="slide-y" data-anim-delay="1.2" class="gradebook__picture__col gradebook__picture__col--green ">
                                         <div class="gradebook__picture__tail"></div>
                                         <div class="gradebook__picture__avatar">
-                                            <img src="src/assets/gradebook/person3.png" alt="">
+                                            <picture>
+                                                <source srcset="src/assets/gradebook/person3.avif" type="image/avif">
+                                                <img src="src/assets/gradebook/person3.png" alt="...">
+                                            </picture>
                                             <div class="gradebook__picture__badge">
                                                 85
                                             </div>
@@ -575,7 +597,10 @@
                                     <div data-animation="slide-y" data-anim-delay="1.4" class="gradebook__picture__col gradebook__picture__col--red ">
                                         <div class="gradebook__picture__tail"></div>
                                         <div class="gradebook__picture__avatar">
-                                            <img src="src/assets/gradebook/person4.png" alt="">
+                                            <picture>
+                                                <source srcset="src/assets/gradebook/person4.avif" type="image/avif">
+                                                <img src="src/assets/gradebook/person4.png" alt="...">
+                                            </picture>
                                             <div class="gradebook__picture__badge">
                                                 75
                                             </div>
@@ -745,11 +770,23 @@
             <div class="integration__container">
                 <div class="integration__platforms">
                     <div class="integration__platforms__content">
-                        <img data-animation="popup" data-anim-delay="0.4" src="src/assets/integration/platform1.png" alt="" class="integration__platforms__item">
-                        <img data-animation="popup" data-anim-delay="0.6" src="src/assets/integration/platform2.png" alt="" class="integration__platforms__item">
-                        <img data-animation="popup" data-anim-delay="0.8" src="src/assets/integration/platform3.png" alt="" class="integration__platforms__item">
-                        <img data-animation="popup" data-anim-delay="1" src="src/assets/integration/platform4.png" alt="" class="integration__platforms__item">
-                    </div>
+                        <picture  class="integration__platforms__item" data-animation="popup" data-anim-delay="0.4">
+                            <source srcset="src/assets/integration/platform1.avif" type="image/avif">
+                            <img src="src/assets/integration/platform1.png" alt="...">
+                        </picture>
+                         <picture class="integration__platforms__item" data-animation="popup" data-anim-delay="0.6">
+                            <source srcset="src/assets/integration/platform2.avif" type="image/avif">
+                            <img src="src/assets/integration/platform2.png" alt="...">
+                        </picture>
+                         <picture class="integration__platforms__item" data-animation="popup" data-anim-delay="0.8">
+                            <source srcset="src/assets/integration/platform3.avif" type="image/avif">
+                            <img src="src/assets/integration/platform3.png" alt="...">
+                        </picture>
+                         <picture class="integration__platforms__item" data-animation="popup" data-anim-delay="1" >
+                            <source srcset="src/assets/integration/platform4.avif" type="image/avif">
+                            <img src="src/assets/integration/platform4.png" alt="...">
+                        </picture>
+                        </div>
                 </div>
                 <div class="integration__content">
                     <div data-animation="slide-y"  class="integration__content__sup-title">
@@ -796,8 +833,11 @@
                         <div class="slider__list">
                             <div class="slider__item">
                                 <div class="testimonial__sliter-content slider__content">
-                                    <img data-animation="fade" data-anim-delay="0.4" class="testimonial__slider-content__img"
-                                        src="src/assets/testimonial/reviewer1.png" />
+                                    
+                                        <picture   data-animation="fade" data-anim-delay="0.4" class="testimonial__slider-content__img">
+                                            <source srcset="src/assets/testimonial/reviewer1.avif" type="image/avif">
+                                            <img src="src/assets/testimonial/reviewer1.png" alt="...">
+                                        </picture>
                                     <div data-animation="slide-y" data-anim-delay="0.6" class="testimonial__review">
                                         <p class="testimonial__review__text">
                                             "Thank you so much for your help. It's exactly what I've been looking for.
@@ -866,7 +906,11 @@
                 <div class="news__row">
                     <div data-animation="fade" data-anim-delay="0.6"  class="news__main">
                         <div class="news__main__image news__image ">
-                            <img src="src/assets/news/news1.png" alt="">
+                            <picture   >
+                                <source srcset="src/assets/news/news1.avif" type="image/avif">
+                                <img src="src/assets/news/news1.png" alt="...">
+                            </picture>
+                            <!-- <img src="src/assets/news/news1.png" alt=""> -->
                         </div>
                         <span class="news__main__badge news__badge news__badge--lg">
                             NEWS
@@ -883,7 +927,11 @@
                     <div data-animation="slide-x" data-anim-x="100%" data-anim-delay="0.8" class="news__list">
                         <div class="news__item">
                             <div class="news__item__image news__image news__image--sm news__image--fixed">
-                                <img src="src/assets/news/news2.png" alt="">
+                                <picture   >
+                                    <source srcset="src/assets/news/news2.avif" type="image/avif">
+                                    <img src="src/assets/news/news2.png" alt="...">
+                                </picture>
+                                <!-- <img src="src/assets/news/news2.png" alt=""> -->
                                 <span class="news__item__badge news__badge">
                                     PRESS RELEASE
                                 </span>
@@ -897,7 +945,11 @@
                         </div>
                         <div class="news__item">
                             <div class="news__item__image news__image news__image--sm news__image--fixed">
-                                <img src="src/assets/news/news3.png" alt="">
+                                <picture   >
+                                    <source srcset="src/assets/news/news3.avif" type="image/avif">
+                                    <img src="src/assets/news/news3.png" alt="...">
+                                </picture>
+                                <!-- <img src="src/assets/news/news3.png" alt=""> -->
                                 <span class="news__item__badge news__badge">
                                     NEWS
                                 </span>
@@ -911,7 +963,11 @@
                         </div>
                         <div class="news__item">
                             <div class="news__item__image news__image news__image--sm news__image--fixed">
-                                <img src="src/assets/news/news4.png" alt="">
+                                 <picture   >
+                                    <source srcset="src/assets/news/news4.avif" type="image/avif">
+                                    <img src="src/assets/news/news4.png" alt="...">
+                                </picture>
+                                <!-- <img src="src/assets/news/news4.png" alt=""> -->
                                 <span class="news__item__badge news__badge">
                                     NEWS
                                 </span>
