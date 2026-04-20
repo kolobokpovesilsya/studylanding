@@ -1,22 +1,25 @@
-export class LazyImageLoader {
+export class LazyContentLoader {
     observer;
     constructor({ threshold, rootMargin }) {
-        const lazyLoadableImages = document.querySelectorAll("[data-lazy]");
-        if (!lazyLoadableImages.length) {
-            return;
-        }
+        const lazyLoadableContentList =
+            document.querySelectorAll("[data-lazy]");
+
         this.observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
                         console.log("Ленивая загрузка");
-                        const picture = entry.target;
+                        const content = entry.target;
                         setTimeout(() => {
                             if (!entry.isIntersecting) {
                                 return;
                             }
-                            this.handleIntersect(picture);
-                            this.observer.unobserve(picture);
+                            if (content instanceof HTMLPictureElement) {
+                                this.handlePictureIntersect(content);
+                            } else if (content instanceof HTMLVideoElement) {
+                                this.handleVideoIntersect(content);
+                            }
+                            this.observer.unobserve(content);
                         }, 200);
                     } else {
                         console.log("элемента нет");
@@ -25,11 +28,11 @@ export class LazyImageLoader {
             },
             { threshold, rootMargin },
         );
-        lazyLoadableImages.forEach((img) => {
-            this.observer.observe(img);
+        lazyLoadableContentList.forEach((cnt) => {
+            this.observer.observe(cnt);
         });
     }
-    handleIntersect = (picture) => {
+    handlePictureIntersect = (picture) => {
         const sources = picture.querySelectorAll("source");
         for (let src of sources) {
             const srcset = src.dataset.srcset;
@@ -49,6 +52,32 @@ export class LazyImageLoader {
         img.onerror = () => {
             console.log("Fail to load src", src);
         };
+
+        delete img.dataset.src;
+    };
+    handleVideoIntersect = (video) => {
+        const sources = video.querySelectorAll("source");
+        for (let src of sources) {
+            const srcset = src.dataset.src;
+            if (!srcset) {
+                continue;
+            }
+            src.src = srcset;
+            src.onerror = () => {
+                console.warn("Fail to load ", srcset);
+            };
+            video.load();
+            video.onload = () => {
+                if (video.hasAttribute("autoplay")) {
+                    video.muted = true;
+                    video
+                        .play()
+                        .catch((e) => console.log("Autoplay prevented"));
+                }
+            };
+
+            delete src.dataset.src;
+        }
 
         delete img.dataset.src;
     };

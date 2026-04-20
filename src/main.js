@@ -5,11 +5,13 @@ import { initIntro } from "./blocks/intro/intro.js";
 import { initClassroom } from "./blocks/classroom/classroom.js";
 import { initBrands } from "./blocks/brands/brands.js";
 import { initSoftware } from "./blocks/software/software.js";
-import { IntersectionAnimation } from "./lib/animation/animation.js";
-import { LazyImageLoader } from "./lib/lazyimages/llazyimages.js";
+import {
+    LazyContentLoader,
+    LazyImageLoader,
+} from "./lib/lazyimages/llazyimages.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-    const intersectionAnimation = new IntersectionAnimation({
+    const intersectionAnimation = new LazyContentLoader({
         rootElement: document,
     });
     new LazyImageLoader({
