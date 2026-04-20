@@ -1,15 +1,15 @@
 .boxicon {
-    --size: rem(80px);
+    --size: 62px;
     position: relative;
-    --border-radius: 1rem;
+    --border-radius: 20px;
     display: inline-flex;
 }
 
 .boxicon__bg {
     background-color: var(--white);
-    border-radius: var(--border-radius);
-    height: var(--size);
-    width: var(--size);
+    border-radius: var-to-rem(--border-radius);
+    height: var-to-rem(--size);
+    width: var-to-rem(--size);
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -18,10 +18,11 @@
 }
 
 .boxicon__backdrop {
+    display: inline-flex;
     position: relative;
     border-radius: var(--border-radius);
     background: #ffffff99;
-    padding: 0.7rem;
+    padding: rem(9px);
     z-index: 2;
     overflow: hidden;
     box-shadow: rem(-7px) rem(12px) rem(23px) #00000030;

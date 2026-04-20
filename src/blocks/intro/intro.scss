@@ -34,7 +34,17 @@
 .intro__btn-play {
     margin-right: 1rem;
 }
-
+.intro__btn-play {
+    border-radius: 50%;
+    width: rem(80px);
+    height: rem(80px);
+    padding: rem(20px);
+}
+.intro__btn__play-icon {
+    width: rem(33px) !important;
+    height: rem(33px) !important;
+    margin-left: rem(5px);
+}
 .intro__content {
     width: 45%;
     display: inline-flex;
@@ -125,7 +135,9 @@
 .intro__popup__icon--blue {
     --bg-color: #23bdee;
 }
-
+.intro__popup__icon--pink {
+    background: #f3627c;
+}
 .intro__popup__title__check {
     width: rem(20px);
     height: rem(20px);
@@ -165,14 +177,27 @@
     --top: 30%;
     --left: -5%;
 }
-
+.intro__popup__calendar-icon {
+    padding: rem(10px);
+}
+.intro__popup__message-icon {
+    width: rem(50px);
+    height: rem(50px);
+    padding: rem(10px);
+    flex-shrink: 0;
+}
 .intro__popup--settings {
     --top: 25%;
     --left: 70%;
-    background: #f3627c;
+
     backdrop-filter: unset;
     width: rem(70px);
     height: rem(70px);
+    padding: rem(10px);
+}
+.intro__popup-icon {
+    width: 100% !important;
+    height: 100% !important;
 }
 
 @media (max-width: 1380px) {

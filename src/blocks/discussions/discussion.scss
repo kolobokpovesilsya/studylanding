@@ -161,6 +161,12 @@
     transform-origin: center center;
     transform: rotate(-5deg);
 }
+.discussion__picture__icon-users {
+    width: rem(40px) !important;
+    height: rem(40px) !important;
+    transform: rotate(-5deg);
+    fill: #2c93f1 !important;
+}
 
 .discussions__screen-background:before {
     content: "";

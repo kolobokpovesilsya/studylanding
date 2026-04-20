@@ -32,7 +32,9 @@
     color: white;
 }
 
-.videocall__network {
+.videocall__network svg {
+    width: 8px !important;
+    height: 8px !important;
 }
 
 .videocall__name {

@@ -42,21 +42,26 @@
     box-shadow: var(--box-shadow-v2);
 }
 
-.software__card-item__icon img {
-    width: 50%;
-    height: 50%;
-}
-
 .software__card-item__icon--warning {
     background-color: var(--accent-warning);
 }
-
+.software__card-item__icon--warning svg {
+    width: 48px;
+    height: 48px;
+}
 .software__card-item__icon--primary {
     background-color: var(--accent-primary);
 }
-
+.software__card-item__icon--primary svg {
+    width: 55px;
+    height: 55px;
+}
 .software__card-item__icon--info {
     background-color: var(--accent-info);
+}
+.software__card-item__icon--info svg {
+    width: 45px;
+    height: 45px;
 }
 .software__card-item__title,
 .software__card-item__text {

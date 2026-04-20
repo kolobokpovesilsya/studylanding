@@ -31,7 +31,13 @@
     border-radius: 100%;
     margin-right: rem(35px);
 }
-
+.features__screen-list-icon {
+    width: rem(28px) !important;
+    height: rem(28px) !important;
+}
+.features__screen-list-icon--users {
+    fill: #2f327d !important;
+}
 .features__screen {
     position: relative;
     flex-basis: 55%;
@@ -113,7 +119,10 @@
     border-radius: var(--btn-radius);
     box-shadow: 0px 0 0 rem(8px) #e1346830;
 }
-
+.features__video__call {
+    width: rem(17px) !important;
+    height: rem(17px) !important;
+}
 @media (max-width: 1280px) {
     .features__content {
         flex-direction: column;

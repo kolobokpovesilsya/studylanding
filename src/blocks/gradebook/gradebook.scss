@@ -72,6 +72,17 @@
     --top: 10%;
     --left: 88%;
 }
+.gradebook__picture__icon {
+    --size: 55px;
+    --rotate: -12deg;
+    width: var-to-rem(--size) !important;
+    height: var-to-rem(--size) !important;
+    transform: rotate(var(--rotate));
+}
+.gradebook__picture__icon-book {
+    --size: 45px;
+    --rotate: 12deg;
+}
 .gradebook__picture__bulb-decor--small {
     --size: 20px;
     --top: -5%;

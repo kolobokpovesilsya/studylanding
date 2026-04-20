@@ -91,8 +91,15 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: rem(70px);
+    height: rem(70px);
+    padding: rem(5px) !important;
 }
-
+.classroom__video-btn__icon {
+    width: rem(30px) !important;
+    height: rem(30px) !important;
+    margin-left: rem(5px);
+}
 @media (max-width: 1024px) {
     .classroom__container {
         flex-direction: column;

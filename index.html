@@ -11,6 +11,7 @@
 </head>
 
 <body class="page">
+    <object type="image/svg+xml" data="sprites.svg" style="display:none" ></object>
     <header class="header  ">
         <div class="header__container">
             <a href="/" class="header__logo logo logo--primary"> Skilline </a>
@@ -62,7 +63,9 @@
                             Join for free
                         </button>
                         <button type="button" class="intro__btn-play btn btn--white">
-                            >
+                            <svg class="icon intro__btn__play-icon">
+                                <use href="sprites.svg#play"></use>
+                            </svg>  
                         </button>
                         <span class="intro__watch">Watch how it works</span>
                     </div>
@@ -81,8 +84,10 @@
                             </div>
                         </div>
                         <div data-animation="popup" data-anim-delay="0.4" class="intro__popup intro__popup--message">
-                            <div class="intro__popup__icon intro__popup__icon--orange">
-
+                            <div class="intro__popup__icon intro__popup__message-icon intro__popup__icon--orange">
+                                 <svg class="icon icon--fill icon--fill-white intro__popup-icon">
+                                    <use href="sprites.svg#envelope"></use>
+                                </svg>    
                             </div>
                             <div class="intro__popup__content">
                                 <div class="intro__popup__title">
@@ -93,7 +98,10 @@
                             </div>
                         </div>
                         <div data-animation="popup" data-anim-delay="0.6" class="intro__popup intro__popup--calendar">
-                            <div class="intro__popup__icon intro__popup__icon--blue">
+                            <div class="intro__popup__icon intro__popup__calendar-icon intro__popup__icon--blue">
+                                <svg class="icon icon--fill icon--fill-white intro__popup-icon">
+                                    <use href="sprites.svg#calendar"></use>
+                                </svg>
                             </div>
                             <div class="intro__popup__content">
                                 <div class="intro__popup__title">
@@ -102,7 +110,10 @@
                                 <div class="intro__popup__description">Assisted Student</div>
                             </div>
                         </div>
-                        <div data-animation="popup" data-anim-delay="0.8" class="intro__popup intro__popup--settings">
+                        <div data-animation="popup" data-anim-delay="0.8" class="intro__popup intro__popup--settings intro__popup__icon--pink">
+                            <svg class="icon icon--fill icon--fill-white intro__popup-icon">
+                                <use href="sprites.svg#levels"></use>
+                            </svg>
                         </div>
                     </div>
 
@@ -138,8 +149,9 @@
                 <div class="software__card-list">
                     <div data-animation="flip-y" data-anim-delay="0.6"  class="software__card-item">
                         <span class="software__card-item__icon software__card-item__icon--info">
-                            <img src="src/assets/software/file-invoice.svg"></img>
-
+                            <svg class="icon icon--fill icon--fill-white  ">
+                                <use href="sprites.svg#file"></use>
+                            </svg> 
                         </span>
                         <h3 class="software__card-item__title">Online Billing, Invoicing, & Contracts
                         </h3>
@@ -148,8 +160,9 @@
                     </div>
                     <div data-animation="flip-y" data-anim-delay="0.8" class="software__card-item">
                         <span class="software__card-item__icon software__card-item__icon--warning">
-                            <img src="src/assets/software/calendar.svg"></img>
-
+                            <svg class="icon icon--fill icon--fill-white  ">
+                                <use href="sprites.svg#calendar"></use>
+                            </svg> 
                         </span>
                         <h3 class="software__card-item__title">Easy Scheduling & Attendance Tracking</h3>
                         <p class="software__card-item__text">Schedule and reserve classrooms at one campus or
@@ -157,8 +170,9 @@
                     </div>
                     <div data-animation="flip-y" data-anim-delay="1" class="software__card-item">
                         <span class="software__card-item__icon software__card-item__icon--primary">
-                            <img src="src/assets/software/users.svg"></img>
-
+                            <svg class="icon icon--fill icon--fill-white  ">
+                               <use href="sprites.svg#users"></use>
+                            </svg> 
                         </span>
                         <h3 class="software__card-item__title">Customer Tracking</h3>
                         <p class="software__card-item__text">Automate and track emails to individuals or groups.
@@ -223,14 +237,16 @@
                             Ваш браузер не поддерживает тег video.
                         </video>
                         <button id="classroom-play" class="classroom__video-btn btn btn--white round">
-                            >
+                             <svg class="icon classroom__video-btn__icon">
+                               <use href="sprites.svg#play"></use>
+                            </svg> 
                         </button>
                     </div>
 
                 </div>
             </div>
         </section>
-        <!-- <section class="features">
+      <section class="features">
             <div class="features__container">
 
                 <h2 class="features__title section-title">
@@ -250,7 +266,11 @@
                                         Ваш браузер не поддерживает тег video.
                                     </video>
                                     <div class="videocall__info">
-                                        <div class="videocall__network">|||</div>
+                                        <div class="videocall__network">
+                                            <svg class="icon icon--fill icon--fill-white classroom__video-btn__icon">
+                                                <use href="sprites.svg#volume"></use>
+                                            </svg>     
+                                        </div>
                                         <div class="videocall__badge videocall__badge--blue">Instructor</div>
                                         <div class="videocall__name">Eveny Howard</div>
                                     </div>
@@ -259,7 +279,12 @@
                                     <button
                                         class="features__video-item-btn features__video-item-btn--info ">Present</button>
                                     <button
-                                        class="features__video-item-btn features__video-item-btn--danger">Call</button>
+                                        class="features__video-item-btn features__video-item-btn--danger">
+                                            <svg class="icon icon--fill icon--fill-white features__video__call">
+                                                <use href="sprites.svg#phone"></use>
+                                            </svg> 
+                                        Call
+                                    </button>
                                 </div>
                             </div>
                             <div class="features__video-v-list ">
@@ -269,7 +294,11 @@
                                         Ваш браузер не поддерживает тег video.
                                     </video>
                                     <div class="videocall__info">
-                                        <div class="videocall__network">|||</div>
+                                        <div class="videocall__network">
+                                             <svg class="icon icon--fill icon--fill-white classroom__video-btn__icon">
+                                                <use href="sprites.svg#volume"></use>
+                                            </svg>  
+                                        </div>
                                         <div class="videocall__name">Tamara Clarke</div>
                                     </div>
                                 </div>
@@ -279,7 +308,11 @@
                                         Ваш браузер не поддерживает тег video.
                                     </video>
                                     <div class="videocall__info">
-                                        <div class="videocall__network">|||</div>
+                                        <div class="videocall__network">
+                                             <svg class="icon icon--fill icon--fill-white classroom__video-btn__icon">
+                                                <use href="sprites.svg#volume"></use>
+                                            </svg>  
+                                        </div>
                                         <div class="videocall__name">Humbert Holland</div>
                                     </div>
                                 </div>
@@ -292,7 +325,11 @@
                                         Ваш браузер не поддерживает тег video.
                                     </video>
                                     <div class="videocall__info">
-                                        <div class="videocall__network">|||</div>
+                                        <div class="videocall__network">
+                                             <svg class="icon icon--fill icon--fill-white classroom__video-btn__icon">
+                                                <use href="sprites.svg#volume"></use>
+                                            </svg>  
+                                        </div>
                                         <div class="videocall__name">Adam levin</div>
                                     </div>
                                 </div>
@@ -302,7 +339,11 @@
                                         Ваш браузер не поддерживает тег video.
                                     </video>
                                     <div class="videocall__info">
-                                        <div class="videocall__network">|||</div>
+                                        <div class="videocall__network">
+                                             <svg class="icon icon--fill icon--fill-white classroom__video-btn__icon">
+                                                <use href="sprites.svg#volume"></use>
+                                            </svg>  
+                                        </div>
                                         <div class="videocall__name">Patricia Mendoza</div>
                                     </div>
                                 </div>
@@ -315,21 +356,30 @@
                         </h3>
                         <ul class="features__screen-list">
                             <li class="features__screen-list-item">
-                                <span>
-                                    <img src="/src/assets/features/group.svg" alt="">
-                                </span>
+                                    <span>
+                                        <svg class="icon features__screen-list-icon">
+                                            <use href="sprites.svg#grid"></use>
+                                        </svg> 
+                                    </span>
+                              
                                 <p>Teachers don’t get lost in the grid view and have a dedicated Podium space.</p>
                             </li>
                             <li class="features__screen-list-item">
                                 <span>
-                                    <img src="/src/assets/features/layer.svg" alt="">
+                                    <svg class="icon features__screen-list-icon">
+                                        <use href="sprites.svg#layer"></use>
+                                    </svg>      
                                 </span>
+                                 
                                 <p>TA’s and presenters can be moved to the front of the class.</p>
                             </li>
                             <li class="features__screen-list-item">
                                 <span>
-                                    <img src="/src/assets/features/users.svg" alt="">
-                                </span>
+                                    <svg class="icon features__screen-list-icon features__screen-list-icon--users">
+                                        <use href="sprites.svg#users"></use>
+                                    </svg> 
+                                </span> 
+                               
                                 <p>Teachers can easily see all students and class data at one time.</p>
                             </li>
                         </ul>
@@ -337,7 +387,7 @@
                 </div>
 
             </div>
-        </section>  -->
+        </section>   
         <section data-animation-container data-anim-threshold="0.8"  class="tools">
             <div class="tools__container">
                 <div class="tools__content">
@@ -371,17 +421,21 @@
                         </div>
 
                         <div   class="tools__picture-icons">
-                            <div data-animation="popup" data-anim-delay="1" class="tools__picture-icon-left boxicon">
-                                <div class="boxicon__backdrop">
+                            <div   class="tools__picture-icon-left boxicon">
+                                <div data-animation="popup" data-anim-delay="1" class="boxicon__backdrop">
                                     <div class="boxicon__bg">
-                                        <img src="src/assets/tools/abstract.svg" alt="">
+                                        <svg class="icon  tools__picture-icon__info">
+                                            <use href="sprites.svg#dual-info"></use>
+                                        </svg> 
                                     </div>
                                 </div>
                             </div>
-                            <div data-animation="popup" data-anim-delay="1" class="tools__picture-icon-right boxicon">
-                                <div class="boxicon__backdrop">
+                            <div class="tools__picture-icon-right boxicon">
+                                <div  data-animation="popup" data-anim-delay="1"  class="boxicon__backdrop">
                                     <div class="boxicon__bg">
-                                        <img src="src/assets/tools/users.svg" alt="">
+                                         <svg class="icon  tools__picture-icon__class">
+                                            <use href="sprites.svg#users-class"></use>
+                                        </svg> 
                                     </div>
                                 </div>
                             </div>
@@ -407,12 +461,22 @@
 
                         </div>
                         <div   class="quiz__item__btns">
-                            <div data-animation="popup" data-anim-delay="1.2" class="quiz__item__btn quiz__cross-btn"><span>x</span></div>
-                            <div data-animation="popup" data-anim-delay="1.2" class="quiz__item__btn quiz__check-btn"><span>|/</span></div>
+                            <div data-animation="popup" data-anim-delay="1.2" class="quiz__item__btn quiz__cross-btn">
+                                <svg class="icon icon--fill icon--fill-none quiz__item__btn-cross  ">
+                                    <use href="sprites.svg#cross-circle"></use>
+                                </svg> 
+                        </div>
+                            <div data-animation="popup" data-anim-delay="1.2" class="quiz__item__btn quiz__check-btn"> 
+                                <svg class="icon icon--fill icon--fill-none  quiz__item__btn-check ">
+                                    <use href="sprites.svg#check-circle"></use>
+                                </svg> 
+                           </div>
                         </div>
                         <div data-animation="popup" data-anim-delay="1.2" class="quiz__item__alert">
                             <div class="quiz__item__alert-img">
-                                <img src="src/assets/quiz/plane.svg" alt="">
+                                <svg class="icon quiz__item__alert-icon  ">
+                                    <use href="sprites.svg#plane"></use>
+                                </svg> 
                             </div>
                             <p class="quiz__item__alert-text">
                                 <span>
@@ -420,10 +484,10 @@
                                 </span>
                             </p>
                         </div>
-                        <div class="quiz__item__bulb-1 bulb bulb--absolute bulb--blue"></div>
-                        <div class="quiz__item__bulb-2 bulb bulb--absolute bulb--orange"></div>
-                        <div class="quiz__item__bulb-3 bulb bulb--absolute bulb--green"></div>
-                        <div class="quiz__item__bulb-4 bulb bulb--absolute bulb--orange"></div>
+                        <div data-animation="popup" data-anim-delay="1.4" class="quiz__item__bulb-1 bulb bulb--absolute bulb--blue"></div>
+                        <div data-animation="popup" data-anim-delay="1.6" class="quiz__item__bulb-2 bulb bulb--absolute bulb--orange"></div>
+                        <div data-animation="popup" data-anim-delay="1.6" class="quiz__item__bulb-3 bulb bulb--absolute bulb--green"></div>
+                        <div data-animation="popup" data-anim-delay="1.6" class="quiz__item__bulb-4 bulb bulb--absolute bulb--orange"></div>
 
                     </div>
                 </div>
@@ -457,7 +521,9 @@
                         <div data-animation="popup" data-anim-delay="0.6" class="gradebook__picture__boxicon  boxicon boxicon--round">
                             <div class="boxicon__backdrop">
                                 <div class="boxicon__bg">
-                                    *
+                                     <svg class="icon  gradebook__picture__icon gradebook__picture__icon-star">
+                                            <use href="sprites.svg#star"></use>
+                                        </svg> 
                                 </div>
                             </div>
                         </div>
@@ -465,7 +531,9 @@
                             class="gradebook__picture__boxicon gradebook__picture__boxicon--right  boxicon boxicon--round">
                             <div class="boxicon__backdrop">
                                 <div class="boxicon__bg">
-                                    b
+                                     <svg class="icon  gradebook__picture__icon gradebook__picture__icon-book">
+                                            <use href="sprites.svg#book"></use>
+                                        </svg> 
                                 </div>
                             </div>
                         </div>
@@ -527,7 +595,7 @@
                 </div>
             </div>
         </section>
-       <!-- <section class="discussions">
+      <section class="discussions">
             <div class="discussions__container">
 
                 <div class="discussions__content">
@@ -554,28 +622,44 @@
                                     <div class="discussions__videocall   videocall videocall--shadow">
                                         <img src="src/assets/discussion/person1.png" />
                                         <div class="videocall__info">
-                                            <div class="videocall__network">|||</div>
+                                            <div class="videocall__network">
+                                                <svg class="icon classroom__video-btn__icon">
+                                                    <use href="sprites.svg#volume"></use>
+                                                </svg> 
+                                            </div>
                                             <div class="videocall__name">Patricia Mendoza</div>
                                         </div>
                                     </div>
                                     <div class="discussions__videocall   videocall videocall--shadow">
                                         <img src="src/assets/discussion/person2.png" />
                                         <div class="videocall__info">
-                                            <div class="videocall__network">|||</div>
+                                            <div class="videocall__network">
+                                                <svg class="icon classroom__video-btn__icon">
+                                                    <use href="sprites.svg#volume"></use>
+                                                </svg> 
+                                            </div>
                                             <div class="videocall__name">Patricia Mendoza</div>
                                         </div>
                                     </div>
                                     <div class="discussions__videocall   videocall videocall--shadow">
                                         <img src="src/assets/discussion/person1.png" />
                                         <div class="videocall__info">
-                                            <div class="videocall__network">|||</div>
+                                            <div class="videocall__network">
+                                                <svg class="icon classroom__video-btn__icon">
+                                                    <use href="sprites.svg#volume"></use>
+                                                </svg> 
+                                            </div>
                                             <div class="videocall__name">Patricia Mendoza</div>
                                         </div>
                                     </div>
                                     <div class="discussions__videocall   videocall videocall--shadow">
                                         <img src="src/assets/discussion/person2.png" />
                                         <div class="videocall__info">
-                                            <div class="videocall__network">|||</div>
+                                            <div class="videocall__network">
+                                                <svg class="icon classroom__video-btn__icon">
+                                                    <use href="sprites.svg#volume"></use>
+                                                </svg> 
+                                            </div>
                                             <div class="videocall__name">Patricia Mendoza</div>
                                         </div>
                                     </div>
@@ -587,7 +671,9 @@
                             <div class="discussion__boxicon  boxicon boxicon--round">
                                 <div class="boxicon__backdrop">
                                     <div class="boxicon__bg">
-                                        <img src="src/assets/discussion/users.svg" alt="">
+                                       <svg class="icon  discussion__picture__icon discussion__picture__icon-users">
+                                            <use href="sprites.svg#users-dialog"></use>
+                                        </svg> 
                                     </div>
                                 </div>
                             </div>
@@ -599,7 +685,11 @@
                                             Ваш браузер не поддерживает тег video.
                                         </video>
                                         <div class="videocall__info">
-                                            <div class="videocall__network">|||</div>
+                                            <div class="videocall__network">
+                                                <svg class="icon classroom__video-btn__icon">
+                                                    <use href="sprites.svg#volume"></use>
+                                                </svg> 
+                                            </div>
                                             <div class="videocall__name">Patricia Mendoza</div>
                                         </div>
                                     </div>
@@ -610,7 +700,11 @@
                                             Ваш браузер не поддерживает тег video.
                                         </video>
                                         <div class="videocall__info">
-                                            <div class="videocall__network">|||</div>
+                                            <div class="videocall__network">
+                                                <svg class="icon classroom__video-btn__icon">
+                                                    <use href="sprites.svg#volume"></use>
+                                                </svg> 
+                                            </div>
                                             <div class="videocall__name">Patricia Mendoza</div>
                                         </div>
                                     </div>
@@ -646,7 +740,7 @@
                     </div>
                 </div>
             </div>
-        </section> -->
+        </section>  
             <section data-animation-container data-anim-threshold="0.8" class="integration">
             <div class="integration__container">
                 <div class="integration__platforms">
@@ -691,7 +785,9 @@
                     <div data-animation="slide-y" data-anim-delay="1.2" class="testimonial__content__btn">
                         <span class="testimonial__content__btn-text">Write your assessment</span>
                         <div class="testimonial__content__btn-arrow">
-                            >
+                            <svg class="icon testimonial__content__btn-icon">
+                                <use href="sprites.svg#arrow-right"></use>
+                            </svg> 
                         </div>
                     </div>
                 </div>
@@ -711,14 +807,46 @@
                                         <div class="testimonial__review__footer">
                                             <div class="testimonial__review__footer__name">Gloria Rose</div>
                                             <div class="testimonial__review__footer__rating">
-
+                                                    <div class="testimonial__review__footer__stars">
+                                                        <div class="testimonial__review__footer__star">
+                                                            <svg class="icon testimonial__content__btn-icon">
+                                                                <use href="sprites.svg#star"></use>
+                                                            </svg> 
+                                                        </div>
+                                                        <div class="testimonial__review__footer__star">
+                                                            <svg class="icon testimonial__content__btn-icon">
+                                                                <use href="sprites.svg#star"></use>
+                                                            </svg> 
+                                                        </div>
+                                                        <div class="testimonial__review__footer__star">
+                                                            <svg class="icon testimonial__content__btn-icon">
+                                                                <use href="sprites.svg#star"></use>
+                                                            </svg> 
+                                                        </div>
+                                                        <div class="testimonial__review__footer__star">
+                                                            <svg class="icon testimonial__content__btn-icon">
+                                                                <use href="sprites.svg#star"></use>
+                                                            </svg> 
+                                                        </div>
+                                                        <div class="testimonial__review__footer__star">
+                                                            <svg class="icon testimonial__content__btn-icon">
+                                                                <use href="sprites.svg#star"></use>
+                                                            </svg> 
+                                                        </div>
+                                                    </div>
+                                                    <div class="testimonial__review__footer__stars-count">
+                                                        12 reviews at Yelp
+                                                    </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="testimonial__slider__controls">
                                         <div data-animation="slide-x" data-anim-x="100%" data-anim-delay="0.8"
                                             class="testimonial__slider__controls__right-arrow slider__controls__right-arrow">
-                                            ></div>
+                                          <svg class="icon testimonial__slider-btn-right">
+                                <use href="sprites.svg#chevrone-right"></use>
+                            </svg>     
+                                        </div>
                                     </div>
                                 </div>
                             </div>

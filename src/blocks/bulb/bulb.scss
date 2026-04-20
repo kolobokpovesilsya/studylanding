@@ -1,16 +1,17 @@
 .bulb {
-    --bg-color: transparent --size: rem(0px);
+    --bg-color: transparent;
+    --size: 0px;
     background: var(--bg-color);
-    width: var(--size);
-    height: var(--size);
+    width: var-to-rem(--size);
+    height: var-to-rem(--size);
     border-radius: 50%;
 }
 .bulb--absolute {
     position: absolute;
     --top: 0;
     --left: 0;
-    top: var(--top);
-    left: var(--left);
+    top: var-to-rem(--top);
+    left: var-to-rem(--left);
 }
 
 .bulb--blue {

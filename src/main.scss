@@ -162,17 +162,31 @@ h3 {
 .section-description {
     text-align: center;
 }
-// .link {
-//     font-size: 22px;
-//     /* color: var(--text-color); */
-// }
+.icon {
+    // --fill: white;
+    width: rem(20px);
+    height: rem(20px);
+    // fill: var(--fill);
+}
+.icon--fill-none {
+    --fill: none;
+}
+.icon--fill-white {
+    --fill: white;
+}
+.icon--fill {
+    fill: var(--fill);
+}
+.icon--sroke {
+    stroke: var(--stroke);
+}
 .text {
     font-size: rem(24px);
     line-height: 180%;
 }
 h1 {
     font-size: rem(54px);
-    line-height: auto;
+    line-height: 150%;
 }
 h2 {
     font-size: rem(36px);
@@ -190,7 +204,7 @@ h5 {
     font-size: rem(20px);
     line-height: 180%;
 }
-.animation-popup--hide { 
+.animation-popup--hide {
     --anim-popup-shift: 120px;
     opacity: 0;
     transform: translateY(var(--anim-popup-shift));
