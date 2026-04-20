@@ -6,15 +6,15 @@ import { initClassroom } from "./blocks/classroom/classroom.js";
 import { initBrands } from "./blocks/brands/brands.js";
 import { initSoftware } from "./blocks/software/software.js";
 import {
-    LazyContentLoader,
-    LazyImageLoader,
+    LazyContentLoader, 
 } from "./lib/lazyimages/llazyimages.js";
+import { IntersectionAnimation } from "./lib/animation/animation.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-    const intersectionAnimation = new LazyContentLoader({
+    const intersectionAnimation = new IntersectionAnimation({
         rootElement: document,
     });
-    new LazyImageLoader({
+    new  LazyContentLoader({
         threshold: 0.01,
         rootMargin: "20px",
     });

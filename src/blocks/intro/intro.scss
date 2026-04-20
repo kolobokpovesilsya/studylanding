@@ -67,20 +67,16 @@
 .intro__image-wrapper {
     position: relative;
     width: 100%;
-    height: 93%;
+    height: 100%;
     display: flex;
     padding-right: rem(40px);
 }
 
-.intro__image > img {
-    position: absolute;
-    bottom: 0;
-    height: 100%;
-}
+ 
 .intro__image picture {
     position: absolute;
     bottom: 0;
-    height: 95%;
+    height: 89%;
 }
 
 .intro__popup {

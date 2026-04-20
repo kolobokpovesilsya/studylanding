@@ -8,7 +8,7 @@ export class LazyContentLoader {
             (entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
-                        console.log("Ленивая загрузка");
+
                         const content = entry.target;
                         setTimeout(() => {
                             if (!entry.isIntersecting) {
@@ -17,6 +17,7 @@ export class LazyContentLoader {
                             if (content instanceof HTMLPictureElement) {
                                 this.handlePictureIntersect(content);
                             } else if (content instanceof HTMLVideoElement) {
+
                                 this.handleVideoIntersect(content);
                             }
                             this.observer.unobserve(content);
@@ -55,7 +56,7 @@ export class LazyContentLoader {
 
         delete img.dataset.src;
     };
-    handleVideoIntersect = (video) => {
+    handleVideoIntersect = (video) => { 
         const sources = video.querySelectorAll("source");
         for (let src of sources) {
             const srcset = src.dataset.src;
@@ -66,19 +67,18 @@ export class LazyContentLoader {
             src.onerror = () => {
                 console.warn("Fail to load ", srcset);
             };
-            video.load();
-            video.onload = () => {
-                if (video.hasAttribute("autoplay")) {
-                    video.muted = true;
-                    video
-                        .play()
-                        .catch((e) => console.log("Autoplay prevented"));
-                }
-            };
+
 
             delete src.dataset.src;
         }
+        video.load();
+         if (video.hasAttribute("autoplay")) { 
+                video.muted = true;
+                video
+                    .play()
+                    .catch((e) => console.log("Autoplay prevented"));
+            }
+        
 
-        delete img.dataset.src;
     };
 }
