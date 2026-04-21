@@ -6,7 +6,7 @@ import { execSync } from "child_process";
 import postcss from "postcss";
 import autoprefixer from "autoprefixer";
 
-const distPath = path.resolve(process.cwd(), "dist");
+const distPath = path.resolve(process.cwd(), "docs");
 const srcPath = path.resolve(process.cwd(), "src");
 
 // Функция для добавления импорта функций в содержимое файла

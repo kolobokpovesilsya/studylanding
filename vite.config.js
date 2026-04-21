@@ -6,7 +6,7 @@ import fs from "fs";
 
 export default defineConfig({
     build: {
-        outDir: "dist",
+        outDir: "docs",
         target: "esnext",
         emptyOutDir: true,
         minify: false,
@@ -100,20 +100,7 @@ export default defineConfig({
             "@assets": resolve(__dirname, "src/assets"),
         },
     },
-    plugins: [
-        {
-            name: "postprocess-build",
-            async closeBundle() {
-                const distPath = resolve(__dirname, "dist");
-
-                // Обработка CSS и JS
-                // await processMainCss(distPath);
-                // await processMainJs(distPath);
-
-                console.log("✅ Сборка завершена");
-            },
-        },
-    ],
+    plugins: [],
     server: {
         watch: {
             usePolling: true,

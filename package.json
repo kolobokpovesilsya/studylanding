@@ -5,7 +5,7 @@
     "scripts": {
         "dev": "vite",
         "build": "vite build && node post-build.js",
-        "preview": "vite build && vite preview"
+        "preview": "npx serve docs"
     },
     "devDependencies": {
         "autoprefixer": "^10.5.0",
