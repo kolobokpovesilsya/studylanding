@@ -129,7 +129,7 @@ function addCSSBlockImports(mainPath) {
             const newInport = `@import url(\'${relative.replaceAll("\\", "/").replace("\.scss", "\.css")}\');`;
             imports += `${newInport}\n`;
         }
-        scssFile += imports;
+        scssFile = scssFile.replace('@charset "UTF-8";', imports);
         fs.writeFileSync(mainPath, scssFile);
     } catch (e) {
         console.error("Fail to add css block imports", e);

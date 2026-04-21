@@ -1,4 +1,29 @@
-@charset "UTF-8";
+@import url('blocks/videocall/videocall.css');
+@import url('blocks/tools/tools.css');
+@import url('blocks/testimonial/testimonial.css');
+@import url('blocks/team/team.css');
+@import url('blocks/software/software.css');
+@import url('blocks/slider/slider.css');
+@import url('blocks/quiz/quiz.css');
+@import url('blocks/notification/notification.css');
+@import url('blocks/news/news.css');
+@import url('blocks/logo/logo.css');
+@import url('blocks/intro/intro.css');
+@import url('blocks/integration/integration.css');
+@import url('blocks/header/header.css');
+@import url('blocks/gradebook/gradebook.css');
+@import url('blocks/footer/footer.css');
+@import url('blocks/features/features.css');
+@import url('blocks/discussions/discussion.css');
+@import url('blocks/classroom/classroom.css');
+@import url('blocks/button/button.css');
+@import url('blocks/burgerbutton/burgerbutton.css');
+@import url('blocks/bulb/bulb.css');
+@import url('blocks/brands/brands.css');
+@import url('blocks/boxicon/boxicon.css');
+@import url('blocks/badge/badge.css');
+@import url('blocks/about/about.css');
+
 /* Utils functions */
 .animation--slide-y-reset {
   --anim-y: 120px;
@@ -383,28 +408,3 @@ a {
     padding: 0 0.6rem;
   }
 }
-@import url('blocks/videocall/videocall.css');
-@import url('blocks/tools/tools.css');
-@import url('blocks/testimonial/testimonial.css');
-@import url('blocks/team/team.css');
-@import url('blocks/software/software.css');
-@import url('blocks/slider/slider.css');
-@import url('blocks/quiz/quiz.css');
-@import url('blocks/notification/notification.css');
-@import url('blocks/news/news.css');
-@import url('blocks/logo/logo.css');
-@import url('blocks/intro/intro.css');
-@import url('blocks/integration/integration.css');
-@import url('blocks/header/header.css');
-@import url('blocks/gradebook/gradebook.css');
-@import url('blocks/footer/footer.css');
-@import url('blocks/features/features.css');
-@import url('blocks/discussions/discussion.css');
-@import url('blocks/classroom/classroom.css');
-@import url('blocks/button/button.css');
-@import url('blocks/burgerbutton/burgerbutton.css');
-@import url('blocks/bulb/bulb.css');
-@import url('blocks/brands/brands.css');
-@import url('blocks/boxicon/boxicon.css');
-@import url('blocks/badge/badge.css');
-@import url('blocks/about/about.css');
