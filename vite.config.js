@@ -5,6 +5,7 @@ import { glob } from "glob";
 import fs from "fs";
 
 export default defineConfig({
+    base: "./",
     build: {
         outDir: "docs",
         target: "esnext",

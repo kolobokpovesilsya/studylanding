@@ -122,12 +122,14 @@ function removeSCSSBlocksImports(mainPath) {
 function addCSSBlockImports(mainPath) {
     try {
         let scssFile = fs.readFileSync(mainPath).toString();
+        let imports = "";
         const scssFiles = glob.sync("src/blocks/**/*.scss", { absolute: true });
         for (let file of scssFiles) {
             const relative = path.relative(srcPath, file);
             const newInport = `@import url(\'${relative.replaceAll("\\", "/").replace("\.scss", "\.css")}\');`;
-            scssFile += `${newInport}\n`;
+            imports += `${newInport}\n`;
         }
+        scssFile = scssFile.replace('@charset "UTF-8";', imports);
         fs.writeFileSync(mainPath, scssFile);
     } catch (e) {
         console.error("Fail to add css block imports", e);
