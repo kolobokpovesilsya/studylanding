@@ -1,0 +1,410 @@
+@import url('blocks/videocall/videocall.css');
+@import url('blocks/tools/tools.css');
+@import url('blocks/testimonial/testimonial.css');
+@import url('blocks/team/team.css');
+@import url('blocks/software/software.css');
+@import url('blocks/slider/slider.css');
+@import url('blocks/quiz/quiz.css');
+@import url('blocks/notification/notification.css');
+@import url('blocks/news/news.css');
+@import url('blocks/logo/logo.css');
+@import url('blocks/intro/intro.css');
+@import url('blocks/integration/integration.css');
+@import url('blocks/header/header.css');
+@import url('blocks/gradebook/gradebook.css');
+@import url('blocks/footer/footer.css');
+@import url('blocks/features/features.css');
+@import url('blocks/discussions/discussion.css');
+@import url('blocks/classroom/classroom.css');
+@import url('blocks/button/button.css');
+@import url('blocks/burgerbutton/burgerbutton.css');
+@import url('blocks/bulb/bulb.css');
+@import url('blocks/brands/brands.css');
+@import url('blocks/boxicon/boxicon.css');
+@import url('blocks/badge/badge.css');
+@import url('blocks/about/about.css');
+
+/* Utils functions */
+.animation--slide-y-reset {
+  --anim-y: 120px;
+  opacity: 0;
+  transform: translateY(var(--anim-y));
+}
+
+.animation--slide-y-enter {
+  --anim-delay: 0.2s;
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: 1.2s;
+  transition-delay: var(--anim-delay);
+}
+
+.animation--slide-x-reset {
+  --anim-x: 120px;
+  opacity: 0;
+  transform: translateX(var(--anim-x));
+}
+
+.animation--slide-x-enter {
+  --anim-delay: 0.2s;
+  opacity: 1;
+  transform: translateX(0);
+  transition-duration: 1.2s;
+  transition-delay: var(--anim-delay);
+}
+
+.animation--popup-reset {
+  --anim-y: 120px;
+  opacity: 0;
+  transform: translateY(var(--anim-y)) scale(0);
+}
+
+.animation--popup-enter {
+  --anim-delay: 0.2s;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition-duration: 1s;
+  transition-delay: var(--anim-delay);
+}
+
+.animation--flip-y-reset {
+  --origin:center center;
+  opacity: 0;
+  transform-origin: var(--origin);
+  transform: rotateY(-90deg);
+}
+
+.animation--flip-y-enter {
+  --origin:center center;
+  --anim-delay: 0.2s;
+  opacity: 1;
+  transform-origin: var(--origin);
+  transform: rotateY(0deg);
+  transition-duration: 1s;
+  transition-delay: var(--anim-delay);
+}
+
+.animation--flip-x-reset {
+  --origin:center center;
+  opacity: 0;
+  transform-origin: var(--origin);
+  transform: rotateX(-90deg);
+}
+
+.animation--flip-x-enter {
+  --origin:center center;
+  --duration:1s;
+  --anim-delay: 0.2s;
+  opacity: 1;
+  transform-origin: var(--origin);
+  transform: rotateX(0deg);
+  transition-duration: var(--duration);
+  transition-delay: var(--anim-delay);
+}
+
+.animation--fade-reset {
+  opacity: 0;
+}
+
+.animation--fade-enter {
+  --duration:1s;
+  --anim-delay: 0.2s;
+  opacity: 1;
+  transition-duration: var(--duration);
+  transition-delay: var(--anim-delay);
+}
+
+/* UI blocks */
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --color-panel: var(--white);
+  --color-bg: var(--white);
+  --accent-primary: #65daff;
+  --accent-warning: #f48c06;
+  --accent-info: #2f327d;
+  --gap: 1rem;
+  --radius: 8px;
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
+  --container: min(100% - 2rem, 1200px);
+  --btn-radius: 5rem;
+  --card-radius: 20px;
+  --box-shadow-v1: 0 10px 60px 0 #262d7615;
+  --box-shadow-v2: 0 16px 40px 0 #252c7130;
+  --text-size: 24px;
+  --text-color: #696984;
+  --menu-text-color: #252641;
+  --heading-text-color: #2f327d;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 20px;
+  scroll-behavior: smooth;
+}
+
+html:has(.header--extended) {
+  overflow: hidden;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 180%;
+  letter-spacing: 2%;
+  font-size: var(--text-size);
+  color: var(--text-color);
+  background: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+section {
+  margin-bottom: 170px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading-text-color);
+  letter-spacing: 0;
+  /* line-height: 140%; */
+}
+
+h2 {
+  margin-bottom: 30px;
+  font-size: 44px;
+  line-height: 180%;
+}
+
+h3 {
+  font-size: 36px;
+  line-height: 160%;
+  font-weight: 500;
+}
+
+.main {
+  flex: 1;
+}
+
+.text-warning {
+  color: var(--accent-warning);
+}
+
+[class*=__container] {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 1.2rem;
+}
+
+.section-title {
+  text-align: center;
+}
+
+.section-description {
+  text-align: center;
+}
+
+.icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.icon--fill-none {
+  --fill: none;
+}
+
+.icon--fill-white {
+  --fill: white;
+}
+
+.icon--fill {
+  fill: var(--fill);
+}
+
+.icon--sroke {
+  stroke: var(--stroke);
+}
+
+.text {
+  font-size: 1.2rem;
+  line-height: 180%;
+}
+
+h1 {
+  font-size: 2.7rem;
+  line-height: 150%;
+}
+
+h2 {
+  font-size: 1.8rem;
+  line-height: 180%;
+}
+
+h3 {
+  font-size: 1.5rem;
+  line-height: auto;
+}
+
+h4 {
+  font-size: 1.1rem;
+  line-height: auto;
+}
+
+h5 {
+  font-size: 1rem;
+  line-height: 180%;
+}
+
+.animation-popup--hide {
+  --anim-popup-shift: 120px;
+  opacity: 0;
+  transform: translateY(var(--anim-popup-shift));
+}
+
+.animation-popup--show {
+  --anim-popup-delay: 0.2s;
+  opacity: 1;
+  transform: translateY(0);
+  transition-duration: 1.2s;
+  transition-delay: var(--anim-popup-delay);
+}
+
+.animation-popup--grow-down {
+  --anim-popup-shift: 20px;
+  opacity: 0;
+  transform: translateY(var(--anim-popup-shift)) scale(0);
+}
+
+.animation-popup--grow-up {
+  --anim-popup-delay: 0.2s;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition-duration: 1s;
+  transition-delay: var(--anim-popup-delay);
+}
+
+.animation-popup--flip-y-hide {
+  opacity: 0;
+  transform: rotateY(-90deg);
+}
+
+.animation-popup--flip-y-show {
+  --anim-popup-delay: 0.2s;
+  opacity: 1;
+  transform: rotateY(0deg);
+  transition-duration: 1s;
+  transition-delay: var(--anim-popup-delay);
+}
+
+@media (max-width: 1600px) {
+  html {
+    font-size: 18px;
+  }
+}
+a {
+  font-size: 1.1rem;
+}
+
+@media (max-width: 1280px) {
+  html {
+    font-size: 17px; /* Все rem размеры уменьшатся пропорционально */
+  }
+  h1 {
+    font-size: 2.2rem;
+    line-height: 160%;
+  }
+  h2 {
+    font-size: 1.7rem;
+    line-height: 160%;
+  }
+  h3 {
+    font-size: 1.4rem;
+  }
+  .text {
+    font-size: 1.1rem;
+  }
+  a {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 1024px) {
+  html {
+    font-size: 16px;
+  }
+  h1 {
+    line-height: 120%;
+  }
+  h4 {
+    font-size: 1rem;
+    line-height: auto;
+  }
+  h5 {
+    font-size: 0.9rem;
+    line-height: 180%;
+  }
+}
+@media (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+  h1 {
+    font-size: 1.9rem;
+    line-height: 110%;
+  }
+  h4 {
+    font-size: 0.9rem;
+    line-height: auto;
+  }
+  .text {
+    font-size: 1rem;
+  }
+  [class*=__container] {
+    max-width: unset;
+  }
+}
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+  [class*=__container] {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 0.6rem;
+  }
+}
