@@ -1,18 +1,4 @@
-/* Utils functions */
-@function rem($px-value, $base-font-size: 20px) {
-    @if unitless($px-value) {
-        $px-value: $px-value * 1px;
-    }
-
-    @if unitless($base-font-size) {
-        $base-font-size: $base-font-size * 1px;
-    }
-
-    @return ($px-value / $base-font-size) * 1rem;
-}
-@function var-to-rem($px-var) {
-    @return calc(var(#{$px-var}) / 20px * 1rem);
-}
+@import "functions.scss";
 @import "lib/animation/animation.scss";
 
 /* UI blocks */
@@ -22,10 +8,8 @@
 @import "./blocks/logo/logo.scss";
 @import "./blocks/burgerbutton/burgerbutton.scss";
 @import "./blocks/badge/badge.scss";
-// @import url("./blocks/notification/notification.scss");
 @import "./blocks/boxicon/boxicon.scss";
 @import "./blocks/bulb/bulb.scss";
-/* Page sections */
 @import "./blocks/header/header.scss";
 @import "./blocks/intro/intro.scss";
 @import "./blocks/brands/brands.scss";
@@ -36,13 +20,10 @@
 @import "./blocks/tools/tools.scss";
 @import "./blocks/quiz/quiz.scss";
 @import "./blocks/gradebook/gradebook.scss";
-//
 @import "./blocks/discussions/discussion.scss";
 @import "./blocks/integration/integration.scss";
 @import "./blocks/testimonial/testimonial.scss";
 @import "./blocks/news/news.scss";
-
-// @import url("./blocks/testimonial/testimonial.scss");
 @import "./blocks/footer/footer.scss";
 
 :root {
@@ -77,7 +58,6 @@
 html {
     font-size: 20px;
     scroll-behavior: smooth;
-    // overflow: hidden;
 }
 html:has(.header--extended) {
     overflow: hidden;
@@ -96,8 +76,6 @@ body {
     background: var(--color-bg);
     display: flex;
     flex-direction: column;
-    // height: 100vh;
-    // overflow: auto;
     min-height: 100vh;
     overflow-x: hidden;
 }
@@ -163,10 +141,8 @@ h3 {
     text-align: center;
 }
 .icon {
-    // --fill: white;
     width: rem(20px);
     height: rem(20px);
-    // fill: var(--fill);
 }
 .icon--fill-none {
     --fill: none;

@@ -7,6 +7,7 @@ import fs from "fs";
 export default defineConfig({
     build: {
         outDir: "dist",
+        target: "esnext",
         emptyOutDir: true,
         minify: false,
         cssCodeSplit: true,

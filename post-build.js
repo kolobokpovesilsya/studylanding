@@ -1,124 +1,177 @@
-// scripts/extract-css.js
+// scripts/extract-css.js (альтернативная версия - без временной папки)
 import { glob } from "glob";
 import fs from "fs";
 import path from "path";
 import { execSync } from "child_process";
+import postcss from "postcss";
+import autoprefixer from "autoprefixer";
 
 const distPath = path.resolve(process.cwd(), "dist");
 const srcPath = path.resolve(process.cwd(), "src");
-const importsRegex = /@import\s+['"][^'"]+['"];\s*/g;
-// 1. Компилируем каждый SCSS файл отдельно через CLI
+
+// Функция для добавления импорта функций в содержимое файла
+function addFunctionsImport(content, inputFile) {
+    // Проверяем, есть ли уже импорт функций
+    const hasFunctionsImport =
+        content.match(/@import\s+['"]functions['"]/i) ||
+        content.match(/@import\s+['"].*functions\.scss['"]/i);
+
+    if (hasFunctionsImport) {
+        return content;
+    }
+
+    const functionsPath = path.join(srcPath, "functions.scss");
+
+    if (!fs.existsSync(functionsPath)) {
+        return content;
+    }
+
+    // Определяем относительный путь от входного файла до functions.scss
+    const inputDir = path.dirname(inputFile);
+    let relativePathToFunctions = path.relative(inputDir, functionsPath);
+    relativePathToFunctions = relativePathToFunctions.replace(/\\/g, "/");
+
+    // Убираем расширение .scss для @import
+    relativePathToFunctions = relativePathToFunctions.replace(/\.scss$/, "");
+
+    // Добавляем импорт в начало файла
+    return `@import "${relativePathToFunctions}";\n${content}`;
+}
+
 const scssFiles = glob.sync("src/blocks/**/*.scss", { absolute: true });
 
-for (const scssFile of scssFiles) {
-    // Определяем выходной путь в dist
-    const relativePath = path.relative(srcPath, scssFile);
-    const blockOutputPath = path.join(
-        `${distPath}/src`,
+for (const filePath of scssFiles) {
+    const relativePath = path.relative(srcPath, filePath);
+    const outputPath = path.join(
+        path.resolve(distPath, "src"),
         relativePath.replace(".scss", ".css"),
     );
-    const outputDir = path.dirname(blockOutputPath);
-    console.log("outpu====", outputDir);
-    // Создаём директорию
+    const outputDir = path.dirname(outputPath);
+
     if (!fs.existsSync(outputDir)) {
         fs.mkdirSync(outputDir, { recursive: true });
     }
-
-    // Компилируем SCSS в CSS
+    const tempFilePath = path.join(
+        path.resolve(distPath, "src"),
+        relativePath.replace(".scss", ".temp.scss"),
+    );
+    let content = fs.readFileSync(filePath).toString();
+    if (!content.includes("functions.scss")) {
+        content = `@import "functions.scss";\n${content}`;
+    }
+    fs.writeFileSync(tempFilePath, content);
     try {
         execSync(
-            `npx sass "${scssFile}" "${blockOutputPath}" --no-source-map --style=expanded`,
+            `npx sass "${tempFilePath}" "${outputPath}" --no-source-map --style=expanded --load-path="${srcPath}" `,
         );
-        console.log(`✅ Compiled: ${relativePath} → ${blockOutputPath}`);
+        const transformedCss = fs.readFileSync(outputPath);
+        const result = await postcss([autoprefixer]).process(transformedCss, {
+            from: tempFilePath,
+            to: outputPath,
+        });
+        fs.writeFileSync(outputPath, result.css);
+        fs.unlinkSync(tempFilePath);
     } catch (error) {
-        console.error(`❌ Error compiling ${scssFile}:`, error.message);
+        console.error(`Error compiling ${filePath}: ${error.message}`);
+        if (fs.existsSync(tempFilePath)) fs.unlinkSync(tempFilePath);
+    } finally {
+        if (fs.existsSync(tempFilePath)) {
+            fs.unlinkSync(tempFilePath);
+        }
     }
 }
 
-// 2. Собираем main.css (глобальные стили без импортов)
 const mainScssPath = path.join(srcPath, "main.scss");
-const mainCssPath = path.join(`${distPath}/src`, "main.css");
-let scssImports = [];
-if (fs.existsSync(mainScssPath)) {
-    // Временно убираем импорты из main.scss
-    let mainContent = fs.readFileSync(mainScssPath, "utf8");
-    scssImports = getSCSSImports(mainContent);
-    const globalStyles = mainContent.replace(importsRegex, "");
+const mainWithoutBlocks = removeSCSSBlocksImports(mainScssPath);
 
-    console.log("scssImports---", scssImports);
-    // Компилируем глобальные стили
-    const tempScss = path.join(`${distPath}/src`, "_temp_main.scss");
-    fs.writeFileSync(tempScss, globalStyles);
+const tempMainPath = path.join(distPath, "src", "main.temp.scss");
+fs.writeFileSync(tempMainPath, mainWithoutBlocks);
+
+const outputMainPath = path.join(distPath, "src", "main.css");
+try {
     execSync(
-        `npx sass "${tempScss}" "${mainCssPath}" --no-source-map --style=expanded`,
+        `npx sass "${tempMainPath}" "${outputMainPath}" --no-source-map --style=expanded --load-path="${srcPath}" `,
     );
-    fs.unlinkSync(tempScss);
+    const transformedCss = fs.readFileSync(outputMainPath);
+    const result = await postcss([autoprefixer]).process(transformedCss, {
+        from: mainScssPath,
+        to: outputMainPath,
+    });
 
-    if (scssImports.length) {
-        let cssContent = "";
-        for (let path of scssImports) {
-            cssContent += `@import url('${path.cssPath}');\n`;
-        }
-        let content = fs.readFileSync(mainCssPath, "utf8");
-        content = content.replace('@charset "UTF-8";', "");
-        cssContent += content;
-        console.log("css file====", mainCssPath);
-        // console.log(JSON.stringify(cssContent));
-        fs.writeFileSync(mainCssPath, cssContent);
+    fs.writeFileSync(outputMainPath, result.css);
+    fs.unlinkSync(tempMainPath);
+} catch (error) {
+    console.error(`Error compiling ${mainScssPath}: ${error.message}`);
+    if (fs.existsSync(tempMainPath)) fs.unlinkSync(tempMainPath);
+} finally {
+    if (fs.existsSync(tempMainPath)) {
+        fs.unlinkSync(tempMainPath);
     }
+}
+addCSSBlockImports(outputMainPath);
 
-    console.log(`✅ Compiled: main.scss → main.css`);
+function removeSCSSBlocksImports(mainPath) {
+    let mainSCSSFile = fs.readFileSync(mainPath).toString();
+
+    mainSCSSFile = mainSCSSFile.replace(
+        /@import\s+["'](\.\/)?blocks\/[^"']+["'];?\s*/g,
+        "",
+    );
+    return mainSCSSFile;
+}
+function addCSSBlockImports(mainPath) {
+    try {
+        let scssFile = fs.readFileSync(mainPath).toString();
+        const scssFiles = glob.sync("src/blocks/**/*.scss", { absolute: true });
+        for (let file of scssFiles) {
+            const relative = path.relative(srcPath, file);
+            const newInport = `@import url(\'${relative.replaceAll("\\", "/").replace("\.scss", "\.css")}\');`;
+            scssFile += `${newInport}\n`;
+        }
+        fs.writeFileSync(mainPath, scssFile);
+    } catch (e) {
+        console.error("Fail to add css block imports", e);
+    }
+}
+async function compileWithPrefixes(inputFile, outputFile, loadPaths = []) {
+    const loadPathArgs = loadPaths.map((p) => `--load-path="${p}"`).join(" ");
+
+    // Читаем и модифицируем содержимое файла
+    let content = fs.readFileSync(inputFile, "utf8");
+    content = addFunctionsImport(content, inputFile);
+
+    // Создаем временный файл с модифицированным содержимым
+    const tempInputFile = outputFile + ".input.temp.scss";
+    fs.writeFileSync(tempInputFile, content);
+
+    const tempFile = outputFile + ".temp.css";
+
+    try {
+        execSync(
+            `npx sass "${tempInputFile}" "${tempFile}" --no-source-map --style=expanded ${loadPathArgs}`,
+            { stdio: "pipe" },
+        );
+
+        const cssContent = fs.readFileSync(tempFile, "utf8");
+        const result = await postcss([autoprefixer]).process(cssContent, {
+            from: inputFile,
+            to: outputFile,
+        });
+
+        fs.writeFileSync(outputFile, result.css);
+        fs.unlinkSync(tempFile);
+
+        return;
+    } catch (error) {
+        console.error(`Error compiling ${inputFile}: ${error.message}`);
+        if (fs.existsSync(tempFile)) fs.unlinkSync(tempFile);
+        return false;
+    } finally {
+        // Удаляем временный входной файл
+        if (fs.existsSync(tempInputFile)) {
+            fs.unlinkSync(tempInputFile);
+        }
+    }
 }
 
-console.log("✅ CSS extraction complete");
-
-function getSCSSImports(mainScssContent) {
-    let match;
-    const scssImports = [];
-    const importsRegex = /@import\s+["']([^"']+)["']\s*;?/g;
-    while ((match = importsRegex.exec(mainScssContent)) !== null) {
-        let importPath = match[1];
-        // Обрабатываем разные форматы путей
-        let cssPath = null;
-
-        // Пути вида './blocks/header/header.scss'
-        if (
-            importPath.startsWith("./blocks/") &&
-            importPath.endsWith(".scss")
-        ) {
-            cssPath = importPath
-                .replace(/^\.\//, "")
-                .replace(/\.scss$/, ".css");
-        }
-        // Пути вида 'blocks/header/header.scss'
-        else if (
-            importPath.startsWith("blocks/") &&
-            importPath.endsWith(".scss")
-        ) {
-            cssPath = importPath.replace(/\.scss$/, ".css");
-        }
-        // Пути вида './blocks/header/header' (без .scss)
-        else if (
-            importPath.startsWith("./blocks/") &&
-            !importPath.endsWith(".scss")
-        ) {
-            cssPath = `${importPath}.css`;
-        }
-        // Пути вида 'blocks/header/header' (без .scss)
-        else if (
-            importPath.startsWith("blocks/") &&
-            !importPath.endsWith(".scss")
-        ) {
-            cssPath = `${importPath}.css`;
-        }
-
-        if (cssPath) {
-            scssImports.push({
-                original: importPath,
-                cssPath: cssPath,
-                blockName: cssPath.split("/")[1], // header, button и т.д.
-            });
-        }
-    }
-    return scssImports;
-}
+console.log("  CSS extraction complete!");

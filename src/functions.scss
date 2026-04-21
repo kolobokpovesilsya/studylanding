@@ -1,0 +1,15 @@
+/* Utils functions */
+@function rem($px-value, $base-font-size: 20px) {
+    @if unitless($px-value) {
+        $px-value: $px-value * 1px;
+    }
+
+    @if unitless($base-font-size) {
+        $base-font-size: $base-font-size * 1px;
+    }
+
+    @return ($px-value / $base-font-size) * 1rem;
+}
+@function var-to-rem($px-var) {
+    @return calc(var(#{$px-var}) / 20px * 1rem);
+}
