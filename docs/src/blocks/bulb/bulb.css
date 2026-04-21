@@ -1,0 +1,29 @@
+/* Utils functions */
+.bulb {
+  --bg-color: transparent;
+  --size: 0px;
+  background: var(--bg-color);
+  width: calc(var(--size) / 20px * 1rem);
+  height: calc(var(--size) / 20px * 1rem);
+  border-radius: 50%;
+}
+
+.bulb--absolute {
+  position: absolute;
+  --top: 0;
+  --left: 0;
+  top: calc(var(--top) / 20px * 1rem);
+  left: calc(var(--left) / 20px * 1rem);
+}
+
+.bulb--blue {
+  --bg-color: #687ef3;
+}
+
+.bulb--green {
+  --bg-color: #34e7a5;
+}
+
+.bulb--orange {
+  --bg-color: var(--accent-warning);
+}
