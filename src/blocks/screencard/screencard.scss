@@ -1,10 +1,9 @@
 .screencard {
-    background-color: #f4f4f460;
     // overflow: hidden;
     border-radius: rem(20px);
 }
 .screencard__header {
-    background-color: #eaeaea60;
+    background-color: #eaeaea;
     padding: rem(10px) rem(25px);
     border-radius: rem(20px) rem(20px) 0 0;
 }
@@ -27,17 +26,18 @@
     background-color: #ee6767;
 }
 .screencard__body {
+    background: #f4f4f4;
     padding: rem(50px) rem(40px);
     border-radius: 0 0 rem(20px) rem(20px);
 }
 @supports (backdrop-filter: blur(1px)) {
-    .screencard__body {
+    .screencard__body--transparend {
         background: #f4f4f460;
         backdrop-filter: blur(rem(15px)) saturate(100%);
         -webkit-backdrop-filter: blur(rem(15px)) saturate(100%);
     }
 
-    .screencard__header {
+    .screencard__header--transparent {
         background: #eaeaea99;
         backdrop-filter: blur(15px) saturate(60%);
         -webkit-backdrop-filter: blur(rem(15px)) saturate(60%);

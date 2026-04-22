@@ -283,14 +283,14 @@
                                 <div class="features__bulb features__bulb-3"></div>
                                 <div class="features__bulb features__bulb-4"></div>
                          
-                            <div class="screencard__header features__screencard-header">
+                            <div class="screencard__header screencard__header--transparent features__screencard-header">
                                 <div class="screencard__toolbar">
                                     <div class="screencard__toolbar-item screencard__toolbar-item--red"></div>
                                     <div class="screencard__toolbar-item screencard__toolbar-item--yellow"></div>
                                     <div class="screencard__toolbar-item screencard__toolbar-item--green"></div>
                                 </div>
                             </div>
-                            <div class="screencard__body features__screencard-body">
+                            <div class="screencard__body screencard__body--transparent features__screencard-body">
                                 <div class="features__video--main">
                                       <div class="features__videocall features__videocall-main videocall videocall--shadow">
                                         <video data-lazy autoplay loop>
@@ -643,8 +643,50 @@
         <section class="discussions">
             <div class="discussions__container">
                 <div class="discussions__content">
-                    <div class="discussions__screen">
-                        <div class="discussions__screen-background">
+                    <div class="discussions__screen-wrapper">
+                        <div class="screencard discussions__screencard">
+                            <div class="screencard__header">
+                                <div class="screencard__toolbar">
+                                    <div class="screencard__toolbar-item screencard__toolbar-item--red"></div>
+                                    <div class="screencard__toolbar-item screencard__toolbar-item--yellow"></div>
+                                    <div class="screencard__toolbar-item screencard__toolbar-item--green"></div>
+                                </div>
+                            </div>
+                            <div class="screencard__body discussions__screencard-body">
+                                <div class="discussions__video-row">
+                                    <div class="discussions__videocall  videocall">
+                                        <video data-lazy autoplay loop>
+                                            <source data-src="./assets/features/asian.mp4" type="video/mp4">
+                                            Ваш браузер не поддерживает тег video.
+                                        </video>                                         
+                                    </div>
+                                    <div class="discussions__video-divider"></div>
+                                     <div class="discussions__videocall     videocall">
+                                        <video data-lazy autoplay loop>
+                                            <source data-src="./assets/features/asian.mp4" type="video/mp4">
+                                            Ваш браузер не поддерживает тег video.
+                                        </video>
+                                        <div class="videocall__info">
+                                            <div class="videocall__network">
+                                                <svg class="icon icon--fill icon--fill-white classroom__video-btn__icon">
+                                                    <use href="sprites.svg#volume"></use>
+                                                </svg>  
+                                            </div>
+                                            <div class="videocall__name">Tamara Clarke</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="discussions__info-row">                                   
+                                    <div class="discussions__info">
+                                        <h4 class="discussions__info-title">Private Discussion</h4>
+                                        <p class="discussions__info-text">Your video can't be seen by others</p>
+                                    </div>
+                                    <span class="discussions__info-btn">End Discussion</span>
+                              
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="discussions__screen-background">
                             <div class="discussions__ring"></div>
                             <div class="discussions__triangle"></div>
 
@@ -762,7 +804,7 @@
                                 </div>
                             </div>
                             <img class="discussions__foreground-interface" src="assets/screensolid.svg" />
-                        </div>
+                        </div> -->
                     </div>
                     <div class="discussions__screen-text">
                         <h3 class="discussions__screen-title">

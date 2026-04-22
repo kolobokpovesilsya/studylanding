@@ -4,170 +4,180 @@
 
 .discussions__content {
     display: flex;
-    gap: 15rem;
+    // gap: rem(50px);
     margin-bottom: rem(200px);
 }
-
-.discussions__screen {
-    position: relative;
-    flex-shrink: 0;
+.discussions__screen-wrapper,
+.discussions__screen-text {
+    width: 50%;
 }
-
-.discussions__screen-interface {
-    position: relative;
-    width: rem(650px);
-    z-index: 1;
+.discussions__screen-text {
+    padding-left: rem(200px);
 }
+// .discussions__screen {
+//     position: relative;
+//     flex-shrink: 0;
+// }
 
-.discussions__screen-background {
-    position: relative;
+// .discussions__screen-interface {
+//     position: relative;
+//     width: rem(650px);
+//     z-index: 1;
+// }
+
+// .discussions__screen-background {
+//     position: relative;
+// }
+
+// .discussions__videocall-layer {
+//     position: absolute;
+//     top: 13%;
+//     left: 1rem;
+//     display: flex;
+//     gap: rem(50px);
+//     z-index: 2;
+//     height: 100%;
+// }
+
+// .discussions__screen-background:after {
+//     content: "";
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     background: rgba(0, 0, 0, 0.03);
+//     border-radius: 1rem;
+//     z-index: 3;
+// }
+
+// @supports (backdrop-filter: blur(1px)) {
+//     .discussions__screen-background:after {
+//         background: rgba(0, 0, 0, 0.03);
+//         backdrop-filter: blur(rem(4px)) saturate(130%);
+//         -webkit-backdrop-filter: blur(rem(4px)) saturate(130%);
+//     }
+// }
+
+// .discussions__videocall-grid {
+//     display: grid;
+//     grid-template-columns: auto auto;
+//     row-gap: 1rem;
+//     column-gap: 2rem;
+// }
+
+// .discussions__videocall img {
+//     height: 110%;
+// }
+
+// .discussions__videocall-main {
+//     display: flex;
+//     flex-direction: column;
+//     gap: 1rem;
+// }
+
+// .discussions__videocall--abstract {
+//     height: rem(193px);
+//     width: rem(193px);
+// }
+
+// .discussions__videocall-btns {
+//     display: flex;
+//     gap: 1.5rem;
+// }
+
+// .discussions__videocall-btn {
+//     display: inline-block;
+//     line-height: normal;
+//     font-size: rem(16px);
+//     font-weight: 500;
+//     width: rem(116px);
+//     color: white;
+//     padding: 0.5rem 1.5rem;
+//     border-radius: var(--btn-radius);
+// }
+
+// .discussions__videocall-btn--info {
+//     background-color: #3465e1;
+//     box-shadow: 0px rem(10px) rem(10px) rem(2px) #3465e130;
+// }
+
+// .discussions__videocall-btn--danger {
+//     background-color: #e13468;
+//     box-shadow: 0px rem(10px) rem(10px) rem(2px) #e1346830;
+// }
+
+// .discussions__screen-foreground {
+//     position: absolute;
+//     top: 15%;
+//     right: -15%;
+//     z-index: 3;
+// }
+
+// .discussions__foreground-layer {
+//     position: absolute;
+//     top: 18%;
+//     left: 15.5%;
+//     z-index: 1;
+// }
+
+// .discussions__foreground-interface {
+//     width: rem(680px);
+//     height: rem(420px);
+// }
+
+// .discussions__foreground-row {
+//     display: flex;
+//     justify-content: space-between;
+// }
+
+// .discussions__foreground-row:first-child {
+//     margin-bottom: 2rem;
+// }
+
+// .discussions__foreground-videocall {
+//     height: rem(200px);
+//     width: rem(200px);
+// }
+
+// .discussions__foreground-divider {
+//     height: rem(200px);
+//     width: rem(3px);
+//     background-color: #d5e2fb;
+//     margin: 0 2rem;
+// }
+.discussions__screencard-body {
+    padding: rem(20px) rem(35px);
 }
-
-.discussions__videocall-layer {
-    position: absolute;
-    top: 13%;
-    left: 1rem;
+.discussions__video-row {
     display: flex;
-    gap: rem(50px);
-    z-index: 2;
-    height: 100%;
+    gap: rem(40px);
+    margin-bottom: rem(35px);
 }
-
-.discussions__screen-background:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.03);
-    border-radius: 1rem;
-    z-index: 3;
+.discussions__video-divider {
+    width: 1px;
+    // height: 100%;
+    background-color: #d5e2fb;
 }
-
-@supports (backdrop-filter: blur(1px)) {
-    .discussions__screen-background:after {
-        background: rgba(0, 0, 0, 0.03);
-        backdrop-filter: blur(rem(4px)) saturate(130%);
-        -webkit-backdrop-filter: blur(rem(4px)) saturate(130%);
-    }
+.discussions__videocall {
+    aspect-ratio: 1/1;
+    // min-width: 197px;
 }
-
-.discussions__videocall-grid {
-    display: grid;
-    grid-template-columns: auto auto;
-    row-gap: 1rem;
-    column-gap: 2rem;
-}
-
-.discussions__videocall img {
-    height: 110%;
-}
-
-.discussions__videocall-main {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.discussions__videocall--abstract {
-    height: rem(193px);
-    width: rem(193px);
-}
-
-.discussions__videocall-btns {
-    display: flex;
-    gap: 1.5rem;
-}
-
-.discussions__videocall-btn {
-    display: inline-block;
-    line-height: normal;
-    font-size: rem(16px);
-    font-weight: 500;
-    width: rem(116px);
-    color: white;
-    padding: 0.5rem 1.5rem;
-    border-radius: var(--btn-radius);
-}
-
-.discussions__videocall-btn--info {
-    background-color: #3465e1;
-    box-shadow: 0px rem(10px) rem(10px) rem(2px) #3465e130;
-}
-
-.discussions__videocall-btn--danger {
-    background-color: #e13468;
-    box-shadow: 0px rem(10px) rem(10px) rem(2px) #e1346830;
-}
-
-.discussions__videocall-info {
-    /* информация о видеозвонке */
-}
-
-.discussions__videocall-network {
-    /* сеть видеозвонка */
-}
-
-.discussions__videocall-icon {
-    /* иконка видеозвонка */
-}
-
-.discussions__videocall-name {
-    /* имя участника */
-}
-
-.discussions__screen-foreground {
-    position: absolute;
-    top: 15%;
-    right: -15%;
-    z-index: 3;
-}
-
-.discussions__foreground-layer {
-    position: absolute;
-    top: 18%;
-    left: 15.5%;
-    z-index: 1;
-}
-
-.discussions__foreground-interface {
-    width: rem(680px);
-    height: rem(420px);
-}
-
-.discussions__foreground-row {
+.discussions__info-row {
     display: flex;
     justify-content: space-between;
 }
-
-.discussions__foreground-row:first-child {
-    margin-bottom: 2rem;
-}
-
-.discussions__foreground-videocall {
-    height: rem(200px);
-    width: rem(200px);
-}
-
-.discussions__foreground-divider {
-    height: rem(200px);
-    width: rem(3px);
-    background-color: #d5e2fb;
-    margin: 0 2rem;
-}
-
-.discussions__foreground-title {
+.discussions__info-title {
     line-height: normal;
     /* font-size: rem(22px); */
 }
 
-.discussions__foreground-text {
+.discussions__info-text {
     line-height: normal;
     font-size: rem(16px);
 }
 
-.discussions__foreground-btn {
+.discussions__info-btn {
     display: inline-flex;
     font-size: rem(20px);
     color: var(--white);
@@ -195,44 +205,44 @@
     fill: #2c93f1 !important;
 }
 
-.discussions__screen-background:before {
-    content: "";
-    position: absolute;
-    left: -1rem;
-    height: rem(196px);
-    width: rem(196px);
-    background-color: #73bcff;
-    border-radius: var(--card-radius);
-    z-index: -1;
-    bottom: -1rem;
-}
+// .discussions__screen-background:before {
+//     content: "";
+//     position: absolute;
+//     left: -1rem;
+//     height: rem(196px);
+//     width: rem(196px);
+//     background-color: #73bcff;
+//     border-radius: var(--card-radius);
+//     z-index: -1;
+//     bottom: -1rem;
+// }
 
-.discussions__ring,
-.discussions__triangle {
-    position: absolute;
-}
+// .discussions__ring,
+// .discussions__triangle {
+//     position: absolute;
+// }
 
-.discussions__ring {
-    top: -2rem;
-    right: -2rem;
-    background-color: transparent;
-    border: 1.2rem solid #23bdee;
-    border-radius: 50%;
-    width: rem(112px);
-    height: rem(112px);
-}
+// .discussions__ring {
+//     top: -2rem;
+//     right: -2rem;
+//     background-color: transparent;
+//     border: 1.2rem solid #23bdee;
+//     border-radius: 50%;
+//     width: rem(112px);
+//     height: rem(112px);
+// }
 
-.discussions__triangle {
-    top: 4rem;
-    right: -5rem;
-    width: 0;
-    height: 0;
-    border-left: rem(16px) solid transparent;
-    border-right: rem(16px) solid transparent;
-    border-bottom: rem(26px) solid #fba333;
-    transform-origin: center center;
-    transform: rotate(-20deg);
-}
+// .discussions__triangle {
+//     top: 4rem;
+//     right: -5rem;
+//     width: 0;
+//     height: 0;
+//     border-left: rem(16px) solid transparent;
+//     border-right: rem(16px) solid transparent;
+//     border-bottom: rem(26px) solid #fba333;
+//     transform-origin: center center;
+//     transform: rotate(-20deg);
+// }
 
 .discussions__screen-title,
 .discussions__screen-description {
@@ -254,65 +264,65 @@
         align-items: center;
         gap: rem(100px);
     }
-    
+
     .discussions__screen-title {
         display: flex;
         justify-content: center;
     }
-    
+
     .discussions__screen-decor {
         margin-left: rem(10px);
     }
-    
+
     .discussions__screen-description {
         text-align: center;
     }
-    
+
     .discussions__screen {
         order: 1;
     }
 }
 
 @media (max-width: 768px) {
-    .discussions__screen-foreground {
-        position: static;
-    }
-    
-    .discussions__screen-background {
-        display: none;
-    }
-    
-    .discussions__foreground-interface {
-        width: 100%;
-        height: auto;
-    }
-    
-    .discussions__foreground-layer {
-        left: 0;
-        top: 12%;
-    }
-    
-    .discussions__foreground-videocall {
-        width: auto;
-        height: auto;
-    }
-    
-    .discussions__foreground-btn {
-        align-self: flex-start;
-        font-size: rem(14px);
-        padding: 0.1rem 0.5rem;
-        line-height: 150%;
-    }
-    
-    .discussions__foreground-text {
-        font-size: rem(14px);
-    }
-    
-    .discussions__foreground-row:first-child {
-        margin-bottom: rem(20px);
-    }
-    
-    .discussions__content {
-        margin-bottom: rem(50px);
-    }
+    // .discussions__screen-foreground {
+    //     position: static;
+    // }
+
+    // .discussions__screen-background {
+    //     display: none;
+    // }
+
+    // .discussions__foreground-interface {
+    //     width: 100%;
+    //     height: auto;
+    // }
+
+    // .discussions__foreground-layer {
+    //     left: 0;
+    //     top: 12%;
+    // }
+
+    // .discussions__foreground-videocall {
+    //     width: auto;
+    //     height: auto;
+    // }
+
+    // .discussions__foreground-btn {
+    //     align-self: flex-start;
+    //     font-size: rem(14px);
+    //     padding: 0.1rem 0.5rem;
+    //     line-height: 150%;
+    // }
+
+    // .discussions__foreground-text {
+    //     font-size: rem(14px);
+    // }
+
+    // .discussions__foreground-row:first-child {
+    //     margin-bottom: rem(20px);
+    // }
+
+    // .discussions__content {
+    //     margin-bottom: rem(50px);
+    // }
 }
