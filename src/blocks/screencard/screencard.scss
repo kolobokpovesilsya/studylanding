@@ -1,0 +1,44 @@
+.screencard {
+    border-radius: rem(20px);
+    background-color: #f4f4f460;
+    // overflow: hidden;
+}
+.screencard__header {
+    background-color: #eaeaea60;
+    padding: rem(10px) rem(25px);
+    border-radius: rem(20px) rem(20px) 0 0;
+}
+.screencard__toolbar {
+    display: flex;
+    gap: rem(10px);
+}
+.screencard__toolbar-item {
+    width: rem(13px);
+    height: rem(13px);
+    border-radius: 50%;
+}
+.screencard__toolbar-item--green {
+    background-color: #5beb7b;
+}
+.screencard__toolbar-item--yellow {
+    background-color: #f6c566;
+}
+.screencard__toolbar-item--red {
+    background-color: #ee6767;
+}
+.screencard__body {
+    padding: rem(50px) rem(40px);
+}
+@supports (backdrop-filter: blur(1px)) {
+    .screencard {
+        background: #f4f4f460;
+        backdrop-filter: blur(rem(80px)) saturate(130%);
+        -webkit-backdrop-filter: blur(rem(80px)) saturate(130%);
+    }
+
+    .screencard__header {
+        background: #eaeaea60;
+        backdrop-filter: blur(rem(10px)) saturate(130%);
+        -webkit-backdrop-filter: blur(rem(10px)) saturate(130%);
+    }
+}

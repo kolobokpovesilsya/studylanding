@@ -2,6 +2,7 @@
 @import "lib/animation/animation.scss";
 
 /* UI blocks */
+@import "blocks/screencard/screencard.scss";
 @import "blocks/videocall/videocall.scss";
 @import "blocks/slider/slider.scss";
 @import "./blocks/button/button.scss";
@@ -58,6 +59,7 @@
 html {
     font-size: 20px;
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 html:has(.header--extended) {
     overflow: hidden;
@@ -219,13 +221,13 @@ h5 {
     transition-delay: var(--anim-popup-delay);
 }
 
+a {
+    font-size: rem(22px);
+}
 @media (max-width: 1600px) {
     html {
         font-size: 18px;
     }
-}
-a {
-    font-size: rem(22px);
 }
 @media (max-width: 1280px) {
     html {
