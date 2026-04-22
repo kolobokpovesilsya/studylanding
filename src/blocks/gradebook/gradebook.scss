@@ -6,29 +6,35 @@
     display: flex;
     gap: rem(190px);
 }
+
 .gradebook__content {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
+
 .gradebook__title,
 .gradebook__description {
     text-align: start !important;
 }
+
 .gradebook__title {
     max-width: rem(393px);
 }
+
 .gradebook__description {
     max-width: rem(600px);
 }
 
 .gradebook__picture {
 }
-.gradebook__picture__background {
+
+.gradebook__background {
     position: relative;
     width: rem(700px);
 }
-.gradebook__picture__background:before {
+
+.gradebook__background:before {
     content: "";
     position: absolute;
     bottom: -5%;
@@ -39,13 +45,15 @@
     border-radius: rem(20px);
     z-index: -1;
 }
-.gradebook__picture__wave-decor {
+
+.gradebook__wave-decor {
     position: absolute;
     bottom: 5%;
     left: 0;
     transform: translateX(-50%);
 }
-.gradebook__picture__bulb-decor {
+
+.gradebook__bulb-decor {
     --size: 44px;
     --top: -14%;
     --right: 2%;
@@ -58,66 +66,83 @@
     right: var(--right);
 }
 
-.gradebook__picture__boxicon {
+.gradebook__bulb-decor--small {
+    --size: 20px;
+    --top: -5%;
+    --right: -3%;
+}
+
+.gradebook__boxicon {
     position: absolute;
     --size: 110px;
     --top: -12%;
     --left: -5%;
-
     top: var(--top);
     left: var(--left);
 }
-.gradebook__picture__boxicon--right {
+
+.gradebook__boxicon--right {
     --size: 79px;
     --top: 10%;
     --left: 88%;
 }
-.gradebook__picture__icon {
+
+.gradebook__icon {
     --size: 55px;
     --rotate: -12deg;
     width: var-to-rem(--size) !important;
     height: var-to-rem(--size) !important;
     transform: rotate(var(--rotate));
 }
-.gradebook__picture__icon-book {
+
+.gradebook__icon--star {
+    /* стили для звезды (наследуется от gradebook__icon) */
+}
+
+.gradebook__icon--book {
     --size: 45px;
     --rotate: 12deg;
 }
-.gradebook__picture__bulb-decor--small {
-    --size: 20px;
-    --top: -5%;
-    --right: -3%;
-}
-.gradebook__picture__wrapper {
+
+.gradebook__wrapper {
     border-radius: var(--card-radius);
     overflow: hidden;
     background: #fff;
     box-shadow: var(--box-shadow-v2);
 }
 
-.gradebook__picture__header {
+.gradebook__header {
     background: #54aff0;
     color: #fff;
     text-align: center;
     padding: rem(13px) 0;
 }
-.gradebook__picture__body {
+
+.gradebook__title-text {
+    /* текст заголовка GradeBook */
+}
+
+.gradebook__body {
     padding-top: rem(50px);
 }
-.gradebook__picture__row {
+
+.gradebook__row {
     display: flex;
 }
-.gradebook__picture__row:not(:last-child) {
+
+.gradebook__row:not(:last-child) {
     margin-bottom: rem(50px);
 }
-.gradebook__picture__col {
+
+.gradebook__col {
     --flex-direction: row;
     flex-grow: 1;
     display: flex;
     align-items: center;
     flex-direction: var(--flex-direction);
 }
-.gradebook__picture__col--blue {
+
+.gradebook__col--blue {
     --tail-bg: #3ac6f2;
     --badge-bg: #cdf3ff;
     --badge-color: #43869b;
@@ -126,7 +151,8 @@
     --left-shift: -10px;
     --tail-width: 100px;
 }
-.gradebook__picture__col--purple {
+
+.gradebook__col--purple {
     --tail-bg: #3189ef;
     --badge-bg: #cde4ff;
     --badge-color: #486f9c;
@@ -137,7 +163,8 @@
     --flex-direction: row-reverse;
     transform: translateY(-10%);
 }
-.gradebook__picture__col--green {
+
+.gradebook__col--green {
     --tail-bg: #68f146;
     --badge-bg: #d7ffcd;
     --badge-color: #4e8c3f;
@@ -146,7 +173,8 @@
     --left-shift: -10px;
     --tail-width: 250px;
 }
-.gradebook__picture__col--red {
+
+.gradebook__col--red {
     --tail-bg: #f13c3c;
     --badge-bg: #ffcdcd;
     --badge-color: #9e5555;
@@ -157,18 +185,24 @@
     --flex-direction: row-reverse;
     transform: translateY(-50%);
 }
-.gradebook__picture__tail {
+
+.gradebook__tail {
     width: var-to-rem(--tail-width);
     height: rem(30px);
     background-color: var(--tail-bg);
 }
 
-.gradebook__picture__avatar {
+.gradebook__avatar {
     position: relative;
     margin-left: var-to-rem(--left-shift);
     margin-right: var-to-rem(--right-shift);
 }
-.gradebook__picture__badge {
+
+.gradebook__avatar img {
+    border-radius: 50%;
+}
+
+.gradebook__badge {
     position: absolute;
     top: var(--badge-top);
     left: var(--badge-left);
@@ -178,16 +212,14 @@
     padding: 0 rem(20px);
     border-radius: rem(40px);
 }
-.gradebook__picture__avatar img {
-    border-radius: 50%;
-}
 
-.gradebook__picture__footer {
+.gradebook__footer {
     text-align: end;
     padding: rem(20px) rem(50px);
     border-radius: 0 0 var(--card-radius) var(--card-radius);
 }
-.gradebook__picture__btn {
+
+.gradebook__btn {
     position: relative;
     display: inline-flex;
     border-radius: rem(60px);
@@ -200,7 +232,8 @@
     padding: rem(4px) rem(40px);
     z-index: 2;
 }
-.gradebook__picture__btn:after {
+
+.gradebook__btn:after {
     content: "";
     position: absolute;
     background-color: #545ae870;
@@ -220,32 +253,39 @@
         flex-direction: column;
         align-items: center;
     }
+    
     .gradebook__title,
     .gradebook__description {
         max-width: unset;
         width: 100%;
         text-align: center !important;
     }
+    
     .gradebook__content {
         width: 80%;
     }
 }
+
 @media (max-width: 768px) {
-    .gradebook__picture__boxicon,
-    .gradebook__picture__bulb-decor,
-    .gradebook__picture__wave-decor {
+    .gradebook__boxicon,
+    .gradebook__bulb-decor,
+    .gradebook__wave-decor {
         display: none;
     }
-    .gradebook__picture__background:before {
+    
+    .gradebook__background:before {
         display: none;
     }
-    .gradebook__picture__row {
+    
+    .gradebook__row {
         // display: none;
     }
+    
     .gradebook__picture {
         width: 100%;
     }
-    .gradebook__picture__background {
+    
+    .gradebook__background {
         width: 100%;
     }
 }

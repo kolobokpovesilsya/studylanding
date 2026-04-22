@@ -5,18 +5,22 @@
     display: flex;
     gap: rem(190px);
 }
+
 .tools__content {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
+
 .tools__title,
 .tools__description {
     text-align: start !important;
 }
+
 .tools__title {
     max-width: rem(393px);
 }
+
 .tools__description {
     max-width: rem(568px);
 }
@@ -25,13 +29,16 @@
 .tools__picture {
     width: 50%;
 }
+
 .tools__picture-wrapper {
     position: relative;
     display: inline-block;
 }
+
 .tools__picture {
     max-height: rem(611px);
 }
+
 .tools__picture-bg {
     position: absolute;
     top: 20%;
@@ -40,7 +47,7 @@
     width: 150%;
 }
 
-.tools__picture-ellipse {
+.tools__ellipse {
     --ellipse-bg: transparent;
     --size: 0;
     position: absolute;
@@ -49,97 +56,118 @@
     background-color: var(--ellipse-bg);
     border-radius: 50%;
 }
-.tools__picture-ellipse--info {
+
+.tools__ellipse--info {
     --ellipse-bg: #8c7aff;
 }
-.tools__picture-ellipse--success {
+
+.tools__ellipse--success {
     --ellipse-bg: #6bf0a8;
 }
-.tools__picture-ellipse--warning {
+
+.tools__ellipse--warning {
     --ellipse-bg: var(--accent-warning);
 }
-.tools__picture-ellipse--main {
+
+.tools__ellipse--main {
     --size: 236px;
     top: -5%;
     left: 50%;
     transform: translateX(-50%);
     z-index: -1;
 }
-.tools__picture-ellipse--left {
+
+.tools__ellipse--left {
     --size: 24px;
     bottom: 15%;
     left: -5%;
 }
-.tools__picture-ellipse--right {
+
+.tools__ellipse--right {
     --size: 20px;
     bottom: 0%;
     right: 5%;
 }
-.tools__picture-ellipse--top {
+
+.tools__ellipse--top {
     --size: 20px;
     top: -10%;
     right: 20%;
 }
-.tools__picture-icon-left {
+
+.tools__icon-left {
     position: absolute;
     top: 30%;
     left: -20%;
     transform: rotate(-12deg);
 }
-.tools__picture-icon-right {
+
+.tools__icon-right {
     position: absolute;
     top: 35%;
     right: -25%;
     transform: rotate(12deg);
 }
-.tools__picture-icon__info,
-.tools__picture-icon__class {
+
+.tools__icon-info,
+.tools__icon-class {
     width: 37px !important;
     height: 37px !important;
 }
+
 @media (max-width: 1280px) {
     .tools {
         margin-bottom: rem(350px);
     }
+    
     .tools__container {
         flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: rem(50px);
     }
+    
     .tools__content,
     .tools__picture {
         width: 80%;
     }
+    
     .tools__picture {
         text-align: center;
     }
+    
     .tools__title,
     .tools__description {
         text-align: center !important;
         max-width: unset;
     }
 }
+
 @media (max-width: 1024px) {
     .tools__picture {
         display: flex;
         justify-content: center;
     }
+    
     .tools__picture-wrapper {
         display: flex;
     }
 }
+
 @media (max-width: 768px) {
     .tools__picture {
         width: 80%;
     }
-    .tools__picture-ellipse--left {
+    
+    .tools__ellipse--left {
         left: 15%;
     }
-    .tools__picture-icon-left {
+    
+    .tools__icon-left {
         left: 0;
     }
-    .tools__picture-icon-right {
+    
+    .tools__icon-right {
         right: 0;
     }
 }

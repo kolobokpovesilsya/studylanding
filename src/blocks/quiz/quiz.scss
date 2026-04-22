@@ -5,30 +5,36 @@
     display: flex;
     gap: rem(190px);
 }
+
 .quiz__content {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
+
 .quiz__title,
 .quiz__description {
     text-align: start !important;
 }
+
 .quiz__title {
     max-width: rem(393px);
 }
+
 .quiz__description {
     max-width: rem(568px);
 }
+
 .quiz__picture {
     position: relative;
     max-height: rem(650px);
 }
 
-.quiz__item {
+.quiz__card {
     position: relative;
 }
-.quiz__item__content {
+
+.quiz__card-content {
     /* overflow: hidden; */
     border-radius: var(--card-radius);
     box-shadow: var(--box-shadow-v1);
@@ -38,29 +44,32 @@
     background-color: var(--white);
 }
 
-.quiz__item__content__image {
+.quiz__card-image {
     position: relative;
     border-radius: var(--card-radius);
     overflow: hidden;
     width: 120%;
     box-shadow: var(--box-shadow-v2);
 }
-.quiz__item__content__image img {
+
+.quiz__card-image img {
     width: 100%;
 }
 
-.quiz__item__content__badge,
-.quiz__item__content__title {
+.quiz__badge,
+.quiz__card-title {
     margin-bottom: rem(40px);
 }
-.quiz__item__btns {
+
+.quiz__card-btns {
     position: absolute;
     top: -1rem;
     right: -3rem;
     transform-origin: center center;
     transform: rotate(30deg);
 }
-.quiz__item__btn {
+
+.quiz__btn {
     width: rem(76px);
     height: rem(76px);
     border-radius: 50%;
@@ -70,39 +79,49 @@
     box-shadow: var(--box-shadow-v1);
     background: var(--white);
 }
-.quiz__item__btn svg {
+
+.quiz__btn svg {
     width: rem(45px);
     height: rem(45px);
 }
-.quiz__item__btn-cross {
+
+.quiz__btn--cross {
     transform: rotate(-30deg);
 }
-.quiz__item__alert {
+
+.quiz__btn-icon--cross,
+.quiz__btn-icon--check {
+    /* стили для иконок кнопок */
+}
+
+.quiz__alert {
     position: absolute;
     bottom: -1rem;
     right: -30%;
     display: flex;
     gap: rem(30px);
     align-items: center;
-
     border-radius: var(--card-radius);
     box-shadow: var(--box-shadow-v1);
     background-color: var(--white);
     padding: rem(20px) rem(40px);
     max-width: rem(365px);
 }
-.quiz__item__alert-text {
+
+.quiz__alert-text {
     position: relative;
     color: #41be90;
     font-size: rem(20px);
     font-weight: 500;
     line-height: normal;
 }
-.quiz__item__alert-text span {
+
+.quiz__alert-text span {
     position: inherit;
     z-index: 2;
 }
-.quiz__item__alert-text:after {
+
+.quiz__alert-text:after {
     content: "";
     position: absolute;
     bottom: -0.8rem;
@@ -113,19 +132,22 @@
     border-radius: 50%;
     z-index: 0;
 }
-.quiz__item__alert-img {
+
+.quiz__alert-img {
     position: relative;
     /* width: 82px; */
     flex-shrink: 0;
 }
-.quiz__item__alert-icon {
+
+.quiz__alert-icon {
     position: relative;
     width: rem(75px) !important;
     height: rem(75px) !important;
     transform: rotate(-25deg) translate(10%, 5%);
     z-index: 2;
 }
-.quiz__item__alert-img:after {
+
+.quiz__alert-img:after {
     content: "";
     position: absolute;
     top: 0.6rem;
@@ -137,27 +159,28 @@
     z-index: 0;
 }
 
-.quiz__item__bulb-1 {
+.quiz__bulb--1 {
     --size: 100px;
     --top: -1.5rem;
     --left: -2.5rem;
     z-index: -1;
 }
-.quiz__item__bulb-2 {
+
+.quiz__bulb--2 {
     --size: 22px;
     --top: -2.5rem;
     --left: 4rem;
     z-index: -1;
 }
 
-.quiz__item__bulb-3 {
+.quiz__bulb--3 {
     --size: 20px;
     --top: 102%;
     --left: -1rem;
     z-index: -1;
 }
 
-.quiz__item__bulb-4 {
+.quiz__bulb--4 {
     --size: 16px;
     --top: 50%;
     --left: 113%;
@@ -170,27 +193,33 @@
         align-items: center;
         gap: rem(100px);
     }
+    
     .quiz__picture {
         order: 1;
         width: 50%;
     }
 }
+
 @media (max-width: 768px) {
     .quiz__picture {
         width: 80%;
     }
-    .quiz__item__alert {
+    
+    .quiz__alert {
         right: -12%;
         padding: rem(10px) rem(20px);
     }
-    .quiz__item__alert-text {
+    
+    .quiz__alert-text {
         font-size: rem(18px);
     }
-    .quiz__item__alert-img {
+    
+    .quiz__alert-img {
         width: rem(90px);
     }
-    .quiz__item__content__badge,
-    .quiz__item__content__title {
+    
+    .quiz__badge,
+    .quiz__card-title {
         margin-bottom: rem(20px);
     }
 }

@@ -1,31 +1,34 @@
 .news__container {
     --container: 1550px;
 }
+
 .news__description {
     margin-bottom: rem(95px);
 }
+
 .news__row {
     display: flex;
     gap: 5rem;
 }
-.news__content {
-    /* display: flex; */
-}
+
 .news__list {
     display: flex;
     flex-direction: column;
     gap: 2rem;
 }
+
 .news__item {
     display: flex;
     gap: rem(35px);
     line-height: 2.5rem;
 }
-.news__content {
+
+.news__item-content {
     display: flex;
     flex-direction: column;
     gap: rem(25px);
 }
+
 .news__badge {
     display: inline-block;
     background: #f4c467;
@@ -35,35 +38,45 @@
     padding: 0.1rem 0.5rem;
     font-size: rem(18px);
 }
-.news__intemtitle {
+
+.news__item-title {
     font-size: rem(22px);
 }
+
 .news__description {
     font-size: rem(20px);
 }
+
 .news__badge--lg {
     font-size: rem(20px);
     padding: 0.2rem 1rem;
 }
-.news__main__image {
+
+.news__main-image {
     margin-bottom: rem(40px);
 }
-.news__main__badge {
+
+.news__main-badge {
     margin-bottom: rem(30px);
 }
-.news__main__title {
+
+.news__main-title {
     margin-bottom: rem(40px);
 }
+
 .news__title--lg {
     font-size: rem(26px);
 }
-.news__main__description {
+
+.news__main-description {
     margin-bottom: rem(45px);
 }
+
 .news__description--lg {
     font-size: rem(20px);
 }
-.news__main__link {
+
+.news__main-link {
     font-size: rem(20px);
 }
 
@@ -71,14 +84,16 @@
     width: rem(280px);
     height: rem(200px);
 }
+
 .news__image--fixed {
     flex-shrink: 0;
 }
 
-.news__item__image {
+.news__item-image {
     position: relative;
 }
-.news__item__badge {
+
+.news__item-badge {
     position: absolute;
     bottom: 1rem;
     right: 1rem;
@@ -89,22 +104,27 @@
     .news__row {
         gap: rem(50px);
     }
-    .news__main__image,
-    .news__main__badge,
-    .news__main__title,
-    .news__main__description {
+    
+    .news__main-image,
+    .news__main-badge,
+    .news__main-title,
+    .news__main-description {
         margin-bottom: rem(20px);
     }
+    
     .news__image--sm {
         width: 10rem;
         height: 6rem;
     }
-    .news__item__badge {
+    
+    .news__item-badge {
         bottom: rem(-20px);
     }
+    
     .news__badge {
         font-size: rem(16px);
     }
+    
     .news__badge--lg {
         font-size: rem(18px);
         line-height: 180%;
@@ -115,6 +135,7 @@
     .news__row {
         flex-direction: column;
     }
+    
     .news__list {
         gap: rem(60px);
     }

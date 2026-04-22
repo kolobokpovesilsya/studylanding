@@ -6,9 +6,11 @@
 .software__description {
     text-align: center;
 }
+
 .software__description {
     margin-bottom: rem(160px);
 }
+
 .software__card-list {
     display: flex;
     justify-content: space-between;
@@ -16,7 +18,7 @@
     align-items: stretch;
 }
 
-.software__card-item {
+.software__card {
     position: relative;
     padding: rem(125px) rem(35px) rem(50px) rem(35px);
     display: flex;
@@ -29,7 +31,7 @@
     margin-bottom: rem(50px);
 }
 
-.software__card-item__icon {
+.software__icon {
     position: absolute;
     top: 0;
     transform: translateY(-50%);
@@ -42,41 +44,46 @@
     box-shadow: var(--box-shadow-v2);
 }
 
-.software__card-item__icon--warning {
+.software__icon--warning {
     background-color: var(--accent-warning);
 }
-.software__card-item__icon--warning svg {
+
+.software__icon--warning svg {
     width: 48px;
     height: 48px;
 }
-.software__card-item__icon--primary {
+
+.software__icon--primary {
     background-color: var(--accent-primary);
 }
-.software__card-item__icon--primary svg {
+
+.software__icon--primary svg {
     width: 55px;
     height: 55px;
 }
-.software__card-item__icon--info {
+
+.software__icon--info {
     background-color: var(--accent-info);
 }
-.software__card-item__icon--info svg {
+
+.software__icon--info svg {
     width: 45px;
     height: 45px;
 }
-.software__card-item__title,
-.software__card-item__text {
+
+.software__card-title,
+.software__card-text {
     text-align: center;
 }
-.software__card-item__text {
+
+.software__card-text {
     line-height: 180%;
-}
-.software__card-item__title {
-    // font-size: rem(30px);
-    margin-bottom: rem(35px);
+    font-size: rem(20px);
 }
 
-.software__card-item__text {
-    font-size: rem(20px);
+.software__card-title {
+    // font-size: rem(30px);
+    margin-bottom: rem(35px);
 }
 
 @media (max-width: 1280px) {
@@ -84,7 +91,8 @@
         align-items: center;
         flex-direction: column;
     }
-    .software__card-item {
+    
+    .software__card {
         flex-shrink: 0;
         flex-basis: rem(500px);
     }
