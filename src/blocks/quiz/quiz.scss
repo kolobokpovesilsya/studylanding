@@ -193,7 +193,7 @@
         align-items: center;
         gap: rem(100px);
     }
-    
+
     .quiz__picture {
         order: 1;
         width: 50%;
@@ -204,22 +204,31 @@
     .quiz__picture {
         width: 80%;
     }
-    
+
     .quiz__alert {
         right: -12%;
         padding: rem(10px) rem(20px);
     }
-    
+
     .quiz__alert-text {
         font-size: rem(18px);
     }
-    
+
     .quiz__alert-img {
         width: rem(90px);
     }
-    
+
     .quiz__badge,
     .quiz__card-title {
         margin-bottom: rem(20px);
+    }
+}
+@media (max-width: 480px) {
+    .quiz__alert {
+        bottom: -2.5rem;
+        padding: rem(5px) rem(10px);
+    }
+    .quiz__card-title {
+        font-size: rem(22px);
     }
 }

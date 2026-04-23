@@ -30,12 +30,17 @@
     // line-height: 2rem;
     margin-bottom: rem(50px);
 }
-
+.intro__controls {
+    display: flex;
+    align-items: center;
+}
 .intro__btn-join,
 .intro__btn-play {
     margin-right: 1rem;
 }
-
+.intro__btn-join {
+    white-space: nowrap;
+}
 .intro__btn-play {
     border-radius: 50%;
     width: rem(80px);
@@ -48,7 +53,9 @@
     height: rem(33px) !important;
     margin-left: rem(5px);
 }
-
+.intro__watch {
+    white-space: nowrap;
+}
 .intro__content {
     width: 45%;
     display: inline-flex;
@@ -247,7 +254,11 @@
     .intro__container {
         gap: rem(50px);
     }
-
+    .intro__btn-play {
+        width: rem(60px);
+        height: rem(60px);
+        padding: 0rem;
+    }
     .intro__content {
         width: 50%;
     }
