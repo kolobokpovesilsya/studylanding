@@ -1,0 +1,36 @@
+.menu{
+    display: none;
+ 
+}
+
+.menu--opened{
+  
+    position:absolute;
+    top:100%;
+       display: block;
+    padding: rem(20px);
+    background: white;
+    border-radius: rem(20px);
+    
+}
+.menu__item{
+    position: relative;
+}
+.menu__item-arrow{
+    display: flex;
+    padding: 0 rem(5px);
+     cursor: pointer; 
+     height: 100%;
+     margin-left: rem(5px);
+     transform:rotate(180deg)
+}
+.menu__item-arrow:after{
+    content: '';
+     width: 0;
+    height: 0;
+    border-left: 0.25rem solid transparent;
+    border-right: 0.25rem solid transparent;
+    border-bottom: 0.5rem solid #4b5563; 
+ 
+     
+}

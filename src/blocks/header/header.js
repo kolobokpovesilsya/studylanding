@@ -1,3 +1,5 @@
+import { MenuController } from "../menu/menu";
+
 let prevScrollTop = 0;
 const burgerBtn = document.querySelector(".header__burgerbutton");
 const header = document.body.querySelector("header");
@@ -68,4 +70,6 @@ function clickBurgerMenu(e) {
 export function initHeader() {
     document.addEventListener("scroll", scrollHandler);
     burgerBtn?.addEventListener("click", clickBurgerMenu);
+    const menuElement = document.querySelector('.header .menu')
+    const menuController = new MenuController(menuElement)
 }
