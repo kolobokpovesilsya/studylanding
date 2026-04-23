@@ -258,3 +258,27 @@
         justify-content: center;
     }
 }
+
+@media (max-width: 480px) {
+    .features__list {
+        display: flex;
+        flex-direction: column;
+        gap: rem(60px);
+    }
+    .features__list-item {
+        flex-direction: column;
+        align-items: center;
+        gap: rem(30px);
+    }
+    .features__list-item-text {
+        text-align: center;
+    }
+    .features__list-item-icon {
+        width: rem(100px) !important;
+        height: rem(100px) !important;
+    }
+    .features__list-icon {
+        width: rem(40px) !important;
+        height: rem(40px) !important;
+    }
+}
