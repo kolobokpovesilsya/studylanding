@@ -79,12 +79,13 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    // overflow-x: hidden;
+    overflow: hidden;
 }
 section {
     margin-bottom: 170px;
 }
-img {
+img,
+picture {
     display: block;
     max-width: 100%;
     height: auto;
@@ -224,6 +225,7 @@ h5 {
 a {
     font-size: rem(22px);
 }
+
 @media (max-width: 1600px) {
     html {
         font-size: 18px;
