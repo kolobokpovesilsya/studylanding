@@ -95,10 +95,6 @@
     transform: rotate(var(--rotate));
 }
 
-.gradebook__icon--star {
-    /* стили для звезды (наследуется от gradebook__icon) */
-}
-
 .gradebook__icon--book {
     --size: 45px;
     --rotate: 12deg;
@@ -116,10 +112,6 @@
     color: #fff;
     text-align: center;
     padding: rem(13px) 0;
-}
-
-.gradebook__title-text {
-    /* текст заголовка GradeBook */
 }
 
 .gradebook__body {
@@ -253,14 +245,14 @@
         flex-direction: column;
         align-items: center;
     }
-    
+
     .gradebook__title,
     .gradebook__description {
         max-width: unset;
         width: 100%;
         text-align: center !important;
     }
-    
+
     .gradebook__content {
         width: 80%;
     }
@@ -272,20 +264,40 @@
     .gradebook__wave-decor {
         display: none;
     }
-    
+
     .gradebook__background:before {
         display: none;
     }
-    
-    .gradebook__row {
-        // display: none;
-    }
-    
+
     .gradebook__picture {
         width: 100%;
     }
-    
+
     .gradebook__background {
         width: 100%;
+    }
+    .gradebook__row {
+        flex-direction: column;
+    }
+    .gradebook__col {
+        margin-bottom: rem(20px);
+    }
+    .gradebook__col--purple {
+        transform: unset;
+        --flex-direction: unset;
+        --badge-right: unset;
+        --right-shift: unset;
+        --left-shift: -10px;
+        --badge-top: 70%;
+        --badge-left: 70%;
+    }
+    .gradebook__col--red {
+        transform: unset;
+        --flex-direction: unset;
+        --badge-right: unset;
+        --right-shift: unset;
+        --left-shift: -10px;
+        --badge-top: 70%;
+        --badge-left: 70%;
     }
 }

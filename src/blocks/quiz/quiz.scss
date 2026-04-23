@@ -80,7 +80,7 @@
     background: var(--white);
 }
 
-.quiz__btn svg {
+.quiz__btn-icon {
     width: rem(45px);
     height: rem(45px);
 }
@@ -223,6 +223,7 @@
         margin-bottom: rem(20px);
     }
 }
+
 @media (max-width: 480px) {
     .quiz__alert {
         bottom: -2.5rem;
@@ -230,5 +231,20 @@
     }
     .quiz__card-title {
         font-size: rem(22px);
+    }
+    .quiz__picture {
+        width: 90%;
+    }
+    .quiz__card-btns {
+        top: -1rem;
+        right: -1.5rem;
+    }
+    .quiz__btn {
+        width: rem(60px);
+        height: rem(60px);
+    }
+    .quiz__btn-icon {
+        width: rem(35px);
+        height: rem(35px);
     }
 }
