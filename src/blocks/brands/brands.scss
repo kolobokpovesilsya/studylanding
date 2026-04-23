@@ -27,18 +27,24 @@
     gap: rem(30px);
 }
 
-.brands__item--hide {
-    opacity: 0;
-    transform: translateY(100px);
-}
-.brands__item--show {
-    --delay: 0.2s opacity: 1;
-    transform: translateY(0);
-    transition-duration: 1.2s;
-    transition-delay: var(--delay);
-}
+// .brands__item--hide {
+//     opacity: 0;
+//     transform: translateY(100px);
+// }
+// .brands__item--show {
+//     --delay: 0.2s opacity: 1;
+//     transform: translateY(0);
+//     transition-duration: 1.2s;
+//     transition-delay: var(--delay);
+// }
+
 @media (max-width: 1280px) {
     .brands__list {
         justify-content: center;
+    }
+}
+@media (max-width: 768px) {
+    .brands__item {
+        width: 25%;
     }
 }
