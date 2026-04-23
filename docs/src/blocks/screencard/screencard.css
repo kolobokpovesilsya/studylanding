@@ -1,0 +1,52 @@
+/* Utils functions */
+.screencard {
+  border-radius: 1rem;
+}
+
+.screencard__header {
+  background-color: #eaeaea;
+  padding: 0.5rem 1.25rem;
+  border-radius: 1rem 1rem 0 0;
+}
+
+.screencard__toolbar {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.screencard__toolbar-item {
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 50%;
+}
+
+.screencard__toolbar-item--green {
+  background-color: #5beb7b;
+}
+
+.screencard__toolbar-item--yellow {
+  background-color: #f6c566;
+}
+
+.screencard__toolbar-item--red {
+  background-color: #ee6767;
+}
+
+.screencard__body {
+  background: #f4f4f4;
+  padding: 2.5rem 2rem;
+  border-radius: 0 0 1rem 1rem;
+}
+
+@supports (backdrop-filter: blur(1px)) {
+  .screencard__body--transparent {
+    background: rgba(244, 244, 244, 0.3764705882);
+    backdrop-filter: blur(0.75rem) saturate(100%);
+    -webkit-backdrop-filter: blur(0.75rem) saturate(100%);
+  }
+  .screencard__header--transparent {
+    background: rgba(234, 234, 234, 0.6);
+    backdrop-filter: blur(15px) saturate(60%);
+    -webkit-backdrop-filter: blur(0.75rem) saturate(60%);
+  }
+}

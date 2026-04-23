@@ -19,7 +19,7 @@
   align-items: stretch;
 }
 
-.software__card-item {
+.software__card {
   position: relative;
   padding: 6.25rem 1.75rem 2.5rem 1.75rem;
   display: flex;
@@ -32,7 +32,7 @@
   margin-bottom: 2.5rem;
 }
 
-.software__card-item__icon {
+.software__icon {
   position: absolute;
   top: 0;
   transform: translateY(-50%);
@@ -45,48 +45,45 @@
   box-shadow: var(--box-shadow-v2);
 }
 
-.software__card-item__icon--warning {
+.software__icon--warning {
   background-color: var(--accent-warning);
 }
 
-.software__card-item__icon--warning svg {
+.software__icon--warning svg {
   width: 48px;
   height: 48px;
 }
 
-.software__card-item__icon--primary {
+.software__icon--primary {
   background-color: var(--accent-primary);
 }
 
-.software__card-item__icon--primary svg {
+.software__icon--primary svg {
   width: 55px;
   height: 55px;
 }
 
-.software__card-item__icon--info {
+.software__icon--info {
   background-color: var(--accent-info);
 }
 
-.software__card-item__icon--info svg {
+.software__icon--info svg {
   width: 45px;
   height: 45px;
 }
 
-.software__card-item__title,
-.software__card-item__text {
+.software__card-title,
+.software__card-text {
   text-align: center;
 }
 
-.software__card-item__text {
+.software__card-text {
   line-height: 180%;
-}
-
-.software__card-item__title {
-  margin-bottom: 1.75rem;
-}
-
-.software__card-item__text {
   font-size: 1rem;
+}
+
+.software__card-title {
+  margin-bottom: 1.75rem;
 }
 
 @media (max-width: 1280px) {
@@ -94,7 +91,7 @@
     align-items: center;
     flex-direction: column;
   }
-  .software__card-item {
+  .software__card {
     flex-shrink: 0;
     flex-basis: 25rem;
   }

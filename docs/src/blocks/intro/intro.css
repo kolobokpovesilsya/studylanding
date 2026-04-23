@@ -1,8 +1,10 @@
+@charset "UTF-8";
 /* Utils functions */
 .intro {
   position: relative;
   overflow: hidden;
   height: 58vw;
+  max-height: 55.9rem;
   background-color: #fff2e1;
   clip-path: ellipse(100% 100% at 50% 0%);
   margin-bottom: 90px;
@@ -24,9 +26,18 @@
   margin-bottom: 2.5rem;
 }
 
+.intro__controls {
+  display: flex;
+  align-items: center;
+}
+
 .intro__btn-join,
 .intro__btn-play {
   margin-right: 1rem;
+}
+
+.intro__btn-join {
+  white-space: nowrap;
 }
 
 .intro__btn-play {
@@ -36,10 +47,14 @@
   padding: 1rem;
 }
 
-.intro__btn__play-icon {
+.intro__play-icon {
   width: 1.65rem !important;
   height: 1.65rem !important;
   margin-left: 0.25rem;
+}
+
+.intro__watch {
+  white-space: nowrap;
 }
 
 .intro__content {
@@ -51,9 +66,6 @@
 
 .intro__image {
   width: 55%;
-}
-
-.intro__image {
   display: flex;
   flex-direction: column;
   justify-content: end;
@@ -69,12 +81,13 @@
   padding-right: 2rem;
 }
 
-.intro__image picture {
+.intro__main-image {
   position: absolute;
   bottom: 0;
-  height: 89%;
+  width: 95%;
 }
 
+/* Попапы */
 .intro__popup {
   position: absolute;
   --top: 66%;
@@ -96,14 +109,15 @@
     -webkit-backdrop-filter: blur(0.5rem) saturate(130%);
   }
 }
-.intro__popup__avatar {
+/* Аватар */
+.intro__avatar {
   position: relative;
   display: inline-flex;
   width: 2.9rem;
   height: 2.9rem;
 }
 
-.intro__popup__avatar:after {
+.intro__avatar:after {
   content: "";
   position: absolute;
   bottom: -5%;
@@ -115,47 +129,24 @@
   border-radius: 50%;
 }
 
-.intro__popup__icon {
-  /* --bg-color: transparent; */
-  display: inline-flex;
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 0.4rem;
-  background-color: var(--bg-color);
+/* Контент попапа */
+.intro__popup-content {
+  /* контейнер для контента попапа */
 }
 
-.intro__popup__icon--orange {
-  --bg-color: #f88c3d;
-}
-
-.intro__popup__icon--blue {
-  --bg-color: #23bdee;
-}
-
-.intro__popup__icon--pink {
-  background: #f3627c;
-}
-
-.intro__popup__title__check {
-  width: 1rem;
-  height: 1rem;
-  background-color: #4ee381;
-  border-radius: 50%;
-}
-
-.intro__popup__title {
+.intro__popup-title {
   display: flex;
   justify-content: space-between;
   font-size: 1.2rem;
   font-weight: bold;
 }
 
-.intro__popup__description {
+.intro__popup-description {
   font-size: 1rem;
   font-weight: 500;
 }
 
-.intro__popup__btn {
+.intro__popup-btn {
   display: inline-flex;
   color: white;
   font-size: 1rem;
@@ -166,6 +157,54 @@
   margin-top: 1rem;
 }
 
+.intro__popup-check {
+  width: 1rem;
+  height: 1rem;
+  background-color: #4ee381;
+  border-radius: 50%;
+}
+
+/* Иконки попапов */
+.intro__popup-icon {
+  display: inline-flex;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.4rem;
+  background-color: var(--bg-color);
+}
+
+.intro__popup-icon--orange {
+  --bg-color: #f88c3d;
+}
+
+.intro__popup-icon--blue {
+  --bg-color: #23bdee;
+}
+
+.intro__popup--pink {
+  background: #f3627c;
+}
+
+/* Специфичные иконки */
+.intro__message-icon,
+.intro__calendar-icon,
+.intro__settings-icon {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.intro__message-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0.5rem;
+  flex-shrink: 0;
+}
+
+.intro__calendar-icon {
+  padding: 0.5rem;
+}
+
+/* Позиционирование попапов */
 .intro__popup--message {
   --top: 50%;
   --left: 60%;
@@ -174,17 +213,6 @@
 .intro__popup--calendar {
   --top: 30%;
   --left: -5%;
-}
-
-.intro__popup__calendar-icon {
-  padding: 0.5rem;
-}
-
-.intro__popup__message-icon {
-  width: 2.5rem;
-  height: 2.5rem;
-  padding: 0.5rem;
-  flex-shrink: 0;
 }
 
 .intro__popup--settings {
@@ -196,11 +224,7 @@
   padding: 0.5rem;
 }
 
-.intro__popup-icon {
-  width: 100% !important;
-  height: 100% !important;
-}
-
+/* Медиа-запросы */
 @media (max-width: 1380px) {
   .intro__popup {
     border-radius: 0.5rem;
@@ -209,11 +233,11 @@
     line-height: normal;
     line-height: 90%;
   }
-  .intro__popup__title {
+  .intro__popup-title {
     font-size: 1rem;
     font-weight: 500;
   }
-  .intro__popup__description {
+  .intro__popup-description {
     font-size: 0.9rem;
     font-weight: 500;
   }
@@ -224,7 +248,12 @@
 }
 @media (max-width: 1280px) {
   .intro__container {
-    gap: 7.5rem;
+    gap: 2.5rem;
+  }
+  .intro__btn-play {
+    width: 3rem;
+    height: 3rem;
+    padding: 0rem;
   }
   .intro__content {
     width: 50%;
@@ -237,6 +266,9 @@
   }
   .intro__description {
     margin-bottom: 1.5rem;
+  }
+  .intro__main-image {
+    width: 85%;
   }
 }
 @media (max-width: 1024px) {
@@ -257,19 +289,56 @@
   .intro__description {
     text-align: center;
   }
+  .intro__main-image {
+    position: static;
+    width: 100%;
+  }
+  .intro__popup--message {
+    --left: 70%;
+  }
+  .intro__popup--calendar {
+    --left: -25%;
+  }
 }
 @media (max-width: 768px) {
   html {
     font-size: 15px;
   }
   .intro__content {
-    margin-top: 20%;
+    margin-top: 10rem;
+  }
+  .intro__popup-btn {
+    display: none;
+  }
+  .intro__popup--join {
+    --left: 0%;
+  }
+  .intro__popup--calendar {
+    --left: -30%;
   }
   .intro__image {
-    width: 80%;
+    width: 60%;
   }
 }
 @media (max-width: 480px) {
+  .intro__image {
+    width: 70%;
+  }
+  .intro__popup--join {
+    --left: 0%;
+  }
+  .intro__popup--calendar {
+    --left: 10%;
+  }
+  .intro__popup-title {
+    display: none;
+  }
+  .intro__popup-description {
+    display: none;
+  }
+  .intro__popup {
+    gap: 0;
+  }
   .intro__controls {
     display: flex;
     flex-direction: column;

@@ -41,6 +41,10 @@
   height: 8px !important;
 }
 
+.videocall__name {
+  white-space: nowrap;
+}
+
 .videocall__badge {
   border-radius: 0.25rem;
   padding: 0.1rem 0.2rem;

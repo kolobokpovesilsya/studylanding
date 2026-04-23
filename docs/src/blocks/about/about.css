@@ -20,7 +20,7 @@
   gap: 100px;
 }
 
-.about__card-item {
+.about__card {
   position: relative;
   display: flex;
   justify-content: center;
@@ -30,7 +30,7 @@
   overflow: hidden;
 }
 
-.about__card-item:after {
+.about__card:after {
   content: "";
   position: absolute;
   top: 0;
@@ -57,11 +57,11 @@
   font-weight: bolder;
 }
 
-.about__card-btn {
+.about__btn {
   padding: 1rem 1.75rem;
 }
 
-.about__card-btn__text {
+.about__btn-text {
   font-weight: bolder;
   font-size: 1.1rem;
 }
@@ -72,7 +72,7 @@
   }
 }
 @media (max-width: 480px) {
-  .about__card-item {
+  .about__card {
     width: 100%;
   }
 }

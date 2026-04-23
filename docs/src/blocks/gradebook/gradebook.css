@@ -24,12 +24,12 @@
   max-width: 30rem;
 }
 
-.gradebook__picture__background {
+.gradebook__background {
   position: relative;
   width: 35rem;
 }
 
-.gradebook__picture__background:before {
+.gradebook__background:before {
   content: "";
   position: absolute;
   bottom: -5%;
@@ -41,14 +41,14 @@
   z-index: -1;
 }
 
-.gradebook__picture__wave-decor {
+.gradebook__wave-decor {
   position: absolute;
   bottom: 5%;
   left: 0;
   transform: translateX(-50%);
 }
 
-.gradebook__picture__bulb-decor {
+.gradebook__bulb-decor {
   --size: 44px;
   --top: -14%;
   --right: 2%;
@@ -61,7 +61,13 @@
   right: var(--right);
 }
 
-.gradebook__picture__boxicon {
+.gradebook__bulb-decor--small {
+  --size: 20px;
+  --top: -5%;
+  --right: -3%;
+}
+
+.gradebook__boxicon {
   position: absolute;
   --size: 110px;
   --top: -12%;
@@ -70,13 +76,13 @@
   left: var(--left);
 }
 
-.gradebook__picture__boxicon--right {
+.gradebook__boxicon--right {
   --size: 79px;
   --top: 10%;
   --left: 88%;
 }
 
-.gradebook__picture__icon {
+.gradebook__icon {
   --size: 55px;
   --rotate: -12deg;
   width: calc(var(--size) / 20px * 1rem) !important;
@@ -84,44 +90,38 @@
   transform: rotate(var(--rotate));
 }
 
-.gradebook__picture__icon-book {
+.gradebook__icon--book {
   --size: 45px;
   --rotate: 12deg;
 }
 
-.gradebook__picture__bulb-decor--small {
-  --size: 20px;
-  --top: -5%;
-  --right: -3%;
-}
-
-.gradebook__picture__wrapper {
+.gradebook__wrapper {
   border-radius: var(--card-radius);
   overflow: hidden;
   background: #fff;
   box-shadow: var(--box-shadow-v2);
 }
 
-.gradebook__picture__header {
+.gradebook__header {
   background: #54aff0;
   color: #fff;
   text-align: center;
   padding: 0.65rem 0;
 }
 
-.gradebook__picture__body {
+.gradebook__body {
   padding-top: 2.5rem;
 }
 
-.gradebook__picture__row {
+.gradebook__row {
   display: flex;
 }
 
-.gradebook__picture__row:not(:last-child) {
+.gradebook__row:not(:last-child) {
   margin-bottom: 2.5rem;
 }
 
-.gradebook__picture__col {
+.gradebook__col {
   --flex-direction: row;
   flex-grow: 1;
   display: flex;
@@ -129,7 +129,7 @@
   flex-direction: var(--flex-direction);
 }
 
-.gradebook__picture__col--blue {
+.gradebook__col--blue {
   --tail-bg: #3ac6f2;
   --badge-bg: #cdf3ff;
   --badge-color: #43869b;
@@ -139,7 +139,7 @@
   --tail-width: 100px;
 }
 
-.gradebook__picture__col--purple {
+.gradebook__col--purple {
   --tail-bg: #3189ef;
   --badge-bg: #cde4ff;
   --badge-color: #486f9c;
@@ -151,7 +151,7 @@
   transform: translateY(-10%);
 }
 
-.gradebook__picture__col--green {
+.gradebook__col--green {
   --tail-bg: #68f146;
   --badge-bg: #d7ffcd;
   --badge-color: #4e8c3f;
@@ -161,7 +161,7 @@
   --tail-width: 250px;
 }
 
-.gradebook__picture__col--red {
+.gradebook__col--red {
   --tail-bg: #f13c3c;
   --badge-bg: #ffcdcd;
   --badge-color: #9e5555;
@@ -173,19 +173,23 @@
   transform: translateY(-50%);
 }
 
-.gradebook__picture__tail {
+.gradebook__tail {
   width: calc(var(--tail-width) / 20px * 1rem);
   height: 1.5rem;
   background-color: var(--tail-bg);
 }
 
-.gradebook__picture__avatar {
+.gradebook__avatar {
   position: relative;
   margin-left: calc(var(--left-shift) / 20px * 1rem);
   margin-right: calc(var(--right-shift) / 20px * 1rem);
 }
 
-.gradebook__picture__badge {
+.gradebook__avatar img {
+  border-radius: 50%;
+}
+
+.gradebook__badge {
   position: absolute;
   top: var(--badge-top);
   left: var(--badge-left);
@@ -196,17 +200,13 @@
   border-radius: 2rem;
 }
 
-.gradebook__picture__avatar img {
-  border-radius: 50%;
-}
-
-.gradebook__picture__footer {
+.gradebook__footer {
   text-align: end;
   padding: 1rem 2.5rem;
   border-radius: 0 0 var(--card-radius) var(--card-radius);
 }
 
-.gradebook__picture__btn {
+.gradebook__btn {
   position: relative;
   display: inline-flex;
   border-radius: 3rem;
@@ -216,7 +216,7 @@
   z-index: 2;
 }
 
-.gradebook__picture__btn:after {
+.gradebook__btn:after {
   content: "";
   position: absolute;
   background-color: rgba(84, 90, 232, 0.4392156863);
@@ -247,18 +247,42 @@
   }
 }
 @media (max-width: 768px) {
-  .gradebook__picture__boxicon,
-  .gradebook__picture__bulb-decor,
-  .gradebook__picture__wave-decor {
+  .gradebook__boxicon,
+  .gradebook__bulb-decor,
+  .gradebook__wave-decor {
     display: none;
   }
-  .gradebook__picture__background:before {
+  .gradebook__background:before {
     display: none;
   }
   .gradebook__picture {
     width: 100%;
   }
-  .gradebook__picture__background {
+  .gradebook__background {
     width: 100%;
+  }
+  .gradebook__row {
+    flex-direction: column;
+  }
+  .gradebook__col {
+    margin-bottom: 1rem;
+  }
+  .gradebook__col--purple {
+    transform: unset;
+    --flex-direction: unset;
+    --badge-right: unset;
+    --right-shift: unset;
+    --left-shift: -10px;
+    --badge-top: 70%;
+    --badge-left: 70%;
+  }
+  .gradebook__col--red {
+    transform: unset;
+    --flex-direction: unset;
+    --badge-right: unset;
+    --right-shift: unset;
+    --left-shift: -10px;
+    --badge-top: 70%;
+    --badge-left: 70%;
   }
 }

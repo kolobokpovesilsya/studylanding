@@ -45,7 +45,7 @@
   width: 150%;
 }
 
-.tools__picture-ellipse {
+.tools__ellipse {
   --ellipse-bg: transparent;
   --size: 0;
   position: absolute;
@@ -55,19 +55,19 @@
   border-radius: 50%;
 }
 
-.tools__picture-ellipse--info {
+.tools__ellipse--info {
   --ellipse-bg: #8c7aff;
 }
 
-.tools__picture-ellipse--success {
+.tools__ellipse--success {
   --ellipse-bg: #6bf0a8;
 }
 
-.tools__picture-ellipse--warning {
+.tools__ellipse--warning {
   --ellipse-bg: var(--accent-warning);
 }
 
-.tools__picture-ellipse--main {
+.tools__ellipse--main {
   --size: 236px;
   top: -5%;
   left: 50%;
@@ -75,40 +75,40 @@
   z-index: -1;
 }
 
-.tools__picture-ellipse--left {
+.tools__ellipse--left {
   --size: 24px;
   bottom: 15%;
   left: -5%;
 }
 
-.tools__picture-ellipse--right {
+.tools__ellipse--right {
   --size: 20px;
   bottom: 0%;
   right: 5%;
 }
 
-.tools__picture-ellipse--top {
+.tools__ellipse--top {
   --size: 20px;
   top: -10%;
   right: 20%;
 }
 
-.tools__picture-icon-left {
+.tools__icon-left {
   position: absolute;
   top: 30%;
   left: -20%;
   transform: rotate(-12deg);
 }
 
-.tools__picture-icon-right {
+.tools__icon-right {
   position: absolute;
   top: 35%;
   right: -25%;
   transform: rotate(12deg);
 }
 
-.tools__picture-icon__info,
-.tools__picture-icon__class {
+.tools__icon-info,
+.tools__icon-class {
   width: 37px !important;
   height: 37px !important;
 }
@@ -149,13 +149,13 @@
   .tools__picture {
     width: 80%;
   }
-  .tools__picture-ellipse--left {
+  .tools__ellipse--left {
     left: 15%;
   }
-  .tools__picture-icon-left {
+  .tools__icon-left {
     left: 0;
   }
-  .tools__picture-icon-right {
+  .tools__icon-right {
     right: 0;
   }
 }

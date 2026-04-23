@@ -4,6 +4,7 @@
 @import url('blocks/team/team.css');
 @import url('blocks/software/software.css');
 @import url('blocks/slider/slider.css');
+@import url('blocks/screencard/screencard.css');
 @import url('blocks/quiz/quiz.css');
 @import url('blocks/notification/notification.css');
 @import url('blocks/news/news.css');
@@ -148,6 +149,7 @@
 html {
   font-size: 20px;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 html:has(.header--extended) {
@@ -164,14 +166,15 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 section {
   margin-bottom: 170px;
 }
 
-img {
+img,
+picture {
   display: block;
   max-width: 100%;
   height: auto;
@@ -332,15 +335,15 @@ h5 {
   transition-delay: var(--anim-popup-delay);
 }
 
+a {
+  font-size: 1.1rem;
+}
+
 @media (max-width: 1600px) {
   html {
     font-size: 18px;
   }
 }
-a {
-  font-size: 1.1rem;
-}
-
 @media (max-width: 1280px) {
   html {
     font-size: 17px; /* Все rem размеры уменьшатся пропорционально */
