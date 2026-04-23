@@ -104,27 +104,27 @@
     .news__row {
         gap: rem(50px);
     }
-    
+
     .news__main-image,
     .news__main-badge,
     .news__main-title,
     .news__main-description {
         margin-bottom: rem(20px);
     }
-    
+
     .news__image--sm {
         width: 10rem;
         height: 6rem;
     }
-    
+
     .news__item-badge {
         bottom: rem(-20px);
     }
-    
+
     .news__badge {
         font-size: rem(16px);
     }
-    
+
     .news__badge--lg {
         font-size: rem(18px);
         line-height: 180%;
@@ -135,8 +135,13 @@
     .news__row {
         flex-direction: column;
     }
-    
+
     .news__list {
         gap: rem(60px);
+    }
+}
+@media (max-width: 480px) {
+    .news__item {
+        flex-direction: column;
     }
 }
