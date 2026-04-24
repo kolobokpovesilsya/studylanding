@@ -8,29 +8,51 @@ export class MenuController {
             console.log("dropdownItems", item);
             this.processDropdownItem(item);
         });
-        document.addEventListener("click", this.handleMenuItemClick);
+        document.addEventListener("click", this.handleClick.bind(this));
     }
 
-    handleMenuItemClick(e) {
+    handleClick(e) {
+        //Close all opened submenu first
+        this.closeOpenedSubmenu()
         const target = e.target;
 
         const menuItem = target.closest(".menu__item");
-        console.log("menuItem===", target, menuItem);
+       
         if (!menuItem) {
             const menuList = document.querySelectorAll(".menu__dropdown");
-
+              console.log("menuItem===", target, menuItem);
             return;
         }
+        const submenu = menuItem.querySelector(':scope .menu__dropdown')
+        //if menu item has submenu togle its expand state
+        if(submenu){
+            e.preventDefault()
+            submenu.classList.toggle("menu__dropdown--opened");
+            return 
+        }
+        console.log('submenu===',submenu)
+        //If menu item doesnt have submenu go to parent
         const dropdownMenu = menuItem.parentElement;
+        //If parent is not submenu apply default behavior
         if (!dropdownMenu.classList.contains("menu__dropdown")) {
             console.log("dropdownMenu===", dropdownMenu);
             return;
         }
-        if (dropdownMenu.classList.contains("menu__dropdown--close-on-click")) {
-            dropdownMenu.classList.remove("menu__dropdown--opened");
-        }
+        //If menu item parent is submenu then close it if it has special close-on-click class
+        // if (dropdownMenu.classList.contains("menu__dropdown--close-on-click")) {
+        //     dropdownMenu.classList.remove("menu__dropdown--opened");
+        // }
 
         // menu__dropdown--close-on-click
+    }
+    closeOpenedSubmenu(){
+        const openedSubmenu = document.querySelectorAll('.menu__dropdown--opened')
+        Array.from(openedSubmenu).forEach(sbmenu=>{
+            console.log('sbmenu===',sbmenu)
+            if(sbmenu.classList.contains('menu__dropdown--opened')){
+                sbmenu.classList.remove('menu__dropdown--opened')
+            }
+        })
     }
     processDropdownItem(dropdownItem) {
         const arrow = document.createElement("div");

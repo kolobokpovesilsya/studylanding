@@ -31,20 +31,26 @@
 }
 .menu__item {
     position: relative;
+    white-space: nowrap;
 }
 .menu__item-arrow {
-    display: flex;
-    padding: 0 rem(5px);
+    --width:5px;
+    --height:10px;
+    margin: 0 rem(5px);
+    margin-top: rem(5px);
     cursor: pointer;
-    height: 100%;
-    margin-left: rem(5px);
+    width: 0;
+    height: 0;
+    border-left: var-to-rem(--width) solid transparent;
+    border-right: var-to-rem(--width) solid transparent;
+    border-bottom: var-to-rem(--height) solid #4b5563;
     transform: rotate(180deg);
 }
 .menu__item-arrow:after {
-    content: "";
-    width: 0;
-    height: 0;
-    border-left: 0.25rem solid transparent;
-    border-right: 0.25rem solid transparent;
-    border-bottom: 0.5rem solid #4b5563;
+    // content: "";
+    // width: 0;
+    // height: 0;
+    // border-left: 0.25rem solid transparent;
+    // border-right: 0.25rem solid transparent;
+    // border-bottom: 0.5rem solid #4b5563;
 }
