@@ -44,7 +44,7 @@
     display: flex;
     justify-content: center;
 }
-.header__nav-item{
+.header__nav-item {
     position: relative;
 }
 .header__nav-item {
@@ -54,17 +54,17 @@
 }
 // .header__nav-item:has(.header__dropdown-menu):after{
 //       content: "";
-   
+
 //     width: 0;
 //     height: 0;
 //     border-left: 0.25rem solid transparent;
 //     border-right: 0.25rem solid transparent;
 //     border-bottom: 0.5rem solid #4b5563;
-//     transform: translateY(-50%) rotate(180deg);  
+//     transform: translateY(-50%) rotate(180deg);
 //     padding: 0 1px;
-//     cursor: pointer; 
+//     cursor: pointer;
 //     margin-left: rem(5px);
-//     margin-top: rem(13px);  
+//     margin-top: rem(13px);
 // }
 .header__nav--right {
     margin-left: auto;
@@ -78,7 +78,7 @@
 }
 
 .header__nav-link {
-    position:relative;
+    position: relative;
     text-decoration: none;
     color: #4b5563;
     font-weight: 500;
@@ -90,7 +90,7 @@
 .header__nav-link:hover {
     color: #111;
 }
- 
+
 // .header__dropdown-menu{
 //     display: none;
 // }
@@ -113,24 +113,41 @@
     padding: rem(18px) rem(50px);
 }
 .header__burgerbutton {
-    margin-left: rem(30px);
+    // margin-left: rem(30px);
     display: none;
+}
+@media (max-width: 1600px) {
+    .header__nav-list {
+        gap: (40px);
+        margin-right: rem(30px);
+    }
 }
 @media (max-width: 1280px) {
     .header__actions {
         gap: rem(10px);
     }
-    .header__burgerbutton {
-        margin-left: rem(10px);
-        padding: rem(15px);
-    }
+
     .header__btn {
         padding: rem(9px) rem(20px);
     }
     .intro__watch {
         font-size: rem(20px);
     }
+    .header__nav-list {
+        gap: (30px);
+        margin-right: rem(30px);
+    }
 }
+// @media (max-width: 1100px) {
+//     .header__nav-list {
+//         display: none;
+//     }
+//     .header__burgerbutton {
+//         display: inline;
+//         margin-left: rem(10px);
+//         padding: rem(15px);
+//     }
+// }
 @media (max-width: 1024px) {
     .header--extended {
         height: 100%;
@@ -161,6 +178,7 @@
     .header__nav-list {
         margin-top: rem(30px);
         margin-right: 0;
+        width: 100%;
     }
     .header--extended .header__nav {
         height: 100%;
@@ -172,7 +190,18 @@
         gap: (30px);
         flex-direction: column;
     }
-    .burgerbutton {
+    .header__nav-item,
+    .header__nav-link {
+        width: 100%;
+    }
+    .header__nav-item {
+        padding: rem(20px);
+    }
+    .header__nav-link {
+        text-align: center;
+        font-size: rem(40px);
+    }
+    .header__burgerbutton {
         display: inline-flex;
     }
 
