@@ -13,28 +13,31 @@ export class MenuController {
 
     handleClick(e) {
         //Close all opened submenu first
-        this.closeOpenedSubmenu()
+         
         const target = e.target;
 
         const menuItem = target.closest(".menu__item");
        
         if (!menuItem) {
+               this.closeOpenedSubmenu()
             const menuList = document.querySelectorAll(".menu__dropdown");
               console.log("menuItem===", target, menuItem);
             return;
         }
         const submenu = menuItem.querySelector(':scope .menu__dropdown')
+        this.closeOpenedSubmenu(submenu)
         //if menu item has submenu togle its expand state
         if(submenu){
             e.preventDefault()
+             
             submenu.classList.toggle("menu__dropdown--opened");
             return 
         }
         console.log('submenu===',submenu)
         //If menu item doesnt have submenu go to parent
-        const dropdownMenu = menuItem.parentElement;
+        const parent = menuItem.parentElement;
         //If parent is not submenu apply default behavior
-        if (!dropdownMenu.classList.contains("menu__dropdown")) {
+        if (!parent.classList.contains("menu__dropdown")) {
             console.log("dropdownMenu===", dropdownMenu);
             return;
         }
@@ -45,21 +48,21 @@ export class MenuController {
 
         // menu__dropdown--close-on-click
     }
-    closeOpenedSubmenu(){
+    closeOpenedSubmenu(currentOpened){
         const openedSubmenu = document.querySelectorAll('.menu__dropdown--opened')
         Array.from(openedSubmenu).forEach(sbmenu=>{
             console.log('sbmenu===',sbmenu)
-            if(sbmenu.classList.contains('menu__dropdown--opened')){
+            if(sbmenu.classList.contains('menu__dropdown--opened') && currentOpened!=sbmenu){
                 sbmenu.classList.remove('menu__dropdown--opened')
             }
         })
     }
     processDropdownItem(dropdownItem) {
-        const arrow = document.createElement("div");
-        arrow.classList.add("menu__item-arrow");
+        // const arrow = document.createElement("div");
+        // arrow.classList.add("menu__item-arrow");
 
-        dropdownItem.appendChild(arrow);
-        arrow.onclick = this.toggleDropdownMenu.bind(this, dropdownItem);
+        // dropdownItem.appendChild(arrow);
+        // arrow.onclick = this.toggleDropdownMenu.bind(this, dropdownItem);
     }
     toggleDropdownMenu = (dropdownElement, e) => {
         const menuElement = Array.from(dropdownElement.children).find((ch) =>
