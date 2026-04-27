@@ -227,7 +227,26 @@ h5 {
 a {
     font-size: rem(22px);
 }
-
+.reset-scroll-btn {
+    --size: 80px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    transform: translate(-20%, 200%) rotate(-90deg);
+    width: var-to-rem(--size);
+    height: var-to-rem(--size);
+    background-color: var(--color-panel);
+    box-shadow: var(--box-shadow-v1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition-duration: 0.2s;
+}
+.reset-scroll-btn--show {
+    transform: translate(-20%, -50%) rotate(-90deg);
+    transition-duration: 0.2s;
+}
 @media (max-width: 1600px) {
     html {
         font-size: 18px;
