@@ -18,9 +18,16 @@
 }
 @supports (backdrop-filter: blur(1px)) {
     .header--fill {
-        background: rgba(255, 255, 255, 0.26);
-        backdrop-filter: blur(rem(10px)) saturate(130%); /*10px*/
-        -webkit-backdrop-filter: blur(rem(10px)) saturate(130%);
+        background: rgba(255, 255, 255, 0.56);
+        backdrop-filter: blur(rem(22px)) saturate(30%);
+        -webkit-backdrop-filter: blur(rem(22px)) saturate(30%);
+    }
+    .theme-dark .header--fill {
+        background: rgba(165, 178, 225, 0.26);
+        backdrop-filter: blur(rem(22px)) saturate(30%);
+
+        -webkit-backdrop-filter: blur(rem(22px)) saturate(30%);
+        box-shadow: 0px rem(10px) rem(40px) #65daff45;
     }
 }
 

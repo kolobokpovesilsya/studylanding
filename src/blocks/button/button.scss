@@ -83,6 +83,57 @@
     --btn-border: var(--accent-warning);
 }
 .btn-slider {
+    position: relative;
+    border: 2px solid black;
+    border-radius: 20px;
+    display: flex;
+    width: 4.5rem;
+    left: 0%;
+    // height: 2rem;
+    overflow: hidden;
+    transform: translateX(0%);
+    transition-duration: 0.5s;
+    // transition-property: left;
+    input {
+        position: absolute;
+        opacity: 0;
+        width: 0;
+        height: 0;
+        visibility: hidden;
+        z-index: -1;
+    }
+    &__pin {
+        position: relative;
+        height: 2rem;
+        width: 2rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: white;
+        border-radius: 50%;
+    }
+    &__false,
+    &__true {
+        position: absolute;
+    }
+    &:has(input:checked) &__pin {
+        transform: translateX(110%);
+        // left: 50%;
+        // transition-property: left;
+        transition-duration: 0.5s;
+        // justify-content: end;
+        // transition-duration: 0.2s;
+    }
+    &:has(input:checked) &__false {
+        z-index: 2;
+    }
+    &:has(input:not(:checked)) &__true {
+        z-index: 2;
+    }
+    // &:has(input:checked) {
+    //     justify-content: end;
+    //     transition-duration: 0.2s;
+    // }
 }
 @media (max-width: 1280px) {
     .btn {

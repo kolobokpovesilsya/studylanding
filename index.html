@@ -94,11 +94,19 @@
                 <div class="burgerbutton__line"></div>
                 <div class="burgerbutton__line"></div>
             </button>
-            <span class="btn-slider header__theme-btn">
-                <svg class="icon intro__play-icon">
-                    <use href="sprites.svg#sun"></use>
-                </svg>
-            </span>
+            <label   class="btn-slider header__theme-btn">
+                <input checked="true"  type="checkbox"/>
+                <span class="btn-slider__background"></span>
+                <span class="btn-slider__pin">
+                    <svg class="icon btn-slider__true ">
+                        <use href="sprites.svg#sun"></use>
+                    </svg>    
+                     <svg class="icon btn-slider__false ">
+                        <use href="sprites.svg#moon"></use>
+                    </svg>    
+                </span>
+                
+            </label>
         </div>
     </header>
     <main class="main">
