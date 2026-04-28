@@ -29,6 +29,7 @@
     box-shadow: var(--box-shadow-v1);
     justify-content: center;
     margin-bottom: rem(50px);
+    background-color: var(--color-panel);
 }
 
 .software__icon {
@@ -91,7 +92,7 @@
         align-items: center;
         flex-direction: column;
     }
-    
+
     .software__card {
         flex-shrink: 0;
         flex-basis: rem(500px);

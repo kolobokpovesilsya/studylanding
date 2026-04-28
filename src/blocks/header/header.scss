@@ -47,13 +47,9 @@
 .header__nav--right {
     margin-left: auto;
 }
-// .header__nav-list {
-//     display: flex;
-//     list-style: none;
-//     gap: rem(70px);
-//     align-items: center;
-//     margin-right: rem(80px);
-// }
+.header__menu-link {
+    --color-text: #4b5563;
+}
 
 .header__actions {
     display: flex;
@@ -95,7 +91,7 @@
     .header__container {
         --row-height: 0;
         display: grid;
-        grid-template-columns: auto 1fr auto;
+        grid-template-columns: auto 1fr auto auto;
         grid-template-rows: min-content var(--row-height, 1fr);
         height: 100%;
         width: 100%;

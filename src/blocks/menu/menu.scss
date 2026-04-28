@@ -11,7 +11,7 @@
     position: absolute;
     top: 100%;
 
-    background: white;
+    background: var(--color-panel);
     border-radius: rem(20px);
     box-shadow: var(--box-shadow-v1);
     opacity: 0;
@@ -49,7 +49,7 @@
     height: 0;
     border-left: var-to-rem(--width) solid transparent;
     border-right: var-to-rem(--width) solid transparent;
-    border-bottom: var-to-rem(--height) solid #4b5563;
+    border-bottom: var-to-rem(--height) solid var(--menu-text-color);
     transform: rotate(180deg);
 }
 .menu__item-link {
@@ -59,7 +59,7 @@
     justify-content: center;
     align-items: center;
     text-decoration: none;
-    color: #4b5563;
+    color: var(--menu-text-color);
     font-weight: 500;
     font-size: rem(22px);
     letter-spacing: 2%;

@@ -95,7 +95,7 @@
 
 .testimonial__review {
     position: absolute;
-    background-color: white;
+    background-color: var(--color-panel);
     box-shadow: var(--box-shadow-v2);
     bottom: -10%;
     left: 5rem;
@@ -178,7 +178,7 @@
 }
 
 .testimonial__slider-arrow {
-    background-color: white;
+    background-color: var(--color-panel);
     box-shadow: var(--box-shadow-v2);
     width: rem(80px);
     height: rem(80px);
