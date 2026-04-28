@@ -84,16 +84,15 @@
 }
 .btn-slider {
     position: relative;
-    border: 2px solid black;
+    border: 2px solid var(--accent-warning);
     border-radius: 20px;
     display: flex;
     width: 4.5rem;
-    left: 0%;
+    
     // height: 2rem;
     overflow: hidden;
-    transform: translateX(0%);
-    transition-duration: 0.5s;
-    // transition-property: left;
+    // transform: translateX(0%);
+     
     input {
         position: absolute;
         opacity: 0;
@@ -102,25 +101,27 @@
         visibility: hidden;
         z-index: -1;
     }
-    &__pin {
+    &__pin {        
         position: relative;
+          left: 0;
         height: 2rem;
         width: 2rem;
         display: inline-flex;
         align-items: center;
         justify-content: center;
         background-color: white;
-        border-radius: 50%;
+        border-radius: 50%;        
+        transition: left 0.3s;
     }
     &__false,
     &__true {
         position: absolute;
     }
     &:has(input:checked) &__pin {
-        transform: translateX(110%);
-        // left: 50%;
+        // transform: translateX(110%);
+        left: 50%;
         // transition-property: left;
-        transition-duration: 0.5s;
+        transition: left 0.3s;
         // justify-content: end;
         // transition-duration: 0.2s;
     }
