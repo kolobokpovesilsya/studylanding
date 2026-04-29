@@ -8,6 +8,7 @@ import { initSoftware } from "./blocks/software/software.js";
 import { LazyContentLoader } from "./lib/lazyimages/llazyimages.js";
 import { IntersectionAnimation } from "./lib/animation/animation.js";
 import { initTestimonial } from "./blocks/testimonial/testimonial.js";
+import { ModalController } from "./blocks/modal/modal.js";
 const resetBtn = document.querySelector(".reset-scroll-btn");
 function bubbleResetBtn(e) {
     const scrollTop = window.scrollY;
@@ -41,6 +42,8 @@ document.addEventListener("DOMContentLoaded", () => {
         threshold: 0.01,
         rootMargin: "20px",
     });
+    new ModalController()
+    
     document.addEventListener("scroll", bubbleResetBtn);
     resetBtn.addEventListener("click", resetScroll);
     initBlocks();

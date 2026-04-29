@@ -886,14 +886,14 @@
                         by the Skilline.</p>
                     <p data-animation="slide-y" data-anim-delay="1" class="testimonial__description">Are you
                         too? Please give your assessment</p>
-                    <div data-animation="slide-y" data-anim-delay="1.2" class="testimonial__btn">
+                    <button data-animation="slide-y" data-anim-delay="1.2" data-bind-modal="assessment-modal" class="testimonial__btn">
                         <span class="testimonial__btn-text">Write your assessment</span>
                         <div class="testimonial__btn-arrow">
                             <svg class="icon testimonial__btn-icon">
                                 <use href="sprites.svg#arrow-right"></use>
                             </svg>
                         </div>
-                    </div>
+                    </button>
                 </div>
                 <div class="testimonial__reviews">
                     <div class="testimonial__slider slider">
@@ -946,14 +946,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- <div class="testimonial__slider-controls">
-                                        <div data-animation="slide-x" data-anim-x="100%" data-anim-delay="0.8"
-                                            class="testimonial__slider-arrow testimonial__slider-arrow--right">
-                                            <svg class="icon testimonial__arrow-icon">
-                                                <use href="sprites.svg#chevrone-right"></use>
-                                            </svg>
-                                        </div>
-                                    </div> -->
+                                    
                                 </div>
                             </div>
                             <div class="slider__item testimonial__slider-item">
@@ -1161,6 +1154,13 @@
                 <use href="sprites.svg#chevrone-right"></use>
             </svg>
         </div>    
+        <div class="modal-stack">
+            <div id="assessment-modal" class=" modal">
+                <div class="modal--content">
+                    <p>Write your assessment</p>
+                </div>
+            </div>
+        </div>
     </main>
     <footer data-animation-container data-anim-threshold="0.8" class="footer" aria-label="Подвал сайта">
         <div class="footer__container">
