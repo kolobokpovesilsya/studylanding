@@ -78,10 +78,15 @@
 }
 
 .testimonial__slider {
-    max-width: rem(560px);
-    max-height: rem(700px);
+    // max-width: rem(560px);
+    // max-height: rem(700px);
+    height: rem(890px);
+    width: rem(760px);
 }
-
+.testimonial__slider-item {
+    // height: rem(890px);
+    // width: rem(760px);
+}
 .testimonial__slider-content {
     position: relative;
     border-radius: var(--card-radius);
@@ -91,15 +96,19 @@
 .testimonial__reviewer-img {
     border-radius: var(--card-radius);
     overflow: hidden;
+    display: inline-flex;
+    height: rem(690px);
 }
 
 .testimonial__review {
     position: absolute;
     background-color: var(--color-panel);
     box-shadow: var(--box-shadow-v2);
-    bottom: -10%;
-    left: 5rem;
-    width: rem(680px);
+    bottom: rem(50px);
+    left: rem(70px);
+    // width: rem(680px);
+
+    width: 86%;
     overflow: hidden;
     padding: 2rem 0;
     border-radius: var(--card-radius);
@@ -174,7 +183,7 @@
     position: absolute;
     top: 30%;
     transform: translate(50%, 50%);
-    right: 0;
+    right: 10%;
 }
 
 .testimonial__slider-arrow {
@@ -198,43 +207,41 @@
 }
 
 @media (max-width: 1750px) {
-    .testimonial__review {
-        left: -2rem;
-        padding: rem(20px) 0;
-    }
+    // .testimonial__review {
+    //     left: -2rem;
+    //     padding: rem(20px) 0;
+    // }
 
-    .testimonial__review-text {
-        padding: 0rem rem(10px) 0rem rem(60px);
-    }
+    // .testimonial__review-text {
+    //     padding: 0rem rem(10px) 0rem rem(60px);
+    // }
 
-    .testimonial__review-text:after {
-        left: rem(40px);
-    }
+    // .testimonial__review-text:after {
+    //     left: rem(40px);
+    // }
 
-    .testimonial__review-footer {
-        padding: rem(20px) rem(40px) 0rem rem(60px);
-    }
+    // .testimonial__review-footer {
+    //     padding: rem(20px) rem(40px) 0rem rem(60px);
+    // }
 }
-
-@media (max-width: 1280px) {
-    .testimonial__review {
-        width: 115%;
-    }
-}
-
-@media (max-width: 1024px) {
-    .testimonial__review {
-        width: 130%;
-        bottom: -20%;
-    }
-
+@media (max-width: 1350px) {
     .testimonial__container {
-        flex-direction: column;
-        align-items: center;
+        gap: rem(20px);
     }
-
+    .testimonial__content {
+        width: 40%;
+    }
+    .testimonial__reviews {
+        width: 60%;
+    }
+}
+@media (max-width: 1280px) {
+    .testimonial__reviews {
+        width: 50%;
+    }
     .testimonial__content {
         width: 100%;
+        margin-bottom: rem(60px);
     }
 
     .testimonial__description {
@@ -244,24 +251,62 @@
     .testimonial__reviewer-name {
         font-size: rem(25px);
     }
+    // .testimonial__review {
+    //     width: 115%;
+    // }
+    .testimonial__container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 1024px) {
+    .testimonial__reviews {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    // .testimonial__review {
+    //     width: 130%;
+    //     bottom: -20%;
+    // }
+
+    // .testimonial__container {
+    //     flex-direction: column;
+    //     align-items: center;
+    // }
+
+    // .testimonial__content {
+    //     width: 100%;
+    // }
+
+    // .testimonial__description {
+    //     margin: 0;
+    // }
+
+    // .testimonial__reviewer-name {
+    //     font-size: rem(25px);
+    // }
 }
 
 @media (max-width: 768px) {
-    .testimonial__reviews {
-        width: 100%;
+    .testimonial__review {
+        left: 0;
+        width: 96%;
+        box-shadow: 6px 10px 10px 0 #252c7130 !important;
     }
-
-    .testimonial__slider {
-        width: 100%;
-        max-width: unset;
-    }
+    // .testimonial__slider {
+    //     width: 100%;
+    //     max-width: unset;
+    // }
     .testimonial__slider-content {
         display: flex;
         flex-direction: column;
     }
     .testimonial__reviewer-img {
-        width: rem(200px);
-        height: rem(200px);
+        display: inline-block;
+        width: rem(250px);
+        height: rem(250px);
         margin-bottom: rem(20px);
     }
     .testimonial__review {
@@ -274,7 +319,6 @@
         transform: translate(-50%, 50%);
         right: unset;
         right: 0;
-        // left: rem(250px);
     }
 }
 @media (max-width: 480px) {

@@ -1,15 +1,33 @@
 .slider {
+    --slide-items-gap: 0;
     position: relative;
+    overflow: hidden;
+}
+.slider__list {
+    position: relative;
+    display: flex;
+    height: 100%;
+    gap: var-to-rem(--slide-items-gap);
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
 }
 .slider__content {
     width: 100%;
     height: 100%;
     display: inline-flex;
-    overflow: hidden;
+    // overflow: hidden;
 }
 .slider__item {
+    // position: absolute;
     flex-shrink: 0;
+    // display: none;
+    &--show {
+        // display: block;
+    }
 }
+
 .slider__bullet-list {
     position: absolute;
     bottom: 0;

@@ -1,92 +1,114 @@
-
+import { toRem } from "../../utils/utils";
 
 export class Slider {
-    currentItem = 0
-    sliderContainer
-    config
+    currentItem = 0;
+    slidesCount = 0;
+    sliderContainer;
+    config;
     constructor(config) {
-        this.config = config
-        const {
-            selector,
-            slidesPerView = 1,
-            initialSlider = 0
-        } = config
-        const sliderContainer = document.querySelector(selector)
+        this.config = config;
+        this.initializeSlier(config);
+    }
+    initializeSlier = (config) => {
+        const { selector, slidesPerView = 1, initialSlider = 0 } = config;
+        const sliderContainer = document.querySelector(selector);
         if (!sliderContainer) {
-            console.warn('There is no element by selector')
-            return
+            console.warn("There is no element by selector");
+            return;
         }
-        this.sliderContainer = sliderContainer
-        if (!sliderContainer.classList.contains('slider')) {
-            console.warn('There is no element with slider class')
-            return
+        this.sliderContainer = sliderContainer;
+        this.setupContainerConfiguration();
+        if (!sliderContainer.classList.contains("slider")) {
+            console.warn("There is no element with slider class");
+            return;
         }
-  
-        const sliderItems = sliderContainer.querySelectorAll('.slider__item')
-       console.log('slider containersliderContainer==',sliderContainer,sliderItems)
-        if (!sliderItems.length) {
-            console.log('Fail to find any slide item with slider__item class')
-            return
-        }
-        this.currentItem = initialSlider
 
-        const { width, height } = this.sliderContainer.getBoundingClientRect()
-        console.log('sliderItems---',sliderItems)
-        for (let item of sliderItems) { 
-            item.style.height = `${height}px`
-            item.style.width = `${width / slidesPerView}px`
+        const sliderItems = sliderContainer.querySelectorAll(".slider__item");
+
+        if (!sliderItems.length) {
+            console.log("Fail to find any slide item with slider__item class");
+            return;
         }
-        this.initializeBullets()
-    }
+        this.slidesCount = sliderItems.length;
+        this.currentItem = initialSlider;
+
+        const { width, height } = this.sliderContainer.getBoundingClientRect();
+        console.log(
+            "this.sliderContainer.style",
+            this.sliderContainer.style.height,
+            this.sliderContainer.style.width,
+        );
+        for (let item of sliderItems) {
+            item.style.height = `${toRem(height)}rem`;
+            item.style.width = `${toRem(width / slidesPerView)}rem`;
+        }
+        this.initializeBullets();
+        this.initializeControls();
+    };
+    setupContainerConfiguration = () => {
+        const { itemsGap } = this.config;
+        if (typeof itemsGap !== "undefined") {
+            this.sliderContainer.style.setProperty(
+                "--slide-items-gap",
+                `${itemsGap}px`,
+            );
+        }
+    };
+    initializeControls = () => {
+        const arrowLeft =
+            this.sliderContainer.querySelector(".sider__arrow-left");
+        const arrowRight = this.sliderContainer.querySelector(
+            ".sider__arrow-right",
+        );
+        console.log("arrows--", arrowRight, arrowLeft);
+        if (arrowLeft) {
+            arrowLeft.onclick = () => this.slide(this.currentItem - 1);
+        }
+        if (arrowRight) {
+            arrowRight.onclick = () => this.slide(this.currentItem + 1);
+        }
+    };
     getBulletList = () => {
-        const bulletsList = this.sliderContainer.querySelector('.slider__bullet-list')
+        const bulletsList = this.sliderContainer.querySelector(
+            ".slider__bullet-list",
+        );
         if (!bulletsList) {
-            return
+            return;
         }
-        return bulletsList
-    }
+        return bulletsList;
+    };
     initializeBullets = () => {
-        const bulletsList = this.getBulletList()
+        const bulletsList = this.getBulletList();
         if (!bulletsList) {
-            return
+            return;
         }
-        console.log('bullets===', bulletsList.children)
         for (let i = 0; i < bulletsList.children.length; i++) {
-            const bullet = bulletsList.children[i]
-            bullet.onclick = (e) => this.slide(i)
+            const bullet = bulletsList.children[i];
+            bullet.onclick = (e) => this.slide(i);
         }
-        // bulletsList.children.forEach((b,idx)=>{
-        //     console.log('add event handler')
-        //     b.onclick=(e)=>this.slide(idx)
-        // })
-    }
+    };
+    getSlideByIdx = (idx) => {
+        const sliderItems =
+            this.sliderContainer.querySelectorAll(".slider__item");
+        return sliderItems?.[idx];
+    };
     slide = (toIdx) => {
-        // const bulletsList = this.getBulletList()
-        // if (!bulletsList) {
-        //     return
-        // }
-        // console.log('slide to===', toIdx)
-        // const toSliderItem = bulletsList.children[toIdx]
-        
-        //  container.scrollTo({ left: 500, behavior: 'smooth' });
-        
-        const sliderItems = this.sliderContainer.querySelectorAll('.slider__item')
-        if(!sliderItems?.length){
-            return 
+        if (toIdx < 0) {
+            toIdx = this.slidesCount - 1;
+        } else if (toIdx == this.slidesCount) {
+            toIdx = 0;
         }
-        console.log('to page===',this.sliderContainer,sliderItems)
-        const toSliderItem = sliderItems[toIdx]
-        toSliderItem.scrollIntoView({
-            behavior: 'smooth',
-            block: 'nearest',
-            inline: 'start'
+        const sliderItem = this.getSlideByIdx(toIdx);
+        sliderItem?.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest",
+            inline: "nearest",
         });
-        this.currentItem = toIdx
-    }
-    getSliderWith = () => {
-        const { width } = this.sliderContainer.getBoundingClientRect()
-        const { slidesPerView } = this.config
-        return width / (slidesPerView || 1)
+
+        this.currentItem = toIdx;
+    };
+    redraw() {
+        this.initializeSlier(this.config);
     }
 }
 

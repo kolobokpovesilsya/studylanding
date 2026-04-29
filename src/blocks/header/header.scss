@@ -74,7 +74,7 @@
     padding: rem(18px) rem(50px);
 }
 .header__burgerbutton {
-    // margin-left: rem(30px);
+    margin-right: rem(15px);
     display: none;
 }
 .header__sun-icon {
@@ -83,13 +83,20 @@
 .header__moon-icon {
     fill: #b1b1b1;
 }
+@media (max-width: 1690px) {
+    .menu__root-list,
+    .header__actions {
+        gap: rem(15px);
+        margin-right: rem(15px);
+    }
+}
 @media (max-width: 1600px) {
     // .header__nav-list {
     //     gap: (40px);
     //     margin-right: rem(30px);
     // }
 }
-@media (max-width: 1280px) {
+@media (max-width: 1380px) {
     .header__btn {
         padding: rem(9px) rem(20px);
     }
@@ -139,12 +146,13 @@
     }
 
     .header__burgerbutton {
-        margin-left: rem(10px);
+        margin-right: rem(10px);
         display: inline-flex;
     }
 
     .header__actions {
         margin-left: auto;
+        margin-right: rem(10px);
         gap: rem(10px);
     }
 }

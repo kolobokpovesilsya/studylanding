@@ -1,11 +1,11 @@
 .burgerbutton {
     background-color: white;
-    padding: rem(21px);
-    border-radius: var(--card-radius);
+    padding: 0.8rem 0.5rem;
+    border-radius: rem(9px);
     box-shadow: var(--box-shadow-v1);
     display: flex;
     flex-direction: column;
-    gap: rem(6px);
+    gap: 0.3rem;
 
     &__line {
         width: rem(30px);
