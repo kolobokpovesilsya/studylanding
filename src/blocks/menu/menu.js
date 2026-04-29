@@ -13,27 +13,27 @@ export class MenuController {
 
     handleClick(e) {
         //Close all opened submenu first
-         
+
         const target = e.target;
 
         const menuItem = target.closest(".menu__item");
-       
+
         if (!menuItem) {
-               this.closeOpenedSubmenu()
+            this.closeOpenedSubmenu();
             const menuList = document.querySelectorAll(".menu__dropdown");
-              console.log("menuItem===", target, menuItem);
+            console.log("menuItem===", target, menuItem);
             return;
         }
-        const submenu = menuItem.querySelector(':scope .menu__dropdown')
-        this.closeOpenedSubmenu(submenu)
+        const submenu = menuItem.querySelector(":scope .menu__dropdown");
+        this.closeOpenedSubmenu(submenu);
         //if menu item has submenu togle its expand state
-        if(submenu){
-            e.preventDefault()
-             
+        if (submenu) {
+            e.preventDefault();
+
             submenu.classList.toggle("menu__dropdown--opened");
-            return 
+            return;
         }
-        console.log('submenu===',submenu)
+        console.log("submenu===", submenu);
         //If menu item doesnt have submenu go to parent
         const parent = menuItem.parentElement;
         //If parent is not submenu apply default behavior
@@ -48,19 +48,23 @@ export class MenuController {
 
         // menu__dropdown--close-on-click
     }
-    closeOpenedSubmenu(currentOpened){
-        const openedSubmenu = document.querySelectorAll('.menu__dropdown--opened')
-        Array.from(openedSubmenu).forEach(sbmenu=>{
-            console.log('sbmenu===',sbmenu)
-            if(sbmenu.classList.contains('menu__dropdown--opened') && currentOpened!=sbmenu){
-                sbmenu.classList.remove('menu__dropdown--opened')
+    closeOpenedSubmenu(currentOpened) {
+        const openedSubmenu = document.querySelectorAll(
+            ".menu__dropdown--opened",
+        );
+        Array.from(openedSubmenu).forEach((sbmenu) => {
+            console.log("sbmenu===", sbmenu);
+            if (
+                sbmenu.classList.contains("menu__dropdown--opened") &&
+                currentOpened != sbmenu
+            ) {
+                sbmenu.classList.remove("menu__dropdown--opened");
             }
-        })
+        });
     }
     processDropdownItem(dropdownItem) {
         // const arrow = document.createElement("div");
         // arrow.classList.add("menu__item-arrow");
-
         // dropdownItem.appendChild(arrow);
         // arrow.onclick = this.toggleDropdownMenu.bind(this, dropdownItem);
     }

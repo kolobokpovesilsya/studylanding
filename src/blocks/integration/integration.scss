@@ -66,8 +66,9 @@
 }
 .theme-dark .integration__platforms-content {
     padding: 0.5rem;
-    background: var(--color-panel);
+    background: #5b6587;
     border-radius: var(--card-radius);
+    justify-items: center;
 }
 
 @media (max-width: 768px) {

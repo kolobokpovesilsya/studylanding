@@ -55,7 +55,8 @@
     --intro-bg: #fff2e1;
 }
 .theme-dark {
-    --color-panel: #474e68;
+    --color-panel: #5b6587;
+    // --color-panel: #474e68;
     --color-bg: #404258;
     --heading-text-color: #dddee1;
     --intro-bg: #ffcc99;
@@ -262,6 +263,7 @@ a {
 .reset-scroll-btn--show {
     transform: translate(-20%, -50%) rotate(-90deg);
     transition-duration: 0.2s;
+    cursor: pointer;
 }
 @media (max-width: 1600px) {
     html {

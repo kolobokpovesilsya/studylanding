@@ -62,6 +62,7 @@
     display: flex;
     gap: rem(30px);
     flex-shrink: 0;
+    margin-right: rem(30px);
 }
 .header__btn {
     font-size: rem(22px);
@@ -75,6 +76,12 @@
 .header__burgerbutton {
     // margin-left: rem(30px);
     display: none;
+}
+.header__sun-icon {
+    fill: var(--accent-warning);
+}
+.header__moon-icon {
+    fill: #b1b1b1;
 }
 @media (max-width: 1600px) {
     // .header__nav-list {
