@@ -7,7 +7,10 @@ import { initBrands } from "./blocks/brands/brands.js";
 import { initSoftware } from "./blocks/software/software.js";
 import { LazyContentLoader } from "./lib/lazyimages/llazyimages.js";
 import { IntersectionAnimation } from "./lib/animation/animation.js";
-import { initTestimonial } from "./blocks/testimonial/testimonial.js";
+import {
+    initTestimonial,
+    closeAssessmentModalHandler,
+} from "./blocks/testimonial/testimonial.js";
 import { ModalController } from "./blocks/modal/modal.js";
 const resetBtn = document.querySelector(".reset-scroll-btn");
 function bubbleResetBtn(e) {
@@ -34,6 +37,12 @@ function initBlocks() {
     initSoftware();
     initTestimonial();
 }
+function closeModalHandler(modalId, status) {
+    switch (modalId) {
+        case "assessment-modal":
+            return closeAssessmentModalHandler(modalId, status);
+    }
+}
 document.addEventListener("DOMContentLoaded", () => {
     const intersectionAnimation = new IntersectionAnimation({
         rootElement: document,
@@ -42,8 +51,8 @@ document.addEventListener("DOMContentLoaded", () => {
         threshold: 0.01,
         rootMargin: "20px",
     });
-    new ModalController()
-    
+    new ModalController(closeModalHandler);
+
     document.addEventListener("scroll", bubbleResetBtn);
     resetBtn.addEventListener("click", resetScroll);
     initBlocks();

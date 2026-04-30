@@ -1,0 +1,11 @@
+.rating {
+    display: flex;
+}
+.rating__star {
+    fill: none !important;
+    stroke: #f9bb1c !important;
+    cursor: pointer;
+}
+.rating__star--filled {
+    fill: #f9bb1c !important;
+}

@@ -1156,8 +1156,55 @@
         </div>    
         <div class="modal-stack">
             <div id="assessment-modal" class=" modal">
-                <div class="modal--content">
-                    <p>Write your assessment</p>
+                <div class="modal__content">
+                    <div class="modal__title">
+                        <h2 class="modal__title-text testimonial__reviewer-title">Write your assessment</h2>
+                        <span class="modal__close">X</span>
+                    </div>
+                    <div class="modal__body">
+                        <form class="testimonial__reviewer-form">
+                            <div class="testimonial__reviewer-group">
+                                <label for="reviewer-name" class="testimonial__reviewer-label">Enter your name:</label>
+                                <input id="reviewer-name" type="text" class="input testimonial__reviewer-name"></input>
+                            </div>
+                            <div class="testimonial__reviewer-group">
+                                <label for="reviewer-text" class="testimonial__reviewer-label">Enter your review</label>
+                                <textarea rows="4" class="input  testimonial__reviewer-text"></textarea>
+                            </div>  
+                            <div class="testimonial__reviewer-group">
+                                <label for="reviewer-text" class="testimonial__reviewer-label">Give a rating</label>     
+                                <div class="testimonial__reviewer-group">
+
+                                <div class="rating testimonial__reviwer-stars">
+                                    <svg class="icon rating__star testimonial__reviwer-star">
+                                        <use href="sprites.svg#star"></use>
+                                    </svg>
+                                    <svg class="icon rating__star testimonial__reviwer-star">
+                                        <use href="sprites.svg#star"></use>
+                                    </svg>
+                                    <svg class="icon rating__star testimonial__reviwer-star">
+                                        <use href="sprites.svg#star"></use>
+                                    </svg>
+                                    <svg class="icon rating__star testimonial__reviwer-star">
+                                        <use href="sprites.svg#star"></use>
+                                    </svg>
+                                    <svg class="icon rating__star testimonial__reviwer-star">
+                                        <use href="sprites.svg#star"></use>
+                                    </svg>
+                                </div>
+                                </div>                 
+                            </div>                 
+                            
+                        </form>
+                    </div>
+                    <div class="modal__footer">
+                        <button class="btn btn--success modal__ok">
+                            Send
+                        </button>
+                        <button class="btn btn--danger modal__cancel">
+                            Cancel
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>

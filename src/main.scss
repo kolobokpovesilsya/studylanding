@@ -4,6 +4,8 @@
 /* UI blocks */
 
 @import "blocks/modal/modal.scss";
+@import "blocks/rating/rating.scss";
+@import "blocks/input/input.scss";
 @import "blocks/menu/menu.scss";
 @import "blocks/screencard/screencard.scss";
 @import "blocks/videocall/videocall.scss";
@@ -39,7 +41,9 @@
     --color-bg: var(--white);
     --accent-primary: #65daff;
     --accent-warning: #f48c06;
+    --accent-success: #f48c06;
     --accent-info: #2f327d;
+    --accent-danger: #e13468;
     --gap: 1rem;
     --radius: 8px;
     --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08);
@@ -54,6 +58,7 @@
     --menu-text-color: #252641;
     --heading-text-color: #2f327d;
     --intro-bg: #fff2e1;
+    --modal-radius: 40px;
 }
 .theme-dark {
     --color-panel: #5b6587;

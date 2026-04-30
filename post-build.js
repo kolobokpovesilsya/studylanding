@@ -143,7 +143,6 @@ function addCSSBlockImports(mainPath, scssFiles) {
         for (let file of scssFiles) {
             const fullPath = path.join(srcPath, file);
             const relative = path.relative(srcPath, fullPath);
-            console.log("relative===", srcPath, file, relative);
             // const relative = path.relative(srcPath, file);
             const newInport = `@import url(\'${relative.replaceAll("\\", "/").replace("\.scss", "\.css")}\');`;
             imports += `${newInport}\n`;

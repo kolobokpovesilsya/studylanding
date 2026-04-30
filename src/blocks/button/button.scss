@@ -37,6 +37,16 @@
     --btn-bg: var(--white);
     --btn-text: var(--black);
 }
+.btn--success {
+    --btn-border: var(--accent-success);
+    --btn-bg: var(--accent-success);
+    --btn-text: var(--white);
+}
+.btn--danger {
+    --btn-border: var(--accent-danger);
+    --btn-bg: var(--accent-danger);
+    --btn-text: var(--white);
+}
 .btn--info {
     --btn-border: var(--accent-info);
     --btn-bg: var(--accent-info);
@@ -89,16 +99,13 @@
     display: flex;
     width: 4.5rem;
     cursor: pointer;
-    // height: 2rem;
     overflow: hidden;
     box-shadow: inset 0 0 11px #00000030;
-    // transform: translateX(0%);
 
     &__background {
         position: absolute;
         height: 100%;
         width: 0;
-        // opacity: 0;
         background-color: #7be17b;
         transition: width 0.3s;
         box-shadow: inset 0 0 11px #00000030;
@@ -135,12 +142,8 @@
         transition: width 0.4s;
     }
     &:has(input:checked) &__pin {
-        // transform: translateX(110%);
         left: 53%;
-        // transition-property: left;
         transition: left 0.3s;
-        // justify-content: end;
-        // transition-duration: 0.2s;
     }
     &:has(input:checked) &__false {
         opacity: 0;
@@ -148,10 +151,6 @@
     &:has(input:not(:checked)) &__true {
         opacity: 0;
     }
-    // &:has(input:checked) {
-    //     justify-content: end;
-    //     transition-duration: 0.2s;
-    // }
 }
 @media (max-width: 1280px) {
     .btn {
