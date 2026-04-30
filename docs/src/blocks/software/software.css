@@ -30,6 +30,7 @@
   box-shadow: var(--box-shadow-v1);
   justify-content: center;
   margin-bottom: 2.5rem;
+  background-color: var(--color-panel);
 }
 
 .software__icon {

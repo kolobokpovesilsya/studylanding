@@ -89,6 +89,65 @@
   --btn-border: var(--accent-warning);
 }
 
+.btn-slider {
+  position: relative;
+  border: 4px solid var(--accent-warning);
+  border-radius: 20px;
+  display: flex;
+  width: 4.5rem;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: inset 0 0 11px rgba(0, 0, 0, 0.1882352941);
+}
+.btn-slider__background {
+  position: absolute;
+  height: 100%;
+  width: 0;
+  background-color: #7be17b;
+  transition: width 0.3s;
+  box-shadow: inset 0 0 11px rgba(0, 0, 0, 0.1882352941);
+}
+.btn-slider input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  visibility: hidden;
+  z-index: -1;
+  pointer-events: none;
+}
+.btn-slider__pin {
+  position: relative;
+  left: -2%;
+  height: 2rem;
+  width: 2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 50%;
+  transition: left 0.3s;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3764705882);
+}
+.btn-slider__false, .btn-slider__true {
+  position: absolute;
+}
+.btn-slider:has(input:checked) .btn-slider__background {
+  width: 100%;
+  opacity: 1;
+  transition: width 0.4s;
+}
+.btn-slider:has(input:checked) .btn-slider__pin {
+  left: 53%;
+  transition: left 0.3s;
+}
+.btn-slider:has(input:checked) .btn-slider__false {
+  opacity: 0;
+}
+.btn-slider:has(input:not(:checked)) .btn-slider__true {
+  opacity: 0;
+}
+
 @media (max-width: 1280px) {
   .btn {
     padding: 0.45rem 1rem;

@@ -211,6 +211,9 @@
   .discussions__screencard-background {
     display: none;
   }
+  .discussions__screencard-foreground {
+    padding-left: 0;
+  }
   .discussions__info-btn {
     align-self: start;
     padding: 0.2rem 0.8rem;

@@ -3,6 +3,9 @@ import './blocks/intro/intro.js';
 import { i as initClassroom } from './blocks/classroom/classroom.js';
 import './blocks/brands/brands.js';
 import './blocks/software/software.js';
+import { i as initTestimonial } from './blocks/testimonial/testimonial.js';
+import './blocks/menu/menu.js';
+import './blocks/slider/slider.js';
 
 class LazyContentLoader {
     observer;
@@ -167,18 +170,37 @@ class IntersectionAnimation {
 
 // import "./blocks/header/header.scss";
 
-
+const resetBtn = document.querySelector(".reset-scroll-btn");
+function bubbleResetBtn(e) {
+    const scrollTop = window.scrollY;
+    const classList = resetBtn.classList;
+    if (scrollTop > 500) {
+        if (!classList.contains("reset-scroll-btn--show")) {
+            classList.add("reset-scroll-btn--show");
+        }
+    } else {
+        if (classList.contains("reset-scroll-btn--show")) {
+            classList.remove("reset-scroll-btn--show");
+        }
+    }
+}
+function resetScroll() {
+    window.scrollTo(0, 0);
+}
+function initBlocks() {
+    initHeader();
+    initClassroom();
+    initTestimonial();
+}
 document.addEventListener("DOMContentLoaded", () => {
     new IntersectionAnimation({
         rootElement: document,
     });
-    new  LazyContentLoader({
+    new LazyContentLoader({
         threshold: 0.01,
         rootMargin: "20px",
     });
-    initHeader();
-    initClassroom();
-    // const slider = new Slider({
-    //     selector: ".team__slider.slider",
-    // });
+    document.addEventListener("scroll", bubbleResetBtn);
+    resetBtn.addEventListener("click", resetScroll);
+    initBlocks();
 });

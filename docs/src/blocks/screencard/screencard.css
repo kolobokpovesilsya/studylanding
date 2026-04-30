@@ -4,7 +4,7 @@
 }
 
 .screencard__header {
-  background-color: #eaeaea;
+  background-color: var(--color-screen-header);
   padding: 0.5rem 1.25rem;
   border-radius: 1rem 1rem 0 0;
 }
@@ -33,19 +33,21 @@
 }
 
 .screencard__body {
-  background: #f4f4f4;
+  position: relative;
+  top: -1px;
+  background: var(--color-screen-body);
   padding: 2.5rem 2rem;
   border-radius: 0 0 1rem 1rem;
 }
 
 @supports (backdrop-filter: blur(1px)) {
   .screencard__body--transparent {
-    background: rgba(244, 244, 244, 0.3764705882);
+    background: color-mix(in srgb, var(--color-screen-body), transparent 30%);
     backdrop-filter: blur(0.75rem) saturate(100%);
     -webkit-backdrop-filter: blur(0.75rem) saturate(100%);
   }
   .screencard__header--transparent {
-    background: rgba(234, 234, 234, 0.6);
+    background: color-mix(in srgb, var(--color-screen-header), transparent 30%);
     backdrop-filter: blur(15px) saturate(60%);
     -webkit-backdrop-filter: blur(0.75rem) saturate(60%);
   }

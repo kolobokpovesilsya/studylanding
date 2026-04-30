@@ -1,4 +1,7 @@
+import { M as MenuController } from '../menu/menu.js';
+
 let prevScrollTop = 0;
+const themeBtn = document.querySelector(".header__theme-btn input");
 const burgerBtn = document.querySelector(".header__burgerbutton");
 const header = document.body.querySelector("header");
 let initialHeaderHeight;
@@ -65,9 +68,18 @@ function clickBurgerMenu(e) {
         });
     }
 }
+function toggleTheme(e) {
+    console.log("click====", e.target);
+
+    document.body.classList.toggle("theme-dark");
+}
 function initHeader() {
     document.addEventListener("scroll", scrollHandler);
     burgerBtn?.addEventListener("click", clickBurgerMenu);
+    themeBtn.onclick = toggleTheme;
+    // themeBtn?.addEventListener("click", toggleTheme);
+    const menuElement = document.querySelector(".header .menu");
+    new MenuController(menuElement);
 }
 
 export { initHeader as i };

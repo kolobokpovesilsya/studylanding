@@ -5,7 +5,7 @@
   overflow: hidden;
   height: 58vw;
   max-height: 55.9rem;
-  background-color: #fff2e1;
+  background-color: var(--intro-bg);
   clip-path: ellipse(100% 100% at 50% 0%);
   margin-bottom: 90px;
 }
@@ -19,6 +19,7 @@
 }
 
 .intro__title {
+  --heading-text-color: #2f327d;
   margin-bottom: 1.75rem;
 }
 
@@ -58,6 +59,7 @@
 }
 
 .intro__content {
+  --text-color: #696984;
   width: 45%;
   display: inline-flex;
   flex-direction: column;

@@ -1,29 +1,28 @@
-@import url('blocks/videocall/videocall.css');
-@import url('blocks/tools/tools.css');
-@import url('blocks/testimonial/testimonial.css');
-@import url('blocks/team/team.css');
-@import url('blocks/software/software.css');
-@import url('blocks/slider/slider.css');
+@import url('blocks/menu/menu.css');
 @import url('blocks/screencard/screencard.css');
-@import url('blocks/quiz/quiz.css');
-@import url('blocks/notification/notification.css');
-@import url('blocks/news/news.css');
-@import url('blocks/logo/logo.css');
-@import url('blocks/intro/intro.css');
-@import url('blocks/integration/integration.css');
-@import url('blocks/header/header.css');
-@import url('blocks/gradebook/gradebook.css');
-@import url('blocks/footer/footer.css');
-@import url('blocks/features/features.css');
-@import url('blocks/discussions/discussion.css');
-@import url('blocks/classroom/classroom.css');
+@import url('blocks/videocall/videocall.css');
+@import url('blocks/slider/slider.css');
 @import url('blocks/button/button.css');
+@import url('blocks/logo/logo.css');
 @import url('blocks/burgerbutton/burgerbutton.css');
-@import url('blocks/bulb/bulb.css');
-@import url('blocks/brands/brands.css');
-@import url('blocks/boxicon/boxicon.css');
 @import url('blocks/badge/badge.css');
+@import url('blocks/boxicon/boxicon.css');
+@import url('blocks/bulb/bulb.css');
+@import url('blocks/header/header.css');
+@import url('blocks/intro/intro.css');
+@import url('blocks/brands/brands.css');
+@import url('blocks/software/software.css');
 @import url('blocks/about/about.css');
+@import url('blocks/classroom/classroom.css');
+@import url('blocks/features/features.css');
+@import url('blocks/tools/tools.css');
+@import url('blocks/quiz/quiz.css');
+@import url('blocks/gradebook/gradebook.css');
+@import url('blocks/discussions/discussion.css');
+@import url('blocks/integration/integration.css');
+@import url('blocks/testimonial/testimonial.css');
+@import url('blocks/news/news.css');
+@import url('blocks/footer/footer.css');
 
 /* Utils functions */
 .animation--slide-y-reset {
@@ -120,6 +119,8 @@
   --white: #ffffff;
   --black: #000000;
   --color-panel: var(--white);
+  --color-screen-body: #f4f4f4;
+  --color-screen-header: #eaeaea;
   --color-bg: var(--white);
   --accent-primary: #65daff;
   --accent-warning: #f48c06;
@@ -134,8 +135,23 @@
   --box-shadow-v2: 0 16px 40px 0 #252c7130;
   --text-size: 24px;
   --text-color: #696984;
+  --text-color: #696984;
   --menu-text-color: #252641;
   --heading-text-color: #2f327d;
+  --intro-bg: #fff2e1;
+}
+
+.theme-dark {
+  --color-panel: #5b6587;
+  --color-bg: #404258;
+  --heading-text-color: #dddee1;
+  --intro-bg: #ffcc99;
+  --text-color: #a2aeb7;
+  --color-screen-body: #616577;
+  --color-screen-header: #9296a7;
+  --menu-text-color: #fff;
+  --box-shadow-v1: 0 10px 20px 0 #65daff20;
+  --box-shadow-v2: 0 16px 20px 0 #65daff30;
 }
 
 *,
@@ -267,6 +283,7 @@ h3 {
 .text {
   font-size: 1.2rem;
   line-height: 180%;
+  color: var(--text-color);
 }
 
 h1 {
@@ -337,6 +354,29 @@ h5 {
 
 a {
   font-size: 1.1rem;
+}
+
+.reset-scroll-btn {
+  --size: 80px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  transform: translate(-20%, 200%) rotate(-90deg);
+  width: calc(var(--size) / 20px * 1rem);
+  height: calc(var(--size) / 20px * 1rem);
+  background-color: var(--color-panel);
+  box-shadow: var(--box-shadow-v1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition-duration: 0.2s;
+}
+
+.reset-scroll-btn--show {
+  transform: translate(-20%, -50%) rotate(-90deg);
+  transition-duration: 0.2s;
+  cursor: pointer;
 }
 
 @media (max-width: 1600px) {
