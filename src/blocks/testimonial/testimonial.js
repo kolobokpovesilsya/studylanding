@@ -1,10 +1,13 @@
+import { RatingInput } from "../rating/rating";
 import { Slider } from "../slider/slider";
 let redrawOnce = true;
+let testimonialRatingInput;
 export function initTestimonial() {
     const slider = new Slider({
         selector: ".testimonial__slider",
         itemsGap: 5,
     });
+    //Responsive slider observer
     const ro = new ResizeObserver((entries) => {
         for (let entry of entries) {
             // const width = entry.contentBoxSize
@@ -31,6 +34,45 @@ export function initTestimonial() {
             // }
         }
     });
-
     ro.observe(document.body);
+    //Modal rating input
+    testimonialRatingInput = new RatingInput(".testimonial__reviwer-stars");
+}
+
+export function closeAssessmentModalHandler(id, status) {
+    const assesmentModal = document.querySelector(`#${id}`);
+    console.log("close handle==", id, assesmentModal, status);
+    if (!assesmentModal) {
+        return;
+    }
+    switch (status) {
+        case "ok":
+            const data = getAssessmentModalInputs(assesmentModal);
+            console.log("send data===", data);
+            resetAssessmentModalInputs(assesmentModal);
+            return;
+        case "close":
+            resetAssessmentModalInputs(assesmentModal);
+            return;
+    }
+}
+function getAssessmentModalInputs(modal) {
+    const input = modal.querySelector("input");
+    const textarea = modal.querySelector("textarea");
+    let ratingValue = testimonialRatingInput?.getRating() || 0;
+
+    const data = {
+        name: input.value,
+        text: textarea.value,
+        rating: ratingValue,
+    };
+
+    return data;
+}
+function resetAssessmentModalInputs(modal) {
+    const input = modal.querySelector("input");
+    const textarea = modal.querySelector("textarea");
+    input.value = "";
+    textarea.value = "";
+    testimonialRatingInput.setRating(0);
 }

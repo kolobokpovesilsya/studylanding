@@ -169,6 +169,7 @@
 }
 
 .testimonial__star-icon {
+    fill: #f9bb1c;
     /* иконка звезды */
 }
 
@@ -206,6 +207,35 @@
     fill: none !important;
 }
 
+/* Modal styles */
+.testimonial__reviewer-title {
+    font-size: rem(40px);
+    letter-spacing: 5%;
+}
+.testimonial__reviewer-form {
+    display: flex;
+    flex-direction: column;
+}
+.testimonial__reviewer-label {
+    margin-bottom: rem(20px);
+    text-align: center;
+    font-size: rem(30px);
+}
+.testimonial__reviewer-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: rem(30px);
+}
+.testimonial__reviwer-stars {
+    display: flex;
+    justify-content: space-between;
+}
+.testimonial__reviwer-star {
+    width: 3rem !important;
+    height: 3rem !important;
+    // fill: none !important;
+    // stroke: #f9bb1c;
+}
 @media (max-width: 1750px) {
     // .testimonial__review {
     //     left: -2rem;
