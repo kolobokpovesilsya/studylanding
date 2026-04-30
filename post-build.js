@@ -10,6 +10,18 @@ const distPath = path.resolve(process.cwd(), "docs");
 const srcPath = path.resolve(process.cwd(), "src");
 
 // Функция для добавления импорта функций в содержимое файла
+function getBlocksImports() {
+    try {
+        const mainCSS = fs
+            .readFileSync(path.join(srcPath, "main.scss"))
+            .toString();
+        const result = mainCSS.match(/(\.\/)?blocks\/[^"']+\s*/g);
+        return result;
+    } catch (e) {
+        return [];
+    }
+}
+const blockImports = getBlocksImports();
 function addFunctionsImport(content, inputFile) {
     // Проверяем, есть ли уже импорт функций
     const hasFunctionsImport =
@@ -38,10 +50,11 @@ function addFunctionsImport(content, inputFile) {
     return `@import "${relativePathToFunctions}";\n${content}`;
 }
 
-const scssFiles = glob.sync("src/blocks/**/*.scss", { absolute: true });
+// const scssFiles = glob.sync("src/blocks/**/*.scss", { absolute: true });
+for (const filePath of blockImports) {
+    const fullPath = path.join(srcPath, filePath);
+    const relativePath = path.relative(srcPath, fullPath);
 
-for (const filePath of scssFiles) {
-    const relativePath = path.relative(srcPath, filePath);
     const outputPath = path.join(
         path.resolve(distPath, "src"),
         relativePath.replace(".scss", ".css"),
@@ -55,7 +68,8 @@ for (const filePath of scssFiles) {
         path.resolve(distPath, "src"),
         relativePath.replace(".scss", ".temp.scss"),
     );
-    let content = fs.readFileSync(filePath).toString();
+    let content = fs.readFileSync(fullPath).toString();
+    // let content = fs.readFileSync(filePath).toString();
     if (!content.includes("functions.scss")) {
         content = `@import "functions.scss";\n${content}`;
     }
@@ -72,7 +86,8 @@ for (const filePath of scssFiles) {
         fs.writeFileSync(outputPath, result.css);
         fs.unlinkSync(tempFilePath);
     } catch (error) {
-        console.error(`Error compiling ${filePath}: ${error.message}`);
+        console.error(`Error compiling ${fullPath}: ${error.message}`);
+        // console.error(`Error compiling ${filePath}: ${error.message}`);
         if (fs.existsSync(tempFilePath)) fs.unlinkSync(tempFilePath);
     } finally {
         if (fs.existsSync(tempFilePath)) {
@@ -108,7 +123,7 @@ try {
         fs.unlinkSync(tempMainPath);
     }
 }
-addCSSBlockImports(outputMainPath);
+addCSSBlockImports(outputMainPath, blockImports);
 
 function removeSCSSBlocksImports(mainPath) {
     let mainSCSSFile = fs.readFileSync(mainPath).toString();
@@ -119,13 +134,17 @@ function removeSCSSBlocksImports(mainPath) {
     );
     return mainSCSSFile;
 }
-function addCSSBlockImports(mainPath) {
+function addCSSBlockImports(mainPath, scssFiles) {
     try {
         let scssFile = fs.readFileSync(mainPath).toString();
         let imports = "";
-        const scssFiles = glob.sync("src/blocks/**/*.scss", { absolute: true });
+        // const scssFiles = glob.sync("src/blocks/**/*.scss", { absolute: true });
+
         for (let file of scssFiles) {
-            const relative = path.relative(srcPath, file);
+            const fullPath = path.join(srcPath, file);
+            const relative = path.relative(srcPath, fullPath);
+            console.log("relative===", srcPath, file, relative);
+            // const relative = path.relative(srcPath, file);
             const newInport = `@import url(\'${relative.replaceAll("\\", "/").replace("\.scss", "\.css")}\');`;
             imports += `${newInport}\n`;
         }
@@ -133,46 +152,6 @@ function addCSSBlockImports(mainPath) {
         fs.writeFileSync(mainPath, scssFile);
     } catch (e) {
         console.error("Fail to add css block imports", e);
-    }
-}
-async function compileWithPrefixes(inputFile, outputFile, loadPaths = []) {
-    const loadPathArgs = loadPaths.map((p) => `--load-path="${p}"`).join(" ");
-
-    // Читаем и модифицируем содержимое файла
-    let content = fs.readFileSync(inputFile, "utf8");
-    content = addFunctionsImport(content, inputFile);
-
-    // Создаем временный файл с модифицированным содержимым
-    const tempInputFile = outputFile + ".input.temp.scss";
-    fs.writeFileSync(tempInputFile, content);
-
-    const tempFile = outputFile + ".temp.css";
-
-    try {
-        execSync(
-            `npx sass "${tempInputFile}" "${tempFile}" --no-source-map --style=expanded ${loadPathArgs}`,
-            { stdio: "pipe" },
-        );
-
-        const cssContent = fs.readFileSync(tempFile, "utf8");
-        const result = await postcss([autoprefixer]).process(cssContent, {
-            from: inputFile,
-            to: outputFile,
-        });
-
-        fs.writeFileSync(outputFile, result.css);
-        fs.unlinkSync(tempFile);
-
-        return;
-    } catch (error) {
-        console.error(`Error compiling ${inputFile}: ${error.message}`);
-        if (fs.existsSync(tempFile)) fs.unlinkSync(tempFile);
-        return false;
-    } finally {
-        // Удаляем временный входной файл
-        if (fs.existsSync(tempInputFile)) {
-            fs.unlinkSync(tempInputFile);
-        }
     }
 }
 
