@@ -1,3 +1,4 @@
+import { openModalById } from "../modal/modal";
 import { RatingInput } from "../rating/rating";
 import { Slider } from "../slider/slider";
 let redrawOnce = true;
@@ -48,7 +49,10 @@ export function closeAssessmentModalHandler(id, status) {
     switch (status) {
         case "ok":
             const data = getAssessmentModalInputs(assesmentModal);
-            console.log("send data===", data);
+            sendAssessment(data);
+            openModalById("send-assessment-modal", {
+                closeTimeout: 1500,
+            });
             resetAssessmentModalInputs(assesmentModal);
             return;
         case "close":
@@ -76,3 +80,5 @@ function resetAssessmentModalInputs(modal) {
     textarea.value = "";
     testimonialRatingInput.setRating(0);
 }
+function validateAssessment() {}
+function sendAssessment(data) {}

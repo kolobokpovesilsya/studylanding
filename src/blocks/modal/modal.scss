@@ -21,6 +21,22 @@
         border-radius: var(--modal-radius);
         background-color: var(--color-panel);
     }
+    &__validation-message {
+        display: none;
+        color: var(--accent-danger);
+        font-size: rem(18px);
+    }
+    &__input-group {
+        display: flex;
+        flex-direction: column;
+    }
+    // &__input-group--mandatory div[data-mandatory] {
+    //     display: block;
+    // }
+    &__input {
+        &--invalid {
+        }
+    }
     &__title {
         display: flex;
         justify-content: space-between;

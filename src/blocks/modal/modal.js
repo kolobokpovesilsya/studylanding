@@ -46,7 +46,18 @@ export class ModalController {
                 };
             }
         });
+        document.addEventListener("open-modal", this.handleOpenModalEvent);
     }
+    handleOpenModalEvent = (e) => {
+        const { id, closeCallback, closeTimeout } = e.detail;
+        console.log("event===", e);
+        this.openModal(id);
+        if (closeTimeout) {
+            setTimeout(() => {
+                this.closeModal(id);
+            }, closeTimeout);
+        }
+    };
     onModalClick = (modalId, e) => {
         const modalContent = e.target.closest(".modal__content");
         if (!modalContent) {
@@ -78,4 +89,14 @@ export class ModalController {
         }
         modal.classList.remove("modal--opened");
     }
+}
+
+export function openModalById(id, options) {
+    const customEvent = new CustomEvent("open-modal", {
+        detail: {
+            id,
+            ...options,
+        },
+    });
+    document.dispatchEvent(customEvent);
 }

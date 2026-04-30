@@ -1154,7 +1154,15 @@
                 <use href="sprites.svg#chevrone-right"></use>
             </svg>
         </div>    
-        <div class="modal-stack">
+        <div class="modal-list">
+            <div id="send-assessment-modal" class=" modal">
+                <div class="modal__content">
+                 
+                    <div class="modal__body">
+                        <p>Thank you for your assessment!</p>
+                    </div>                    
+                </div>
+            </div>
             <div id="assessment-modal" class=" modal">
                 <div class="modal__content">
                     <div class="modal__title">
@@ -1163,36 +1171,36 @@
                     </div>
                     <div class="modal__body">
                         <form class="testimonial__reviewer-form">
-                            <div class="testimonial__reviewer-group">
+                            <div class="testimonial__reviewer-group modal__input-group">
                                 <label for="reviewer-name" class="testimonial__reviewer-label">Enter your name:</label>
-                                <input id="reviewer-name" type="text" class="input testimonial__reviewer-name"></input>
+                                <input id="reviewer-name" type="text" class="input testimonial__reviewer-name modal__input"></input>
+                                <div data-mandatory class="modal__validation-message">Need to fill</div>
                             </div>
-                            <div class="testimonial__reviewer-group">
+                            <div class="testimonial__reviewer-group modal__input-group">
                                 <label for="reviewer-text" class="testimonial__reviewer-label">Enter your review</label>
-                                <textarea rows="4" class="input  testimonial__reviewer-text"></textarea>
+                                <textarea rows="4" class="input  testimonial__reviewer-text modal__input"></textarea>
+                                <div data-mandatory class="modal__validation-message">Need to fill</div>
                             </div>  
-                            <div class="testimonial__reviewer-group">
+                            <div class="testimonial__reviewer-group modal__input-group">
                                 <label for="reviewer-text" class="testimonial__reviewer-label">Give a rating</label>     
-                                <div class="testimonial__reviewer-group">
-
                                 <div class="rating testimonial__reviwer-stars">
-                                    <svg class="icon rating__star testimonial__reviwer-star">
-                                        <use href="sprites.svg#star"></use>
-                                    </svg>
-                                    <svg class="icon rating__star testimonial__reviwer-star">
-                                        <use href="sprites.svg#star"></use>
-                                    </svg>
-                                    <svg class="icon rating__star testimonial__reviwer-star">
-                                        <use href="sprites.svg#star"></use>
-                                    </svg>
-                                    <svg class="icon rating__star testimonial__reviwer-star">
-                                        <use href="sprites.svg#star"></use>
-                                    </svg>
-                                    <svg class="icon rating__star testimonial__reviwer-star">
-                                        <use href="sprites.svg#star"></use>
-                                    </svg>
+                                        <svg class="icon rating__star testimonial__reviwer-star">
+                                            <use href="sprites.svg#star"></use>
+                                        </svg>
+                                        <svg class="icon rating__star testimonial__reviwer-star">
+                                            <use href="sprites.svg#star"></use>
+                                        </svg>
+                                        <svg class="icon rating__star testimonial__reviwer-star">
+                                            <use href="sprites.svg#star"></use>
+                                        </svg>
+                                        <svg class="icon rating__star testimonial__reviwer-star">
+                                            <use href="sprites.svg#star"></use>
+                                        </svg>
+                                        <svg class="icon rating__star testimonial__reviwer-star">
+                                            <use href="sprites.svg#star"></use>
+                                        </svg>
                                 </div>
-                                </div>                 
+                                <div data-mandatory class="modal__validation-message">Need to fill</div>                                           
                             </div>                 
                             
                         </form>
@@ -1208,6 +1216,7 @@
                 </div>
             </div>
         </div>
+       
     </main>
     <footer data-animation-container data-anim-threshold="0.8" class="footer" aria-label="Подвал сайта">
         <div class="footer__container">
