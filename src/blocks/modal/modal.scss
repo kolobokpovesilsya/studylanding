@@ -1,8 +1,7 @@
-.modal-stack{
-
+.modal-stack {
 }
 
-.modal{
+.modal {
     display: none;
     position: fixed;
     top: 0;
@@ -13,13 +12,38 @@
     justify-content: center;
     background-color: #00000090;
     z-index: 1000;
-    &--opened{
-        display: flex;    
+    &--opened {
+        display: flex;
     }
-    &__content{
-        
+    &__content {
+        position: relative;
+        padding: rem(40px);
+        border-radius: var(--modal-radius);
         background-color: var(--color-panel);
-
     }
-    
+    &__title {
+        display: flex;
+        justify-content: space-between;
+        &-text {
+            margin-right: rem(20px);
+        }
+    }
+    &__close {
+        position: absolute;
+        top: rem(-20px);
+        right: rem(-30px);
+        width: rem(40px);
+        height: rem(40px);
+        background: rgba(255, 255, 255, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    &__footer {
+        display: flex;
+        justify-content: end;
+        gap: rem(20px);
+    }
 }
