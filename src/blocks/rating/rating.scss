@@ -1,5 +1,6 @@
 .rating {
-    display: flex;
+    display: inline-flex;
+    gap:rem(20px)
 }
 .rating__star {
     fill: none !important;
