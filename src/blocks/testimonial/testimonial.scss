@@ -227,15 +227,14 @@
     margin-bottom: rem(30px);
 }
 .testimonial__reviwer-stars {
-    display: flex;
-    justify-content: space-between;
+   text-align: center;
 }
-.testimonial__reviwer-star {
-    width: 3rem !important;
-    height: 3rem !important;
-    // fill: none !important;
-    // stroke: #f9bb1c;
-}
+// .testimonial__reviwer-star {
+//     width: 3rem !important;
+//     height: 3rem !important;
+//     // fill: none !important;
+//     // stroke: #f9bb1c;
+// }
 @media (max-width: 1750px) {
     // .testimonial__review {
     //     left: -2rem;

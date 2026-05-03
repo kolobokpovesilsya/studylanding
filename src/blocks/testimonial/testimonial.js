@@ -63,22 +63,22 @@ export function closeAssessmentModalHandler(id, status) {
 function getAssessmentModalInputs(modal) {
     const input = modal.querySelector("input");
     const textarea = modal.querySelector("textarea");
-    let ratingValue = testimonialRatingInput?.getRating() || 0;
+    let ratingValue = modal.querySelector("rating-input");;
 
     const data = {
         name: input.value,
         text: textarea.value,
-        rating: ratingValue,
+        rating: ratingValue.value,
     };
-
     return data;
 }
 function resetAssessmentModalInputs(modal) {
     const input = modal.querySelector("input");
     const textarea = modal.querySelector("textarea");
+    const ratingInput = modal.querySelector("rating-input");
     input.value = "";
     textarea.value = "";
-    testimonialRatingInput.setRating(0);
+    ratingInput.value = "";
 }
 function validateAssessment() {}
 function sendAssessment(data) {}
