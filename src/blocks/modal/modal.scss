@@ -25,6 +25,9 @@
         display: none;
         color: var(--accent-danger);
         font-size: rem(18px);
+        &--show{
+            display: block;
+        }
     }
     &__input-group {
         display: flex;

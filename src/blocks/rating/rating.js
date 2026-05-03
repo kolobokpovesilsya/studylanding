@@ -64,12 +64,12 @@ export class RatingInput extends HTMLElement {
 
     get value() { return this._value; }
     set value(val) {
-        const newVal = Number(val) || 0;
+        const newVal = Number(val) || 0; 
         if (this._value !== newVal) {
             this._value = newVal;
             this._internals.setFormValue(String(this._value));
-            this.hilightStars(this._value);
-            this.dispatchEvent(new Event('change', { bubbles: true, composed: true }));
+            this.hilightStars(this._value); 
+            this.dispatchEvent(new Event('input', { bubbles: true, composed: true }));
         }
     }
 
@@ -87,7 +87,6 @@ export class RatingInput extends HTMLElement {
 
     hilightStars = (rating) => {
         const stars = this._ratingContainer.children;
-        console.log('start====',stars)
         for (let i = 0; i < 5; i++) {
             const st = stars[i];
             if (i < rating) {
@@ -109,7 +108,7 @@ export class RatingInput extends HTMLElement {
         const starIndex = Array.from(this._ratingContainer.children).indexOf(
             star,
         );
-        this._value= starIndex + 1
+        this.value= starIndex + 1
     };
     onHover = (e) => {
         const star = e.target.closest(".rating__star");
