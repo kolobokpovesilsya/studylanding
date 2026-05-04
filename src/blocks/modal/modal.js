@@ -11,104 +11,132 @@ export class ModalController {
             const modal = this.modalMap[modalId];
             if (modal) {
                 invoker.onclick = () => {
-                    console.log("open modal");
                     this.openModal(modalId);
                 };
             }
         });
         document.addEventListener("open-modal", this.handleOpenModalEvent);
     }
-    valueToString=(value)=>{
-        if(typeof value == 'number'){
-            return value.toString()
+    valueToString = (value) => {
+        if (typeof value == "number") {
+            return value.toString();
         }
-        if(typeof value=='undefined' || value==null){
-            return ''
+        if (typeof value == "undefined" || value == null) {
+            return "";
         }
-        return value.trim()
-    }
-    checkValidationRule = (input,rule)=>{
-        const value = input.value
-        switch(rule){
-            case 'mandatory':
-                return !this.valueToString(value)?false:true
-            case 'range':
-                if(typeof value == 'undefined' || value==null){
-                    return false
+        return value.trim();
+    };
+    valueToNumber = (value) => {
+        if (typeof value == "number") {
+            return value;
+        }
+        if (!value) {
+            return;
+        }
+        const converted = +value;
+        if (isNaN(converted)) {
+            return;
+        }
+        return converted;
+    };
+    checkValidationRule = (input, message) => {
+        const rule = message.getAttribute("data-validation-rule");
+        const value = input.value;
+        switch (rule) {
+            case "mandatory":
+                return !this.valueToString(value) ? false : true;
+            case "range":
+                if (typeof value == "undefined" || value == null) {
+                    return false;
                 }
-                const converted = +value
-                if(isNaN(converted)){
-                    return false
+                const converted = this.valueToNumber(value);
+                if (isNaN(converted)) {
+                    console.warn(`${input.id} must be a number`);
+                    return false;
                 }
-                const min = data-validation-min
-                return !this.valueToString(value)?false:true
+                const min = this.valueToNumber(
+                    message.getAttribute("data-validation-min"),
+                );
+                const max = this.valueToNumber(
+                    message.getAttribute("data-validation-max"),
+                );
+                if (min >= max) {
+                    console.warn(
+                        "Invalid range. Min should be smaller than max.",
+                    );
+                    return false;
+                }
+                let valid = true;
+                if (typeof min == "number") {
+                    valid = converted >= min;
+                }
+                if (typeof max == "number") {
+                    valid &= converted <= min;
+                }
+
+                return valid;
             default:
-                return false    
+                return false;
         }
-    }
-    checkFormValidity=(modalId)=>{
-        const modal = this.modalMap[modalId]
-        const validationInputs = modal.querySelectorAll('[data-validate]')
-        if(!validationInputs.length){
-            return true
+    };
+    checkFormValidity = (modalId) => {
+        const modal = this.modalMap[modalId];
+        const validationInputs = modal.querySelectorAll("[data-validate]");
+        if (!validationInputs.length) {
+            return true;
         }
-        
-        for(let input of Array.from(validationInputs)){
-            const fieldValid = this.checkFieldValidity(modalId,input)
-            console.log('fieldValid===',fieldValid,input,)
-            if(!fieldValid){
-                return false
+
+        for (let input of Array.from(validationInputs)) {
+            const fieldValid = this.checkFieldValidity(modalId, input);
+            if (!fieldValid) {
+                return false;
             }
         }
-        return true
-    }
-    checkFieldValidity=(modalId,input)=>{
-          const modal = this.modalMap[modalId]
-            const id =input.id 
-            if(!id){
-                return true
+        return true;
+    };
+    checkFieldValidity = (modalId, input) => {
+        const modal = this.modalMap[modalId];
+        const id = input.id;
+        if (!id) {
+            return true;
+        }
+        const messages = modal.querySelectorAll(`[data-for="${id}"`);
+        if (!messages.length) {
+            return true;
+        }
+
+        for (let message of messages) {
+            const result = this.checkValidationRule(input, message);
+            if (result) {
+                message.classList.remove("modal__validation-message--show");
+                continue;
             }
-            const messages = modal.querySelectorAll(`[data-for="${id}"`)
-              console.log('inpiut===',messages,`[data-for="${id}"`)
-            if(!messages.length){
-                return true
-            }   
-           
-            for(let message of messages){
-                const rule =  message.getAttribute('data-validation-rule')
-                const result =  this.checkValidationRule(input,rule)
-                if(result){
-                    message.classList.remove('modal__validation-message--show')
-                    continue
-                }
-                message.classList.add('modal__validation-message--show')
-                return false
-            }  
-            return true 
-    }
-    setupInputValidation=(modalId)=>{
-        const modal = this.modalMap[modalId]
-        const validationInputs = modal.querySelectorAll('[data-validate]')
-        console.log('validationInputs===',modalId,modal,validationInputs)
-        if(!validationInputs.length){
-            return true
+            message.classList.add("modal__validation-message--show");
+            return false;
         }
-        validationInputs.forEach(input=>{
-            input.addEventListener('input',(e)=>{
-                this.checkFieldValidity(modalId,e.target)
-                console.log('change====')
-            })
-        })
-    }
-    handleOnOk=(modalId,e)=>{
-        const isFormValid = this.checkFormValidity(modalId)
-        if(!isFormValid){
-            return 
+        return true;
+    };
+    setupInputValidation = (modalId) => {
+        const modal = this.modalMap[modalId];
+        const validationInputs = modal.querySelectorAll("[data-validate]");
+        if (!validationInputs.length) {
+            return true;
         }
-        this.closeModal.bind(this, modalId, "ok");
-    }
+        validationInputs.forEach((input) => {
+            input.addEventListener("input", (e) => {
+                this.checkFieldValidity(modalId, e.target);
+            });
+        });
+    };
+    handleOnOk = (modalId, e) => {
+        const isFormValid = this.checkFormValidity(modalId);
+        console.log("isform valid", isFormValid);
+        if (!isFormValid) {
+            return;
+        }
+        this.closeModal(modalId, "ok");
+    };
     processModal = (modal) => {
-        console.log('proces===')
         this.modalMap[modal.id] = modal;
         const okBtn = modal.querySelector(".modal__ok");
         const closeBtn = modal.querySelector(".modal__close");
@@ -117,18 +145,10 @@ export class ModalController {
             okBtn.onclick = this.handleOnOk.bind(this, modal.id);
         }
         if (closeBtn) {
-            closeBtn.onclick = this.closeModal.bind(
-                this,
-                modal.id,
-                "close",
-            );
+            closeBtn.onclick = this.closeModal.bind(this, modal.id, "close");
         }
         if (cancelBtn) {
-            cancelBtn.onclick = this.closeModal.bind(
-                this,
-                modal.id,
-                "close",
-            );
+            cancelBtn.onclick = this.closeModal.bind(this, modal.id, "close");
         }
         modal.onclick = this.onModalClick.bind(this, modal.id);
         modal.addEventListener(
@@ -139,12 +159,10 @@ export class ModalController {
             {},
         );
 
-        this.setupInputValidation(modal.id)
-        
-    }
+        this.setupInputValidation(modal.id);
+    };
     handleOpenModalEvent = (e) => {
         const { id, closeCallback, closeTimeout } = e.detail;
-        console.log("event===", e);
         this.openModal(id);
         if (closeTimeout) {
             setTimeout(() => {

@@ -25,9 +25,10 @@
         display: none;
         color: var(--accent-danger);
         font-size: rem(18px);
-        &--show{
+        &--show {
             display: block;
         }
+        text-align: center;
     }
     &__input-group {
         display: flex;
