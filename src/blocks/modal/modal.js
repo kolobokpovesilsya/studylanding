@@ -3,19 +3,22 @@ export class ModalController {
     onCloseEvent;
     constructor(onClose) {
         this.onCloseEvent = onClose;
-        const modalList = document.querySelectorAll(".modal");
+        const modalListTemplate = document.querySelector(".modal-list");
+        const modalList = modalListTemplate?.content?.children || [];
         const modalInvokerList = document.querySelectorAll("[data-bind-modal]");
-        modalList.forEach(this.processModal);
         modalInvokerList.forEach((invoker) => {
             const modalId = invoker.getAttribute("data-bind-modal");
-            const modal = this.modalMap[modalId];
-            if (modal) {
-                invoker.onclick = () => {
-                    this.openModal(modalId);
-                };
-            }
+
+            invoker.onclick = () => {
+                this.openModal(modalId);
+            };
         });
         document.addEventListener("open-modal", this.handleOpenModalEvent);
+    }
+    getModalTemplate(id) {
+        const modalListTemplate = document.querySelector(".modal-list");
+        const modalList = modalListTemplate?.content?.children || [];
+        return Array.from(modalList).find((m) => m.id == id);
     }
     valueToString = (value) => {
         if (typeof value == "number") {
@@ -47,7 +50,7 @@ export class ModalController {
         }
         this.closeModal(modalId, "ok");
     };
-    processModal = (modal) => {
+    makeInteractive = (modal) => {
         this.modalMap[modal.id] = modal;
         const okBtn = modal.querySelector(".modal__ok");
         const closeBtn = modal.querySelector(".modal__close");
@@ -72,6 +75,7 @@ export class ModalController {
 
         this.setupInputValidation(modal.id);
     };
+
     handleOpenModalEvent = (e) => {
         const { id, closeCallback, closeTimeout, openCallback } = e.detail;
         this.openModal(id, openCallback);
@@ -88,30 +92,33 @@ export class ModalController {
         }
     };
     openModal(id, openCallback) {
-        const modal = this.modalMap[id];
+        const openedModals = document.body.querySelectorAll(".modal--opened");
+        if (openedModals.length) {
+            openedModals.forEach((om) => {
+                om.remove();
+            });
+        }
+        const modal = this.getModalTemplate(id);
         if (!modal) {
             return;
         }
-        if (modal.classList.contains("modal--opened")) {
-            return;
-        }
-        modal.classList.add("modal--opened");
+        const openedModal = modal.cloneNode(true);
+        openedModal.classList.add("modal--opened");
+        document.body.appendChild(openedModal);
+        this.makeInteractive(openedModal);
         openCallback?.();
     }
     closeModal(id, status) {
-        const modal = this.modalMap[id];
-        if (!modal) {
+        const openedModal = this.modalMap[id];
+        if (!openedModal) {
             return;
         }
-        if (!modal.classList.contains("modal--opened")) {
-            return;
-        }
-
         const shouldClose = this.onCloseEvent(id, status);
         if (shouldClose === false) {
             return;
         }
-        modal.classList.remove("modal--opened");
+        delete this.modalMap[id];
+        openedModal.remove();
     }
     checkValidationRule = (input, message) => {
         const rule = message.getAttribute("data-validation-rule");

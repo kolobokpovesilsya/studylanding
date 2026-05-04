@@ -2,7 +2,8 @@
 }
 
 .modal {
-    display: none;
+    // display: none;
+    display: flex;
     position: fixed;
     top: 0;
     left: 0;
@@ -13,9 +14,9 @@
     background-color: #00000090;
     z-index: 1000;
 
-    &--opened {
-        display: flex;
-    }
+    // &--opened {
+    //     display: flex;
+    // }
     &__content {
         position: relative;
         display: flex;
