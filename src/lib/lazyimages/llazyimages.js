@@ -48,7 +48,6 @@ export class LazyContentLoader {
         } else if (content instanceof HTMLVideoElement) {
             LazyContentLoader.handleVideoIntersect(content);
         }
-        console.log("end process", content);
         delete content.dataset.lazy;
     }
     static handlePictureIntersect = (picture) => {
@@ -69,7 +68,7 @@ export class LazyContentLoader {
 
         img.src = srcset;
         img.onerror = () => {
-            console.log("Fail to load src", src);
+            console.error("Fail to load src", src);
         };
 
         delete img.dataset.src;

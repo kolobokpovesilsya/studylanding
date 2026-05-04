@@ -27,7 +27,7 @@ export class Slider {
         const sliderItems = sliderContainer.querySelectorAll(".slider__item");
 
         if (!sliderItems.length) {
-            console.log("Fail to find any slide item with slider__item class");
+            console.warn("Fail to find any slide item with slider__item class");
             return;
         }
         this.currentItem = this.getSlideNumber(
@@ -75,7 +75,6 @@ export class Slider {
         const arrowRight = this.sliderContainer.querySelector(
             ".sider__arrow-right",
         );
-        console.log("arrows--", arrowRight, arrowLeft);
         if (arrowLeft) {
             arrowLeft.onclick = () => this.slide(this.currentItem - 1);
         }
@@ -101,7 +100,6 @@ export class Slider {
         }
 
         Array.from(bulletsList.children).forEach((b, idx) => {
-            console.log("====", b, b.classList);
             const cl = b.classList;
             if (cl.contains("slider__bullet--active") && idx !== activeIdx) {
                 cl.remove("slider__bullet--active");

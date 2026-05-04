@@ -5,7 +5,6 @@ const playBtn = document.querySelector(".intro__btn-play");
 function onBeforeSlide({ idx, item }) {
     requestAnimationFrame(() => {
         const contentList = item.querySelectorAll("[data-lazy='manual']");
-        console.log("contentList===", contentList);
         contentList.forEach((cnt) => {
             LazyContentLoader.loadLazyContent(cnt);
         });

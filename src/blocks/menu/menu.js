@@ -5,7 +5,6 @@ export class MenuController {
         );
 
         Array.from(dropdownItems).forEach((item) => {
-            console.log("dropdownItems", item);
             this.processDropdownItem(item);
         });
         document.addEventListener("click", this.handleClick.bind(this));
@@ -21,7 +20,6 @@ export class MenuController {
         if (!menuItem) {
             this.closeOpenedSubmenu();
             const menuList = document.querySelectorAll(".menu__dropdown");
-            console.log("menuItem===", target, menuItem);
             return;
         }
         const submenu = menuItem.querySelector(":scope .menu__dropdown");
@@ -33,12 +31,10 @@ export class MenuController {
             submenu.classList.toggle("menu__dropdown--opened");
             return;
         }
-        console.log("submenu===", submenu);
         //If menu item doesnt have submenu go to parent
         const parent = menuItem.parentElement;
         //If parent is not submenu apply default behavior
         if (!parent.classList.contains("menu__dropdown")) {
-            console.log("dropdownMenu===", dropdownMenu);
             return;
         }
         //If menu item parent is submenu then close it if it has special close-on-click class
@@ -53,7 +49,6 @@ export class MenuController {
             ".menu__dropdown--opened",
         );
         Array.from(openedSubmenu).forEach((sbmenu) => {
-            console.log("sbmenu===", sbmenu);
             if (
                 sbmenu.classList.contains("menu__dropdown--opened") &&
                 currentOpened != sbmenu
@@ -72,7 +67,6 @@ export class MenuController {
         const menuElement = Array.from(dropdownElement.children).find((ch) =>
             ch.classList.contains("menu__dropdown"),
         );
-        console.log("click arrow", dropdownElement.children, menuElement);
         if (!menuElement) {
             return;
         }
