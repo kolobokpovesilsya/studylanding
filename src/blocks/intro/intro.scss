@@ -225,7 +225,24 @@
     height: rem(70px);
     padding: rem(10px);
 }
-
+.intro__slider {
+    width: 100%;
+    height: 100%;
+}
+.intro__slider-content {
+    display: flex;
+    flex-direction: column;
+}
+.intro__slider-video {
+    flex-grow: 1;
+    text-align: center;
+}
+.intro__slider-video video {
+    height: 100%;
+}
+.intro__slider-text {
+    text-align: center;
+}
 /* Медиа-запросы */
 @media (max-width: 1380px) {
     .intro__popup {

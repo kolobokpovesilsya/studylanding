@@ -1,34 +1,29 @@
-import { IntersectionAnimation } from "../../utils/intersectionAnimation";
+import { LazyContentLoader } from "../../lib/lazyimages/llazyimages";
+import { openModalById } from "../modal/modal";
+import { Slider } from "../slider/slider";
+const playBtn = document.querySelector(".intro__btn-play");
+function onBeforeSlide({ idx, item }) {
+    requestAnimationFrame(() => {
+        const contentList = item.querySelectorAll("[data-lazy='manual']");
+        console.log("contentList===", contentList);
+        contentList.forEach((cnt) => {
+            LazyContentLoader.loadLazyContent(cnt);
+        });
+    });
+}
+const slider = new Slider({
+    selector: ".intro__slider",
+    itemsGap: 5,
+    onBeforeSlide,
+    onSliderMount: onBeforeSlide,
+});
 
-const introContentChildren = document.querySelector(".intro__content").children;
-const popupList = document.querySelectorAll(".intro__popup");
-
-function onHide() {
-    Array.from(introContentChildren).forEach((ch) => {
-        ch.classList.add("animation-popup--hide");
-    });
-    popupList.forEach((ch) => {
-        ch.classList.add("animation-popup--grow-down");
+playBtn.onclick = () => {
+    openModalById("how-it-works-modal", { openCallback: updateSlider });
+};
+function updateSlider() {
+    requestAnimationFrame(() => {
+        slider.redraw();
     });
 }
-function onIntersect() {
-    console.log("introContentChildren=", introContentChildren);
-    Array.from(introContentChildren).forEach((ch, idx) => {
-        ch.classList.remove("animation-popup--hide");
-        ch.style.setProperty("--anim-popup-delay", `${0.2 * (idx + 1)}s`);
-        ch.classList.add("animation-popup--show");
-    });
-    popupList.forEach((ch, idx) => {
-        ch.classList.remove("animation-popup--grow-down");
-        ch.style.setProperty("--anim-popup-delay", `${0.2 * (idx + 1)}s`);
-        ch.classList.add("animation-popup--grow-up");
-    });
-}
-export function initIntro() {
-    // const intersectionObserver = new IntersectionAnimation({
-    //     containerSelector: ".intro",
-    //     onHide,
-    //     onIntersect,
-    //     threshold: 0.5,
-    // });
-}
+export function initIntro() {}

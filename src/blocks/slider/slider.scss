@@ -29,16 +29,29 @@
 }
 
 .slider__bullet-list {
-    position: absolute;
+    position: relative;
     bottom: 0;
     left: 50%;
-    display: inline-flex;
+    transform: translateX(-50%);
+    gap: rem(5px);
+    display: flex;
+    width: min-content;
 }
 .slider__bullet {
-    width: rem(5px);
-    height: rem(5px);
-    background-color: black;
-    border-radius: 100%;
-    margin: rem(5px);
+    display: flex;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 0.2rem solid var(--accent-warning);
+
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    color: var(--accent-warning);
+    border-radius: 50%;
+    font-size: 1rem;
     cursor: pointer;
+    &--active {
+        background-color: var(--accent-warning);
+        color: white;
+    }
 }

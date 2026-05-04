@@ -1,25 +1,34 @@
 export class LazyContentLoader {
     observer;
     constructor({ threshold, rootMargin }) {
-        const lazyLoadableContentList =
-            document.querySelectorAll("[data-lazy]");
-
+        let lazyLoadableContentList = document.querySelectorAll("[data-lazy]");
+        if (lazyLoadableContentList.length) {
+            lazyLoadableContentList = Array.from(
+                lazyLoadableContentList,
+            ).filter((cnt) => {
+                if (cnt.getAttribute("data-lazy") == "manual") {
+                    return false;
+                }
+                return true;
+            });
+        }
         this.observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
-
                         const content = entry.target;
                         setTimeout(() => {
                             if (!entry.isIntersecting) {
                                 return;
                             }
-                            if (content instanceof HTMLPictureElement) {
-                                this.handlePictureIntersect(content);
-                            } else if (content instanceof HTMLVideoElement) {
-
-                                this.handleVideoIntersect(content);
-                            }
+                            LazyContentLoader.loadLazyContent(content);
+                            // if (content instanceof HTMLPictureElement) {
+                            //     LazyContentLoader.handlePictureIntersect(
+                            //         content,
+                            //     );
+                            // } else if (content instanceof HTMLVideoElement) {
+                            //     LazyContentLoader.handleVideoIntersect(content);
+                            // }
                             this.observer.unobserve(content);
                         }, 200);
                     } else {
@@ -33,7 +42,16 @@ export class LazyContentLoader {
             this.observer.observe(cnt);
         });
     }
-    handlePictureIntersect = (picture) => {
+    static loadLazyContent(content) {
+        if (content instanceof HTMLPictureElement) {
+            LazyContentLoader.handlePictureIntersect(content);
+        } else if (content instanceof HTMLVideoElement) {
+            LazyContentLoader.handleVideoIntersect(content);
+        }
+        console.log("end process", content);
+        delete content.dataset.lazy;
+    }
+    static handlePictureIntersect = (picture) => {
         const sources = picture.querySelectorAll("source");
         for (let src of sources) {
             const srcset = src.dataset.srcset;
@@ -56,29 +74,31 @@ export class LazyContentLoader {
 
         delete img.dataset.src;
     };
-    handleVideoIntersect = (video) => { 
+    static handleVideoIntersect = (video) => {
         const sources = video.querySelectorAll("source");
-        for (let src of sources) {
-            const srcset = src.dataset.src;
-            if (!srcset) {
-                continue;
+        if (sources.length) {
+            for (let src of sources) {
+                const srcset = src.dataset.src;
+                if (!srcset) {
+                    continue;
+                }
+                src.src = srcset;
+                src.onerror = () => {
+                    console.warn("Fail to load ", srcset);
+                };
+
+                delete src.dataset.src;
             }
-            src.src = srcset;
-            src.onerror = () => {
-                console.warn("Fail to load ", srcset);
-            };
-
-
-            delete src.dataset.src;
+        } else {
+            const src = video.dataset.src;
+            video.src = src;
+            delete video.dataset.src;
         }
-        video.load();
-         if (video.hasAttribute("autoplay")) { 
-                video.muted = true;
-                video
-                    .play()
-                    .catch((e) => console.log("Autoplay prevented"));
-            }
-        
 
+        video.load();
+        if (video.hasAttribute("autoplay")) {
+            video.muted = true;
+            video.play().catch((e) => console.log("Autoplay prevented"));
+        }
     };
 }
