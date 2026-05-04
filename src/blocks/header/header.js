@@ -1,6 +1,8 @@
 import { MenuController } from "../menu/menu";
+import { openModalById } from "../modal/modal";
 
 let prevScrollTop = 0;
+// const signupBtn = document.querySelector(".header__sign-up");
 const themeBtn = document.querySelector(".header__theme-btn input");
 const burgerBtn = document.querySelector(".header__burgerbutton");
 const header = document.body.querySelector("header");
@@ -80,4 +82,8 @@ export function initHeader() {
     // themeBtn?.addEventListener("click", toggleTheme);
     const menuElement = document.querySelector(".header .menu");
     const menuController = new MenuController(menuElement);
+    // signupBtn.onclick = () => {
+    //     console.log("sign up modal===");
+    //     openModalById("sign-up-modal");
+    // };
 }

@@ -85,7 +85,7 @@
                 <button type="button" class="header__btn-login header__btn btn btn--white">
                     Login
                 </button>
-                <button type="button" class="header__btn btn btn--warning">
+                <button type="button" class="header__sign-up header__btn  btn btn--warning" data-bind-modal="sign-up-modal">
                     Sign Up
                 </button>
 
@@ -123,7 +123,7 @@
                         interactive way
                     </div>
                     <div data-animation="slide-y" data-anim-delay="0.4" class="intro__controls">
-                        <button type="button" class="intro__btn-join btn btn--warning">
+                        <button type="button" class="intro__btn-join btn btn--warning" data-bind-modal="sign-up-modal">
                             Join for free
                         </button>
                         <!-- <div class="intro__play-wrapper"> -->
@@ -277,7 +277,7 @@
                         </picture>
                         <div class="about__card-content">
                             <h3 class="about__card-title">FOR INSTRUCTORS</h3>
-                            <button class="about__btn btn btn--outlined-white">
+                            <button class="about__btn btn btn--outlined-white" data-bind-modal="sign-up-modal">
                                 <span class="about__btn-text">Start a class today</span>
                             </button>
                         </div>
@@ -1161,7 +1161,41 @@
                 <use href="sprites.svg#chevrone-right"></use>
             </svg>
         </div>
-        <template class="modal-list">
+        
+    </main>
+    <footer data-animation-container data-anim-threshold="0.8" class="footer" aria-label="Подвал сайта">
+        <div class="footer__container">
+            <div data-animation="slide-y" class="footer__logo-row">
+                <a href="/" class="footer__logo logo logo--primary"> Skilline </a>
+                <div class="footer__divider"></div>
+                <div class="footer__virtual">
+                    Virtual Class<br />
+                    for Zoom
+                </div>
+            </div>
+            <div class="footer__search">
+                <div data-animation="slide-y" class="footer__search-title">
+                    Subscribe to get our Newsletter
+                </div>
+                <div data-animation="slide-y" class="footer__search-group">
+                    <input placeholder="Your Email" type="text" class="footer__search-input">
+                    <div class="footer__search-btn">Subscribe</div>
+                </div>
+            </div>
+            <div data-animation="slide-y" class="footer___links">
+                <a href="" class="footer__link">Careers</a>
+                <div class="footer__divider"></div>
+                <a href="" class="footer__link">Privacy Policy</a>
+                <div class="footer__divider"></div>
+                <a href="" class="footer__link">Terms & Conditions</a>
+            </div>
+            <div data-animation="slide-y" class="footer__rights">
+                © 2021 Class Technologies Inc.
+            </div>
+        </div>
+
+    </footer>
+     <template class="modal-list">
             <div id="send-assessment-modal" class=" modal">
                 <div class="modal__content">
 
@@ -1193,6 +1227,51 @@
                                 <rating-input data-validate id="reviewer-rating" class=" testimonial__reviwer-stars"></rating-input>
                                 <div data-validation-rule="range" data-validation-min="1" data-for="reviewer-rating" class="modal__validation-message">Need to fill</div>
                             </div>
+
+                        </form>
+                    </div>
+                    <div class="modal__footer">
+                        <button class="btn btn--success modal__ok">
+                            Send
+                        </button>
+                        <button class="btn btn--danger modal__cancel">
+                            Cancel
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="sign-up-modal" class=" modal">
+                <div class="modal__content">
+                    <div class="modal__title">
+                        <h2 class="modal__title-text testimonial__reviewer-title">Sign up</h2>
+                        <span class="modal__close">X</span>
+                    </div>
+                    <div class="modal__body">
+                        <form class="sign-up">
+                            <div class="modal__input-group sign-up__group">
+                                <label for="sign-up-name" class="sign-up__name-label">Enter your name:</label>
+                                <input data-validate id="sign-up-name" type="text"
+                                    class="input  modal__input sign-up__name"></input>
+                                <div data-validation-rule="mandatory" data-for="sign-up-name" class="modal__validation-message">Need to fill</div>
+                            </div>
+                             <div class="modal__input-group sign-up__group">
+                                <label for="sign-up-email" class="sign-up__email-label">Enter your email:</label>
+                                <input data-validate id="sign-up-email" type="text"
+                                    class="input  modal__input sign-up__email"></input>
+                                <div data-validation-rule="mandatory" data-for="sign-up-email" class="modal__validation-message">Need to fill</div>
+                            </div>
+                             <div class="modal__input-group sign-up__group">
+                                <label for="sign-up-password" class="sign-up__password-label">Enter password:</label>
+                                <input data-validate id="sign-up-password" type="text"
+                                    class="input  modal__input sign-up__password"></input>
+                                <div data-validation-rule="mandatory" data-for="sign-up-password" class="modal__validation-message">Need to fill</div>
+                            </div>
+                             <div class="modal__input-group sign-up__group">
+                                <label for="sign-up-retpassword" class="sign-up__retpassword-label">Retry password:</label>
+                                <input data-validate id="sign-up-retpassword" type="text"
+                                    class="input  modal__input sign-up__retpassword"></input>
+                                <div data-validation-rule="mandatory" data-for="sign-up-retpassword" class="modal__validation-message">Need to fill</div>
+                            </div> 
 
                         </form>
                     </div>
@@ -1262,39 +1341,6 @@
                 </div>               
             </div>
         </template> 
-    </main>
-    <footer data-animation-container data-anim-threshold="0.8" class="footer" aria-label="Подвал сайта">
-        <div class="footer__container">
-            <div data-animation="slide-y" class="footer__logo-row">
-                <a href="/" class="footer__logo logo logo--primary"> Skilline </a>
-                <div class="footer__divider"></div>
-                <div class="footer__virtual">
-                    Virtual Class<br />
-                    for Zoom
-                </div>
-            </div>
-            <div class="footer__search">
-                <div data-animation="slide-y" class="footer__search-title">
-                    Subscribe to get our Newsletter
-                </div>
-                <div data-animation="slide-y" class="footer__search-group">
-                    <input placeholder="Your Email" type="text" class="footer__search-input">
-                    <div class="footer__search-btn">Subscribe</div>
-                </div>
-            </div>
-            <div data-animation="slide-y" class="footer___links">
-                <a href="" class="footer__link">Careers</a>
-                <div class="footer__divider"></div>
-                <a href="" class="footer__link">Privacy Policy</a>
-                <div class="footer__divider"></div>
-                <a href="" class="footer__link">Terms & Conditions</a>
-            </div>
-            <div data-animation="slide-y" class="footer__rights">
-                © 2021 Class Technologies Inc.
-            </div>
-        </div>
-
-    </footer>
 </body>
 
 </html>
