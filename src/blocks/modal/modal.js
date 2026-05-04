@@ -96,7 +96,7 @@ export class ModalController {
             return;
         }
         modal.classList.add("modal--opened");
-        openCallback();
+        openCallback?.();
     }
     closeModal(id, status) {
         const modal = this.modalMap[id];
