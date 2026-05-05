@@ -290,7 +290,7 @@
                         </picture>
                         <div class="about__card-content">
                             <h3 class="about__card-title">FOR STUDENTS</h3>
-                            <button class="about__btn btn btn--outlined-primary active">
+                            <button class="about__btn btn btn--outlined-primary active" data-bind-modal="access-code-modal">
                                 <span class="about__btn-text">Enter access code</span>
                             </button>
                         </div>
@@ -866,7 +866,7 @@
                         systems (SIS), and education platforms.
                     </p>
                     <div data-animation="slide-y" data-anim-delay="0.8" class="integration__btn">
-                        <span class="integration__btn-text">See All Integrations</span>
+                        <span class="integration__btn-text" >See All Integrations</span>
                     </div>
                 </div>
             </div>
@@ -1240,39 +1240,20 @@
                     </div>
                 </div>
             </div>
-            <div id="sign-up-modal" class=" modal">
+            <div id="access-code-modal" class=" modal">
                 <div class="modal__content">
                     <div class="modal__title">
-                        <h2 class="modal__title-text testimonial__reviewer-title">Sign up</h2>
+                        <h2 class="modal__title-text about-modal__title">Enter access code</h2>
                         <span class="modal__close">X</span>
                     </div>
                     <div class="modal__body">
-                        <form class="sign-up">
-                            <div class="modal__input-group sign-up__group">
-                                <label for="sign-up-name" class="sign-up__name-label">Enter your name:</label>
-                                <input data-validate id="sign-up-name" type="text"
-                                    class="input  modal__input sign-up__name"></input>
-                                <div data-validation-rule="mandatory" data-for="sign-up-name" class="modal__validation-message">Need to fill</div>
+                        <form class="about-modal__code-form">
+                            <div class="modal__input-group about-modal__group">
+                                <label for="code" class="about-modal__label">Access code:</label>
+                                <input data-validate name="code" id="code" type="text"
+                                    class="input modal__input about-modal__input"></input>
+                                <div data-validation-rule="mandatory" data-for="code" class="modal__validation-message">Need to fill</div>
                             </div>
-                             <div class="modal__input-group sign-up__group">
-                                <label for="sign-up-email" class="sign-up__email-label">Enter your email:</label>
-                                <input data-validate id="sign-up-email" type="text"
-                                    class="input  modal__input sign-up__email"></input>
-                                <div data-validation-rule="mandatory" data-for="sign-up-email" class="modal__validation-message">Need to fill</div>
-                            </div>
-                             <div class="modal__input-group sign-up__group">
-                                <label for="sign-up-password" class="sign-up__password-label">Enter password:</label>
-                                <input data-validate id="sign-up-password" type="text"
-                                    class="input  modal__input sign-up__password"></input>
-                                <div data-validation-rule="mandatory" data-for="sign-up-password" class="modal__validation-message">Need to fill</div>
-                            </div>
-                             <div class="modal__input-group sign-up__group">
-                                <label for="sign-up-retpassword" class="sign-up__retpassword-label">Retry password:</label>
-                                <input data-validate id="sign-up-retpassword" type="text"
-                                    class="input  modal__input sign-up__retpassword"></input>
-                                <div data-validation-rule="mandatory" data-for="sign-up-retpassword" class="modal__validation-message">Need to fill</div>
-                            </div> 
-
                         </form>
                     </div>
                     <div class="modal__footer">
@@ -1283,6 +1264,79 @@
                             Cancel
                         </button>
                     </div>
+                </div>
+            </div>
+            <div id="integration-modal" class=" modal">
+                <div class="modal__content integration__modal-content">
+                    <div class="modal__title">
+                        <h2 class="modal__title-text integration-modal__title">All integrations</h2>
+                        <span class="modal__close">X</span>
+                    </div>
+                    <div class="modal__body integration__modal-body">
+                        <div class="integration__grid">
+
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            <div id="sign-up-modal" class=" modal">
+                <div class="modal__content sign-up__content">
+                    <div class="modal__title">
+                        <!-- <h2 class="modal__title-text testimonial__reviewer-title">Sign up</h2> -->
+                        <span class="modal__close">X</span>
+                    </div>
+                    <div class="modal__body sign-up__body">
+                        <div class="sign-up__wrapper">
+                             <div class="sign-up__image-wrapper">
+                                <img class="sign-up__image" src="./assets/signup/signup.jpg"/>
+                             </div>
+                             <div class="sign-up__content-wrapper">
+                                <h2 class="modal__title-text sign-up__title">Sign up</h2>
+                                <hr class="sign-up__divider"/>
+                                <form class="sign-up__form">
+                                
+                                    <div class="modal__input-group sign-up__group">
+                                        <label for="sign-up-name" class="sign-up__name-label">Enter your name:</label>
+                                        <input data-validate id="sign-up-name" name="name" type="text"
+                                            class="input  modal__input sign-up__name"></input>
+                                        <div data-validation-rule="mandatory" data-for="sign-up-name" class="modal__validation-message">Need to fill</div>
+                                    </div>
+                                    <div class="modal__input-group sign-up__group">
+                                        <label for="sign-up-email" class="sign-up__email-label">Enter your email:</label>
+                                        <input data-validate id="sign-up-email" name="email" type="text"
+                                            class="input  modal__input sign-up__email"></input>
+                                        <div data-validation-rule="mandatory" data-for="sign-up-email" class="modal__validation-message">Need to fill</div>
+                                        <div data-validation-rule="email" data-for="sign-up-email" class="modal__validation-message">Wrong email format</div>
+                                    </div>
+                                    <div class="modal__input-group sign-up__group">
+                                        <label for="sign-up-password" class="sign-up__password-label">Enter password:</label>
+                                        <input type="password" name="password" data-validate id="sign-up-password" type="text"
+                                            class="input  modal__input sign-up__password"></input>
+                                        <div data-validation-rule="mandatory" data-for="sign-up-password" class="modal__validation-message">Need to fill</div>
+                                        <div data-validation-rule="password" data-for="sign-up-password" class="modal__validation-message">Wrong password format</div>
+                                    </div>
+                                    <div class="modal__input-group sign-up__group">
+                                        <label for="sign-up-retpassword" class="sign-up__retpassword-label">Retry password:</label>
+                                        <input type="password" data-validate id="sign-up-retpassword" type="text"
+                                            class="input  modal__input sign-up__retpassword"></input>
+                                        <div data-validation-rule="retry-password" data-validation-source-password="sign-up-password" data-for="sign-up-retpassword" class="modal__validation-message">Passwords mismatch</div>
+                                        
+                                    </div> 
+                                    <div class="modal__footer sign-up__footer">
+                                        <button type="button" class="btn btn--success modal__ok">
+                                            Send
+                                        </button>
+                                        <button type="button" class="btn btn--danger modal__cancel">
+                                            Cancel
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                   
                 </div>
             </div>
             <div id="how-it-works-modal" class="modal  ">

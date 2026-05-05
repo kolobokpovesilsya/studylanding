@@ -30,22 +30,29 @@
             height: 95%;
         }
     }
+
+    &__input-group {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: rem(20px);
+    }
     &__validation-message {
+        position: absolute;
+        bottom: rem(-20px);
+        left: 50%;
+        width: 100%;
+        transform: translateX(-50%);
         display: none;
         color: var(--accent-danger);
         font-size: rem(18px);
+        line-height: 100%;
         &--show {
             display: block;
         }
         text-align: center;
     }
-    &__input-group {
-        display: flex;
-        flex-direction: column;
-    }
-    // &__input-group--mandatory div[data-mandatory] {
-    //     display: block;
-    // }
+
     &__input {
         &--invalid {
         }
@@ -53,8 +60,13 @@
     &__title {
         display: flex;
         justify-content: space-between;
+
         &-text {
             margin-right: rem(20px);
+            margin-bottom: rem(20px);
+            color: var(--text-color);
+            letter-spacing: 2%;
+            line-height: 150%;
         }
     }
     &__body {

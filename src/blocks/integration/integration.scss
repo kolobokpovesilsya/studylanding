@@ -70,7 +70,25 @@
     border-radius: var(--card-radius);
     justify-items: center;
 }
-
+.integration__modal-content {
+    max-height: 90%;
+}
+.integration__modal-body {
+    display: flex;
+    overflow: hidden;
+}
+.integration__grid {
+    position: relative;
+    overflow: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    // height: rem(600px);
+}
+.integration__grid img {
+    height: 150px;
+}
 @media (max-width: 768px) {
     .integration__container {
         flex-direction: column;

@@ -65,13 +65,6 @@ export class ModalController {
             cancelBtn.onclick = this.closeModal.bind(this, modal.id, "close");
         }
         modal.onclick = this.onModalClick.bind(this, modal.id);
-        modal.addEventListener(
-            "wheel",
-            (e) => {
-                e.preventDefault();
-            },
-            {},
-        );
 
         this.setupInputValidation(modal.id);
     };
@@ -106,27 +99,33 @@ export class ModalController {
         openedModal.classList.add("modal--opened");
         document.body.appendChild(openedModal);
         this.makeInteractive(openedModal);
-        openCallback?.();
+        openCallback?.(openedModal);
+        const html = document.querySelector("html");
+        html.style.overflow = "hidden";
     }
     closeModal(id, status) {
+        const html = document.querySelector("html");
+        html.style.overflow = "auto";
         const openedModal = this.modalMap[id];
         if (!openedModal) {
             return;
         }
-        const shouldClose = this.onCloseEvent(id, status);
+        const shouldClose = this.onCloseEvent(openedModal, status);
         if (shouldClose === false) {
             return;
         }
         delete this.modalMap[id];
         openedModal.remove();
     }
-    checkValidationRule = (input, message) => {
+    checkValidationRule = (input, message, modalId) => {
+        const modal = this.modalMap[modalId];
         const rule = message.getAttribute("data-validation-rule");
         const value = input.value;
         switch (rule) {
-            case "mandatory":
+            case "mandatory": {
                 return !this.valueToString(value) ? false : true;
-            case "range":
+            }
+            case "range": {
                 if (typeof value == "undefined" || value == null) {
                     return false;
                 }
@@ -156,8 +155,33 @@ export class ModalController {
                 }
 
                 return valid;
+            }
+            case "email": {
+                const strVal = this.valueToString(value);
+                const isEmail =
+                    /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(
+                        strVal,
+                    );
+                return isEmail;
+            }
+            case "password": {
+                const strVal = this.valueToString(value);
+                const isPasswordValid =
+                    /^(?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9]+$/.test(strVal);
+                return isPasswordValid;
+            }
+            case "retry-password": {
+                const sourcePasswordId = message.getAttribute(
+                    "data-validation-source-password",
+                );
+                const sourcePassword = modal.querySelector(
+                    `#${sourcePasswordId}`,
+                ).value;
+                const password = this.valueToString(value);
+                return sourcePassword.trim() === password.trim();
+            }
             default:
-                return false;
+                return true;
         }
     };
     checkFormValidity = (modalId) => {
@@ -185,17 +209,16 @@ export class ModalController {
         if (!messages.length) {
             return true;
         }
-
+        let isValid = true;
         for (let message of messages) {
-            const result = this.checkValidationRule(input, message);
-            if (result) {
-                message.classList.remove("modal__validation-message--show");
-                continue;
+            const result = this.checkValidationRule(input, message, modalId);
+            message.classList.remove("modal__validation-message--show");
+            if (!result && isValid) {
+                message.classList.add("modal__validation-message--show");
+                isValid = false;
             }
-            message.classList.add("modal__validation-message--show");
-            return false;
         }
-        return true;
+        return isValid;
     };
     setupInputValidation = (modalId) => {
         const modal = this.modalMap[modalId];
