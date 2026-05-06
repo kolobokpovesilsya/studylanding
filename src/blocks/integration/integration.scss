@@ -86,8 +86,12 @@
     justify-items: center;
     // height: rem(600px);
 }
-.integration__grid img {
-    height: 150px;
+.integration__grid-cell {
+    height: rem(150px);
+    padding: rem(10px);
+}
+.integration__grid-cell img {
+    height: 100%;
 }
 @media (max-width: 768px) {
     .integration__container {

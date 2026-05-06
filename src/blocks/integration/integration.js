@@ -14,21 +14,24 @@ function onIntegrationModalOpen(modal) {
 
     const grid = modal.querySelector(".integration__grid");
     requestAnimationFrame(() => {
-        for (let i = 0, j = 0; i < platformList.length * 3; i++, j++) {
-            // for (let i = 0, j = 0; i < platformList.length * 50; i++, j++) {
+        // for (let i = 0, j = 0; i < platformList.length * 3; i++, j++) {
+        for (let i = 0, j = 0; i < platformList.length * 50; i++, j++) {
             if (j == platformList.length) {
                 j = 0;
                 // break;
             }
             const platformUrl = platformList[j];
+            const container = document.createElement("div");
+            container.classList.add("integration__grid-cell");
             const img = document.createElement("img");
             img.src = platformUrl;
-            grid.appendChild(img);
+            container.appendChild(img);
+            grid.appendChild(container);
         }
         // const images = grid.querySelectorAll('img')
-        requestAnimationFrame(() => {
-            new Virtualizer(grid);
-        });
+        // requestAnimationFrame(() => {
+        //     new Virtualizer(grid);
+        // });
     });
 }
 
