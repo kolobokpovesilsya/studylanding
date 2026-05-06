@@ -1,24 +1,25 @@
 .logo {
     position: relative;
-    display: inline-flex; /* или block, в зависимости от макета */
+    display: inline-flex;
     align-items: center;
-}
 
-.logo::after {
-    content: "";
-    position: absolute;
-    top: 55%; /* привязываем к центру по вертикали */
-    left: -0.6rem; /* привязываем к левому краю */
-    width: rem(60px);
-    height: rem(60px);
-    transform-origin: center center;
-    transform: translateY(-50%) rotate(45deg); /* сдвиг на половину высоты + поворот */
+    &::after {
+        content: "";
+        position: absolute;
+        top: 55%;
+        left: -0.6rem;
+        width: rem(60px);
+        height: rem(60px);
+        transform-origin: center center;
+        transform: translateY(-50%) rotate(45deg);
+        z-index: -1;
+        pointer-events: none;
+        border-radius: rem(3px);
+    }
 
-    z-index: -1; /* если ромб должен быть ПОД текстом */
-    pointer-events: none; /* чтобы не перекрывал клики */
-    border-radius: rem(3px);
-}
-
-.logo--primary::after {
-    background-color: var(--accent-primary);
+    &--primary {
+        &::after {
+            background-color: var(--accent-primary);
+        }
+    }
 }

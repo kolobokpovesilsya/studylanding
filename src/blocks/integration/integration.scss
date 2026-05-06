@@ -1,116 +1,124 @@
-.integration__container {
-    --container: 1457px;
-    display: flex;
-    gap: rem(100px);
-}
+.integration {
+    &__container {
+        --container: 1457px;
+        display: flex;
+        gap: rem(100px);
+    }
 
-.integration__content,
-.integration__platforms {
-    width: 50%;
-}
+    &__content,
+    &__platforms {
+        width: 50%;
+    }
 
-.integration__sup-title {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    font-size: rem(20px);
-    letter-spacing: 20%;
-}
-
-.integration__title-decoration {
-    display: inline-block;
-    height: rem(1px);
-    width: rem(80px);
-    background-color: #525596;
-}
-
-.integration__title {
-    font-weight: bold;
-    font-size: rem(36px);
-}
-
-.integration__description {
-    font-size: rem(24px);
-    letter-spacing: 2%;
-    line-height: 160%;
-    margin-bottom: rem(20px);
-}
-
-.integration__description span {
-    display: block;
-}
-
-.integration__btn {
-    display: inline-flex;
-    justify-content: space-between;
-    align-items: center;
-    border: rem(1px) solid #f48c06;
-    border-radius: rem(40px);
-    background-color: transparent;
-    color: #f48c06;
-}
-
-.integration__btn-text {
-    display: inline-block;
-    margin-left: rem(40px);
-    margin-right: rem(25px);
-    font-size: rem(22px);
-    letter-spacing: 2%;
-}
-
-.integration__platforms-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: end;
-    row-gap: 2rem;
-}
-.theme-dark .integration__platforms-content {
-    padding: 0.5rem;
-    background: #5b6587;
-    border-radius: var(--card-radius);
-    justify-items: center;
-}
-.integration__modal-content {
-    max-height: 90%;
-}
-.integration__modal-body {
-    display: flex;
-    overflow: hidden;
-}
-.integration__grid {
-    position: relative;
-    overflow: auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    justify-items: center;
-    // height: rem(600px);
-}
-.integration__grid-cell {
-    height: rem(150px);
-    padding: rem(10px);
-}
-.integration__grid-cell img {
-    height: 100%;
-}
-@media (max-width: 768px) {
-    .integration__container {
-        flex-direction: column;
+    &__sup-title {
+        display: flex;
         align-items: center;
+        gap: 1rem;
+        font-size: rem(20px);
+        letter-spacing: 20%;
     }
 
-    .integration__platforms {
-        order: 2;
-        width: 100%;
+    &__title-decoration {
+        display: inline-block;
+        height: rem(1px);
+        width: rem(80px);
+        background-color: #525596;
     }
 
-    .integration__content {
-        padding: 0 rem(20px);
-        width: 100%;
+    &__title {
+        font-weight: bold;
+        font-size: rem(36px);
     }
 
-    .integration__platforms-content {
+    &__description {
+        font-size: rem(24px);
+        letter-spacing: 2%;
+        line-height: 160%;
+        margin-bottom: rem(20px);
+
+        span {
+            display: block;
+        }
+    }
+
+    &__btn {
+        display: inline-flex;
+        justify-content: space-between;
+        align-items: center;
+        border: rem(1px) solid #f48c06;
+        border-radius: rem(40px);
+        background-color: transparent;
+        color: #f48c06;
+    }
+
+    &__btn-text {
+        display: inline-block;
+        margin-left: rem(40px);
+        margin-right: rem(25px);
+        font-size: rem(22px);
+        letter-spacing: 2%;
+    }
+
+    &__platforms-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: end;
+        row-gap: 2rem;
+
+        .theme-dark & {
+            padding: 0.5rem;
+            background: #5b6587;
+            border-radius: var(--card-radius);
+            justify-items: center;
+        }
+    }
+
+    &__modal-content {
+        max-height: 90%;
+    }
+
+    &__modal-body {
+        display: flex;
+        overflow: hidden;
+    }
+
+    &__grid {
+        position: relative;
+        overflow: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
         justify-items: center;
-        padding: 0 rem(20px);
+    }
+
+    &__grid-cell {
+        height: rem(150px);
+        padding: rem(10px);
+
+        img {
+            height: 100%;
+        }
+    }
+
+    @media (max-width: 768px) {
+        &__container {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &__platforms {
+            order: 2;
+            width: 100%;
+        }
+
+        &__content {
+            padding: 0 rem(20px);
+            width: 100%;
+        }
+
+        &__platforms-content {
+            justify-items: center;
+            padding: 0 rem(20px);
+        }
     }
 }

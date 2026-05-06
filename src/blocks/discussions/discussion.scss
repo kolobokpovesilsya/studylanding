@@ -1,219 +1,253 @@
-.discussions__container {
-    --container: 1500px;
-}
+.discussions {
+    &__container {
+        --container: 1500px;
+    }
 
-.discussions__content {
-    display: flex;
-    margin-bottom: rem(200px);
-}
-.discussions__screen-wrapper {
-    position: relative;
-}
-.discussions__screen-wrapper,
-.discussions__screen-text {
-    width: 50%;
-}
-.discussions__screen-text {
-    padding-left: rem(200px);
-}
+    &__content {
+        display: flex;
+        margin-bottom: rem(200px);
+    }
 
-.discussions__screencard {
-    position: relative;
-    z-index: 2;
-}
-.discussions__screencard-foreground {
-    padding-left: rem(40px);
-}
-.discussions__screencard-background {
-    position: absolute;
-    z-index: -1;
-    width: 100%;
-    // height: 100%;
-    top: -19%;
-    left: rem(-20px);
-}
-@supports (backdrop-filter: blur(1px)) {
-    .discussions__screencard-background:after {
-        content: "";
+    &__screen-wrapper {
+        position: relative;
+    }
+
+    &__screen-wrapper,
+    &__screen-text {
+        width: 50%;
+    }
+
+    &__screen-text {
+        padding-left: rem(200px);
+    }
+
+    &__screencard {
+        position: relative;
+        z-index: 2;
+    }
+
+    &__screencard-foreground {
+        padding-left: rem(40px);
+    }
+
+    &__screencard-background {
         position: absolute;
-        top: 0;
-        left: 0;
+        z-index: -1;
+        width: 100%;
+        top: -19%;
+        left: rem(-20px);
+
+        @supports (backdrop-filter: blur(1px)) {
+            &:after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: #f4f4f460;
+                backdrop-filter: blur(rem(5px)) saturate(100%);
+                -webkit-backdrop-filter: blur(rem(15px)) saturate(100%);
+                z-index: 100;
+                border-radius: rem(20px);
+                overflow: hidden;
+            }
+        }
+    }
+
+    &__shape {
+        position: absolute;
+        top: var(--top);
+        left: var(--left);
+        right: var(--right);
+        bottom: var(--bottom);
+        background: var(--color);
+        z-index: -1;
+    }
+
+    &__square {
+        --color: #73bcff;
+        width: rem(196px);
+        height: rem(196px);
+        border-radius: 18px;
+        --bottom: -5%;
+        --left: -2%;
+    }
+
+    &__ring {
+        width: 5.6rem;
+        height: 5.6rem;
+        border-radius: 50%;
+        border: 20px solid #23bdee;
+        --top: -11%;
+        --right: -5%;
+    }
+
+    &__triangle {
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 20px solid #fba333;
+        --top: 15%;
+        --right: -13%;
+        transform: rotate(-18deg);
+    }
+
+    &__video-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    &__video-col {
+        &--row {
+            display: grid;
+            gap: rem(10px);
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+    &__videocall-preview {
         width: 100%;
         height: 100%;
-        background: #f4f4f460;
-        backdrop-filter: blur(rem(5px)) saturate(100%);
-        -webkit-backdrop-filter: blur(rem(15px)) saturate(100%);
-        z-index: 100;
-        border-radius: rem(20px);
-        overflow: hidden;
     }
-}
-.discussions__shape {
-    position: absolute;
-    top: var(--top);
-    left: var(--left);
-    right: var(--right);
-    bottom: var(--bottom);
-    background: var(--color);
-    z-index: -1;
-}
-.discussions__square {
-    --color: #73bcff;
-    width: rem(196px);
-    height: rem(196px);
-    border-radius: 18px;
-    --bottom: -5%;
-    --left: -2%;
-}
-.discussions__ring {
-    width: 5.6rem;
-    height: 5.6rem;
-    border-radius: 50%;
-    border: 20px solid #23bdee;
-    --top: -11%;
-    --right: -5%;
-}
-.discussions__triangle {
-    width: 0;
-    height: 0;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 20px solid #fba333;
-    --top: 15%;
-    --right: -13%;
-    transform: rotate(-18deg);
-}
-.discussions__video-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-.discussions__video-col--row {
-    display: grid;
-    gap: rem(10px);
-    grid-template-columns: 1fr 1fr;
-}
-.discussions__videocall-preview {
-    width: 100%;
-    height: 100%;
-}
-.discussions__screencard-body {
-    padding: rem(20px) rem(35px);
-}
-.discussions__screencard-body-bg {
-    padding: rem(40px) rem(20px);
-}
-.discussions__video-row {
-    display: flex;
-    gap: rem(40px);
-    margin-bottom: rem(35px);
-}
-.discussions__video-divider {
-    width: 1px;
-    background-color: #d5e2fb;
-}
-.discussions__videocall {
-    aspect-ratio: 1/1;
-}
-.discussions__info-row {
-    display: flex;
-    justify-content: space-between;
-}
-.discussions__info-title {
-    line-height: normal;
-}
 
-.discussions__info-text {
-    line-height: normal;
-    font-size: rem(16px);
-}
-
-.discussions__info-btn {
-    display: inline-flex;
-    font-size: rem(20px);
-    color: var(--white);
-    border-radius: var(--btn-radius);
-    padding: 0.2rem 1.5rem;
-    background: linear-gradient(
-        57deg,
-        rgba(245, 84, 84, 1) 1%,
-        rgba(229, 66, 43, 1) 100%
-    );
-    box-shadow: 0px rem(10px) rem(20px) rem(5px) #eb493a40;
-    white-space: nowrap;
-}
-
-.discussions__boxicon {
-    position: absolute;
-    top: 4rem;
-    transform-origin: center center;
-    transform: rotate(-5deg);
-}
-
-.discussions__icon--users {
-    width: rem(40px) !important;
-    height: rem(40px) !important;
-    transform: rotate(-5deg);
-    fill: #2c93f1 !important;
-}
-
-.discussions__screen-title,
-.discussions__screen-description {
-    text-align: start;
-}
-
-.discussions__more-features {
-    display: flex;
-    justify-content: center;
-}
-
-@media (max-width: 1280px) {
-    .discussions__content {
-        flex-direction: column;
-        align-items: center;
-        gap: rem(100px);
+    &__screencard-body {
+        padding: rem(20px) rem(35px);
     }
-    .discussions__screen-text {
-        padding-left: 0;
+
+    &__screencard-body-bg {
+        padding: rem(40px) rem(20px);
     }
-    .discussions__screen-wrapper {
-        order: 2;
-        width: 70%;
+
+    &__video-row {
+        display: flex;
+        gap: rem(40px);
+        margin-bottom: rem(35px);
     }
-    .discussions__screen-title {
+
+    &__video-divider {
+        width: 1px;
+        background-color: #d5e2fb;
+    }
+
+    &__videocall {
+        aspect-ratio: 1/1;
+    }
+
+    &__info-row {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__info-title {
+        line-height: normal;
+    }
+
+    &__info-text {
+        line-height: normal;
+        font-size: rem(16px);
+    }
+
+    &__info-btn {
+        display: inline-flex;
+        font-size: rem(20px);
+        color: var(--white);
+        border-radius: var(--btn-radius);
+        padding: 0.2rem 1.5rem;
+        background: linear-gradient(
+            57deg,
+            rgba(245, 84, 84, 1) 1%,
+            rgba(229, 66, 43, 1) 100%
+        );
+        box-shadow: 0px rem(10px) rem(20px) rem(5px) #eb493a40;
+        white-space: nowrap;
+    }
+
+    &__boxicon {
+        position: absolute;
+        top: 4rem;
+        transform-origin: center center;
+        transform: rotate(-5deg);
+    }
+
+    &__icon {
+        &--users {
+            width: rem(40px) !important;
+            height: rem(40px) !important;
+            transform: rotate(-5deg);
+            fill: #2c93f1 !important;
+        }
+    }
+
+    &__screen-title,
+    &__screen-description {
+        text-align: start;
+    }
+
+    &__more-features {
         display: flex;
         justify-content: center;
     }
 
-    .discussions__screen-description {
-        text-align: center;
-        margin-bottom: rem(50px);
-    }
-}
+    @media (max-width: 1280px) {
+        &__content {
+            flex-direction: column;
+            align-items: center;
+            gap: rem(100px);
+        }
 
-@media (max-width: 768px) {
-    .discussions__screen-wrapper {
-        order: 2;
-        width: 100%;
+        &__screen-text {
+            padding-left: 0;
+        }
+
+        &__screen-wrapper {
+            order: 2;
+            width: 70%;
+        }
+
+        &__screen-title {
+            display: flex;
+            justify-content: center;
+        }
+
+        &__screen-description {
+            text-align: center;
+            margin-bottom: rem(50px);
+        }
     }
-    .discussions__screencard-background {
-        display: none;
+
+    @media (max-width: 768px) {
+        &__screen-wrapper {
+            order: 2;
+            width: 100%;
+        }
+
+        &__screencard-background {
+            display: none;
+        }
+
+        &__screencard-foreground {
+            padding-left: 0;
+        }
+
+        &__info-btn {
+            align-self: start;
+            padding: 0.2rem 0.8rem;
+        }
+
+        &__content {
+            margin-bottom: rem(50px);
+        }
     }
-    .discussions__screencard-foreground {
-        padding-left: 0;
-    }
-    .discussions__info-btn {
-        align-self: start;
-        padding: 0.2rem 0.8rem;
-    }
-    .discussions__content {
-        margin-bottom: rem(50px);
-    }
-}
-@media (max-width: 480px) {
-    .discussions__screencard-background {
-        display: none;
-    }
-    .discussions__video-row {
-        flex-direction: column;
+
+    @media (max-width: 480px) {
+        &__screencard-background {
+            display: none;
+        }
+
+        &__video-row {
+            flex-direction: column;
+        }
     }
 }

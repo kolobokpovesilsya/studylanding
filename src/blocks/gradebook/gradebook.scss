@@ -1,303 +1,306 @@
 .gradebook {
-}
+    &__container {
+        --container: 1580px;
+        display: flex;
+        gap: rem(190px);
+    }
 
-.gradebook__container {
-    --container: 1580px;
-    display: flex;
-    gap: rem(190px);
-}
-
-.gradebook__content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.gradebook__title,
-.gradebook__description {
-    text-align: start !important;
-}
-
-.gradebook__title {
-    max-width: rem(393px);
-}
-
-.gradebook__description {
-    max-width: rem(600px);
-}
-
-.gradebook__picture {
-}
-
-.gradebook__background {
-    position: relative;
-    width: rem(700px);
-}
-
-.gradebook__background:before {
-    content: "";
-    position: absolute;
-    bottom: -5%;
-    left: -3%;
-    width: rem(288px);
-    height: rem(207px);
-    background-color: #d3e7ff;
-    border-radius: rem(20px);
-    z-index: -1;
-}
-
-.gradebook__wave-decor {
-    position: absolute;
-    bottom: 5%;
-    left: 0;
-    transform: translateX(-50%);
-}
-
-.gradebook__bulb-decor {
-    --size: 44px;
-    --top: -14%;
-    --right: 2%;
-    position: absolute;
-    background-color: #9fd7ff;
-    border-radius: 50%;
-    width: var-to-rem(--size);
-    height: var-to-rem(--size);
-    top: var(--top);
-    right: var(--right);
-}
-
-.gradebook__bulb-decor--small {
-    --size: 20px;
-    --top: -5%;
-    --right: -3%;
-}
-
-.gradebook__boxicon {
-    position: absolute;
-    --size: 110px;
-    --top: -12%;
-    --left: -5%;
-    top: var(--top);
-    left: var(--left);
-}
-
-.gradebook__boxicon--right {
-    --size: 79px;
-    --top: 10%;
-    --left: 88%;
-}
-
-.gradebook__icon {
-    --size: 55px;
-    --rotate: -12deg;
-    width: var-to-rem(--size) !important;
-    height: var-to-rem(--size) !important;
-    transform: rotate(var(--rotate));
-}
-
-.gradebook__icon--book {
-    --size: 45px;
-    --rotate: 12deg;
-}
-
-.gradebook__wrapper {
-    border-radius: var(--card-radius);
-    overflow: hidden;
-    background: var(--color-panel);
-    box-shadow: var(--box-shadow-v2);
-}
-
-.gradebook__header {
-    background: #54aff0;
-    color: #fff;
-    text-align: center;
-    padding: rem(13px) 0;
-}
-
-.gradebook__body {
-    padding-top: rem(50px);
-}
-
-.gradebook__row {
-    display: flex;
-}
-
-.gradebook__row:not(:last-child) {
-    margin-bottom: rem(50px);
-}
-
-.gradebook__col {
-    --flex-direction: row;
-    flex-grow: 1;
-    display: flex;
-    align-items: center;
-    flex-direction: var(--flex-direction);
-}
-
-.gradebook__col--blue {
-    --tail-bg: #3ac6f2;
-    --badge-bg: #cdf3ff;
-    --badge-color: #43869b;
-    --badge-top: 70%;
-    --badge-left: 70%;
-    --left-shift: -10px;
-    --tail-width: 100px;
-}
-
-.gradebook__col--purple {
-    --tail-bg: #3189ef;
-    --badge-bg: #cde4ff;
-    --badge-color: #486f9c;
-    --badge-top: 80%;
-    --badge-left: 20%;
-    --right-shift: -10px;
-    --tail-width: 250px;
-    --flex-direction: row-reverse;
-    transform: translateY(-10%);
-}
-
-.gradebook__col--green {
-    --tail-bg: #68f146;
-    --badge-bg: #d7ffcd;
-    --badge-color: #4e8c3f;
-    --badge-top: 70%;
-    --badge-left: 70%;
-    --left-shift: -10px;
-    --tail-width: 250px;
-}
-
-.gradebook__col--red {
-    --tail-bg: #f13c3c;
-    --badge-bg: #ffcdcd;
-    --badge-color: #9e5555;
-    --badge-top: 70%;
-    --badge-left: -20%;
-    --right-shift: -10px;
-    --tail-width: 120px;
-    --flex-direction: row-reverse;
-    transform: translateY(-50%);
-}
-
-.gradebook__tail {
-    width: var-to-rem(--tail-width);
-    height: rem(30px);
-    background-color: var(--tail-bg);
-}
-
-.gradebook__avatar {
-    position: relative;
-    margin-left: var-to-rem(--left-shift);
-    margin-right: var-to-rem(--right-shift);
-}
-
-.gradebook__avatar img {
-    border-radius: 50%;
-}
-
-.gradebook__badge {
-    position: absolute;
-    top: var(--badge-top);
-    left: var(--badge-left);
-    background-color: var(--badge-bg);
-    color: var(--badge-color);
-    font-size: rem(22px);
-    padding: 0 rem(20px);
-    border-radius: rem(40px);
-}
-
-.gradebook__footer {
-    text-align: end;
-    padding: rem(20px) rem(50px);
-    border-radius: 0 0 var(--card-radius) var(--card-radius);
-}
-
-.gradebook__btn {
-    position: relative;
-    display: inline-flex;
-    border-radius: rem(60px);
-    background: linear-gradient(
-        51deg,
-        rgba(84, 90, 231, 1) 0%,
-        rgba(57, 63, 207, 1) 100%
-    );
-    color: white;
-    padding: rem(4px) rem(40px);
-    z-index: 2;
-}
-
-.gradebook__btn:after {
-    content: "";
-    position: absolute;
-    background-color: #545ae870;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 20%;
-    z-index: -1;
-    filter: blur(rem(10px));
-    -webkit-filter: blur(rem(10px));
-    border-radius: rem(60px);
-    font-size: rem(20px);
-}
-
-@media (max-width: 1280px) {
-    .gradebook__container {
+    &__content {
+        display: flex;
         flex-direction: column;
+        justify-content: center;
+    }
+
+    &__title,
+    &__description {
+        text-align: start !important;
+    }
+
+    &__title {
+        max-width: rem(393px);
+    }
+
+    &__description {
+        max-width: rem(600px);
+    }
+
+    &__picture {
+    }
+
+    &__background {
+        position: relative;
+        width: rem(700px);
+
+        &:before {
+            content: "";
+            position: absolute;
+            bottom: -5%;
+            left: -3%;
+            width: rem(288px);
+            height: rem(207px);
+            background-color: #d3e7ff;
+            border-radius: rem(20px);
+            z-index: -1;
+        }
+    }
+
+    &__wave-decor {
+        position: absolute;
+        bottom: 5%;
+        left: 0;
+        transform: translateX(-50%);
+    }
+
+    &__bulb-decor {
+        --size: 44px;
+        --top: -14%;
+        --right: 2%;
+        position: absolute;
+        background-color: #9fd7ff;
+        border-radius: 50%;
+        width: var-to-rem(--size);
+        height: var-to-rem(--size);
+        top: var(--top);
+        right: var(--right);
+
+        &--small {
+            --size: 20px;
+            --top: -5%;
+            --right: -3%;
+        }
+    }
+
+    &__boxicon {
+        position: absolute;
+        --size: 110px;
+        --top: -12%;
+        --left: -5%;
+        top: var(--top);
+        left: var(--left);
+
+        &--right {
+            --size: 79px;
+            --top: 10%;
+            --left: 88%;
+        }
+    }
+
+    &__icon {
+        --size: 55px;
+        --rotate: -12deg;
+        width: var-to-rem(--size) !important;
+        height: var-to-rem(--size) !important;
+        transform: rotate(var(--rotate));
+
+        &--book {
+            --size: 45px;
+            --rotate: 12deg;
+        }
+    }
+
+    &__wrapper {
+        border-radius: var(--card-radius);
+        overflow: hidden;
+        background: var(--color-panel);
+        box-shadow: var(--box-shadow-v2);
+    }
+
+    &__header {
+        background: #54aff0;
+        color: #fff;
+        text-align: center;
+        padding: rem(13px) 0;
+    }
+
+    &__body {
+        padding-top: rem(50px);
+    }
+
+    &__row {
+        display: flex;
+
+        &:not(:last-child) {
+            margin-bottom: rem(50px);
+        }
+    }
+
+    &__col {
+        --flex-direction: row;
+        flex-grow: 1;
+        display: flex;
         align-items: center;
+        flex-direction: var(--flex-direction);
+
+        &--blue {
+            --tail-bg: #3ac6f2;
+            --badge-bg: #cdf3ff;
+            --badge-color: #43869b;
+            --badge-top: 70%;
+            --badge-left: 70%;
+            --left-shift: -10px;
+            --tail-width: 100px;
+        }
+
+        &--purple {
+            --tail-bg: #3189ef;
+            --badge-bg: #cde4ff;
+            --badge-color: #486f9c;
+            --badge-top: 80%;
+            --badge-left: 20%;
+            --right-shift: -10px;
+            --tail-width: 250px;
+            --flex-direction: row-reverse;
+            transform: translateY(-10%);
+        }
+
+        &--green {
+            --tail-bg: #68f146;
+            --badge-bg: #d7ffcd;
+            --badge-color: #4e8c3f;
+            --badge-top: 70%;
+            --badge-left: 70%;
+            --left-shift: -10px;
+            --tail-width: 250px;
+        }
+
+        &--red {
+            --tail-bg: #f13c3c;
+            --badge-bg: #ffcdcd;
+            --badge-color: #9e5555;
+            --badge-top: 70%;
+            --badge-left: -20%;
+            --right-shift: -10px;
+            --tail-width: 120px;
+            --flex-direction: row-reverse;
+            transform: translateY(-50%);
+        }
     }
 
-    .gradebook__title,
-    .gradebook__description {
-        max-width: unset;
-        width: 100%;
-        text-align: center !important;
+    &__tail {
+        width: var-to-rem(--tail-width);
+        height: rem(30px);
+        background-color: var(--tail-bg);
     }
 
-    .gradebook__content {
-        width: 80%;
-    }
-}
+    &__avatar {
+        position: relative;
+        margin-left: var-to-rem(--left-shift);
+        margin-right: var-to-rem(--right-shift);
 
-@media (max-width: 768px) {
-    .gradebook__boxicon,
-    .gradebook__bulb-decor,
-    .gradebook__wave-decor {
-        display: none;
+        img {
+            border-radius: 50%;
+        }
     }
 
-    .gradebook__background:before {
-        display: none;
+    &__badge {
+        position: absolute;
+        top: var(--badge-top);
+        left: var(--badge-left);
+        background-color: var(--badge-bg);
+        color: var(--badge-color);
+        font-size: rem(22px);
+        padding: 0 rem(20px);
+        border-radius: rem(40px);
     }
 
-    .gradebook__picture {
-        width: 100%;
+    &__footer {
+        text-align: end;
+        padding: rem(20px) rem(50px);
+        border-radius: 0 0 var(--card-radius) var(--card-radius);
     }
 
-    .gradebook__background {
-        width: 100%;
+    &__btn {
+        position: relative;
+        display: inline-flex;
+        border-radius: rem(60px);
+        background: linear-gradient(
+            51deg,
+            rgba(84, 90, 231, 1) 0%,
+            rgba(57, 63, 207, 1) 100%
+        );
+        color: white;
+        padding: rem(4px) rem(40px);
+        z-index: 2;
+
+        &:after {
+            content: "";
+            position: absolute;
+            background-color: #545ae870;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 20%;
+            z-index: -1;
+            filter: blur(rem(10px));
+            -webkit-filter: blur(rem(10px));
+            border-radius: rem(60px);
+            font-size: rem(20px);
+        }
     }
-    .gradebook__row {
-        flex-direction: column;
+
+    @media (max-width: 1280px) {
+        &__container {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        &__title,
+        &__description {
+            max-width: unset;
+            width: 100%;
+            text-align: center !important;
+        }
+
+        &__content {
+            width: 80%;
+        }
     }
-    .gradebook__col {
-        margin-bottom: rem(20px);
-    }
-    .gradebook__col--purple {
-        transform: unset;
-        --flex-direction: unset;
-        --badge-right: unset;
-        --right-shift: unset;
-        --left-shift: -10px;
-        --badge-top: 70%;
-        --badge-left: 70%;
-    }
-    .gradebook__col--red {
-        transform: unset;
-        --flex-direction: unset;
-        --badge-right: unset;
-        --right-shift: unset;
-        --left-shift: -10px;
-        --badge-top: 70%;
-        --badge-left: 70%;
+
+    @media (max-width: 768px) {
+        &__boxicon,
+        &__bulb-decor,
+        &__wave-decor {
+            display: none;
+        }
+
+        &__background {
+            width: 100%;
+
+            &:before {
+                display: none;
+            }
+        }
+
+        &__picture {
+            width: 100%;
+        }
+
+        &__row {
+            flex-direction: column;
+        }
+
+        &__col {
+            margin-bottom: rem(20px);
+
+            &--purple {
+                transform: unset;
+                --flex-direction: unset;
+                --badge-right: unset;
+                --right-shift: unset;
+                --left-shift: -10px;
+                --badge-top: 70%;
+                --badge-left: 70%;
+            }
+
+            &--red {
+                transform: unset;
+                --flex-direction: unset;
+                --badge-right: unset;
+                --right-shift: unset;
+                --left-shift: -10px;
+                --badge-top: 70%;
+                --badge-left: 70%;
+            }
+        }
     }
 }

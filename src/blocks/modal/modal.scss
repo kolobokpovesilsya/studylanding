@@ -1,8 +1,4 @@
-.modal-stack {
-}
-
 .modal {
-    // display: none;
     display: flex;
     position: fixed;
     top: 0;
@@ -14,9 +10,6 @@
     background-color: #00000090;
     z-index: 1000;
 
-    // &--opened {
-    //     display: flex;
-    // }
     &__content {
         position: relative;
         display: flex;
@@ -53,10 +46,6 @@
         text-align: center;
     }
 
-    &__input {
-        &--invalid {
-        }
-    }
     &__title {
         display: flex;
         justify-content: space-between;

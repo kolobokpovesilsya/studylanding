@@ -2,56 +2,54 @@
     --slide-items-gap: 0;
     position: relative;
     overflow: hidden;
-}
-.slider__list {
-    position: relative;
-    display: flex;
-    height: 100%;
-    gap: var-to-rem(--slide-items-gap);
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-}
-.slider__content {
-    width: 100%;
-    height: 100%;
-    display: inline-flex;
-    // overflow: hidden;
-}
-.slider__item {
-    // position: absolute;
-    flex-shrink: 0;
-    // display: none;
-    &--show {
-        // display: block;
+
+    &__list {
+        position: relative;
+        display: flex;
+        height: 100%;
+        gap: var-to-rem(--slide-items-gap);
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
     }
-}
 
-.slider__bullet-list {
-    position: relative;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    gap: rem(5px);
-    display: flex;
-    width: min-content;
-}
-.slider__bullet {
-    display: flex;
-    width: 1.5rem;
-    height: 1.5rem;
-    border: 0.2rem solid var(--accent-warning);
+    &__content {
+        width: 100%;
+        height: 100%;
+        display: inline-flex;
+    }
 
-    justify-content: center;
-    align-items: center;
-    background-color: transparent;
-    color: var(--accent-warning);
-    border-radius: 50%;
-    font-size: 1rem;
-    cursor: pointer;
-    &--active {
-        background-color: var(--accent-warning);
-        color: white;
+    &__item {
+        flex-shrink: 0;
+    }
+
+    &__bullet-list {
+        position: relative;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        gap: rem(5px);
+        display: flex;
+        width: min-content;
+    }
+
+    &__bullet {
+        display: flex;
+        width: 1.5rem;
+        height: 1.5rem;
+        border: 0.2rem solid var(--accent-warning);
+        justify-content: center;
+        align-items: center;
+        background-color: transparent;
+        color: var(--accent-warning);
+        border-radius: 50%;
+        font-size: 1rem;
+        cursor: pointer;
+
+        &--active {
+            background-color: var(--accent-warning);
+            color: white;
+        }
     }
 }
