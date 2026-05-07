@@ -1,6 +1,11 @@
+import {
+    DARK_THEME,
+    getTheme,
+    LIGHT_THEME,
+    setTheme,
+} from "../../lib/theme/theme";
 import { MenuController } from "../menu/menu";
-import { openModalById } from "../modal/modal";
-
+const THEME_CLASS = "theme-dark";
 let prevScrollTop = 0;
 // const signupBtn = document.querySelector(".header__sign-up");
 const themeBtn = document.querySelector(".header__theme-btn input");
@@ -70,20 +75,31 @@ function clickBurgerMenu(e) {
         });
     }
 }
-function toggleTheme(e) {
-    console.log("click====", e.target);
-
-    document.body.classList.toggle("theme-dark");
+function initializeTheme() {
+    const theme = getTheme();
+    document.body.classList.remove(THEME_CLASS);
+    if (theme == DARK_THEME) {
+        document.body.classList.add(THEME_CLASS);
+        themeBtn.checked = false;
+    } else {
+        themeBtn.checked = true;
+    }
+}
+function toggleTheme() {
+    const currentTheme = document.body.classList.contains(THEME_CLASS)
+        ? LIGHT_THEME
+        : DARK_THEME;
+    setTheme(currentTheme);
+    document.body.classList.remove(THEME_CLASS);
+    if (currentTheme == DARK_THEME) {
+        document.body.classList.add(THEME_CLASS);
+    }
 }
 export function initHeader() {
     document.addEventListener("scroll", scrollHandler);
     burgerBtn?.addEventListener("click", clickBurgerMenu);
     themeBtn.onclick = toggleTheme;
-    // themeBtn?.addEventListener("click", toggleTheme);
+    initializeTheme();
     const menuElement = document.querySelector(".header .menu");
     const menuController = new MenuController(menuElement);
-    // signupBtn.onclick = () => {
-    //     console.log("sign up modal===");
-    //     openModalById("sign-up-modal");
-    // };
 }
