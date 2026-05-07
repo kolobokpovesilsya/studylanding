@@ -7,7 +7,6 @@ import {
 import { MenuController } from "../menu/menu";
 const THEME_CLASS = "theme-dark";
 let prevScrollTop = 0;
-// const signupBtn = document.querySelector(".header__sign-up");
 const themeBtn = document.querySelector(".header__theme-btn input");
 const burgerBtn = document.querySelector(".header__burgerbutton");
 const header = document.body.querySelector("header");
@@ -27,7 +26,7 @@ const scrollHandler = (e) => {
     prevScrollTop = scrollTop;
 };
 
-function toggleExpand(endCallback, duration = 200) {
+function toggleMenuExpand(endCallback, duration = 200) {
     const startHeaderHeight = header.offsetHeight;
     let startTime = performance.now();
     const shouldExpand = window.innerHeight > startHeaderHeight;
@@ -61,12 +60,12 @@ function clickBurgerMenu(e) {
         initialHeaderHeight = header.offsetHeight;
         initialHeaderBackground = header.style.background;
         header.style.background = "var(--color-panel)";
-        toggleExpand(() => {
+        toggleMenuExpand(() => {
             header.classList.toggle("header--extended");
             header.style.height = "100%";
         });
     } else {
-        toggleExpand(() => {
+        toggleMenuExpand(() => {
             header.classList.toggle("header--extended");
             setTimeout(() => {
                 header.style.background = initialHeaderBackground;
