@@ -3,9 +3,12 @@ export class IntersectionAnimation {
         const animationContainers = rootElement.querySelectorAll(
             "[data-animation-container]",
         );
-        Array.from(animationContainers).forEach((e) =>
-            this.connectIntersectionObserver(e, onIntersect, onHide),
-        );
+        requestAnimationFrame(() => {
+            window.scrollTo(0, scrollY);
+            Array.from(animationContainers).forEach((e) =>
+                this.connectIntersectionObserver(e, onIntersect, onHide),
+            );
+        });
     }
     connectIntersectionObserver(animationContainer, onIntersect, onHide) {
         let threshold = animationContainer.getAttribute("data-anim-threshold");
@@ -43,18 +46,23 @@ export class IntersectionAnimation {
 
         Array.from(animatedElementList).forEach((el) => {
             const animationType = el.getAttribute("data-animation");
-            const origin = el.getAttribute("data-anim-origin");
-            const delay = el.getAttribute("data-anim-delay");
-            const duration = el.getAttribute("data-anim-duration");
-            const shiftY = el.getAttribute("data-anim-y");
-            const shiftX = el.getAttribute("data-anim-x");
-            const animationClass = this.getAnimationClass(animationType, reset);
-            delay && el.style.setProperty("--anim-delay", `${delay}s`);
-            shiftY && el.style.setProperty("--anim-y", `${shiftY}`);
-            shiftX && el.style.setProperty("--anim-x", `${shiftX}`);
-            origin && el.style.setProperty("--origin", origin);
-            duration && el.style.setProperty("--duration", duration);
-            el.classList.add(animationClass);
+            if (animationType) {
+                const origin = el.getAttribute("data-anim-origin");
+                const delay = el.getAttribute("data-anim-delay");
+                const duration = el.getAttribute("data-anim-duration");
+                const shiftY = el.getAttribute("data-anim-y");
+                const shiftX = el.getAttribute("data-anim-x");
+                const animationClass = this.getAnimationClass(
+                    animationType,
+                    reset,
+                );
+                delay && el.style.setProperty("--anim-delay", `${delay}s`);
+                shiftY && el.style.setProperty("--anim-y", `${shiftY}`);
+                shiftX && el.style.setProperty("--anim-x", `${shiftX}`);
+                origin && el.style.setProperty("--origin", origin);
+                duration && el.style.setProperty("--duration", duration);
+                el.classList.add(animationClass);
+            }
         });
     };
     getAnimationClass = (animationType, reset) => {

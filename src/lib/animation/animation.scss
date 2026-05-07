@@ -1,54 +1,54 @@
 .animation--slide-y-reset {
-  --anim-y: 120px;
-  opacity: 0;
-  transform: translateY(var(--anim-y));
+    --anim-y: 120px;
+    opacity: 0;
+    transform: translate3d(0, var(--anim-y), 0);
 }
 
 .animation--slide-y-enter {
-  --anim-delay: 0.2s;
-  opacity: 1;
-  transform: translateY(0);
-  transition-duration: 1.2s;
-  transition-delay: var(--anim-delay);
+    --anim-delay: 0.2s;
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition-duration: 1.2s;
+    transition-delay: var(--anim-delay);
 }
 .animation--slide-x-reset {
-  --anim-x: 120px;
-  opacity: 0;
-  transform: translateX(var(--anim-x));
+    --anim-x: 120px;
+    opacity: 0;
+    transform: translate3d(var(--anim-x), 0, 0);
 }
 
 .animation--slide-x-enter {
-  --anim-delay: 0.2s;
-  opacity: 1;
-  transform: translateX(0);
-  transition-duration: 1.2s;
-  transition-delay: var(--anim-delay);
+    --anim-delay: 0.2s;
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition-duration: 1.2s;
+    transition-delay: var(--anim-delay);
 }
 //popup
 .animation--popup-reset {
-  --anim-y: 120px;
-  opacity: 0;
-  transform: translateY(var(--anim-y)) scale(0);
+    --anim-y: 120px;
+    opacity: 0;
+    transform: translate3d(0, var(--anim-y), 0) scale(0);
 }
 
 .animation--popup-enter {
-  --anim-delay: 0.2s;
-  opacity: 1;
-  transform: translateY(0) scale(1);
-  transition-duration: 1s;
-  transition-delay: var(--anim-delay);
+    --anim-delay: 0.2s;
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+    transition-duration: 1s;
+    transition-delay: var(--anim-delay);
 }
 //flip vertical
 .animation--flip-y-reset {
-    --origin:center center; 
+    --origin: center center;
     opacity: 0;
     transform-origin: var(--origin);
     transform: rotateY(-90deg);
 }
 
 .animation--flip-y-enter {
-  --origin:center center; 
-  --anim-delay: 0.2s;
+    --origin: center center;
+    --anim-delay: 0.2s;
     opacity: 1;
     transform-origin: var(--origin);
     transform: rotateY(0deg);
@@ -57,16 +57,16 @@
 }
 
 .animation--flip-x-reset {
-    --origin:center center; 
+    --origin: center center;
     opacity: 0;
     transform-origin: var(--origin);
     transform: rotateX(-90deg);
 }
 
 .animation--flip-x-enter {
-  --origin:center center; 
-  --duration:1s;
-  --anim-delay: 0.2s;
+    --origin: center center;
+    --duration: 1s;
+    --anim-delay: 0.2s;
     opacity: 1;
     transform-origin: var(--origin);
     transform: rotateX(0deg);
@@ -74,14 +74,14 @@
     transition-delay: var(--anim-delay);
 }
 
-.animation--fade-reset { 
+.animation--fade-reset {
     opacity: 0;
 }
 
-.animation--fade-enter { 
-  --duration:1s;
-  --anim-delay: 0.2s;
-    opacity: 1;       
+.animation--fade-enter {
+    --duration: 1s;
+    --anim-delay: 0.2s;
+    opacity: 1;
     transition-duration: var(--duration);
     transition-delay: var(--anim-delay);
 }
