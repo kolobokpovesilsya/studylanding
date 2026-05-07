@@ -1,0 +1,236 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 20px;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+html:has(.header--extended) {
+    overflow: hidden;
+}
+body {
+    font-family: "Poppins", system-ui, sans-serif;
+    line-height: 180%;
+    letter-spacing: 2%;
+    font-size: var(--text-size);
+    color: var(--text-color);
+    background: var(--color-bg);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: hidden;
+}
+section {
+    margin-bottom: 170px;
+}
+img,
+picture {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+ul {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+.link {
+    font-family: "Poppins", system-ui, sans-serif;
+    text-decoration: underline;
+}
+button {
+    font: inherit;
+    cursor: pointer;
+    border: none;
+    background: transparent;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--heading-text-color);
+    letter-spacing: 0;
+    /* line-height: 140%; */
+}
+h2 {
+    margin-bottom: 30px;
+    font-size: 44px;
+    line-height: 180%;
+}
+h3 {
+    font-size: 36px;
+    line-height: 160%;
+    font-weight: 500;
+}
+.main {
+    flex: 1;
+}
+
+.text-warning {
+    color: var(--accent-warning);
+}
+
+[class*="__container"] {
+    max-width: var(--container);
+    margin: 0 auto;
+    padding: 0 rem(24px);
+}
+.section-title {
+    font-family: "Poppins", system-ui, sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+.section-description {
+    text-align: center;
+    font-family: "Poppins", system-ui, sans-serif;
+}
+.icon {
+    width: rem(20px);
+    height: rem(20px);
+}
+.icon--fill-none {
+    --fill: none;
+}
+.icon--fill-white {
+    --fill: white;
+}
+.icon--fill {
+    fill: var(--fill);
+}
+.icon--sroke {
+    stroke: var(--stroke);
+}
+.text {
+    font-size: rem(24px);
+    line-height: 180%;
+    color: var(--text-color);
+}
+h1 {
+    font-size: rem(54px);
+    line-height: 150%;
+}
+h2 {
+    font-size: rem(36px);
+    line-height: 180%;
+}
+h3 {
+    font-size: rem(30px);
+    line-height: auto;
+}
+h4 {
+    font-size: rem(22px);
+    line-height: auto;
+}
+h5 {
+    font-size: rem(20px);
+    line-height: 180%;
+}
+
+a {
+    font-size: rem(22px);
+}
+.reset-scroll-btn {
+    --size: 80px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    transform: translate(-20%, 200%) rotate(-90deg);
+    width: var-to-rem(--size);
+    height: var-to-rem(--size);
+    background-color: var(--color-panel);
+    box-shadow: var(--box-shadow-v1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition-duration: 0.2s;
+}
+.reset-scroll-btn--show {
+    transform: translate(-20%, -50%) rotate(-90deg);
+    transition-duration: 0.2s;
+    cursor: pointer;
+}
+@media (max-width: 1600px) {
+    html {
+        font-size: 18px;
+    }
+}
+@media (max-width: 1280px) {
+    html {
+        font-size: 17px; /* Все rem размеры уменьшатся пропорционально */
+    }
+    h1 {
+        font-size: rem(44px);
+        line-height: 160%;
+    }
+    h2 {
+        font-size: rem(34px);
+        line-height: 160%;
+    }
+    h3 {
+        font-size: rem(28px);
+    }
+
+    .text {
+        font-size: rem(22px);
+    }
+    a {
+        font-size: rem(20px);
+    }
+}
+
+@media (max-width: 1024px) {
+    html {
+        font-size: 16px;
+    }
+    h1 {
+        line-height: 120%;
+    }
+    h4 {
+        font-size: rem(20px);
+        line-height: auto;
+    }
+    h5 {
+        font-size: rem(18px);
+        line-height: 180%;
+    }
+}
+@media (max-width: 768px) {
+    html {
+        font-size: 15px;
+    }
+    h1 {
+        font-size: rem(38px);
+        line-height: 110%;
+    }
+    h4 {
+        font-size: rem(18px);
+        line-height: auto;
+    }
+    .text {
+        font-size: rem(20px);
+    }
+    [class*="__container"] {
+        max-width: unset;
+    }
+}
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+    [class*="__container"] {
+        max-width: var(--container);
+        margin: 0 auto;
+        padding: 0 rem(12px);
+    }
+}

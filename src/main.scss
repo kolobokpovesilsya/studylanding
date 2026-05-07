@@ -1,8 +1,9 @@
 @import "functions.scss";
+
 @import "lib/animation/animation.scss";
-@import "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap";
 /* UI blocks */
 
+@import "blocks/common.scss";
 @import "blocks/modal/modal.scss";
 @import "blocks/signup/signup.scss";
 @import "blocks/rating/rating.scss";
@@ -35,35 +36,35 @@
 
 @font-face {
     font-family: "Poppins";
-    src: url("./fonts/Poppins-Regular.ttf") format("ttf");
+    src: url("./fonts/Poppins/Poppins-Regular.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: "Poppins";
-    src: url("./fonts/Poppins-Medium.ttf") format("ttf");
+    src: url("./fonts/Poppins/Poppins-Medium.ttf") format("truetype");
     font-weight: 500;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: "Poppins";
-    src: url("./fonts/Poppins-SemiBold.ttf") format("ttf");
+    src: url("./fonts/Poppins/Poppins-SemiBold.ttf") format("truetype");
     font-weight: 600;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: "Poppins";
-    src: url("./fonts/Poppins-Bold.ttf") format("ttf");
+    src: url("./fonts/Poppins/Poppins-Bold.ttf") format("truetype");
     font-weight: 700;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: "Nunito Sans";
-    src: url("./fonts/Nunito_Sans/NunitoSans-VariableFont_YTLC,opsz,wdth,wght.ttf")
+    src: url("./fonts/Nunito_Sans/NunitoSans-VariableFont_YTLC.ttf")
         format("truetype");
     font-weight: 200 1000;
     font-style: normal;
@@ -72,7 +73,7 @@
 
 @font-face {
     font-family: "Nunito Sans";
-    src: url("./fonts/Nunito_Sans/NunitoSans-Italic-VariableFont_YTLC,opsz,wdth,wght.ttf")
+    src: url("./fonts/Nunito_Sans/NunitoSans-Italic-VariableFont_YTLC.ttf")
         format("truetype");
     font-weight: 200 1000;
     font-style: italic;
@@ -119,276 +120,4 @@
     --menu-text-color: #fff;
     --box-shadow-v1: 0 10px 20px 0 #65daff20;
     --box-shadow-v2: 0 16px 20px 0 #65daff30;
-}
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-html {
-    font-size: 20px;
-    scroll-behavior: smooth;
-    overflow-x: hidden;
-}
-html:has(.header--extended) {
-    overflow: hidden;
-}
-body {
-    font-family:
-        system-ui,
-        -apple-system,
-        "Segoe UI",
-        Roboto,
-        sans-serif;
-    line-height: 180%;
-    letter-spacing: 2%;
-    font-size: var(--text-size);
-    color: var(--text-color);
-    background: var(--color-bg);
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    overflow: hidden;
-}
-section {
-    margin-bottom: 170px;
-}
-img,
-picture {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-ul {
-    list-style: none;
-}
-a {
-    text-decoration: none;
-    color: inherit;
-}
-button {
-    font: inherit;
-    cursor: pointer;
-    border: none;
-    background: transparent;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    color: var(--heading-text-color);
-    letter-spacing: 0;
-    /* line-height: 140%; */
-}
-h2 {
-    margin-bottom: 30px;
-    font-size: 44px;
-    line-height: 180%;
-}
-h3 {
-    font-size: 36px;
-    line-height: 160%;
-    font-weight: 500;
-}
-.main {
-    flex: 1;
-}
-
-.text-warning {
-    color: var(--accent-warning);
-}
-
-[class*="__container"] {
-    max-width: var(--container);
-    margin: 0 auto;
-    padding: 0 rem(24px);
-}
-.section-title {
-    text-align: center;
-}
-.section-description {
-    text-align: center;
-}
-.icon {
-    width: rem(20px);
-    height: rem(20px);
-}
-.icon--fill-none {
-    --fill: none;
-}
-.icon--fill-white {
-    --fill: white;
-}
-.icon--fill {
-    fill: var(--fill);
-}
-.icon--sroke {
-    stroke: var(--stroke);
-}
-.text {
-    font-size: rem(24px);
-    line-height: 180%;
-    color: var(--text-color);
-}
-h1 {
-    font-size: rem(54px);
-    line-height: 150%;
-}
-h2 {
-    font-size: rem(36px);
-    line-height: 180%;
-}
-h3 {
-    font-size: rem(30px);
-    line-height: auto;
-}
-h4 {
-    font-size: rem(22px);
-    line-height: auto;
-}
-h5 {
-    font-size: rem(20px);
-    line-height: 180%;
-}
-.animation-popup--hide {
-    --anim-popup-shift: 120px;
-    opacity: 0;
-    transform: translateY(var(--anim-popup-shift));
-}
-
-.animation-popup--show {
-    --anim-popup-delay: 0.2s;
-    opacity: 1;
-    transform: translateY(0);
-    transition-duration: 1.2s;
-    transition-delay: var(--anim-popup-delay);
-}
-.animation-popup--grow-down {
-    --anim-popup-shift: 20px;
-    opacity: 0;
-    transform: translateY(var(--anim-popup-shift)) scale(0);
-}
-
-.animation-popup--grow-up {
-    --anim-popup-delay: 0.2s;
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    transition-duration: 1s;
-    transition-delay: var(--anim-popup-delay);
-}
-.animation-popup--flip-y-hide {
-    opacity: 0;
-    transform: rotateY(-90deg);
-}
-
-.animation-popup--flip-y-show {
-    --anim-popup-delay: 0.2s;
-    opacity: 1;
-    transform: rotateY(0deg);
-    transition-duration: 1s;
-    transition-delay: var(--anim-popup-delay);
-}
-
-a {
-    font-size: rem(22px);
-}
-.reset-scroll-btn {
-    --size: 80px;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    transform: translate(-20%, 200%) rotate(-90deg);
-    width: var-to-rem(--size);
-    height: var-to-rem(--size);
-    background-color: var(--color-panel);
-    box-shadow: var(--box-shadow-v1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    transition-duration: 0.2s;
-}
-.reset-scroll-btn--show {
-    transform: translate(-20%, -50%) rotate(-90deg);
-    transition-duration: 0.2s;
-    cursor: pointer;
-}
-@media (max-width: 1600px) {
-    html {
-        font-size: 18px;
-    }
-}
-@media (max-width: 1280px) {
-    html {
-        font-size: 17px; /* Все rem размеры уменьшатся пропорционально */
-    }
-    h1 {
-        font-size: rem(44px);
-        line-height: 160%;
-    }
-    h2 {
-        font-size: rem(34px);
-        line-height: 160%;
-    }
-    h3 {
-        font-size: rem(28px);
-    }
-
-    .text {
-        font-size: rem(22px);
-    }
-    a {
-        font-size: rem(20px);
-    }
-}
-
-@media (max-width: 1024px) {
-    html {
-        font-size: 16px;
-    }
-    h1 {
-        line-height: 120%;
-    }
-    h4 {
-        font-size: rem(20px);
-        line-height: auto;
-    }
-    h5 {
-        font-size: rem(18px);
-        line-height: 180%;
-    }
-}
-@media (max-width: 768px) {
-    html {
-        font-size: 15px;
-    }
-    h1 {
-        font-size: rem(38px);
-        line-height: 110%;
-    }
-    h4 {
-        font-size: rem(18px);
-        line-height: auto;
-    }
-    .text {
-        font-size: rem(20px);
-    }
-    [class*="__container"] {
-        max-width: unset;
-    }
-}
-@media (max-width: 480px) {
-    html {
-        font-size: 14px;
-    }
-    [class*="__container"] {
-        max-width: var(--container);
-        margin: 0 auto;
-        padding: 0 rem(12px);
-    }
 }

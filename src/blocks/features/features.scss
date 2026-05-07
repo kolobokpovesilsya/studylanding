@@ -14,12 +14,14 @@
 
     &__screen-title {
         margin-bottom: rem(60px);
+        text-align: start;
+        font-weight: 600;
     }
 
     &__list-item {
         display: flex;
         align-items: center;
-
+        font-family: "Poppins", system-ui, sans-serif;
         &:not(:last-child) {
             margin-bottom: rem(40px);
         }

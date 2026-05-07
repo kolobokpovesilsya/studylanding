@@ -17,6 +17,7 @@
 
     &__title {
         max-width: rem(393px);
+        font-weight: 600;
     }
 
     &__description {
@@ -55,9 +56,13 @@
 
     &__badge,
     &__card-title {
+        font-family: "Poppins", system-ui, sans-serif;
+        font-weight: 600;
         margin-bottom: rem(40px);
     }
-
+    &__badge {
+        font-weight: 500;
+    }
     &__card-btns {
         position: absolute;
         top: -1rem;
@@ -88,17 +93,13 @@
         }
     }
 
-    &__btn-icon {
-        &--cross,
-        &--check {
-        }
-    }
-
     &__alert {
         position: absolute;
         bottom: -1rem;
         right: -30%;
         display: flex;
+        font-family: "Poppins", system-ui, sans-serif;
+        font-weight: 600;
         gap: rem(30px);
         align-items: center;
         border-radius: var(--card-radius);

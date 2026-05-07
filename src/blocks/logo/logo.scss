@@ -2,7 +2,8 @@
     position: relative;
     display: inline-flex;
     align-items: center;
-
+    font-family: "Poppins", system-ui, sans-serif;
+    font-weight: bold;
     &::after {
         content: "";
         position: absolute;

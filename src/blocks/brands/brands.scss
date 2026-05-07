@@ -6,7 +6,8 @@
         line-height: 160%;
         margin-bottom: rem(40px);
         font-weight: 500;
-
+        font-family: "Poppins", system-ui, sans-serif;
+        font-weight: 500;
         &--hide {
             opacity: 0;
             transform: translateY(20px);

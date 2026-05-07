@@ -32,11 +32,13 @@
     }
 
     &__title {
+        font-family: "Poppins", system-ui, sans-serif;
+        font-weight: 500;
     }
 
     &__description {
         width: 90%;
-
+        font-family: "Poppins", system-ui, sans-serif;
         &:before {
             content: "";
             position: absolute;

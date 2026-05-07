@@ -2,7 +2,10 @@
     &__container {
         --container: 1470px;
     }
-
+    &__title {
+        font-family: "Poppins", system-ui, sans-serif;
+        font-weight: bold;
+    }
     &__title,
     &__description {
         text-align: center;
@@ -10,6 +13,7 @@
 
     &__description {
         margin-bottom: rem(160px);
+        font-family: "Poppins", system-ui, sans-serif;
     }
 
     &__card-list {
@@ -81,10 +85,13 @@
     &__card-text {
         line-height: 180%;
         font-size: rem(20px);
+        font-family: "Poppins", system-ui, sans-serif;
     }
 
     &__card-title {
         margin-bottom: rem(35px);
+        font-family: "Poppins", system-ui, sans-serif;
+        font-weight: 500;
     }
 
     @media (max-width: 1280px) {

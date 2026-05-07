@@ -11,7 +11,9 @@
     &__screen-wrapper {
         position: relative;
     }
-
+    &__screen-title {
+        font-weight: 600;
+    }
     &__screen-wrapper,
     &__screen-text {
         width: 50%;
@@ -138,15 +140,19 @@
     &__info-row {
         display: flex;
         justify-content: space-between;
+        font-family: "Poppins", system-ui, sans-serif;
+        font-weight: 500;
     }
 
     &__info-title {
         line-height: normal;
+        font-weight: bold;
     }
 
     &__info-text {
         line-height: normal;
         font-size: rem(16px);
+        font-weight: 600;
     }
 
     &__info-btn {
@@ -189,7 +195,9 @@
         display: flex;
         justify-content: center;
     }
-
+    &__more-btn {
+        font-family: "Nunito Sans", system-ui, sans-serif;
+    }
     @media (max-width: 1280px) {
         &__content {
             flex-direction: column;

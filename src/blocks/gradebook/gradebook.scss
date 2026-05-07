@@ -18,13 +18,11 @@
 
     &__title {
         max-width: rem(393px);
+        font-weight: 600;
     }
 
     &__description {
         max-width: rem(600px);
-    }
-
-    &__picture {
     }
 
     &__background {
@@ -106,12 +104,15 @@
         overflow: hidden;
         background: var(--color-panel);
         box-shadow: var(--box-shadow-v2);
+        font-family: "Poppins", system-ui, sans-serif;
+        font-weight: 500;
     }
 
     &__header {
         background: #54aff0;
         color: #fff;
         text-align: center;
+        font-weight: 600;
         padding: rem(13px) 0;
     }
 

@@ -2,7 +2,7 @@
     &__root-list {
         display: flex;
         list-style: none;
-        gap: rem(40px);
+        gap: rem(20px);
         align-items: center;
         margin-right: rem(50px);
     }
@@ -59,7 +59,8 @@
         align-items: center;
         text-decoration: none;
         color: var(--menu-text-color);
-        font-weight: 500;
+        font-family: "Poppins", system-ui, sans-serif;
+        font-weight: 400;
         font-size: rem(22px);
         letter-spacing: 2%;
         width: 100%;

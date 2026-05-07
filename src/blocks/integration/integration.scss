@@ -1,4 +1,5 @@
 .integration {
+    font-family: "Nunito Sans", system-ui, sans-serif;
     &__container {
         --container: 1457px;
         display: flex;
@@ -26,8 +27,8 @@
     }
 
     &__title {
-        font-weight: bold;
         font-size: rem(36px);
+        font-weight: bold;
     }
 
     &__description {

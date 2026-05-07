@@ -2,7 +2,10 @@
     &__container {
         --container: 1550px;
     }
-
+    &__title,
+    &__description {
+        font-family: "Nunito Sans", system-ui, sans-serif;
+    }
     &__description {
         margin-bottom: rem(95px);
     }
@@ -47,6 +50,7 @@
 
     &__item-title {
         font-size: rem(22px);
+        font-weight: 500;
     }
 
     &__item-image {

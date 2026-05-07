@@ -18,9 +18,13 @@
     &__title {
         --heading-text-color: #2f327d;
         margin-bottom: rem(35px);
+        font-family: "Poppins", system-ui, sans-serif;
+        font-weight: bold;
     }
 
     &__description {
+        font-family: "Nunito Sans", system-ui, sans-serif;
+        font-weight: 400;
         margin-bottom: rem(50px);
     }
 
@@ -36,6 +40,8 @@
 
     &__btn-join {
         white-space: nowrap;
+        font-family: "Poppins", system-ui, sans-serif;
+        font-weight: 600;
     }
 
     &__btn-play {
@@ -53,6 +59,7 @@
 
     &__watch {
         white-space: nowrap;
+        font-family: "Poppins", system-ui, sans-serif;
     }
 
     &__content {
@@ -159,18 +166,23 @@
         justify-content: space-between;
         font-size: rem(24px);
         font-weight: bold;
+        font-family: "Nunito Sans", system-ui, sans-serif;
+        font-weight: bold;
     }
 
     &__popup-description {
         font-size: rem(20px);
         font-weight: 500;
+        font-family: "Nunito Sans", system-ui, sans-serif;
+        font-weight: 600;
     }
 
     &__popup-btn {
         display: inline-flex;
         color: white;
-        font-size: rem(20px);
+        font-family: "Nunito Sans", system-ui, sans-serif;
         font-weight: bold;
+        font-size: rem(20px);
         padding: rem(10px) rem(40px);
         background-color: #d8587e;
         border-radius: rem(80px);
