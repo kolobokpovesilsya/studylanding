@@ -96,6 +96,9 @@
             --size: 45px;
             --rotate: 12deg;
         }
+        &--star {
+            fill: var(--accent-yellow);
+        }
     }
 
     &__wrapper {
