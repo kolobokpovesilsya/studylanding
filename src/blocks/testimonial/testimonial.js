@@ -2,21 +2,28 @@ import { openModalById } from "../modal/modal";
 import { RatingInput } from "../rating/rating";
 import { Slider } from "../slider/slider";
 let redrawOnce = true;
+let resizeRAF = null;
 export function initTestimonial() {
     const slider = new Slider({
         selector: ".testimonial__slider",
         itemsGap: 5,
     });
+
     const ro = new ResizeObserver((entries) => {
         for (let entry of entries) {
-            const width = document.body.offsetWidth;
-            if (width <= 595) {
-                slider.redraw();
-                redrawOnce = true;
-            } else if (width > 595 && redrawOnce) {
-                slider.redraw();
-                redrawOnce = false;
+            if (resizeRAF) {
+                cancelAnimationFrame(resizeRAF);
             }
+            resizeRAF = requestAnimationFrame(() => {
+                const width = document.body.offsetWidth;
+                if (width <= 595) {
+                    slider.redraw();
+                    redrawOnce = true;
+                } else if (width > 595 && redrawOnce) {
+                    slider.redraw();
+                    redrawOnce = false;
+                }
+            });
         }
     });
     ro.observe(document.body);

@@ -43,19 +43,12 @@
     }
 
     &__btn {
-        display: inline-flex;
-        justify-content: space-between;
-        align-items: center;
-        border: rem(1px) solid #f48c06;
-        border-radius: rem(40px);
-        background-color: transparent;
-        color: #f48c06;
+        --btn-padding-x: 36.1px;
+        --btn-padding-y: 17.5px;
     }
 
     &__btn-text {
         display: inline-block;
-        margin-left: rem(40px);
-        margin-right: rem(25px);
         font-size: rem(22px);
         letter-spacing: 2%;
     }

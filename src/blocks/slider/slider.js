@@ -5,6 +5,7 @@ export class Slider {
     slidesCount = 0;
     sliderContainer;
     config;
+    rafId = null;
     constructor(config) {
         this.config = config;
         this.initializeSlier(config);
@@ -30,6 +31,7 @@ export class Slider {
             console.warn("Fail to find any slide item with slider__item class");
             return;
         }
+        this.slidesCount = sliderItems.length;
         this.currentItem = this.getSlideNumber(
             initialSlider,
             sliderItems.length,
@@ -40,12 +42,13 @@ export class Slider {
         if (bulletsList) {
             itemHeight -= bulletsList.getBoundingClientRect().height;
         }
-
-        sliderList.style.height = `${toRem(itemHeight)}rem`;
-        for (let item of sliderItems) {
-            item.style.height = `${toRem(itemHeight)}rem`;
-            item.style.width = `${toRem(width / slidesPerView)}rem`;
-        }
+        requestAnimationFrame(() => {
+            sliderList.style.height = `${toRem(itemHeight)}rem`;
+            for (let item of sliderItems) {
+                item.style.height = `${toRem(itemHeight)}rem`;
+                item.style.width = `${toRem(width / slidesPerView)}rem`;
+            }
+        });
         this.initializeBullets();
         this.setActiveBullet(this.currentItem);
         this.initializeControls();
@@ -54,9 +57,9 @@ export class Slider {
     getSlideNumber = (num, count) => {
         let itemNumber = num;
         if (itemNumber < 0) {
-            itemNumber = 0;
-        } else if (itemNumber >= count) {
             itemNumber = count - 1;
+        } else if (itemNumber > count - 1) {
+            itemNumber = 0;
         }
         return itemNumber;
     };
@@ -145,23 +148,48 @@ export class Slider {
         });
     }
     slide = (toIdx) => {
-        if (toIdx < 0) {
-            toIdx = this.slidesCount - 1;
-        } else if (toIdx == this.slidesCount) {
-            toIdx = 0;
+        if (this.rafId) {
+            return;
         }
-        const sliderItem = this.getSlideByIdx(toIdx);
-        this.onBeforeSlide(toIdx, sliderItem);
-        sliderItem?.scrollIntoView({
-            behavior: "smooth",
-            block: "nearest",
-            inline: "nearest",
-        });
-
-        this.currentItem = toIdx;
+        toIdx = this.getSlideNumber(toIdx, this.slidesCount);
+        const targetSlide = this.getSlideByIdx(toIdx);
+        if (!targetSlide) {
+            return;
+        }
+        const prevSlide = this.getSlideByIdx(this.currentItem);
+        if (!prevSlide) {
+            return;
+        }
+        this.onBeforeSlide(toIdx, targetSlide);
         this.setActiveBullet(toIdx);
-        this.onAfterSlide(toIdx, sliderItem);
+
+        const container = this.sliderContainer.querySelector(".slider__list");
+        const start = prevSlide.offsetLeft;
+        const end = targetSlide.offsetLeft;
+        const distance = end - start;
+        const duration = 200;
+        let startTime = null;
+
+        const ease = (t) => 1 - Math.pow(1 - t, 3);
+        const animate = (currentTime) => {
+            if (!startTime) startTime = currentTime;
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+
+            container.scrollLeft = start + distance * ease(progress);
+
+            if (progress < 1) {
+                this.rafId = requestAnimationFrame(animate);
+            } else {
+                this.currentItem = toIdx;
+                this.rafId = null;
+                this.onAfterSlide(toIdx, targetSlide);
+            }
+        };
+
+        this.rafId = requestAnimationFrame(animate);
     };
+
     redraw() {
         this.initializeSlier(this.config);
     }

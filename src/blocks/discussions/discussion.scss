@@ -196,6 +196,9 @@
         justify-content: center;
     }
     &__more-btn {
+        --btn-padding-x: 36.5px;
+        --btn-padding-y: 17.5px;
+
         font-family: "Nunito Sans", system-ui, sans-serif;
     }
     @media (max-width: 1280px) {

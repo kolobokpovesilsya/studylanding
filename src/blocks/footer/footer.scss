@@ -68,17 +68,14 @@
     }
 
     &__search-btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        color: white;
-        padding: rem(15px) rem(40px);
+        --btn-padding-x: 31.5px;
+        --btn-padding-y: 12.5px;
+        --btn-text: white;
         background: linear-gradient(
             51deg,
             rgba(84, 90, 231, 1) 0%,
             rgba(57, 63, 207, 1) 100%
         );
-        border-radius: rem(40px);
     }
 
     &__links {

@@ -66,7 +66,10 @@ class Slider {
             arrowLeft.onclick = () => this.slide(this.currentItem - 1);
         }
         if (arrowRight) {
-            arrowRight.onclick = () => this.slide(this.currentItem + 1);
+            arrowRight.onclick = () => {
+                console.log("click");
+                this.slide(this.currentItem + 1);
+            };
         }
     };
     getBulletList = () => {
@@ -94,11 +97,13 @@ class Slider {
         return sliderItems?.[idx];
     };
     slide = (toIdx) => {
+        console.log("====", toIdx);
         if (toIdx < 0) {
             toIdx = this.slidesCount - 1;
-        } else if (toIdx == this.slidesCount) {
+        } else if (toIdx >= this.slidesCount) {
             toIdx = 0;
         }
+        console.log("====1", toIdx);
         const sliderItem = this.getSlideByIdx(toIdx);
         sliderItem?.scrollIntoView({
             behavior: "smooth",

@@ -82,10 +82,10 @@
                 </ul>
             </nav>
             <div class="header__actions">
-                <button type="button" class="header__btn-login header__btn btn btn--white">
+                <button type="button" class="btn btn--white header__btn-login header__btn">
                     Login
                 </button>
-                <button type="button" class="header__sign-up header__btn  btn btn--warning" data-bind-modal="sign-up-modal">
+                <button type="button" class="btn btn--warning header__sign-up header__btn" data-bind-modal="sign-up-modal">
                     Sign Up
                 </button>
 
@@ -277,7 +277,7 @@
                         </picture>
                         <div class="about__card-content">
                             <h3 class="about__card-title">FOR INSTRUCTORS</h3>
-                            <button class="about__btn btn btn--outlined-white" data-bind-modal="sign-up-modal">
+                            <button class="btn btn--outlined-white about__btn about__start" data-bind-modal="sign-up-modal">
                                 <span class="about__btn-text">Start a class today</span>
                             </button>
                         </div>
@@ -290,7 +290,7 @@
                         </picture>
                         <div class="about__card-content">
                             <h3 class="about__card-title">FOR STUDENTS</h3>
-                            <button class="about__btn btn btn--outlined-primary active" data-bind-modal="access-code-modal">
+                            <button class="btn btn--outlined-primary  active about__btn about__code" data-bind-modal="access-code-modal">
                                 <span class="about__btn-text">Enter access code</span>
                             </button>
                         </div>
@@ -865,7 +865,7 @@
                         pre-integrated with more than 200+ tools, student information
                         systems (SIS), and education platforms.
                     </p>
-                    <div data-animation="slide-y" data-anim-delay="0.8" class="integration__btn">
+                    <div data-animation="slide-y" data-anim-delay="0.8" class="btn btn--outlined-orange integration__btn">
                         <span class="integration__btn-text" >See All Integrations</span>
                     </div>
                 </div>
@@ -888,9 +888,9 @@
                     <p data-animation="slide-y" data-anim-delay="1" class="testimonial__description">Are you
                         too? Please give your assessment</p>
                     <button data-animation="slide-y" data-anim-delay="1.2" data-bind-modal="assessment-modal"
-                        class="testimonial__btn">
+                        class="btn btn--outlined-orange  testimonial__btn">
                         <span class="testimonial__btn-text">Write your assessment</span>
-                        <div class="testimonial__btn-arrow">
+                        <div class=" testimonial__btn-arrow">
                             <svg class="icon testimonial__btn-icon">
                                 <use href="sprites.svg#arrow-right"></use>
                             </svg>
@@ -961,11 +961,9 @@
                                     </picture>
                                     <div data-animation="slide-y" data-anim-delay="0.6" class="testimonial__review">
                                         <p class="testimonial__review-text">
-                                            "TI’m very grateful for your support. Skilline turned out to be the perfect
-                                            fit — it’s
-                                            exactly the tool our business needed. The time and effort it saves are
-                                            incredible; we’re already seeing great results.
-                                            You won’t be disappointed if you give it a try!"
+                                            "I’m very grateful for your support. Skilline turned out to be the perfect
+                                            fit — it’s. The time and effort it saves are
+                                            incredible; we’re already seeing great results."
                                         </p>
                                         <div class="testimonial__review-footer">
                                             <div class="testimonial__reviewer-name">Angela Watson</div>
@@ -1014,12 +1012,9 @@
                                     </picture>
                                     <div data-animation="slide-y" data-anim-delay="0.6" class="testimonial__review">
                                         <p class="testimonial__review-text">
-                                            "Just wanted to say a massive thank you! This is exactly what I’ve been
-                                            searching for.
-                                            Skilline feels like it was made for our business — it’s filled a gap we
+                                            "Skilline feels like it was made for our business — it’s filled a gap we
                                             didn’t even
-                                            fully realise we had. The time savings are amazing, and I can confidently
-                                            say it’s worth every bit.
+                                            fully realise we had.
                                             No regrets here!"
                                         </p>
                                         <div class="testimonial__review-footer">
@@ -1178,8 +1173,8 @@
                     Subscribe to get our Newsletter
                 </div>
                 <div data-animation="slide-y" class="footer__search-group">
-                    <input placeholder="Your Email" type="text" class="footer__search-input">
-                    <div class="footer__search-btn">Subscribe</div>
+                    <input id="footer-email" placeholder="Your Email" type="text" class="footer__search-input"/>
+                    <div class="btn footer__search-btn">Subscribe</div>
                 </div>
             </div>
             <div data-animation="slide-y" class="footer__links">

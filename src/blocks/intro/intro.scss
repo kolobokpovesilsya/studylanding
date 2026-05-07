@@ -39,6 +39,8 @@
     }
 
     &__btn-join {
+        --btn-padding-y: 17.5px;
+        --btn-padding-x: 37.1px;
         white-space: nowrap;
         font-family: "Poppins", system-ui, sans-serif;
         font-weight: 600;
