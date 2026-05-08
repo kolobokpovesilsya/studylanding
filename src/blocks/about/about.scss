@@ -74,6 +74,7 @@
         font-size: rem(22px);
     }
     &__code {
+        opacity: 0.9;
     }
     @media (max-width: 768px) {
         &__card-list {

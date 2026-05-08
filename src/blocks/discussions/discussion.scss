@@ -157,6 +157,7 @@
 
     &__info-btn {
         display: inline-flex;
+        align-items: center;
         font-size: rem(20px);
         color: var(--white);
         border-radius: var(--btn-radius);

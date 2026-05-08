@@ -39,8 +39,9 @@
     }
 
     &__btn-join {
-        --btn-padding-y: 17.5px;
+        --btn-padding-y: 27px;
         --btn-padding-x: 37.1px;
+        --btn-font-size: 24px;
         white-space: nowrap;
         font-family: "Poppins", system-ui, sans-serif;
         font-weight: 600;
@@ -284,7 +285,10 @@
         &__container {
             gap: rem(50px);
         }
-
+        &__btn-join {
+            --btn-padding-y: 15px;
+            --btn-padding-x: 20px;
+        }
         &__btn-play {
             width: rem(60px);
             height: rem(60px);
@@ -322,9 +326,9 @@
         }
 
         &__content {
-            margin-top: 10%;
+            margin-top: 20%;
             align-items: center;
-            width: 100%;
+            width: 60%;
         }
 
         &__title,
@@ -365,6 +369,9 @@
     }
 
     @media (max-width: 480px) {
+        &__content {
+            width: 100%;
+        }
         &__image {
             width: 70%;
         }

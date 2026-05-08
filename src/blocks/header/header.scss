@@ -84,7 +84,6 @@
     &__btn {
         font-size: rem(22px);
         letter-spacing: 2%;
-        // padding: rem(18px) rem(40px);
     }
     &__btn-login {
         box-shadow: var(--box-shadow-v1);
@@ -119,8 +118,10 @@
     }
 
     @media (max-width: 1380px) {
+        padding: rem(24px) rem(16px);
         &__btn {
-            padding: rem(9px) rem(20px);
+            --btn-padding-y: 13px;
+            --btn-padding-x: 20px;
         }
 
         .intro__watch {
@@ -173,6 +174,10 @@
     }
 
     @media (max-width: 768px) {
+        &__btn {
+            --btn-padding-y: 12px;
+            --btn-padding-x: 20px;
+        }
     }
 
     @media (max-width: 480px) {

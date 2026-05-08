@@ -1,17 +1,18 @@
 .btn {
+    --btn-font-size: 22px;
     --btn-bg: transparent;
     --btn-text: #000000;
     --btn-border: transparent;
     --btn-padding-x: 49px;
-    --btn-padding-y: 7.41px;
+    --btn-padding-y: 20px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.5em;
     padding: var-to-rem(--btn-padding-y) var-to-rem(--btn-padding-x);
-    font: inherit;
+    font-size: var-to-rem(--btn-font-size);
     font-weight: 500;
-    line-height: auto;
+    line-height: 100%;
     text-decoration: none;
     border: rem(1px) solid var(--btn-border);
     border-radius: var(--btn-radius);
@@ -159,8 +160,8 @@
     }
 }
 @media (max-width: 1280px) {
-    .btn {
-        padding: 0.45rem 1rem;
-        font-size: rem(24px);
-    }
+    // .btn {
+    //     padding: 0.45rem 1rem;
+    //     font-size: rem(24px);
+    // }
 }
