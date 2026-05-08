@@ -14,7 +14,7 @@
     <object type="image/svg+xml" data="sprites.svg" style="display:none"></object>
     <header class="header  ">
         <div class="header__container">
-            <a href="/" class="header__logo logo logo--primary"> Skilline </a>
+            <a href="/" class="header__logo logo logo--filled"> Skilline </a>
             <nav class="menu header__nav header__nav--right">
                 <ul class="menu__root-list ">
                     <li class="menu__item ">
@@ -82,7 +82,7 @@
                 </ul>
             </nav>
             <div class="header__actions">
-                <button type="button" class="btn btn--white header__btn-login header__btn">
+                <button type="button" class="btn btn--white header__btn-login header__btn" data-bind-modal="sign-in-modal">
                     Login
                 </button>
                 <button type="button" class="btn btn--warning header__sign-up header__btn" data-bind-modal="sign-up-modal">
@@ -1057,7 +1057,7 @@
                         </div>
                         <div class="slider__controls testimonial__slider-controls">
                             <div data-animation="slide-x" data-anim-x="100%" data-anim-delay="0.8"
-                                class="sider__arrow-right testimonial__slider-arrow testimonial__slider-arrow--right">
+                                class="slider__arrow-right testimonial__slider-arrow testimonial__slider-arrow--right">
                                 <svg class="icon testimonial__arrow-icon">
                                     <use href="sprites.svg#chevrone-right"></use>
                                 </svg>
@@ -1093,7 +1093,7 @@
                             Class, launched less than a year ago by Blackboard co-founder Michael Chasen, integrates
                             exclusively...
                         </p>
-                        <a href="" class="news__main-link news__link">Read more</a>
+                        <a href="" class="link news__main-link news__link">Read more</a>
                     </div>
                     <div data-animation="slide-x" data-anim-x="100%" data-anim-delay="0.8" class="news__list">
                         <div class="news__item">
@@ -1172,10 +1172,14 @@
                 <div data-animation="slide-y" class="footer__search-title">
                     Subscribe to get our Newsletter
                 </div>
-                <div data-animation="slide-y" class="footer__search-group">
-                    <input id="footer-email" placeholder="Your Email" type="text" class="footer__search-input"/>
-                    <div class="btn footer__search-btn">Subscribe</div>
-                </div>
+                <form data-animation="slide-y" class="footer__search-group">
+                    <div class="footer__input-group">
+                         <input name="email" id="footer-email" placeholder="Your Email" type="text" class="input footer__search-input"/>
+                         <div class="invalid-message footer__invalid-email">Invalid email</div>
+                    </div>                    
+                    <button type="button" disabled name="subscribe" class="btn footer__search-btn">Subscribe</button>
+                     
+                </form>
             </div>
             <div data-animation="slide-y" class="footer__links">
                 <a href="" class="footer__link">Careers</a>
@@ -1187,16 +1191,12 @@
             <div data-animation="slide-y" class="footer__rights">
                 © 2021 Class Technologies Inc.
             </div>
-        </div>
+        </div> 
 
     </footer>
      <template class="modal-list">
-            <div id="send-assessment-modal" class=" modal">
-                <div class="modal__content">
-
-                    <div class="modal__body">
-                        <p>Thank you for your assessment!</p>
-                    </div> 
+            <div id="blank-modal" class=" modal">
+                <div class="modal__content" style="padding:0"> 
                 </div>
             </div>
             <div id="assessment-modal" class=" modal">
@@ -1211,7 +1211,7 @@
                                 <label for="reviewer-name" class="testimonial__reviewer-label">Enter your name:</label>
                                 <input data-validate id="reviewer-name" type="text"
                                     class="input testimonial__reviewer-name modal__input"></input>
-                                <div data-validation-rule="mandatory" data-for="reviewer-name" class="modal__validation-message">Need to fill</div>
+                                <div data-validation-rule="mandatory" data-for="reviewer-name" class="invalid-message modal__validation-message">Need to fill</div>
                             </div>
                             <div class="testimonial__reviewer-group modal__input-group">
                                 <label for="reviewer-text" class="testimonial__reviewer-label">Enter your review</label>
@@ -1220,7 +1220,7 @@
                             <div class="testimonial__reviewer-group modal__input-group">
                                 <label for="reviewer-text" class="testimonial__reviewer-label">Give a rating</label>
                                 <rating-input data-validate id="reviewer-rating" class=" testimonial__reviwer-stars"></rating-input>
-                                <div data-validation-rule="range" data-validation-min="1" data-for="reviewer-rating" class="modal__validation-message">Need to fill</div>
+                                <div data-validation-rule="range" data-validation-min="1" data-for="reviewer-rating" class="invalid-message modal__validation-message">Need to fill</div>
                             </div>
 
                         </form>
@@ -1294,30 +1294,76 @@
                                         <label for="sign-up-name" class="sign-up__name-label">Enter your name:</label>
                                         <input data-validate id="sign-up-name" name="name" type="text"
                                             class="input  modal__input sign-up__name"></input>
-                                        <div data-validation-rule="mandatory" data-for="sign-up-name" class="modal__validation-message">Need to fill</div>
+                                        <div data-validation-rule="mandatory" data-for="sign-up-name" class="invalid-message modal__validation-message">Need to fill</div>
                                     </div>
                                     <div class="modal__input-group sign-up__group">
                                         <label for="sign-up-email" class="sign-up__email-label">Enter your email:</label>
                                         <input data-validate id="sign-up-email" name="email" type="text"
                                             class="input  modal__input sign-up__email"></input>
-                                        <div data-validation-rule="mandatory" data-for="sign-up-email" class="modal__validation-message">Need to fill</div>
-                                        <div data-validation-rule="email" data-for="sign-up-email" class="modal__validation-message">Wrong email format</div>
+                                        <div data-validation-rule="mandatory" data-for="sign-up-email" class="invalid-message modal__validation-message">Need to fill</div>
+                                        <div data-validation-rule="email" data-for="sign-up-email" class="invalid-message modal__validation-message">Wrong email format</div>
                                     </div>
                                     <div class="modal__input-group sign-up__group">
                                         <label for="sign-up-password" class="sign-up__password-label">Enter password:</label>
                                         <input type="password" name="password" data-validate id="sign-up-password" type="text"
                                             class="input  modal__input sign-up__password"></input>
-                                        <div data-validation-rule="mandatory" data-for="sign-up-password" class="modal__validation-message">Need to fill</div>
-                                        <div data-validation-rule="password" data-for="sign-up-password" class="modal__validation-message">Wrong password format</div>
+                                        <div data-validation-rule="mandatory" data-for="sign-up-password" class="invalid-message modal__validation-message">Need to fill</div>
+                                        <div data-validation-rule="password" data-for="sign-up-password" class="invalid-message modal__validation-message">Wrong password format</div>
                                     </div>
                                     <div class="modal__input-group sign-up__group">
                                         <label for="sign-up-retpassword" class="sign-up__retpassword-label">Retry password:</label>
                                         <input type="password" data-validate id="sign-up-retpassword" type="text"
                                             class="input  modal__input sign-up__retpassword"></input>
-                                        <div data-validation-rule="retry-password" data-validation-source-password="sign-up-password" data-for="sign-up-retpassword" class="modal__validation-message">Passwords mismatch</div>
+                                        <div data-validation-rule="retry-password" data-validation-source-password="sign-up-password" data-for="sign-up-retpassword" class="invalid-message modal__validation-message">Passwords mismatch</div>
                                         
                                     </div> 
                                     <div class="modal__footer sign-up__footer">
+                                        <button type="button" class="btn btn--success modal__ok">
+                                            Send
+                                        </button>
+                                        <button type="button" class="btn btn--danger modal__cancel">
+                                            Cancel
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                   
+                </div>
+            </div>
+            <div id="sign-in-modal" class=" modal">
+                <div class="modal__content sign-in__content">
+                    <div class="modal__title">
+                        <!-- <h2 class="modal__title-text testimonial__reviewer-title">Sign up</h2> -->
+                        <span class="modal__close">X</span>
+                    </div>
+                    <div class="modal__body sign-in__body">
+                        <div class="sign-in__wrapper">
+                             <div class="sign-in__image-wrapper">
+                                <img class="sign-in__image" src="./assets/signin/signin.jpg"/>
+                             </div>
+                             <div class="sign-in__content-wrapper">
+                                <h2 class="modal__title-text sign-in__title">Sign in</h2>
+                                <hr class="sign-in__divider"/>
+                                <form class="sign-in__form">                                 
+                                    <div class="modal__input-group sign-in__group">
+                                        <label for="sign-in-email" class="sign-in__email-label">Enter your email:</label>
+                                        <input data-validate id="sign-in-email" name="email" type="text"
+                                            class="input  modal__input sign-in__email"></input>
+                                        <div data-validation-rule="mandatory" data-for="sign-in-email" class="invalid-message modal__validation-message">Need to fill</div>
+                                        <div data-validation-rule="email" data-for="sign-in-email" class="invalid-message modal__validation-message">Wrong email format</div>
+                                    </div>
+                                    <div class="modal__input-group sign-in__group">
+                                        <label for="sign-in-password" class="sign-in__password-label">Enter password:</label>
+                                        <input type="password" name="password" data-validate id="sign-in-password" type="text"
+                                            class="input  modal__input sign-in__password"></input>
+                                        <div data-validation-rule="mandatory" data-for="sign-in-password" class="invalid-message modal__validation-message">Need to fill</div>
+                                        <div data-validation-rule="password" data-for="sign-in-password" class="invalid-message modal__validation-message">Wrong password format</div>
+                                    </div> 
+                                    <div class="modal__footer sign-in__footer">
                                         <button type="button" class="btn btn--success modal__ok">
                                             Send
                                         </button>

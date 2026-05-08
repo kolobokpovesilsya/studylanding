@@ -1,0 +1,33 @@
+.alert {
+    --bg: #8eb7d7;
+    --color: #4a7699;
+    --fill: var(--color);
+
+    display: flex;
+    align-items: center;
+    gap: rem(20px);
+    background-color: var(--bg);
+    padding: 1rem;
+    border-radius: var(--card-radius);
+    color: var(--color);
+    &--success {
+        --bg: #90d0a0;
+        --color: #2d7b2d;
+    }
+    &__text {
+        // color:
+    }
+    &--danger {
+        --bg: #f59c9c;
+        --color: #992323;
+    }
+    &__icon {
+        width: 2rem;
+        height: 2rem;
+    }
+    &__icon-svg {
+        fill: var(--fill);
+        width: 100%;
+        height: 100%;
+    }
+}
