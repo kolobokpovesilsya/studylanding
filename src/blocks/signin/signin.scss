@@ -1,0 +1,43 @@
+.sign-in {
+    &__content {
+        padding: 0;
+        // overflow: hidden;
+    }
+
+    &__wrapper {
+        display: flex;
+        gap: rem(20px);
+    }
+
+    &__content-wrapper {
+        padding: rem(15px) rem(15px) rem(15px) 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__image-wrapper {
+        width: rem(400px);
+    }
+
+    &__image {
+        height: 100%;
+        object-fit: fill;
+    }
+
+    &__title {
+        margin: 0;
+    }
+
+    &__divider {
+        width: 50%;
+        margin-bottom: rem(20px);
+    }
+    &__form {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+    &__footer {
+        margin-top: auto;
+    }
+}
