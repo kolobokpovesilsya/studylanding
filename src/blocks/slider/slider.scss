@@ -23,7 +23,10 @@
     &__item {
         flex-shrink: 0;
     }
-
+    &__arrow-right,
+    &__arrow-left {
+        cursor: pointer;
+    }
     &__bullet-list {
         position: relative;
         bottom: 0;

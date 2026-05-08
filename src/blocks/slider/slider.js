@@ -73,10 +73,11 @@ export class Slider {
         }
     };
     initializeControls = () => {
-        const arrowLeft =
-            this.sliderContainer.querySelector(".sider__arrow-left");
+        const arrowLeft = this.sliderContainer.querySelector(
+            ".slider__arrow-left",
+        );
         const arrowRight = this.sliderContainer.querySelector(
-            ".sider__arrow-right",
+            ".slider__arrow-right",
         );
         if (arrowLeft) {
             arrowLeft.onclick = () => this.slide(this.currentItem - 1);
