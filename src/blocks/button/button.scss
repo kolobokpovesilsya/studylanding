@@ -25,6 +25,10 @@
         box-shadow 0.2s ease;
     user-select: none;
 }
+.btn[disabled] {
+    cursor: not-allowed;
+    opacity: 0.8;
+}
 .btn.round {
     border-radius: 100%;
     padding: 1rem 1.5rem;
