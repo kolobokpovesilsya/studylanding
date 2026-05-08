@@ -4,21 +4,24 @@
     align-items: center;
     font-family: "Poppins", system-ui, sans-serif;
     font-weight: bold;
+    font-size: rem(32px);
     &::after {
         content: "";
         position: absolute;
         top: 55%;
         left: -0.6rem;
-        width: rem(60px);
-        height: rem(60px);
+        width: rem(65.3px);
+        height: rem(65.3px);
         transform-origin: center center;
         transform: translateY(-50%) rotate(45deg);
         z-index: -1;
         pointer-events: none;
-        border-radius: rem(3px);
+        border: 2px solid var(--accent-primary);
+        background-color: transparent;
+        border-radius: rem(7px);
     }
 
-    &--primary {
+    &--filled {
         &::after {
             background-color: var(--accent-primary);
         }
