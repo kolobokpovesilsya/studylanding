@@ -329,22 +329,22 @@
                 </div>
             </div>
         </section>
-        <section id="features" class="features">
+        <section id="features" data-animation-container data-anim-threshold="0.8" class="features">
             <div class="features__container">
-                <h2 class="features__title section-title">
+                <h2 data-animation="slide-y"   class="features__title section-title">
                     Our <span class="text-warning">Features</span>
                 </h2>
-                <p class="features__description section-description">
+                <p data-animation="slide-y" data-anim-delay="0.4" class="features__description section-description">
                     This very extraordinary feature, can make learning activities more efficient
                 </p>
                 <div class="features__content">
-                    <div class="features__screen-wrapper">
+                    <div data-animation="slide-x" data-anim-x="-100%" data-anim-delay="0.6" class="features__screen-wrapper">
                         <div class="screencard features__screen">
 
-                            <div class="features__bulb features__bulb-1"></div>
-                            <div class="features__bulb features__bulb-2"></div>
-                            <div class="features__bulb features__bulb-3"></div>
-                            <div class="features__bulb features__bulb-4"></div>
+                            <div data-animation="popup"  data-anim-delay="0.9" class="features__bulb features__bulb-1"></div>
+                            <div data-animation="popup"  data-anim-delay="1.2" class="features__bulb features__bulb-2"></div>
+                            <div data-animation="popup"  data-anim-delay="1.4" class="features__bulb features__bulb-3"></div>
+                            <div data-animation="popup"  data-anim-delay="1.6" class="features__bulb features__bulb-4"></div>
 
                             <div class="screencard__header screencard__header--transparent features__screencard-header">
                                 <div class="screencard__toolbar">
@@ -354,7 +354,7 @@
                                 </div>
                             </div>
                             <div class="screencard__body screencard__body--transparent features__screencard-body">
-                                <div class="features__video--main">
+                                <div data-animation="popup"  data-anim-delay="1.7" class="features__video--main">
                                     <div
                                         class="features__videocall features__videocall-main videocall videocall--shadow">
                                         <video data-lazy autoplay loop>
@@ -385,6 +385,7 @@
                                 </div>
                                 <div class="features__video-grid">
                                     <div
+                                    data-animation="popup"  data-anim-delay="1.7"
                                         class="features__videocall features__videocall-col1 features__videocall-col  videocall">
                                         <video data-lazy autoplay loop>
                                             <source data-src="./assets/features/asian.mp4" type="video/mp4">
@@ -401,6 +402,7 @@
                                         </div>
                                     </div>
                                     <div
+                                    data-animation="popup"  data-anim-delay="1.7"
                                         class="features__videocall features__videocall-col2 features__videocall-col videocall">
                                         <video data-lazy autoplay loop>
                                             <source data-src="./assets/features/asian2.mp4" type="video/mp4">
@@ -417,6 +419,7 @@
                                         </div>
                                     </div>
                                     <div
+                                    data-animation="popup"  data-anim-delay="1.7"
                                         class="features__videocall features__videocall-col3 features__videocall-col videocall videocall--shadow">
                                         <video data-lazy autoplay loop>
                                             <source data-src="./assets/features/black.mp4" type="video/mp4">
@@ -433,6 +436,7 @@
                                         </div>
                                     </div>
                                     <div
+                                    data-animation="popup"  data-anim-delay="1.7"
                                         class="features__videocall features__videocall-col4 features__videocall-col features__videocall--lg   videocall videocall--shadow">
                                         <video data-lazy autoplay loop>
                                             <source data-src="./assets/features/asian3.mp4" type="video/mp4">
@@ -453,7 +457,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="features__screen-description">
+                    <div data-animation="slide-x" data-anim-x="100%" data-anim-delay="0.8" class="features__screen-description">
                         <h3 class="section-title features__screen-title">
                             A <span class="text-warning">user interface</span> designed for the classroom
                         </h3>
@@ -715,15 +719,15 @@
                 </div>
             </div>
         </section>
-        <section id="discussions" class="discussions">
+        <section data-animation-container data-anim-threshold="0.8" id="discussions" class="discussions">
             <div class="discussions__container">
                 <div class="discussions__content">
-                    <div class="discussions__screen-wrapper">
+                    <div data-animation="slide-x" data-anim-x="-100%" data-anim-delay="0.6"  class="discussions__screen-wrapper">
                         <div class="screencard discussions__screencard discussions__screencard-background">
-                            <div class="discussions__shape discussions__square"></div>
-                            <div class="discussions__shape discussions__ring"></div>
-                            <div class="discussions__shape discussions__triangle"></div>
-                            <div class="screencard__header">
+                            <div data-animation="popup"  data-anim-delay="0.8" class="discussions__shape discussions__square"></div>
+                            <div data-animation="popup"  data-anim-delay="0.9" class="discussions__shape discussions__ring"></div>
+                            <div data-animation="popup"  data-anim-delay="1.1" class="discussions__shape discussions__triangle"></div>
+                            <div data-animation="popup"  data-anim-delay="1.2" class="screencard__header">
                                 <div class="screencard__toolbar">
                                     <div class="screencard__toolbar-item screencard__toolbar-item--red"></div>
                                     <div class="screencard__toolbar-item screencard__toolbar-item--yellow"></div>
@@ -733,7 +737,7 @@
                             <div class="screencard__body  discussions__screencard-body discussions__screencard-body-bg">
                                 <div class="discussions__video-grid">
                                     <div class="discussions__video-col">
-                                        <div
+                                        <div 
                                             class="discussions__videocall discussions__videocall-main videocall videocall--shadow">
                                             <img src="./assets/discussions/abstractuser.svg" />
                                         </div>
@@ -750,12 +754,13 @@
 
                                     </div>
                                     <div class="discussions__video-col discussions__video-col--row">
-                                        <div
+                                        <div  
                                             class="discussions__videocall discussions__videocall-main videocall videocall--shadow">
                                             <img class="discussions__videocall-preview"
                                                 src="./assets/discussions/person1.png" />
                                         </div>
                                         <div
+                                        
                                             class="discussions__videocall discussions__videocall-main videocall videocall--shadow">
                                             <img class="discussions__videocall-preview"
                                                 src="./assets/discussions/person2.png" />
@@ -775,14 +780,14 @@
                             </div>
                             <div class="screencard__body discussions__screencard-body">
                                 <div class="discussions__video-row">
-                                    <div class="discussions__videocall  videocall">
+                                    <div data-animation="fade"  data-anim-delay="1.3"  class="discussions__videocall  videocall">
                                         <video data-lazy autoplay loop>
                                             <source data-src="./assets/features/operator.mp4" type="video/mp4">
                                             Ваш браузер не поддерживает тег video.
                                         </video>
                                     </div>
                                     <div class="discussions__video-divider"></div>
-                                    <div class="discussions__videocall     videocall">
+                                    <div data-animation="fade"  data-anim-delay="1.4" class="discussions__videocall     videocall">
                                         <video data-lazy autoplay loop>
                                             <source data-src="./assets/features/asian.mp4" type="video/mp4">
                                             Ваш браузер не поддерживает тег video.
@@ -798,7 +803,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="discussions__info-row">
+                                <div  class="discussions__info-row">
                                     <div class="discussions__info">
                                         <h4 class="discussions__info-title">Private Discussion</h4>
                                         <p class="discussions__info-text">Your video can't be seen by others</p>
@@ -809,7 +814,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="discussions__screen-text">
+                    <div data-animation="slide-x" data-anim-x="100%" data-anim-delay="0.8"  class="discussions__screen-text">
                         <h3 class="section-title discussions__screen-title">
                             One-on-One  <span class="  discussions__screen-decor text-warning">Discussions</span>
                         </h3>
@@ -819,7 +824,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="discussions__more-features">
+                <div data-animation="fade"  data-anim-delay="1.3" class="discussions__more-features">
                     <div class="btn btn--outlined-orange discussions__more-btn">
                         See more features
                     </div>
@@ -865,9 +870,9 @@
                         pre-integrated with more than 200+ tools, student information
                         systems (SIS), and education platforms.
                     </p>
-                    <div data-animation="slide-y" data-anim-delay="0.8" class="btn btn--outlined-orange integration__btn">
+                    <button   data-animation="fade"  data-anim-delay="1.3" class="btn btn--outlined-orange integration__btn">
                         <span class="integration__btn-text" >See All Integrations</span>
-                    </div>
+                    </button>
                 </div>
             </div>
         </section>
@@ -887,7 +892,7 @@
                         by the Skilline.</p>
                     <p data-animation="slide-y" data-anim-delay="1" class="testimonial__description">Are you
                         too? Please give your assessment</p>
-                    <button data-animation="slide-y" data-anim-delay="1.2" data-bind-modal="assessment-modal"
+                    <button  data-animation="slide-y" data-anim-delay="1.2" data-bind-modal="assessment-modal"
                         class="btn btn--outlined-orange  testimonial__btn">
                         <span class="testimonial__btn-text">Write your assessment</span>
                         <div class=" testimonial__btn-arrow">
