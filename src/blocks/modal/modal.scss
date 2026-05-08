@@ -30,21 +30,6 @@
         flex-direction: column;
         margin-bottom: rem(20px);
     }
-    &__validation-message {
-        position: absolute;
-        bottom: rem(-20px);
-        left: 50%;
-        width: 100%;
-        transform: translateX(-50%);
-        display: none;
-        color: var(--accent-danger);
-        font-size: rem(18px);
-        line-height: 100%;
-        &--show {
-            display: block;
-        }
-        text-align: center;
-    }
 
     &__title {
         display: flex;

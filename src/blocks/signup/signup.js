@@ -1,16 +1,36 @@
+import { getAlertElement } from "../alert/alert";
 import { openModalById } from "../modal/modal";
 
-export function closeSignupModalHandler(modal, status) {
-    console.log("close===", status);
+export async function closeSignupModalHandler(modal, status) {
     switch (status) {
         case "ok":
-            const data = getData(modal);
-            console.log("data===", data);
-            sendData(data);
-            openModalById("send-assessment-modal", {
-                closeTimeout: 1500,
-            });
-            return;
+            let alertElement;
+            try {
+                const data = getData(modal);
+                await sendData(data);
+                alertElement = getAlertElement(
+                    "User signed up successfully!",
+                    "success",
+                );
+                openModalById("blank-modal", {
+                    closeTimeout: 1500,
+                    message: alertElement,
+                });
+            } catch (e) {
+                if (typeof e == "string") {
+                    alertElement = getAlertElement(e, "danger");
+                } else {
+                    alertElement = getAlertElement(
+                        "Fail to sign up!",
+                        "danger",
+                    );
+                }
+                openModalById("blank-modal", {
+                    closeTimeout: 1500,
+                    message: alertElement,
+                });
+            }
+            break;
         case "close":
             return;
     }
@@ -29,4 +49,6 @@ function getData(modal) {
     };
 }
 
-function sendData(data) {}
+function sendData(data) {
+    return Promise.reject("Service unuvailable now!");
+}

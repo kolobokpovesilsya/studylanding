@@ -115,6 +115,21 @@ h3 {
     line-height: 180%;
     color: var(--text-color);
 }
+.invalid-message {
+    position: absolute;
+    left: 50%;
+    bottom: rem(-16px);
+    display: none;
+    transform: translateX(-50%);
+    font-size: rem(16px);
+    color: var(--accent-danger);
+    width: 100%;
+    text-align: center;
+    line-height: 100%;
+    &--show {
+        display: block;
+    }
+}
 h1 {
     font-size: rem(54px);
     line-height: 150%;

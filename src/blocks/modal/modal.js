@@ -1,3 +1,5 @@
+import { validateEmail } from "../../utils/utils";
+
 export class ModalController {
     modalMap = {};
     onCloseEvent;
@@ -70,8 +72,13 @@ export class ModalController {
     };
 
     handleOpenModalEvent = (e) => {
-        const { id, closeCallback, closeTimeout, openCallback } = e.detail;
-        this.openModal(id, openCallback);
+        const { id, closeCallback, closeTimeout, openCallback, message } =
+            e.detail;
+        const openedModal = this.openModal(id, openCallback);
+        if (message && openedModal) {
+            const content = openedModal.querySelector(".modal__content");
+            content?.appendChild(message);
+        }
         if (closeTimeout) {
             setTimeout(() => {
                 this.closeModal(id);
@@ -102,6 +109,7 @@ export class ModalController {
         openCallback?.(openedModal);
         const html = document.querySelector("html");
         html.style.overflow = "hidden";
+        return openedModal;
     }
     closeModal(id, status) {
         const html = document.querySelector("html");
@@ -158,11 +166,7 @@ export class ModalController {
             }
             case "email": {
                 const strVal = this.valueToString(value);
-                const isEmail =
-                    /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(
-                        strVal,
-                    );
-                return isEmail;
+                return validateEmail(strVal);
             }
             case "password": {
                 const strVal = this.valueToString(value);
@@ -212,9 +216,9 @@ export class ModalController {
         let isValid = true;
         for (let message of messages) {
             const result = this.checkValidationRule(input, message, modalId);
-            message.classList.remove("modal__validation-message--show");
+            message.classList.remove("invalid-message--show");
             if (!result && isValid) {
-                message.classList.add("modal__validation-message--show");
+                message.classList.add("invalid-message--show");
                 isValid = false;
             }
         }

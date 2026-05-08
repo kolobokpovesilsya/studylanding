@@ -15,6 +15,10 @@ import { ModalController } from "./blocks/modal/modal.js";
 import { closeSignupModalHandler } from "./blocks/signup/signup.js";
 import { closeAccessCodeModalHandler } from "./blocks/about/about.js";
 import { initIntegration } from "./blocks/integration/integration.js";
+import { closeSigninModalHandler } from "./blocks/signin/signin.js";
+import { initDiscussions } from "./blocks/discussions/discussions.js";
+import { initNews } from "./blocks/news/news.js";
+import { initFooter } from "./blocks/footer/footer.js";
 const resetBtn = document.querySelector(".reset-scroll-btn");
 function bubbleResetBtn(e) {
     const scrollTop = window.scrollY;
@@ -38,9 +42,11 @@ function initBlocks() {
     initClassroom();
     initBrands();
     initSoftware();
+    initDiscussions();
     initTestimonial();
     initIntegration();
-    initIntegration();
+    initNews();
+    initFooter();
 }
 function closeModalHandler(modal, status) {
     switch (modal.id) {
@@ -48,6 +54,8 @@ function closeModalHandler(modal, status) {
             return closeAssessmentModalHandler(modal, status);
         case "sign-up-modal":
             return closeSignupModalHandler(modal, status);
+        case "sign-in-modal":
+            return closeSigninModalHandler(modal, status);
         case "access-code-modal":
             return closeAccessCodeModalHandler(modal, status);
     }
