@@ -51,20 +51,29 @@
 
     &__search-group {
         display: flex;
+        justify-content: center;
         gap: rem(20px);
+        flex-wrap: wrap;
     }
-
+    &__input-group {
+        position: relative;
+    }
+    &__invalid-email {
+        // position: absolute;
+        // bottom: -16px;
+        // font-size: rem(16px);
+        // left: 50%;
+        // transform: translateX(-50%);
+        // display: none;
+        // color: var(--accent-danger);
+        // width: 100%;
+        // text-align: center;
+        // &--show {
+        //     display: block;
+        // }
+    }
     &__search-input {
-        background-color: transparent;
-        color: #83839a;
-        letter-spacing: 4%;
-        font-size: rem(20px);
-        outline: none;
-        border: 1px solid #83839a;
-        border-radius: rem(40px);
-        padding: rem(16px) rem(25px);
         max-width: rem(400px);
-        flex-grow: 1;
     }
 
     &__search-btn {
