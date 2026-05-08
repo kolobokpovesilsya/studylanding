@@ -1,6 +1,6 @@
 .input {
-    --color: #83839a background-color: transparent;
-    color: var(--color);
+    background-color: transparent;
+    color: #83839a;
     letter-spacing: 4%;
     font-size: rem(20px);
     outline: none;
@@ -8,4 +8,15 @@
     border-radius: rem(40px);
     padding: rem(16px) rem(25px);
     flex-grow: 1;
+    &--invalid {
+        border-color: var(--accent-danger);
+        color: var(--accent-danger);
+    }
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+        transition:
+            color 5000s ease 0s,
+            background-color 5000s ease 0s;
+    }
 }
