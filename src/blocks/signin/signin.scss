@@ -40,4 +40,12 @@
     &__footer {
         margin-top: auto;
     }
+    @media (max-width: 768px) {
+        &__wrapper {
+            padding: rem(20px);
+        }
+        &__image-wrapper {
+            display: none;
+        }
+    }
 }

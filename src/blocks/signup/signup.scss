@@ -1,7 +1,6 @@
 .sign-up {
     &__content {
         padding: 0;
-        // overflow: hidden;
     }
 
     &__wrapper {
@@ -33,5 +32,13 @@
 
     &__footer {
         margin-top: rem(30px);
+    }
+    @media (max-width: 768px) {
+        &__wrapper {
+            padding: rem(20px);
+        }
+        &__image-wrapper {
+            display: none;
+        }
     }
 }

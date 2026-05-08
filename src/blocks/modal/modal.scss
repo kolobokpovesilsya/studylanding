@@ -65,4 +65,17 @@
         justify-content: end;
         gap: rem(20px);
     }
+    @media (max-width: 480px) {
+        &__content {
+            // width: 100%;
+            margin: rem(5px);
+        }
+        &__close {
+            left: 50%;
+            transform: translateX(-50%);
+            top: rem(-100px);
+            width: 4rem;
+            height: 4rem;
+        }
+    }
 }
