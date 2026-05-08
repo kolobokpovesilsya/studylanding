@@ -8,8 +8,13 @@ export class MenuController {
             this.processDropdownItem(item);
         });
         document.addEventListener("click", this.handleClick.bind(this));
+        document.addEventListener("scroll", this.handleScroll, {
+            passive: true,
+        });
     }
-
+    handleScroll = (e) => {
+        this.closeOpenedSubmenu();
+    };
     handleClick(e) {
         //Close all opened submenu first
 
